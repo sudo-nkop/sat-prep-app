@@ -1,0 +1,10 @@
+{
+  "appId": "app.satpractice.local",
+  "appName": "SAT Practice",
+  "webDir": "../www",
+  "bundledWebRuntime": false,
+  "android": {
+    "allowMixedContent": false,
+    "captureInput": true
+  }
+}

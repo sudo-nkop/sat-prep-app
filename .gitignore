@@ -1,0 +1,4 @@
+.cap-project/
+*.apk
+node_modules/
+.DS_Store

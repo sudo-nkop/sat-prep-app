@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1020">
+<title>SAT Practice</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header id="topbar">
+  <button class="back-btn" id="back-btn" hidden aria-label="Back">←</button>
+  <h1 id="page-title">SAT Practice</h1>
+  <button class="icon-btn" id="settings-btn" aria-label="Settings">⚙</button>
+</header>
+
+<main id="app">
+
+  <!-- HOME -->
+  <section class="screen" id="screen-home">
+    <div class="banner" id="reminder-banner" hidden>
+      <span id="reminder-text">Time to practice!</span>
+      <button class="btn-link" id="reminder-dismiss">Dismiss</button>
+    </div>
+
+    <div class="hero">
+      <div class="streak-card">
+        <div class="streak-num" id="streak-num">0</div>
+        <div class="streak-label">day streak</div>
+      </div>
+      <div class="stats-card">
+        <div class="stat"><span id="stat-questions">0</span><small>answered</small></div>
+        <div class="stat"><span id="stat-accuracy">—</span><small>accuracy</small></div>
+      </div>
+    </div>
+
+    <div class="menu-grid">
+      <button class="menu-tile" data-go="screen-practice-setup">
+        <div class="tile-emoji">📝</div>
+        <div class="tile-title">Practice</div>
+        <div class="tile-sub">Untimed, with explanations</div>
+      </button>
+      <button class="menu-tile" data-go="screen-test-setup">
+        <div class="tile-emoji">⏱️</div>
+        <div class="tile-title">Timed Test</div>
+        <div class="tile-sub">Real-test conditions</div>
+      </button>
+      <button class="menu-tile" data-go="screen-cheatsheets">
+        <div class="tile-emoji">📚</div>
+        <div class="tile-title">Cheatsheets</div>
+        <div class="tile-sub">Formulas, grammar, tips</div>
+      </button>
+      <button class="menu-tile" data-go="screen-history">
+        <div class="tile-emoji">📈</div>
+        <div class="tile-title">History</div>
+        <div class="tile-sub">Past sessions</div>
+      </button>
+    </div>
+
+    <div class="install-prompt" id="install-prompt" hidden>
+      <div>
+        <strong>Install this app</strong>
+        <p>Add to your home screen for offline use.</p>
+      </div>
+      <button class="btn primary" id="install-btn">Install</button>
+    </div>
+  </section>
+
+  <!-- PRACTICE SETUP -->
+  <section class="screen" id="screen-practice-setup" hidden>
+    <h2>Practice Mode</h2>
+    <p class="muted">Pick a section. You'll see one question at a time with explanations after answering.</p>
+
+    <label class="field">
+      <span>Section</span>
+      <select id="practice-section">
+        <option value="all">All sections</option>
+        <option value="math">Math only</option>
+        <option value="rw">Reading & Writing only</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Topic</span>
+      <select id="practice-topic"><option value="all">All topics</option></select>
+    </label>
+
+    <label class="field">
+      <span>Difficulty</span>
+      <select id="practice-difficulty">
+        <option value="all">Any</option>
+        <option value="1">Easy</option>
+        <option value="2">Medium</option>
+        <option value="3">Hard</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Number of questions</span>
+      <select id="practice-count">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="15">15</option>
+        <option value="25">25</option>
+      </select>
+    </label>
+
+    <button class="btn primary big" id="practice-start">Start Practice</button>
+  </section>
+
+  <!-- TEST SETUP -->
+  <section class="screen" id="screen-test-setup" hidden>
+    <h2>Timed Test</h2>
+    <p class="muted">A timed mini-section that mimics the real Digital SAT pacing.</p>
+    <div class="test-options">
+      <button class="opt" data-test="rw">
+        <strong>Reading & Writing</strong>
+        <small>27 questions · 32 min</small>
+      </button>
+      <button class="opt" data-test="math">
+        <strong>Math</strong>
+        <small>22 questions · 35 min</small>
+      </button>
+      <button class="opt" data-test="mixed">
+        <strong>Mixed Mini-Test</strong>
+        <small>15 questions · 20 min</small>
+      </button>
+    </div>
+    <p class="muted small">During the test you can flag questions and return to them. No explanations until the end.</p>
+  </section>
+
+  <!-- QUIZ (used for both practice and test) -->
+  <section class="screen quiz-screen" id="screen-quiz" hidden>
+    <div class="quiz-header">
+      <span id="quiz-progress">1 / 10</span>
+      <span class="timer" id="quiz-timer" hidden>00:00</span>
+      <button class="btn-link" id="quiz-flag">⚐ Flag</button>
+    </div>
+
+    <div class="question" id="question-container">
+      <div class="q-prompt" id="q-prompt"></div>
+      <div class="choices" id="q-choices"></div>
+    </div>
+
+    <div class="explanation" id="q-explanation" hidden>
+      <div class="explanation-result" id="q-result"></div>
+      <p id="q-explanation-text"></p>
+    </div>
+
+    <div class="quiz-actions">
+      <button class="btn" id="quiz-prev" hidden>← Prev</button>
+      <button class="btn primary" id="quiz-submit">Submit</button>
+      <button class="btn" id="quiz-next" hidden>Next →</button>
+      <button class="btn danger" id="quiz-finish" hidden>Finish</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="screen" id="screen-results" hidden>
+    <h2>Results</h2>
+    <div class="results-summary">
+      <div class="result-big" id="result-score">0 / 0</div>
+      <div class="result-pct" id="result-pct">0%</div>
+    </div>
+    <div class="result-detail" id="result-time" hidden></div>
+    <div class="result-breakdown" id="result-breakdown"></div>
+
+    <h3>Review</h3>
+    <div class="review-list" id="review-list"></div>
+
+    <button class="btn primary big" data-go="screen-home">Done</button>
+  </section>
+
+  <!-- CHEATSHEETS -->
+  <section class="screen" id="screen-cheatsheets" hidden>
+    <h2>Cheatsheets</h2>
+    <div class="cheatsheet-list" id="cheatsheet-list"></div>
+    <article class="cheatsheet-content" id="cheatsheet-content" hidden></article>
+  </section>
+
+  <!-- HISTORY -->
+  <section class="screen" id="screen-history" hidden>
+    <h2>Session History</h2>
+    <div id="history-list" class="history-list"></div>
+    <button class="btn danger" id="clear-history">Clear history</button>
+  </section>
+
+  <!-- SETTINGS -->
+  <section class="screen" id="screen-settings" hidden>
+    <h2>Settings</h2>
+
+    <label class="field">
+      <span>Practice reminder</span>
+      <select id="reminder-interval">
+        <option value="0">Off</option>
+        <option value="12">Every 12 hours</option>
+        <option value="24" selected>Every 24 hours</option>
+        <option value="48">Every 48 hours</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Theme</span>
+      <select id="theme-select">
+        <option value="dark" selected>Dark</option>
+        <option value="light">Light</option>
+      </select>
+    </label>
+
+    <button class="btn" id="enable-notifs">Enable browser notifications</button>
+    <p class="muted small" id="notif-status"></p>
+
+    <hr>
+
+    <h3>About</h3>
+    <p class="muted small">SAT Practice v1.0 · Questions stored in <code>data/questions.json</code>. Add more by editing that file — see <code>data/README.md</code>.</p>
+
+    <button class="btn danger" id="reset-app">Reset all data</button>
+  </section>
+
+</main>
+
+<script defer src="vendor/katex/katex.min.js"></script>
+<script defer src="vendor/katex/contrib/auto-render.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+{
+  "version": 1,
+  "_comment": "Add more questions to the 'questions' array. Each question has: id, section ('math' or 'rw'), topic, difficulty (1-3), prompt, choices (A-D), answer ('A'/'B'/'C'/'D'), explanation. Math notation uses LaTeX between $...$ (inline) or $$...$$ (display). Use \\\\ inside JSON strings to produce a single backslash for KaTeX commands.",
+  "questions": [
+    {
+      "id": "m-alg-001",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "If $3x - 7 = 2x + 5$, what is the value of $x$?",
+      "choices": {"A": "$-2$", "B": "$6$", "C": "$12$", "D": "$14$"},
+      "answer": "C",
+      "explanation": "Subtract $2x$: $x - 7 = 5$. Add $7$: $x = 12$."
+    },
+    {
+      "id": "m-alg-002",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "A line has a slope of $4$ and passes through $(1, -3)$. What is its $y$-intercept?",
+      "choices": {"A": "$-7$", "B": "$-3$", "C": "$1$", "D": "$4$"},
+      "answer": "A",
+      "explanation": "$y = mx + b \\Rightarrow -3 = 4(1) + b \\Rightarrow b = -7$."
+    },
+    {
+      "id": "m-alg-003",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "prompt": "Solve: $2x + y = 10$ and $x - y = 2$. What is $x + y$?",
+      "choices": {"A": "$4$", "B": "$6$", "C": "$8$", "D": "$10$"},
+      "answer": "B",
+      "explanation": "Add equations: $3x = 12 \\Rightarrow x = 4$. Then $y = 4 - 2 = 2$. So $x + y = 6$."
+    },
+    {
+      "id": "m-alg-004",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "A car rental costs $\\$30$ plus $\\$0.25$ per mile. Which equation gives total cost $C$ for $m$ miles?",
+      "choices": {"A": "$C = 30m + 0.25$", "B": "$C = 0.25m + 30$", "C": "$C = 30 + 25m$", "D": "$C = 30(0.25 + m)$"},
+      "answer": "B",
+      "explanation": "Per-mile rate $\\times$ miles + flat fee $\\Rightarrow 0.25m + 30$."
+    },
+    {
+      "id": "m-alg-005",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "If $f(x) = 2x - 5$, what is $f(7)$?",
+      "choices": {"A": "$4$", "B": "$9$", "C": "$14$", "D": "$19$"},
+      "answer": "B",
+      "explanation": "$f(7) = 2(7) - 5 = 9$."
+    },
+    {
+      "id": "m-alg-006",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 2,
+      "prompt": "Which value of $c$ makes the system $y = 3x + 2$ and $y = cx - 4$ have NO solution?",
+      "choices": {"A": "$-3$", "B": "$0$", "C": "$2$", "D": "$3$"},
+      "answer": "D",
+      "explanation": "No solution requires the lines to be parallel (same slope) but with different intercepts. So $c = 3$."
+    },
+    {
+      "id": "m-alg-007",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "What is the $x$-intercept of $4x - 6y = 24$?",
+      "choices": {"A": "$(-4, 0)$", "B": "$(0, -4)$", "C": "$(6, 0)$", "D": "$(0, 6)$"},
+      "answer": "C",
+      "explanation": "Set $y = 0$: $4x = 24 \\Rightarrow x = 6$."
+    },
+    {
+      "id": "m-alg-008",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "If $5(x - 2) = 3x + 4$, what is $x$?",
+      "choices": {"A": "$-7$", "B": "$-3$", "C": "$7$", "D": "$14$"},
+      "answer": "C",
+      "explanation": "$5x - 10 = 3x + 4 \\Rightarrow 2x = 14 \\Rightarrow x = 7$."
+    },
+    {
+      "id": "m-alg-009",
+      "section": "math",
+      "topic": "linear-models",
+      "difficulty": 2,
+      "prompt": "A phone plan is $\\$40$/month plus $\\$0.10$/text. If Maria's bill was $\\$58$, how many texts did she send?",
+      "choices": {"A": "$18$", "B": "$90$", "C": "$180$", "D": "$580$"},
+      "answer": "C",
+      "explanation": "$40 + 0.10t = 58 \\Rightarrow 0.10t = 18 \\Rightarrow t = 180$."
+    },
+    {
+      "id": "m-alg-010",
+      "section": "math",
+      "topic": "lines",
+      "difficulty": 1,
+      "prompt": "What is the slope of a line perpendicular to $y = \\tfrac{1}{2}x + 7$?",
+      "choices": {"A": "$-2$", "B": "$-\\tfrac{1}{2}$", "C": "$\\tfrac{1}{2}$", "D": "$2$"},
+      "answer": "A",
+      "explanation": "Perpendicular slopes multiply to $-1$. $\\tfrac{1}{2} \\cdot m = -1 \\Rightarrow m = -2$."
+    },
+    {
+      "id": "m-adv-001",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 1,
+      "prompt": "What are the solutions to $x^2 - 5x + 6 = 0$?",
+      "choices": {"A": "$x = 1, 6$", "B": "$x = 2, 3$", "C": "$x = -2, -3$", "D": "$x = -1, -6$"},
+      "answer": "B",
+      "explanation": "Factor: $(x - 2)(x - 3) = 0 \\Rightarrow x = 2$ or $3$."
+    },
+    {
+      "id": "m-adv-002",
+      "section": "math",
+      "topic": "polynomials",
+      "difficulty": 1,
+      "prompt": "Which expression is equivalent to $(x + 3)(x - 4)$?",
+      "choices": {"A": "$x^2 + 7x - 12$", "B": "$x^2 - x - 12$", "C": "$x^2 - 7x + 12$", "D": "$x^2 + x - 12$"},
+      "answer": "B",
+      "explanation": "$x^2 - 4x + 3x - 12 = x^2 - x - 12$."
+    },
+    {
+      "id": "m-adv-003",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "If $f(x) = x^2 - 4x + 3$, what is $f(2)$?",
+      "choices": {"A": "$-1$", "B": "$0$", "C": "$3$", "D": "$7$"},
+      "answer": "A",
+      "explanation": "$(2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$."
+    },
+    {
+      "id": "m-adv-004",
+      "section": "math",
+      "topic": "exponents",
+      "difficulty": 1,
+      "prompt": "Which is equivalent to $(2x^3)(3x^4)$?",
+      "choices": {"A": "$5x^7$", "B": "$5x^{12}$", "C": "$6x^7$", "D": "$6x^{12}$"},
+      "answer": "C",
+      "explanation": "Multiply coefficients: $6$. Add exponents: $x^{3+4} = x^7$. Result: $6x^7$."
+    },
+    {
+      "id": "m-adv-005",
+      "section": "math",
+      "topic": "exponents",
+      "difficulty": 2,
+      "prompt": "If $2^{x+1} = 32$, what is $x$?",
+      "choices": {"A": "$3$", "B": "$4$", "C": "$5$", "D": "$16$"},
+      "answer": "B",
+      "explanation": "$32 = 2^5$, so $x + 1 = 5 \\Rightarrow x = 4$."
+    },
+    {
+      "id": "m-adv-006",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "prompt": "$f(x) = (x - 3)^2 - 4$. What is the minimum value of $f$?",
+      "choices": {"A": "$-4$", "B": "$-3$", "C": "$3$", "D": "$9$"},
+      "answer": "A",
+      "explanation": "Vertex form: minimum = the constant after the squared term, here $-4$."
+    },
+    {
+      "id": "m-adv-007",
+      "section": "math",
+      "topic": "rational",
+      "difficulty": 2,
+      "prompt": "Which equals $\\dfrac{x^2 - 9}{x - 3}$ for $x \\ne 3$?",
+      "choices": {"A": "$x - 3$", "B": "$x + 3$", "C": "$x^2 + 3$", "D": "$x^2 - 3$"},
+      "answer": "B",
+      "explanation": "$x^2 - 9 = (x - 3)(x + 3)$. Cancel $(x - 3) \\Rightarrow x + 3$."
+    },
+    {
+      "id": "m-adv-008",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "prompt": "A quadratic has roots at $x = -2$ and $x = 5$. Which equation matches?",
+      "choices": {"A": "$y = (x - 2)(x + 5)$", "B": "$y = (x + 2)(x - 5)$", "C": "$y = (x - 2)(x - 5)$", "D": "$y = (x + 2)(x + 5)$"},
+      "answer": "B",
+      "explanation": "Roots at $-2$ and $5 \\Rightarrow$ factors $(x + 2)(x - 5)$."
+    },
+    {
+      "id": "m-adv-009",
+      "section": "math",
+      "topic": "radicals",
+      "difficulty": 2,
+      "prompt": "Which value satisfies $\\sqrt{2x + 1} = 5$?",
+      "choices": {"A": "$2$", "B": "$5$", "C": "$12$", "D": "$13$"},
+      "answer": "C",
+      "explanation": "Square both sides: $2x + 1 = 25 \\Rightarrow x = 12$."
+    },
+    {
+      "id": "m-adv-010",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "prompt": "If $(x - 4)^2 = 49$, what is the SUM of the two values of $x$?",
+      "choices": {"A": "$-7$", "B": "$0$", "C": "$7$", "D": "$8$"},
+      "answer": "D",
+      "explanation": "$x - 4 = \\pm 7 \\Rightarrow x = 11$ or $-3$. Sum $= 8$."
+    },
+    {
+      "id": "m-ps-001",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 1,
+      "prompt": "A shirt is on sale 25% off the original price of $\\$48$. What is the sale price?",
+      "choices": {"A": "$\\$12$", "B": "$\\$23$", "C": "$\\$36$", "D": "$\\$40$"},
+      "answer": "C",
+      "explanation": "$25\\%$ of $48 = 12$. $48 - 12 = \\$36$."
+    },
+    {
+      "id": "m-ps-002",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 1,
+      "prompt": "A recipe uses $3$ cups flour : $2$ cups sugar. With $9$ cups flour, how much sugar?",
+      "choices": {"A": "$4$", "B": "$5$", "C": "$6$", "D": "$8$"},
+      "answer": "C",
+      "explanation": "$9/3 = 3\\times$ scale. Sugar $= 2 \\times 3 = 6$."
+    },
+    {
+      "id": "m-ps-003",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 1,
+      "prompt": "The mean of $5$ numbers is $14$. Four of them are $10, 12, 15, 18$. What is the fifth?",
+      "choices": {"A": "$13$", "B": "$14$", "C": "$15$", "D": "$16$"},
+      "answer": "C",
+      "explanation": "Sum $= 5 \\times 14 = 70$. Sum of given $= 55$. Fifth $= 15$."
+    },
+    {
+      "id": "m-ps-004",
+      "section": "math",
+      "topic": "rates",
+      "difficulty": 1,
+      "prompt": "A car goes $240$ miles in $4$ hours. At the same rate, how far in $7$ hours?",
+      "choices": {"A": "$280$", "B": "$360$", "C": "$420$", "D": "$480$"},
+      "answer": "C",
+      "explanation": "Rate $= 60$ mph. $60 \\times 7 = 420$."
+    },
+    {
+      "id": "m-ps-005",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 1,
+      "prompt": "Population grew from $12{,}000$ to $13{,}200$. By what percent did it grow?",
+      "choices": {"A": "$1\\%$", "B": "$8\\%$", "C": "$10\\%$", "D": "$12\\%$"},
+      "answer": "C",
+      "explanation": "$1200/12000 = 0.10 = 10\\%$."
+    },
+    {
+      "id": "m-ps-006",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 3,
+      "prompt": "A price is increased $20\\%$, then decreased $20\\%$. The final price is what percent of the original?",
+      "choices": {"A": "$92\\%$", "B": "$96\\%$", "C": "$100\\%$", "D": "$104\\%$"},
+      "answer": "B",
+      "explanation": "$1.20 \\times 0.80 = 0.96 = 96\\%$."
+    },
+    {
+      "id": "m-ps-007",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 2,
+      "prompt": "A class has $24$ students with boys:girls = $5:3$. How many girls?",
+      "choices": {"A": "$8$", "B": "$9$", "C": "$12$", "D": "$15$"},
+      "answer": "B",
+      "explanation": "Total parts $= 8$. $24/8 = 3$ per part. Girls $= 3 \\times 3 = 9$."
+    },
+    {
+      "id": "m-ps-008",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 2,
+      "prompt": "Which set has the LARGEST standard deviation?",
+      "choices": {"A": "$\\{5,5,5,5,5\\}$", "B": "$\\{3,4,5,6,7\\}$", "C": "$\\{1,1,5,9,9\\}$", "D": "$\\{5,5,5,5,6\\}$"},
+      "answer": "C",
+      "explanation": "Largest spread from the mean $\\Rightarrow \\{1,1,5,9,9\\}$."
+    },
+    {
+      "id": "m-geo-001",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "prompt": "A circle has radius $6$. What is its area?",
+      "choices": {"A": "$12\\pi$", "B": "$24\\pi$", "C": "$36\\pi$", "D": "$72\\pi$"},
+      "answer": "C",
+      "explanation": "$A = \\pi r^2 = 36\\pi$."
+    },
+    {
+      "id": "m-geo-002",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 2,
+      "prompt": "In a right triangle, $\\sin\\theta = \\tfrac{3}{5}$. What is $\\cos\\theta$?",
+      "choices": {"A": "$\\tfrac{3}{4}$", "B": "$\\tfrac{4}{5}$", "C": "$\\tfrac{5}{3}$", "D": "$\\tfrac{5}{4}$"},
+      "answer": "B",
+      "explanation": "$3$-$4$-$5$ triangle: $\\cos\\theta = \\tfrac{4}{5}$."
+    },
+    {
+      "id": "m-geo-003",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "prompt": "A cylinder has radius $3$ and height $10$. What is its volume?",
+      "choices": {"A": "$30\\pi$", "B": "$60\\pi$", "C": "$90\\pi$", "D": "$100\\pi$"},
+      "answer": "C",
+      "explanation": "$V = \\pi r^2 h = \\pi (9)(10) = 90\\pi$."
+    },
+    {
+      "id": "m-geo-004",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "prompt": "Two angles in a triangle measure $40^\\circ$ and $75^\\circ$. What is the third?",
+      "choices": {"A": "$55^\\circ$", "B": "$65^\\circ$", "C": "$75^\\circ$", "D": "$115^\\circ$"},
+      "answer": "B",
+      "explanation": "$180 - 40 - 75 = 65^\\circ$."
+    },
+    {
+      "id": "m-geo-005",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "prompt": "A 30-60-90 triangle has hypotenuse $12$. Length of shorter leg?",
+      "choices": {"A": "$4$", "B": "$6$", "C": "$6\\sqrt{3}$", "D": "$12$"},
+      "answer": "B",
+      "explanation": "Sides $x : x\\sqrt{3} : 2x$. $2x = 12 \\Rightarrow x = 6$."
+    },
+    {
+      "id": "m-geo-006",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "prompt": "A right triangle has legs $5$ and $12$. What is the hypotenuse?",
+      "choices": {"A": "$7$", "B": "$13$", "C": "$17$", "D": "$60$"},
+      "answer": "B",
+      "explanation": "Memorize the $5$-$12$-$13$ triple. $\\sqrt{25 + 144} = \\sqrt{169} = 13$."
+    },
+    {
+      "id": "rw-gr-001",
+      "section": "rw",
+      "topic": "agreement",
+      "difficulty": 1,
+      "prompt": "Each of the students ___ expected to bring a calculator to the exam.",
+      "choices": {"A": "are", "B": "is", "C": "were", "D": "have been"},
+      "answer": "B",
+      "explanation": "'Each' is singular → 'is'."
+    },
+    {
+      "id": "rw-gr-002",
+      "section": "rw",
+      "topic": "punctuation",
+      "difficulty": 2,
+      "prompt": "Identify the correctly punctuated sentence.",
+      "choices": {
+        "A": "The book, which I borrowed from Sara was fascinating.",
+        "B": "The book which I borrowed from Sara, was fascinating.",
+        "C": "The book, which I borrowed from Sara, was fascinating.",
+        "D": "The book; which I borrowed from Sara, was fascinating."
+      },
+      "answer": "C",
+      "explanation": "Non-essential clause needs commas on BOTH sides."
+    },
+    {
+      "id": "rw-gr-003",
+      "section": "rw",
+      "topic": "pronouns",
+      "difficulty": 1,
+      "prompt": "The committee announced ___ decision yesterday.",
+      "choices": {"A": "it's", "B": "its", "C": "its'", "D": "their"},
+      "answer": "B",
+      "explanation": "'Its' is the possessive (no apostrophe). The committee owns its decision."
+    },
+    {
+      "id": "rw-gr-004",
+      "section": "rw",
+      "topic": "modifiers",
+      "difficulty": 2,
+      "prompt": "___ down the hallway, the painting caught my attention.",
+      "choices": {"A": "Walking", "B": "When walking", "C": "As I walked", "D": "Having walked"},
+      "answer": "C",
+      "explanation": "A/B/D leave a dangling modifier (the painting wasn't walking). C names the subject."
+    },
+    {
+      "id": "rw-gr-005",
+      "section": "rw",
+      "topic": "agreement",
+      "difficulty": 2,
+      "prompt": "Neither the manager nor the employees ___ aware of the new policy.",
+      "choices": {"A": "was", "B": "were", "C": "is", "D": "has been"},
+      "answer": "B",
+      "explanation": "Neither/nor agrees with the NEAREST subject ('employees', plural) → 'were'."
+    },
+    {
+      "id": "rw-gr-006",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 1,
+      "prompt": "The team practiced for six months. ___, they failed to qualify.",
+      "choices": {"A": "Therefore", "B": "Furthermore", "C": "Nevertheless", "D": "Specifically"},
+      "answer": "C",
+      "explanation": "Practiced hard BUT failed → contrast → 'Nevertheless'."
+    },
+    {
+      "id": "rw-gr-007",
+      "section": "rw",
+      "topic": "concision",
+      "difficulty": 2,
+      "prompt": "Choose the most concise option.",
+      "choices": {
+        "A": "In light of the fact that the road was closed due to construction",
+        "B": "Due to the fact that the road was closed because of construction",
+        "C": "Since the road was closed for construction",
+        "D": "Owing to the fact of the road being closed for construction"
+      },
+      "answer": "C",
+      "explanation": "Cut wordy phrases like 'In light of the fact that' → 'Since'."
+    },
+    {
+      "id": "rw-gr-008",
+      "section": "rw",
+      "topic": "punctuation",
+      "difficulty": 2,
+      "prompt": "The recipe calls for three ingredients ___ flour, sugar, and butter.",
+      "choices": {"A": ",", "B": ";", "C": ":", "D": "—"},
+      "answer": "C",
+      "explanation": "A complete sentence introducing a list → colon."
+    },
+    {
+      "id": "rw-gr-009",
+      "section": "rw",
+      "topic": "verbs",
+      "difficulty": 2,
+      "prompt": "The professor recommended that each student ___ their thesis by Friday.",
+      "choices": {"A": "submits", "B": "submitted", "C": "submit", "D": "had submitted"},
+      "answer": "C",
+      "explanation": "Subjunctive after 'recommend that' → base form 'submit'."
+    },
+    {
+      "id": "rw-gr-010",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 2,
+      "prompt": "Economists predicted a sharp decline in spending. ___, retail sales rose 4%.",
+      "choices": {"A": "As expected", "B": "Specifically", "C": "Surprisingly", "D": "Furthermore"},
+      "answer": "C",
+      "explanation": "Predicted decline but spending rose → unexpected → 'Surprisingly'."
+    },
+    {
+      "id": "rw-rd-001",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "The mantis shrimp has 16 types of color receptors (humans have 3), enabling it to perceive colors and polarized light invisible to most species. This visual capacity helps it communicate, hunt, and navigate coral reefs with precision.\n\nWhat is the passage's main purpose?",
+      "choices": {
+        "A": "To compare the mantis shrimp's vision to humans'",
+        "B": "To describe the unique and complex visual abilities of the mantis shrimp",
+        "C": "To explain how mantis shrimp hunt",
+        "D": "To argue that mantis shrimp are the most intelligent marine animal"
+      },
+      "answer": "B",
+      "explanation": "The passage is centered on the unique visual system. A is too narrow; C and D aren't supported."
+    },
+    {
+      "id": "rw-rd-002",
+      "section": "rw",
+      "topic": "words-in-context",
+      "difficulty": 2,
+      "prompt": "The discovery prompted scientists to reconsider cephalopod evolution. The species, found at depths over 4,000m, shows traits suggesting some octopuses diverged from relatives much earlier than thought, expanding the known evolutionary tree.\n\n'Expanding' most nearly means:",
+      "choices": {"A": "inflating", "B": "broadening", "C": "prolonging", "D": "magnifying"},
+      "answer": "B",
+      "explanation": "'Expanding the tree' = making the tree broader/wider."
+    },
+    {
+      "id": "rw-rd-003",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Hobsbawm argued the 'long nineteenth century' (1789–1914) was defined less by political revolutions than by industrialization's slow remaking of daily life. He conceded revolutions and wars dominated headlines, but insisted ordinary people's experience of the era was shaped primarily by factories, railways, and wage labor. ___\n\nWhich choice most logically completes the text?",
+      "choices": {
+        "A": "For Hobsbawm, the period's true legacy lay in the transformation of work and routine, not in dramatic political events.",
+        "B": "Hobsbawm believed political revolutions had little impact on ordinary citizens.",
+        "C": "Hobsbawm therefore concluded that industrialization was a uniquely European phenomenon.",
+        "D": "As a result, Hobsbawm dismissed the role of warfare entirely."
+      },
+      "answer": "A",
+      "explanation": "A continues the passage's thesis. B is too extreme; C and D contradict the text."
+    },
+    {
+      "id": "rw-rd-004",
+      "section": "rw",
+      "topic": "two-text",
+      "difficulty": 3,
+      "prompt": "Text 1: A 2019 study found office workers who took regular short walks reported lower stress than those who stayed seated. The authors concluded brief activity could improve workplace wellbeing.\n\nText 2: Sociologist Maya Tran cautions against treating walking as a universal stress remedy. She doesn't dispute movement helps, but emphasizes workplace stress often stems from systemic issues — heavy workloads, unclear expectations, conflict — that walking won't resolve.\n\nHow would Tran respond to the 2019 study's conclusion?",
+      "choices": {
+        "A": "By rejecting the finding that walking reduces stress.",
+        "B": "By agreeing walking should be the primary tool against workplace stress.",
+        "C": "By acknowledging the benefit while arguing it doesn't address underlying causes.",
+        "D": "By suggesting the study should have been longer."
+      },
+      "answer": "C",
+      "explanation": "Tran 'does not dispute' the benefit but emphasizes systemic causes."
+    },
+    {
+      "id": "rw-rd-005",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 2,
+      "prompt": "Notes:\n• Frank Lloyd Wright completed Fallingwater in 1939.\n• It is built directly over a waterfall in Pennsylvania.\n• Wright designed it to harmonize with natural surroundings.\n• It's a defining example of 'organic architecture'.\n\nGoal: emphasize the relationship between the building and its environment. Best choice?",
+      "choices": {
+        "A": "Frank Lloyd Wright completed Fallingwater in 1939.",
+        "B": "Fallingwater, completed in 1939, is in rural Pennsylvania.",
+        "C": "Frank Lloyd Wright designed Fallingwater, an example of organic architecture, to harmonize with its natural surroundings, including the waterfall it sits above.",
+        "D": "Fallingwater is a defining example of organic architecture."
+      },
+      "answer": "C",
+      "explanation": "C combines harmony with natural surroundings + the waterfall — directly hits the goal."
+    },
+    {
+      "id": "rw-rd-006",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 1,
+      "prompt": "The bristlecone pine, found in harsh, arid climates of the American West, can live thousands of years. Methuselah is over 4,800. Scientists attribute its longevity to slow growth and the ability to seal off damaged or diseased trunk portions, letting the rest thrive.\n\nThe pine's long lifespan is primarily due to:",
+      "choices": {
+        "A": "Mild climates",
+        "B": "Rapid healing of damage",
+        "C": "Slow growth and isolation of damaged tissue",
+        "D": "Resistance to all disease"
+      },
+      "answer": "C",
+      "explanation": "Stated explicitly in the passage."
+    },
+    {
+      "id": "rw-rd-007",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 2,
+      "prompt": "Although early critics dismissed jazz as unrefined, it has become one of America's most significant cultural contributions. Jazz draws on African rhythms, European harmonies, and the lived experiences of Black communities. ___ its complex history, jazz keeps evolving, influencing genres from hip-hop to classical.\n\nWhich choice fits the blank?",
+      "choices": {"A": "Because of", "B": "Despite", "C": "Owing to", "D": "Reflecting"},
+      "answer": "B",
+      "explanation": "Complex history but still evolving = contrast → 'Despite'."
+    },
+    {
+      "id": "rw-rd-008",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 2,
+      "prompt": "Notes:\n• Coral reefs cover <1% of the ocean floor.\n• They support ~25% of all marine species.\n• Rising ocean temperatures cause widespread bleaching.\n• Many reefs have lost more than half their coral cover since 1980.\n\nGoal: emphasize the disproportionate ecological importance of reefs. Best choice?",
+      "choices": {
+        "A": "Coral reefs cover less than 1% of the ocean floor but support roughly 25% of all marine species.",
+        "B": "Rising temperatures have caused widespread coral bleaching.",
+        "C": "Many reefs have lost more than half their coral cover since 1980.",
+        "D": "Coral reefs are home to many fish species."
+      },
+      "answer": "A",
+      "explanation": "A juxtaposes <1% area with 25% of species — that's the disproportion."
+    }
+  ]
+}
