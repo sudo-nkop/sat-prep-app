@@ -155,6 +155,7 @@
       <span class="timer" id="quiz-timer" hidden>00:00</span>
       <button class="btn-link" id="quiz-flag">Flag</button>
     </div>
+    <div class="progress-track"><div class="progress-fill" id="quiz-progress-bar"></div></div>
 
     <div class="question" id="question-container">
       <div class="q-prompt" id="q-prompt"></div>
@@ -178,9 +179,10 @@
   <!-- RESULTS -->
   <section class="screen" id="screen-results" hidden>
     <h2>Results</h2>
-    <div class="results-summary">
+    <div class="results-summary" id="results-summary">
       <div class="result-big" id="result-score">0 / 0</div>
       <div class="result-pct" id="result-pct">0%</div>
+      <div class="result-bar-track"><div class="result-bar-fill" id="result-bar"></div></div>
     </div>
     <div class="result-detail" id="result-time" hidden></div>
     <div class="result-breakdown" id="result-breakdown"></div>

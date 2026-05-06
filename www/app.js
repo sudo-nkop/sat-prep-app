@@ -194,6 +194,8 @@ function renderQuiz() {
   const s = currentSession;
   const q = s.questions[s.idx];
   document.getElementById('quiz-progress').textContent = `${s.idx + 1} / ${s.questions.length}`;
+  const bar = document.getElementById('quiz-progress-bar');
+  if (bar) bar.style.width = `${((s.idx + 1) / s.questions.length) * 100}%`;
   const promptEl = document.getElementById('q-prompt');
   promptEl.innerHTML = escapeHtml(q.prompt).replace(/\n/g, '<br>');
   renderMath(promptEl);
@@ -356,8 +358,16 @@ function showResults(timeUp) {
   const s = currentSession;
   let correct = 0;
   s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
+  const pct = Math.round(correct / s.questions.length * 100);
   document.getElementById('result-score').textContent = `${correct} / ${s.questions.length}`;
-  document.getElementById('result-pct').textContent = Math.round(correct / s.questions.length * 100) + '%';
+  document.getElementById('result-pct').textContent = pct + '%';
+  const summary = document.getElementById('results-summary');
+  if (summary) {
+    summary.classList.remove('good', 'okay', 'low');
+    summary.classList.add(pct >= 80 ? 'good' : pct >= 60 ? 'okay' : 'low');
+  }
+  const resultBar = document.getElementById('result-bar');
+  if (resultBar) setTimeout(() => { resultBar.style.width = pct + '%'; }, 100);
 
   const timeEl = document.getElementById('result-time');
   if (s.mode === 'test') {

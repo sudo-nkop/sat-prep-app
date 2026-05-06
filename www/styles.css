@@ -113,6 +113,16 @@ body {
   border-color: rgba(255,255,255,0.38);
 }
 
+/* Sky-blue accent stripe at the bottom of the topbar */
+#topbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: #009cde;
+}
+#topbar { position: sticky; } /* ensure stacking context for ::after */
+
 main#app {
   max-width: 760px;
   margin: 0 auto;
@@ -523,6 +533,22 @@ h3 {
 }
 .opt small { color: var(--muted); font-size: 13px; }
 
+/* ── QUIZ PROGRESS BAR ────────────────────────────────── */
+.progress-track {
+  height: 5px;
+  background: var(--border);
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: #009cde;
+  border-radius: var(--radius-pill);
+  transition: width .4s cubic-bezier(.4, 0, .2, 1);
+  width: 0%;
+}
+
 /* ── QUIZ ─────────────────────────────────────────────── */
 .quiz-header {
   display: flex; align-items: center; justify-content: space-between;
@@ -654,6 +680,23 @@ h3 {
   text-transform: uppercase;
   font-weight: 600;
 }
+.result-bar-track {
+  height: 6px;
+  background: rgba(255,255,255,0.18);
+  border-radius: var(--radius-pill);
+  margin-top: 18px;
+  overflow: hidden;
+}
+.result-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: #009cde;
+  transition: width .8s cubic-bezier(.4, 0, .2, 1);
+  width: 0%;
+}
+.results-summary.good .result-bar-fill { background: var(--good); }
+.results-summary.okay .result-bar-fill { background: #f5a623; }
+.results-summary.low  .result-bar-fill { background: var(--bad); }
 .result-detail {
   text-align: center;
   color: var(--muted);
