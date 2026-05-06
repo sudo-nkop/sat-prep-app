@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0b1020">
+<meta name="theme-color" content="#003087">
 <title>SAT Practice</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="vendor/katex/katex.min.css">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -28,6 +31,7 @@
       <button class="btn-link" id="reminder-dismiss">Dismiss</button>
     </div>
 
+    <!-- Stats on top -->
     <div class="hero">
       <div class="streak-card">
         <div class="streak-num" id="streak-num">0</div>
@@ -39,28 +43,38 @@
       </div>
     </div>
 
+    <!-- Four practice tiles in the middle -->
     <div class="menu-grid">
       <button class="menu-tile" data-go="screen-practice-setup">
-        <div class="tile-emoji">📝</div>
+        <div class="tile-tag">Mode 01</div>
         <div class="tile-title">Practice</div>
         <div class="tile-sub">Untimed, with explanations</div>
       </button>
       <button class="menu-tile" data-go="screen-test-setup">
-        <div class="tile-emoji">⏱️</div>
+        <div class="tile-tag">Mode 02</div>
         <div class="tile-title">Timed Test</div>
         <div class="tile-sub">Real-test conditions</div>
       </button>
-      <button class="menu-tile" data-go="screen-cheatsheets">
-        <div class="tile-emoji">📚</div>
-        <div class="tile-title">Cheatsheets</div>
-        <div class="tile-sub">Formulas, grammar, tips</div>
-      </button>
       <button class="menu-tile" data-go="screen-history">
-        <div class="tile-emoji">📈</div>
+        <div class="tile-tag">Track</div>
         <div class="tile-title">History</div>
         <div class="tile-sub">Past sessions</div>
       </button>
+      <button class="menu-tile" data-go="screen-import">
+        <div class="tile-tag">Add</div>
+        <div class="tile-title">Import</div>
+        <div class="tile-sub">Add questions from text</div>
+      </button>
     </div>
+
+    <!-- Cheatsheets bar at bottom -->
+    <button class="cheatsheets-bar" data-go="screen-cheatsheets">
+      <div class="cs-bar-left">
+        <div class="cs-bar-title">Cheatsheets</div>
+        <div class="cs-bar-sub">Formulas · Grammar · Key tips</div>
+      </div>
+      <span class="cs-bar-arrow">→</span>
+    </button>
 
     <div class="install-prompt" id="install-prompt" hidden>
       <div>
@@ -139,7 +153,7 @@
     <div class="quiz-header">
       <span id="quiz-progress">1 / 10</span>
       <span class="timer" id="quiz-timer" hidden>00:00</span>
-      <button class="btn-link" id="quiz-flag">⚐ Flag</button>
+      <button class="btn-link" id="quiz-flag">Flag</button>
     </div>
 
     <div class="question" id="question-container">
@@ -154,6 +168,7 @@
 
     <div class="quiz-actions">
       <button class="btn" id="quiz-prev" hidden>← Prev</button>
+      <button class="btn" id="quiz-skip" hidden>Skip</button>
       <button class="btn primary" id="quiz-submit">Submit</button>
       <button class="btn" id="quiz-next" hidden>Next →</button>
       <button class="btn danger" id="quiz-finish" hidden>Finish</button>
@@ -188,6 +203,62 @@
     <h2>Session History</h2>
     <div id="history-list" class="history-list"></div>
     <button class="btn danger" id="clear-history">Clear history</button>
+  </section>
+
+  <!-- IMPORT -->
+  <section class="screen" id="screen-import" hidden>
+    <h2>Import Questions</h2>
+    <p class="muted">Add questions to your bank. They're saved locally and mixed into all practice modes.</p>
+
+    <div class="import-tabs">
+      <button class="tab-btn active" data-tab="paste">Paste Text</button>
+      <button class="tab-btn" data-tab="manual">Add Manually</button>
+    </div>
+
+    <div class="tab-panel" id="import-paste-panel">
+      <p class="muted small">One question per block, blocks separated by <code>---</code>.</p>
+      <pre class="format-example">Q: Question text
+A: First choice
+B: Second choice
+C: Third choice
+D: Fourth choice
+Answer: B
+Section: math
+Topic: algebra
+Difficulty: 2
+Explain: Why B is correct.</pre>
+      <label class="field">
+        <span>Paste questions</span>
+        <textarea id="import-text" rows="10" placeholder="Paste your questions here…"></textarea>
+      </label>
+      <button class="btn primary" id="import-parse-btn">Parse</button>
+      <div id="import-preview" hidden></div>
+      <button class="btn primary big" id="import-confirm-btn" hidden>Add Questions</button>
+    </div>
+
+    <div class="tab-panel" id="import-manual-panel" hidden>
+      <label class="field"><span>Question prompt</span><textarea id="mq-prompt" rows="3" placeholder="Use $LaTeX$ for math"></textarea></label>
+      <label class="field"><span>Choice A</span><input id="mq-a" type="text"></label>
+      <label class="field"><span>Choice B</span><input id="mq-b" type="text"></label>
+      <label class="field"><span>Choice C (optional)</span><input id="mq-c" type="text"></label>
+      <label class="field"><span>Choice D (optional)</span><input id="mq-d" type="text"></label>
+      <label class="field">
+        <span>Correct answer</span>
+        <select id="mq-answer"><option>A</option><option>B</option><option>C</option><option>D</option></select>
+      </label>
+      <label class="field">
+        <span>Section</span>
+        <select id="mq-section"><option value="math">Math</option><option value="rw">Reading &amp; Writing</option></select>
+      </label>
+      <label class="field"><span>Topic</span><input id="mq-topic" type="text" placeholder="e.g. algebra"></label>
+      <label class="field">
+        <span>Difficulty</span>
+        <select id="mq-difficulty"><option value="1">Easy</option><option value="2" selected>Medium</option><option value="3">Hard</option></select>
+      </label>
+      <label class="field"><span>Explanation</span><textarea id="mq-explain" rows="3"></textarea></label>
+      <button class="btn primary big" id="mq-add-btn">Add Question</button>
+      <p id="mq-status" class="muted small"></p>
+    </div>
   </section>
 
   <!-- SETTINGS -->

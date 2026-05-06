@@ -7,6 +7,7 @@ const KEY = {
   history: 'sat-app:history',
   settings: 'sat-app:settings',
   lastOpen: 'sat-app:lastOpen',
+  imported: 'sat-app:imported',
 };
 
 const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark' };
@@ -29,7 +30,7 @@ function getStats() { return load(KEY.stats, { answered: 0, correct: 0, streak: 
 function getHistory() { return load(KEY.history, []); }
 
 // ---------- navigation ----------
-const screens = ['home', 'practice-setup', 'test-setup', 'quiz', 'results', 'cheatsheets', 'history', 'settings'];
+const screens = ['home', 'practice-setup', 'test-setup', 'quiz', 'results', 'cheatsheets', 'history', 'settings', 'import'];
 const screenStack = ['screen-home'];
 
 function go(id, push = true) {
@@ -39,7 +40,6 @@ function go(id, push = true) {
   });
   if (push) screenStack.push(id);
   document.getElementById('back-btn').hidden = screenStack.length <= 1;
-  // titles
   const titles = {
     'screen-home': 'SAT Practice',
     'screen-practice-setup': 'Practice',
@@ -49,8 +49,10 @@ function go(id, push = true) {
     'screen-cheatsheets': 'Cheatsheets',
     'screen-history': 'History',
     'screen-settings': 'Settings',
+    'screen-import': 'Import Questions',
   };
   document.getElementById('page-title').textContent = titles[id] || 'SAT Practice';
+  if (id === 'screen-home') refreshHome();
   window.scrollTo(0, 0);
 }
 function back() {
@@ -65,7 +67,8 @@ async function loadQuestions() {
   const res = await fetch('data/questions.json', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
-  allQuestions = data.questions;
+  const imported = load(KEY.imported, []);
+  allQuestions = [...data.questions, ...imported];
   populateTopicFilter();
 }
 
@@ -216,7 +219,7 @@ function renderQuiz() {
 
   // flag visual
   const flagBtn = document.getElementById('quiz-flag');
-  flagBtn.textContent = s.flagged.has(s.idx) ? '⚑ Flagged' : '⚐ Flag';
+  flagBtn.textContent = s.flagged.has(s.idx) ? 'Flagged' : 'Flag';
 
   // explanation reset
   const expl = document.getElementById('q-explanation');
@@ -224,6 +227,7 @@ function renderQuiz() {
 
   // actions
   const submit = document.getElementById('quiz-submit');
+  const skip = document.getElementById('quiz-skip');
   const next = document.getElementById('quiz-next');
   const prev = document.getElementById('quiz-prev');
   const finish = document.getElementById('quiz-finish');
@@ -232,17 +236,20 @@ function renderQuiz() {
   if (s.mode === 'practice') {
     if (s.answers[s.idx] != null && s._reviewed?.[s.idx]) {
       submit.hidden = true;
+      skip.hidden = true;
       next.hidden = s.idx === s.questions.length - 1;
       finish.hidden = s.idx !== s.questions.length - 1;
       showExplanation();
     } else {
       submit.hidden = false;
+      skip.hidden = false;
       next.hidden = true;
       finish.hidden = true;
     }
   } else {
     // test mode: navigation only
     submit.hidden = true;
+    skip.hidden = true;
     next.hidden = s.idx === s.questions.length - 1;
     finish.hidden = s.idx !== s.questions.length - 1;
     prev.hidden = s.idx === 0;
@@ -265,7 +272,7 @@ function showExplanation() {
   const expl = document.getElementById('q-explanation');
   expl.hidden = false;
   const result = document.getElementById('q-result');
-  result.textContent = correct ? '✓ Correct' : (ans ? '✗ Incorrect' : '— Skipped');
+  result.textContent = correct ? 'Correct' : (ans ? 'Incorrect' : 'Skipped');
   result.className = 'explanation-result ' + (correct ? 'correct' : 'incorrect');
   const explText = document.getElementById('q-explanation-text');
   explText.innerHTML = escapeHtml(q.explanation || '').replace(/\n/g, '<br>');
@@ -306,6 +313,15 @@ function prevQuestion() {
   if (currentSession.idx > 0) {
     currentSession.idx -= 1;
     renderQuiz();
+  }
+}
+function skipQuestion() {
+  const s = currentSession;
+  if (s.idx < s.questions.length - 1) {
+    s.idx += 1;
+    renderQuiz();
+  } else {
+    finishQuiz();
   }
 }
 function toggleFlag() {
@@ -375,7 +391,7 @@ function showResults(timeUp) {
     const ans = s.answers[i];
     const correctChoice = q.answer;
     const cls = ans == null ? 'unanswered' : (ans === correctChoice ? 'correct' : 'incorrect');
-    const status = ans == null ? '— Skipped' : (ans === correctChoice ? '✓ Correct' : `✗ Your answer: ${ans}`);
+    const status = ans == null ? 'Skipped' : (ans === correctChoice ? 'Correct' : `Your answer: ${ans}`);
     return `
       <div class="review-item ${cls}">
         <div class="review-q">${i + 1}. ${escapeHtml(q.prompt)}</div>
@@ -465,6 +481,130 @@ function applySettings() {
   document.documentElement.dataset.theme = s.theme;
   document.getElementById('theme-select').value = s.theme;
   document.getElementById('reminder-interval').value = String(s.reminderHours);
+}
+
+// ---------- import ----------
+function addImportedQuestions(newQs) {
+  const existing = load(KEY.imported, []);
+  save(KEY.imported, [...existing, ...newQs]);
+  allQuestions = [...allQuestions, ...newQs];
+  populateTopicFilter();
+}
+
+function parseImportText(text) {
+  const blocks = text.split(/\n---+\n?/).filter(b => b.trim());
+  const results = [];
+  const errors = [];
+  blocks.forEach((block, idx) => {
+    const q = { choices: {} };
+    block.trim().split('\n').forEach(line => {
+      const m = line.match(/^([A-Za-z]+):\s*(.*)/);
+      if (!m) return;
+      const key = m[1].toUpperCase();
+      const val = m[2].trim();
+      if (key === 'Q') q.prompt = val;
+      else if (key === 'A') q.choices.A = val;
+      else if (key === 'B') q.choices.B = val;
+      else if (key === 'C') q.choices.C = val;
+      else if (key === 'D') q.choices.D = val;
+      else if (key === 'ANSWER') q.answer = val.toUpperCase().charAt(0);
+      else if (key === 'SECTION') q.section = val.toLowerCase().includes('math') ? 'math' : 'rw';
+      else if (key === 'TOPIC') q.topic = val.toLowerCase();
+      else if (key === 'DIFFICULTY') q.difficulty = Math.min(3, Math.max(1, parseInt(val) || 2));
+      else if (key === 'EXPLAIN' || key === 'EXPLANATION') q.explanation = val;
+    });
+    if (q.prompt && q.choices.A && q.choices.B && ['A','B','C','D'].includes(q.answer)) {
+      q.section = q.section || 'math';
+      q.topic = q.topic || 'general';
+      q.difficulty = q.difficulty || 2;
+      q.explanation = q.explanation || '';
+      q.id = `imported-${Date.now()}-${idx}`;
+      results.push(q);
+    } else {
+      errors.push(idx + 1);
+    }
+  });
+  return { results, errors };
+}
+
+function initImportScreen() {
+  // tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      document.getElementById('import-paste-panel').hidden = tab !== 'paste';
+      document.getElementById('import-manual-panel').hidden = tab !== 'manual';
+    };
+  });
+
+  // parse button
+  let parsedQuestions = [];
+  document.getElementById('import-parse-btn').onclick = () => {
+    const text = document.getElementById('import-text').value;
+    const { results, errors } = parseImportText(text);
+    parsedQuestions = results;
+    const preview = document.getElementById('import-preview');
+    const confirmBtn = document.getElementById('import-confirm-btn');
+    if (results.length === 0) {
+      preview.hidden = false;
+      preview.innerHTML = '<div class="preview-item preview-error">No valid questions found. Check the format above.</div>';
+      confirmBtn.hidden = true;
+      return;
+    }
+    preview.hidden = false;
+    preview.innerHTML = results.map((q, i) => `
+      <div class="preview-item">
+        <strong>${i + 1}.</strong> ${escapeHtml(q.prompt)}
+        <div class="preview-meta">${q.section.toUpperCase()} · ${q.topic} · Difficulty ${q.difficulty} · Answer: ${q.answer}</div>
+      </div>
+    `).join('') + (errors.length ? `<div class="preview-item preview-error">Skipped blocks (missing required fields): ${errors.join(', ')}</div>` : '');
+    confirmBtn.hidden = false;
+    confirmBtn.textContent = `Add ${results.length} Question${results.length !== 1 ? 's' : ''}`;
+  };
+
+  // confirm button
+  document.getElementById('import-confirm-btn').onclick = () => {
+    if (parsedQuestions.length === 0) return;
+    addImportedQuestions(parsedQuestions);
+    document.getElementById('import-text').value = '';
+    document.getElementById('import-preview').hidden = true;
+    document.getElementById('import-confirm-btn').hidden = true;
+    parsedQuestions = [];
+    alert(`Added! Your bank now has ${allQuestions.length} questions.`);
+  };
+
+  // manual add
+  document.getElementById('mq-add-btn').onclick = () => {
+    const prompt = document.getElementById('mq-prompt').value.trim();
+    const a = document.getElementById('mq-a').value.trim();
+    const b = document.getElementById('mq-b').value.trim();
+    const answer = document.getElementById('mq-answer').value;
+    if (!prompt || !a || !b) {
+      document.getElementById('mq-status').textContent = 'Prompt, Choice A, and Choice B are required.';
+      return;
+    }
+    const c = document.getElementById('mq-c').value.trim();
+    const d = document.getElementById('mq-d').value.trim();
+    const q = {
+      id: `imported-${Date.now()}`,
+      prompt,
+      choices: { A: a, B: b },
+      answer,
+      section: document.getElementById('mq-section').value,
+      topic: document.getElementById('mq-topic').value.trim().toLowerCase() || 'general',
+      difficulty: Number(document.getElementById('mq-difficulty').value),
+      explanation: document.getElementById('mq-explain').value.trim(),
+    };
+    if (c) q.choices.C = c;
+    if (d) q.choices.D = d;
+    addImportedQuestions([q]);
+    ['mq-prompt','mq-a','mq-b','mq-c','mq-d','mq-topic','mq-explain'].forEach(id => {
+      document.getElementById(id).value = '';
+    });
+    document.getElementById('mq-status').textContent = `Saved! Bank has ${allQuestions.length} questions total.`;
+  };
 }
 
 // ---------- cheatsheets ----------
@@ -754,6 +894,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   });
 
+  initImportScreen();
+
   document.getElementById('reminder-dismiss').onclick = () => {
     document.getElementById('reminder-banner').hidden = true;
     save(KEY.lastOpen, Date.now());
@@ -769,6 +911,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // quiz controls
   document.getElementById('quiz-submit').onclick = submitAnswer;
+  document.getElementById('quiz-skip').onclick = skipQuestion;
   document.getElementById('quiz-next').onclick = nextQuestion;
   document.getElementById('quiz-prev').onclick = prevQuestion;
   document.getElementById('quiz-flag').onclick = toggleFlag;
