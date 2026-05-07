@@ -64,6 +64,12 @@ function go(id, push = true) {
 }
 function back() {
   if (screenStack.length > 1) {
+    if (screenStack[screenStack.length - 1] === 'screen-quiz' && currentSession) {
+      const visitedIds = currentSession.questions
+        .slice(0, currentSession.idx + 1)
+        .map(q => q.id);
+      addSeenIds(visitedIds);
+    }
     screenStack.pop();
     go(screenStack[screenStack.length - 1], false);
   }
@@ -79,6 +85,24 @@ async function loadQuestions() {
   populateTopicFilter();
 }
 
+function updateUnseenLabel() {
+  const el = document.getElementById('unseen-count-label');
+  if (!el) return;
+  const section = document.getElementById('practice-section').value;
+  const topic   = document.getElementById('practice-topic').value;
+  const diff    = document.getElementById('practice-difficulty').value;
+  const seenIds = getSeenIds();
+  const pool = allQuestions.filter(q =>
+    (section === 'all' || q.section === section) &&
+    (topic   === 'all' || q.topic   === topic)   &&
+    (diff    === 'all' || q.difficulty === Number(diff))
+  );
+  const unseen = pool.filter(q => !seenIds.has(q.id)).length;
+  el.textContent = pool.length === 0
+    ? 'No questions match these filters.'
+    : `${unseen} unseen question${unseen !== 1 ? 's' : ''} available (${pool.length} total)`;
+}
+
 function populateTopicFilter() {
   const sel = document.getElementById('practice-topic');
   const sectionSel = document.getElementById('practice-section');
@@ -90,6 +114,7 @@ function populateTopicFilter() {
     });
     sel.innerHTML = '<option value="all">All topics</option>' +
       [...topics].sort().map(t => `<option value="${t}">${t.replace('-', ' ')}</option>`).join('');
+    updateUnseenLabel();
   }
   sectionSel.addEventListener('change', refresh);
   refresh();
@@ -953,6 +978,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   // practice
+  document.getElementById('practice-difficulty').addEventListener('change', updateUnseenLabel);
+  document.getElementById('practice-topic').addEventListener('change', updateUnseenLabel);
   document.getElementById('practice-start').onclick = startPractice;
 
   // test
@@ -1002,6 +1029,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   try {
     await loadQuestions();
+    updateUnseenLabel();
   } catch (e) {
     alert('Could not load questions: ' + e.message + '\nMake sure data/questions.json is reachable.');
   }
