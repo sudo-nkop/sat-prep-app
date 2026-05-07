@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -43,38 +43,39 @@
       </div>
     </div>
 
-    <!-- Four practice tiles in the middle -->
+    <!-- Five tiles side by side -->
     <div class="menu-grid">
       <button class="menu-tile" data-go="screen-practice-setup">
+        <div class="tile-icon">✏️</div>
         <div class="tile-tag">Mode 01</div>
         <div class="tile-title">Practice</div>
         <div class="tile-sub">Untimed, with explanations</div>
       </button>
       <button class="menu-tile" data-go="screen-test-setup">
+        <div class="tile-icon">⏱</div>
         <div class="tile-tag">Mode 02</div>
         <div class="tile-title">Timed Test</div>
         <div class="tile-sub">Real-test conditions</div>
       </button>
+      <button class="menu-tile" data-go="screen-cheatsheets">
+        <div class="tile-icon">📋</div>
+        <div class="tile-tag">Study</div>
+        <div class="tile-title">Cheat­sheets</div>
+        <div class="tile-sub">Formulas &amp; tips</div>
+      </button>
       <button class="menu-tile" data-go="screen-history">
+        <div class="tile-icon">📈</div>
         <div class="tile-tag">Track</div>
         <div class="tile-title">History</div>
         <div class="tile-sub">Past sessions</div>
       </button>
       <button class="menu-tile" data-go="screen-import">
+        <div class="tile-icon">➕</div>
         <div class="tile-tag">Add</div>
         <div class="tile-title">Import</div>
-        <div class="tile-sub">Add questions from text</div>
+        <div class="tile-sub">Add questions</div>
       </button>
     </div>
-
-    <!-- Cheatsheets bar at bottom -->
-    <button class="cheatsheets-bar" data-go="screen-cheatsheets">
-      <div class="cs-bar-left">
-        <div class="cs-bar-title">Cheatsheets</div>
-        <div class="cs-bar-sub">Formulas · Grammar · Key tips</div>
-      </div>
-      <span class="cs-bar-arrow">→</span>
-    </button>
 
     <div class="install-prompt" id="install-prompt" hidden>
       <div>

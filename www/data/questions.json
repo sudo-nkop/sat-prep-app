@@ -561,6 +561,483 @@
       },
       "answer": "A",
       "explanation": "A juxtaposes <1% area with 25% of species — that's the disproportion."
+    },
+
+    {
+      "id": "pdf-ac472881",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "$$\\frac{12x+28}{4} - \\frac{s}{13} = r(x - 8)$$\n\nIn the given equation, $s$ and $r$ are constants, and $s > 0$. If the equation has infinitely many solutions, what is the value of $s$?",
+      "choices": {"A": "$52$", "B": "$156$", "C": "$403$", "D": "$624$"},
+      "answer": "C",
+      "explanation": "Rewrite the left side: $3x + 7 - \\frac{s}{13} = r(x - 8)$. For infinitely many solutions, coefficients must match: coefficient of $x$ gives $3 = r$. Constant terms: $7 - \\frac{s}{13} = -8r = -24$, so $-\\frac{s}{13} = -31$, giving $s = 403$."
+    },
+    {
+      "id": "pdf-3f5a3602",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "In the $xy$-plane, two lines are graphed. One line passes through $(8, 0)$ and $(3, 4)$. The other line passes through $(8, 0)$ and $(3, 2)$. What system of linear equations is represented by the lines?",
+      "choices": {
+        "A": "$8x + 4y = 32$ and $-10x - 4y = -64$",
+        "B": "$8x - 4y = 32$ and $-10x + 4y = -64$",
+        "C": "$4x - 10y = 32$ and $-8x + 10y = -64$",
+        "D": "$4x + 10y = 32$ and $-8x - 10y = -64$"
+      },
+      "answer": "D",
+      "explanation": "Line 1 through $(8,0)$ and $(3,4)$: slope $= \\frac{4-0}{3-8} = -\\frac{4}{5}$. Equation: $\\frac{4}{5}x + y = \\frac{32}{5} \\Rightarrow 4x + 10y = 32$. Line 2 through $(8,0)$ and $(3,2)$: slope $= -\\frac{2}{5}$. Equation: $\\frac{2}{5}x + y = \\frac{16}{5} \\Rightarrow 2x + 5y = 16$, multiply by $-4$: $-8x - 10y = -64$."
+    },
+    {
+      "id": "pdf-3d1070c9",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "The function $f$ is defined by $f(x) = 25x + 30$. What is the value of $f(x)$ when $x = 2$?",
+      "choices": {"A": "$50$", "B": "$57$", "C": "$80$", "D": "$110$"},
+      "answer": "C",
+      "explanation": "$f(2) = 25(2) + 30 = 50 + 30 = 80$."
+    },
+    {
+      "id": "pdf-002dba45",
+      "section": "math",
+      "topic": "lines",
+      "difficulty": 2,
+      "prompt": "Line $k$ is defined by $y = -\\dfrac{17}{3}x + 5$. Line $j$ is perpendicular to line $k$ in the $xy$-plane. What is the slope of line $j$?",
+      "choices": {"A": "$-\\dfrac{17}{3}$", "B": "$-\\dfrac{3}{17}$", "C": "$\\dfrac{3}{17}$", "D": "$\\dfrac{17}{3}$"},
+      "answer": "C",
+      "explanation": "The slope of line $k$ is $-\\frac{17}{3}$. The slope of a perpendicular line is the negative reciprocal: $\\frac{3}{17} \\approx 0.176$."
+    },
+    {
+      "id": "pdf-edc1b7b7",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "$$2(8x) + 4(7y) = 12$$\n$$-2(8x) + 4(7y) = 12$$\n\nThe solution to the given system of equations is $(x, y)$. What is the value of $8x + 7y$?",
+      "choices": {"A": "$0$", "B": "$3$", "C": "$6$", "D": "$12$"},
+      "answer": "B",
+      "explanation": "Adding the two equations: $8(7y) = 24 \\Rightarrow 7y = 3$. Substituting back into the first equation: $2(8x) + 4(3) = 12 \\Rightarrow 2(8x) = 0 \\Rightarrow 8x = 0$. Therefore $8x + 7y = 0 + 3 = 3$."
+    },
+    {
+      "id": "pdf-f224df07",
+      "section": "math",
+      "topic": "inequalities",
+      "difficulty": 2,
+      "prompt": "A cargo helicopter delivers only 100-pound packages and 120-pound packages. For each delivery trip, the helicopter must carry at least 10 packages, and the total weight of the packages can be at most 1,100 pounds. What is the maximum number of 120-pound packages that the helicopter can carry per trip?",
+      "choices": {"A": "$2$", "B": "$4$", "C": "$5$", "D": "$6$"},
+      "answer": "C",
+      "explanation": "Let $a$ = number of 120-lb packages and $b$ = number of 100-lb packages. We need $120a + 100b \\leq 1100$ and $a + b \\geq 10$. To maximize $a$, minimize $b = 10 - a$: $120a + 100(10-a) \\leq 1100 \\Rightarrow 20a \\leq 100 \\Rightarrow a \\leq 5$."
+    },
+    {
+      "id": "pdf-fa80893a",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "prompt": "If $2x + 3 = 9$, what is the value of $6x - 1$?",
+      "choices": {"A": "$6$", "B": "$11$", "C": "$17$", "D": "$27$"},
+      "answer": "C",
+      "explanation": "Multiply both sides of $2x + 3 = 9$ by $3$: $6x + 9 = 27$. Subtract $10$: $6x - 1 = 17$."
+    },
+    {
+      "id": "pdf-bd9eb2b5",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "The function $f$ is defined by $f(x) = 8x$. For what value of $x$ does $f(x) = 72$?",
+      "choices": {"A": "$8$", "B": "$9$", "C": "$64$", "D": "$80$"},
+      "answer": "B",
+      "explanation": "$72 = 8x \\Rightarrow x = 9$."
+    },
+    {
+      "id": "pdf-1480dd5c",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "$$f(x) = 4x + b$$\n\nFor the linear function $f$, $b$ is a constant and $f(7) = 28$. What is the value of $b$?",
+      "choices": {"A": "$0$", "B": "$1$", "C": "$4$", "D": "$7$"},
+      "answer": "A",
+      "explanation": "$f(7) = 4(7) + b = 28 \\Rightarrow 28 + b = 28 \\Rightarrow b = 0$."
+    },
+    {
+      "id": "pdf-3008cfc3",
+      "section": "math",
+      "topic": "lines",
+      "difficulty": 3,
+      "prompt": "The table below gives the coordinates of two points on a line in the $xy$-plane:\n\n| $x$ | $y$ |\n|---|---|\n| $k$ | $13$ |\n| $k+7$ | $-15$ |\n\nThe $y$-intercept of the line is $(k - 5,\\ b)$, where $k$ and $b$ are constants. What is the value of $b$?",
+      "choices": {"A": "$13$", "B": "$19$", "C": "$33$", "D": "$41$"},
+      "answer": "C",
+      "explanation": "Slope $= \\frac{-15 - 13}{(k+7) - k} = \\frac{-28}{7} = -4$. Using the slope between $(k-5, b)$ and $(k, 13)$: $-4 = \\frac{13 - b}{k - (k-5)} = \\frac{13-b}{5}$. So $13 - b = -20$, giving $b = 33$."
+    },
+    {
+      "id": "pdf-0d6ab461",
+      "section": "math",
+      "topic": "linear-models",
+      "difficulty": 1,
+      "prompt": "Gabriella deposits $\\$35$ in a savings account at the end of each week. At the beginning of the 1st week of a year there was $\\$600$ in that savings account. How much money, in dollars, will be in the account at the end of the 4th week of that year?",
+      "choices": {"A": "$\\$460$", "B": "$\\$635$", "C": "$\\$639$", "D": "$\\$740$"},
+      "answer": "D",
+      "explanation": "Starting amount + 4 weekly deposits: $600 + 4(35) = 600 + 140 = \\$740$."
+    },
+    {
+      "id": "pdf-4becad44",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "One of the two equations in a system of linear equations is $3x = 36y - 45$. The system has no solution. Which equation could be the second equation in this system?",
+      "choices": {
+        "A": "$x = 4y$",
+        "B": "$\\dfrac{1}{3}x = 4y$",
+        "C": "$x = 12y - 15$",
+        "D": "$\\dfrac{1}{3}x = 12y - 15$"
+      },
+      "answer": "B",
+      "explanation": "Rewrite the given equation: $x = 12y - 15$, i.e., $y = \\frac{1}{12}x + \\frac{5}{4}$. For no solution, need same slope ($\\frac{1}{12}$) but different $y$-intercept. Choice B: $\\frac{1}{3}x = 4y \\Rightarrow y = \\frac{1}{12}x$, slope $= \\frac{1}{12}$ with $y$-intercept $0 \\neq \\frac{5}{4}$. ✓"
+    },
+    {
+      "id": "pdf-d1b66ae6",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "$$-x + y = -3.5$$\n$$x + 3y = 9.5$$\n\nIf $(x, y)$ satisfies the system of equations above, what is the value of $y$?",
+      "choices": {"A": "$\\dfrac{1}{2}$", "B": "$\\dfrac{3}{2}$", "C": "$3$", "D": "$6$"},
+      "answer": "B",
+      "explanation": "Adding the two equations: $4y = 6 \\Rightarrow y = \\frac{3}{2}$."
+    },
+    {
+      "id": "pdf-cb8f449f",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 2,
+      "prompt": "$$\\frac{1}{2}y = 4$$\n$$x - \\frac{1}{2}y = 2$$\n\nThe system of equations above has solution $(x, y)$. What is the value of $x$?",
+      "choices": {"A": "$3$", "B": "$\\dfrac{7}{2}$", "C": "$4$", "D": "$6$"},
+      "answer": "D",
+      "explanation": "Adding the two equations eliminates $y$: $\\frac{1}{2}y + x - \\frac{1}{2}y = 4 + 2$, so $x = 6$."
+    },
+    {
+      "id": "pdf-3409707e",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 1,
+      "prompt": "$$x + y = 125$$\n$$x + y + y = 155$$\n\nThe solution to the given system of equations is $(x, y)$. What is the value of $y$?",
+      "choices": {"A": "$25$", "B": "$30$", "C": "$125$", "D": "$155$"},
+      "answer": "B",
+      "explanation": "Substitute $x + y = 125$ into the second equation: $125 + y = 155 \\Rightarrow y = 30$."
+    },
+    {
+      "id": "pdf-520c8177",
+      "section": "math",
+      "topic": "linear-models",
+      "difficulty": 1,
+      "prompt": "A veterinarian recommends that each day a certain rabbit should eat 25 calories per pound of the rabbit's weight, plus an additional 11 calories. Which equation represents this situation, where $c$ is the total number of calories the veterinarian recommends the rabbit should eat each day if the rabbit's weight is $x$ pounds?",
+      "choices": {
+        "A": "$c = 25x$",
+        "B": "$c = 36x$",
+        "C": "$c = 11x + 25$",
+        "D": "$c = 25x + 11$"
+      },
+      "answer": "D",
+      "explanation": "25 calories per pound $\\times$ weight in pounds $+$ 11 additional calories $= 25x + 11$."
+    },
+    {
+      "id": "pdf-88e13c8c",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "prompt": "The total cost $f(x)$, in dollars, to lease a car for 36 months from a particular car dealership is given by $f(x) = 36x + 1{,}000$, where $x$ is the monthly payment, in dollars. What is the total cost to lease a car when the monthly payment is $\\$400$?",
+      "choices": {"A": "$\\$13{,}400$", "B": "$\\$13{,}000$", "C": "$\\$15{,}400$", "D": "$\\$37{,}400$"},
+      "answer": "C",
+      "explanation": "$f(400) = 36(400) + 1{,}000 = 14{,}400 + 1{,}000 = \\$15{,}400$."
+    },
+    {
+      "id": "pdf-744ee7d7",
+      "section": "math",
+      "topic": "inequalities",
+      "difficulty": 1,
+      "prompt": "A graph in the $xy$-plane shows a horizontal boundary line at $y = 36$. The region on and above the line is shaded. Which inequality represents all solutions shown in the shaded region?",
+      "choices": {"A": "$x \\leq 36$", "B": "$x \\geq 36$", "C": "$y \\leq 36$", "D": "$y \\geq 36$"},
+      "answer": "D",
+      "explanation": "The boundary is horizontal at $y = 36$. Shading above (and including) the line means all points where $y \\geq 36$."
+    },
+    {
+      "id": "pdf-3cdbf026",
+      "section": "math",
+      "topic": "lines",
+      "difficulty": 3,
+      "prompt": "The graph of the equation $ax + ky = 6$ is a line in the $xy$-plane, where $a$ and $k$ are constants. If the line contains the points $(-2, -6)$ and $(0, -3)$, what is the value of $k$?",
+      "choices": {"A": "$-2$", "B": "$-1$", "C": "$2$", "D": "$3$"},
+      "answer": "A",
+      "explanation": "The point $(0, -3)$ is the $y$-intercept. Substituting into $ax + ky = 6$: $a(0) + k(-3) = 6 \\Rightarrow -3k = 6 \\Rightarrow k = -2$."
+    },
+
+    {
+      "id": "pdf-f1bfbed3",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Marta Coll and colleagues' 2010 Mediterranean Sea biodiversity census reported approximately 17,000 species, nearly double the number reported in Carlo Bianchi and Carla Morri's 2000 census—a difference only partly attributable to the description of new invertebrate species in the interim. Another factor is that the morphological variability of microorganisms is poorly understood compared to that of vertebrates, invertebrates, plants, and algae, creating uncertainty about how to evaluate microorganisms as species. Researchers' decisions on such matters therefore can be highly consequential. Indeed, the two censuses reported similar counts of vertebrate, plant, and algal species, suggesting that _____\n\nWhich choice most logically completes the text?",
+      "choices": {
+        "A": "Coll and colleagues reported a much higher number of species than Bianchi and Morri did largely due to the inclusion of invertebrate species that had not been described at the time of Bianchi and Morri's census.",
+        "B": "some differences observed in microorganisms may have been treated as variations within species by Bianchi and Morri but treated as indicative of distinct species by Coll and colleagues.",
+        "C": "Bianchi and Morri may have been less sensitive to the degree of morphological variation displayed within a typical species of microorganism than Coll and colleagues were.",
+        "D": "the absence of clarity regarding how to differentiate among species of microorganisms may have resulted in Coll and colleagues underestimating the number of microorganism species."
+      },
+      "answer": "B",
+      "explanation": "Since non-microorganism counts were similar across the two censuses, the large overall difference must come from microorganism classification. B explains this: researcher decisions to count microorganism variations as separate species versus variations within a species accounts for the discrepancy."
+    },
+    {
+      "id": "pdf-87aa7bab",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "A common assumption among art historians is that the invention of photography in the mid-nineteenth century displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature, which coincided with the rise of photography, seems to support this claim. However, photography's impact on the portrait miniature may be overstated. Although records from art exhibitions in the Netherlands from 1820 to 1892 show a decrease in the number of both full-sized and miniature portraits submitted, this trend was established before the invention of photography.\n\nBased on the text, what can be concluded about the diminishing popularity of the portrait miniature in the nineteenth century?",
+      "choices": {
+        "A": "Factors other than the rise of photography may be more directly responsible for the portrait miniature's decline.",
+        "B": "Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit.",
+        "C": "The popularity of the portrait miniature likely persisted for longer than art historians have assumed.",
+        "D": "As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography."
+      },
+      "answer": "A",
+      "explanation": "The text reveals that the decline in portrait miniature submissions began before photography was invented, meaning photography cannot be the primary cause. Other factors must be more directly responsible."
+    },
+    {
+      "id": "pdf-d73a908a",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "Believing that living in an impractical space can heighten awareness and even improve health, conceptual artists Madeline Gins and Shusaku Arakawa designed an apartment building in Japan to be more fanciful than functional. A kitchen counter is chest-high on one side and knee-high on the other; a ceiling has a door to nowhere. The effect is disorienting but invigorating: after four years there, filmmaker Nobu Yamaoka reported significant health benefits.\n\nWhich choice best states the main idea of the text?",
+      "choices": {
+        "A": "Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable.",
+        "B": "Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment.",
+        "C": "As a filmmaker, Yamaoka has long supported the designs of conceptual artists such as Gins and Arakawa.",
+        "D": "Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building's residents."
+      },
+      "answer": "D",
+      "explanation": "The text describes an impractical but potentially health-improving apartment design. D accurately captures this main idea. A adds an unsupported claim about unsustainability; B overstates effectiveness; C misrepresents Yamaoka's role."
+    },
+    {
+      "id": "pdf-d748c3fd",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 2,
+      "prompt": "In her 2021 article \"Throwaway History: Towards a Historiography of Ephemera,\" scholar Anne Garner discusses John Johnson (1882–1956), a devoted collector of items intended to be discarded, including bus tickets and campaign pamphlets. Johnson recognized that scholarly institutions considered his expansive collection of ephemera to be worthless—indeed, it wasn't until 1968, after Johnson's death, that Oxford University's Bodleian Library acquired the collection, having grasped the items' potential value to historians and other researchers. Hence, the example of Johnson serves to _____\n\nWhich choice most logically completes the text?",
+      "choices": {
+        "A": "demonstrate the difficulties faced by contemporary historians in conducting research at the Bodleian Library without access to ephemera.",
+        "B": "represent the challenge of incorporating examples of ephemera into the collections of libraries and other scholarly institutions.",
+        "C": "lend support to arguments by historians and other researchers who continue to assert that ephemera holds no value for scholars.",
+        "D": "illustrate both the relatively low scholarly regard in which ephemera was once held and the later recognition of ephemera's possible utility."
+      },
+      "answer": "D",
+      "explanation": "Johnson's collection was dismissed as worthless during his lifetime but was later acquired by the Bodleian Library for its scholarly value. This perfectly illustrates the shift from low regard to recognized utility."
+    },
+    {
+      "id": "pdf-6b8a7c74",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "One recognized social norm of gift giving is that the time spent obtaining a gift will be viewed as a reflection of the gift's thoughtfulness. Marketing experts Farnoush Reshadi, Julian Givi, and Gopal Das addressed this view in their studies of norms surrounding the giving of gift cards, noting that while recipients tend to view digital gift cards as superior to physical gift cards in terms of usage, 94.8 percent of participants surveyed indicated that it is more socially acceptable to give a physical gift card to a recipient. This finding suggests that _____\n\nWhich choice most logically completes the text?",
+      "choices": {
+        "A": "gift givers likely overestimate the amount of effort required to use digital gift cards and thus mistakenly assume gift recipients will view them as less desirable than physical gift cards.",
+        "B": "physical gift cards are likely preferred by gift recipients because the tangible nature of those cards offers a greater psychological sense of ownership than digital gift cards do.",
+        "C": "physical gift cards are likely less desirable to gift recipients than digital gift cards are because of the perception that physical gift cards require unnecessary effort to obtain.",
+        "D": "gift givers likely perceive digital gift cards as requiring relatively low effort to obtain and thus wrongly assume gift recipients will appreciate them less than they do physical gift cards."
+      },
+      "answer": "D",
+      "explanation": "The norm equates effort with thoughtfulness. Digital cards are easy to obtain online (low perceived effort), so gift givers assume recipients will appreciate them less—even though recipients actually prefer digital cards for their usability."
+    },
+    {
+      "id": "pdf-a15b3219",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 3,
+      "prompt": "In the United States, firms often seek incentives from municipal governments to expand to those municipalities. A team of political scientists hypothesized that municipalities are much more likely to respond to firms and offer incentives if expansions can be announced before the next election to benefit local elected officials. The team contacted officials in thousands of municipalities, indicating the firm would announce its expansion either just before or just after the next election. A bar graph showed that the number of municipalities giving no response, responding to the inquiry, or offering incentives was nearly identical for both announcement timing conditions.\n\nWhich choice best describes data that weakens the team's hypothesis?",
+      "choices": {
+        "A": "A large majority of the municipalities that received an inquiry mentioning plans for an announcement before the next election didn't respond to the inquiry.",
+        "B": "The proportion of municipalities that responded to the inquiry or offered incentives didn't substantially differ across the announcement timing conditions.",
+        "C": "Only around half the municipalities that responded to inquiries mentioning plans for an announcement before the next election offered incentives.",
+        "D": "Of the municipalities that received an inquiry mentioning plans for an announcement date after the next election, more than 1,200 didn't respond and only around 100 offered incentives."
+      },
+      "answer": "B",
+      "explanation": "The hypothesis predicts municipalities should be much MORE responsive when the announcement is before the election. If response rates are virtually identical regardless of timing, this directly contradicts and weakens the hypothesis."
+    },
+    {
+      "id": "pdf-ed314256",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 3,
+      "prompt": "The most recent iteration of the immersive theater experience Sleep No More, which premiered in New York City in 2011, transforms its performance space—a five-story warehouse—into a 1930s-era hotel. Audience members, who wander through the labyrinthine venue at their own pace and follow the actors as they play out simultaneous, interweaving narrative loops, confront the impossibility of experiencing the production in its entirety. The play's refusal of narrative coherence thus hinges on the sense of spatial fragmentation that the venue's immense and intricate layout generates.\n\nWhat does the text most strongly suggest about Sleep No More's use of its performance space?",
+      "choices": {
+        "A": "The choice of a New York City venue likely enabled the play's creators to experiment with the use of theatrical space in a way that venues from earlier productions could not.",
+        "B": "Audience members likely find the experience of the play disappointing because they generally cannot make their way through the entire venue.",
+        "C": "The production's dependence on a particular performance environment would likely make it difficult to reproduce exactly in a different theatrical space.",
+        "D": "Audience members who navigate the space according to a recommended itinerary will likely have a better grasp of the play's narrative than audience members who depart from that itinerary."
+      },
+      "answer": "C",
+      "explanation": "The text says the play's narrative refusal 'hinges on' the specific spatial fragmentation of its venue. Since the theatrical effect depends so essentially on this particular space, reproducing it in a different environment would be very difficult."
+    },
+    {
+      "id": "pdf-8c1be131",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "During the World War II era, some Mexican American women adopted a striking new look called pachuca style. They wore altered men's jackets or zoot suits and dramatic makeup, and they combed their hair into high, rounded shapes. Some people criticized pachuca style, saying it was dangerous and women should dress traditionally. But historians see things differently. They see pachuca style as a form of rebellion against the era's rigid social expectations for women. They say that it showed a desire for self-expression and freedom on the part of women who adopted the style.\n\nAccording to the text, how do historians view pachuca style?",
+      "choices": {
+        "A": "They think that pachuca style was such a popular trend that it continues to influence fashion in the United States to the present day.",
+        "B": "They think that pachuca style was a way for some Mexican American women to express themselves and resist strict social expectations.",
+        "C": "They think that pachuca style was celebrated because it enabled some Mexican American women to show their support for the United States during World War II.",
+        "D": "They think that pachuca style was similar to other fashion trends that different groups of women adopted in the same period."
+      },
+      "answer": "B",
+      "explanation": "The text explicitly states historians view pachuca style as 'a form of rebellion against the era's rigid social expectations,' reflecting a desire for 'self-expression and freedom.'"
+    },
+    {
+      "id": "pdf-92c2564d",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "Utah is home to Pando, a colony of about 47,000 quaking aspen trees that all share a single root system. Pando is one of the largest single organisms by mass on Earth, but ecologists are worried that its growth is declining in part because of grazing by animals. The ecologists say that strong fences could prevent deer from eating young trees and help Pando start thriving again.\n\nAccording to the text, why are ecologists worried about Pando?",
+      "choices": {
+        "A": "It isn't growing at the same rate it used to.",
+        "B": "It isn't producing young trees anymore.",
+        "C": "It can't grow into new areas because it is blocked by fences.",
+        "D": "Its root system can't support many more new trees."
+      },
+      "answer": "A",
+      "explanation": "The text states ecologists are worried because Pando's 'growth is declining in part because of grazing by animals.' This directly supports answer A. Fences are a proposed solution, not a cause of concern."
+    },
+    {
+      "id": "pdf-22e4d633",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 2,
+      "prompt": "Although many transposons, DNA sequences that move within an organism's genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species. In humans, they are functionally important within the hippocampus, a brain structure that supports complex cognitive processes. When the results of molecular analysis of two species of octopus were announced in 2022, the confirmation of a LINE transposon in Octopus vulgaris and Octopus bimaculoides genomes prompted researchers to hypothesize that the LINE transposon family is tied to a species' capacity for advanced cognition.\n\nWhich finding, if true, would most directly support the researchers' hypothesis?",
+      "choices": {
+        "A": "The LINE transposon in O. vulgaris and O. bimaculoides genomes is active in an octopus brain structure that functions similarly to the human hippocampus.",
+        "B": "The human genome contains multiple transposons from the LINE family that are all primarily active in the hippocampus.",
+        "C": "A consistent number of copies of LINE transposons is present across the genomes of most octopus species, with few known corruptions.",
+        "D": "O. vulgaris and O. bimaculoides have smaller brains than humans do relative to body size, but their genomes contain sequences from a wider variety of transposon families."
+      },
+      "answer": "A",
+      "explanation": "If the LINE transposon in octopuses is active in a brain region analogous to the human hippocampus (which supports complex cognition), this directly supports the hypothesis that LINE transposons are linked to advanced cognition across species."
+    },
+    {
+      "id": "pdf-458b4a11",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 3,
+      "prompt": "To understand how temperature change affects microorganism-mediated cycling of soil nutrients in alpine ecosystems, Eva Kaštovská et al. collected plant-soil cores in the Tatra Mountains at elevations around 2,100 meters and transplanted them to elevations of 1,700–1,800 meters, where the mean air temperature was warmer by 2°C. Microorganism-mediated nutrient cycling was accelerated in the transplanted cores; crucially, microorganism community composition was unchanged, allowing Kaštovská et al. to attribute the acceleration to temperature-induced increases in microorganism activity.\n\nIt can most reasonably be inferred from the text that the finding about the microorganism community composition was important for which reason?",
+      "choices": {
+        "A": "It provided preliminary evidence that microorganism-mediated nutrient cycling was accelerated in the transplanted cores.",
+        "B": "It suggested that temperature-induced changes in microorganism activity may be occurring at increasingly high elevations.",
+        "C": "It ruled out a potential alternative explanation for the acceleration in microorganism-mediated nutrient cycling.",
+        "D": "It clarified that microorganism activity levels in the plant-soil cores varied depending on which microorganisms comprised the community."
+      },
+      "answer": "C",
+      "explanation": "Because community composition was unchanged, researchers could rule out the alternative explanation that a change in which microorganisms were present (rather than temperature) caused the increased nutrient cycling. This controlled for a confounding variable."
+    },
+    {
+      "id": "pdf-0d7f4966",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 3,
+      "prompt": "Jean-Bernard Caron and colleagues recently discovered a cache of jellyfish fossils in the Burgess Shale, a site in the Canadian Rockies rich in fossils from the Cambrian period (over 500 million years ago). Caron and colleagues claim that these are the oldest jellyfish fossils ever discovered. In the past twenty years, two sites in China and the United States have yielded fossils of a similar age that some experts believe are most likely jellyfish. But Caron and colleagues argue that the apparent tentacles in those fossils are in fact the comb rows of ctenophores, gelatinous animals only distantly related to jellyfish.\n\nWhich statement, if true, would most directly weaken the claim by Caron and colleagues about the fossils found in China and the United States?",
+      "choices": {
+        "A": "Sites in the Canadian Rockies from later periods than the Cambrian period have yielded fossils that have been conclusively identified as ctenophore fossils.",
+        "B": "The fossils found in China and the United States are so poorly preserved that though they cannot be conclusively identified as jellyfish, they cannot be conclusively identified as ctenophores either.",
+        "C": "While ctenophore fossils have been discovered in China and the United States, they have never been discovered in the Burgess Shale.",
+        "D": "The fossils discovered by Caron and colleagues in the Burgess Shale were better preserved than the fossils discovered by other researchers in China and the United States."
+      },
+      "answer": "B",
+      "explanation": "Caron argues the Chinese and American fossils are ctenophores, not jellyfish. If the fossils are too poorly preserved to be conclusively identified as either organism, then Caron's specific claim that they are ctenophores cannot be supported."
+    },
+    {
+      "id": "pdf-3543e6e2",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 1,
+      "prompt": "The following text is from Jane Austen's 1811 novel Sense and Sensibility. Elinor lives with her younger sisters and her mother, Mrs. Dashwood.\n\n\"Elinor, this eldest daughter, whose advice was so effectual, possessed a strength of understanding, and coolness of judgment, which qualified her, though only nineteen, to be the counsellor of her mother, and enabled her frequently to counteract, to the advantage of them all, that eagerness of mind in Mrs. Dashwood which must generally have led to imprudence.\"\n\nAccording to the text, what is true about Elinor?",
+      "choices": {
+        "A": "Elinor often argues with her mother but fails to change her mind.",
+        "B": "Elinor can be overly sensitive with regard to family matters.",
+        "C": "Elinor thinks her mother is a bad role model.",
+        "D": "Elinor is remarkably mature for her age."
+      },
+      "answer": "D",
+      "explanation": "Though only nineteen, Elinor serves as counsellor to her mother and possesses 'strength of understanding, and coolness of judgment.' This demonstrates maturity well beyond her years."
+    },
+    {
+      "id": "pdf-75e07a4d",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 1,
+      "prompt": "To make sure they got the nutrition they needed while in space, the astronauts of NASA's Gemini missions were given menus for three meals a day (meals A, B, and C) on a four-day rotating schedule. A sample of food items from these menus is shown below:\n\n| Food item | Day | Meal |\n|---|---|---|\n| Sugar cookie cubes | 1 | B |\n| Chicken and vegetables | 2 | B |\n| Shrimp cocktail | 4 | C |\n| Hot cocoa | 3 | A |\n\nA student notes that on day 1, the menu included _____\n\nWhich choice most effectively uses data from the table to complete the statement?",
+      "choices": {
+        "A": "shrimp cocktail for meal B.",
+        "B": "hot cocoa for meal C.",
+        "C": "sugar cookie cubes for meal B.",
+        "D": "chicken and vegetables for meal A."
+      },
+      "answer": "C",
+      "explanation": "According to the table, sugar cookie cubes appear on Day 1 for Meal B. Shrimp cocktail was Day 4 / Meal C, hot cocoa was Day 3 / Meal A, and chicken and vegetables was Day 2 / Meal B."
+    },
+    {
+      "id": "pdf-1ba5ad7a",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 3,
+      "prompt": "Many literary theorists distinguish between fabula, a narrative's content, and syuzhet, a narrative's arrangement and presentation of events. In the film The Godfather Part II, the fabula is the story of the Corleone family, and the syuzhet is the presentation of the story as it alternates between two timelines in 1901 and 1958. But literary theorist Mikhail Bakhtin maintained that fabula and syuzhet are insufficient to completely describe a narrative—he held that systematic categorizations of artistic phenomena discount the subtle way in which meaning is created by interactions between the artist, the work, and the audience.\n\nWhich choice best states the main idea of the text?",
+      "choices": {
+        "A": "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.",
+        "B": "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people.",
+        "C": "The storytelling methods used in The Godfather Part II may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized.",
+        "D": "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically."
+      },
+      "answer": "A",
+      "explanation": "Bakhtin argued that fabula and syuzhet (two concepts other theorists use) are insufficient to fully describe narratives because they miss how meaning is created through artist-work-audience interactions. A best captures this main idea."
+    },
+    {
+      "id": "pdf-602b47c7",
+      "section": "rw",
+      "topic": "main-idea",
+      "difficulty": 2,
+      "prompt": "Biologists have predicted that birds' feather structures vary with habitat temperature, but this hadn't been tested in mountain environments. Ornithologist Sahas Barve studied feathers from 249 songbird species inhabiting different elevations—and thus experiencing different temperatures—in the Himalaya Mountains. He found that feathers of high-elevation species not only have a greater proportion of warming downy sections than do feathers of low-elevation species, but high-elevation species' feathers also tend to be longer, providing a thicker layer of insulation.\n\nWhich choice best states the main idea of the text?",
+      "choices": {
+        "A": "Barve's investigation shows that some species of Himalayan songbirds have evolved feathers that better regulate body temperature than do the feathers of other species, contradicting previous predictions.",
+        "B": "Barve found an association between habitat temperature and feather structure among Himalayan songbirds, lending new support to a general prediction.",
+        "C": "Barve discovered that songbirds have adapted to their environment by growing feathers without flat and smooth sections, complicating an earlier hypothesis.",
+        "D": "The results of Barve's study suggest that the ability of birds to withstand cold temperatures is determined more strongly by feather length than feather structure, challenging an established belief."
+      },
+      "answer": "B",
+      "explanation": "Barve's study confirmed that feather structures vary with habitat temperature in Himalayan songbirds, supporting (not contradicting) the biologists' general prediction. This lends new evidence to that prediction."
+    },
+    {
+      "id": "pdf-068f939b",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 3,
+      "prompt": "The ancient Greek concept of \"mimesis,\" a term used in the works of Plato, Aristotle, and other Greek philosophers in discussions of representational art—visual, performance, or literary art that aims to depict the real world—is a foundational concept of the Western philosophy of aesthetics. Mimesis is typically translated as \"imitation\" in modern editions of ancient Greek texts, but scholar Stephen Halliwell warns that this is overly reductive: \"imitation\" implies that art merely copies a reality that exists outside and prior to the work of art, and translating \"mimesis\" this way obscures the multifaceted ways in which the ancient Greeks understood the relationship between art and reality.\n\nWhich statement, if true, would most directly support the claim by Halliwell presented in the text?",
+      "choices": {
+        "A": "One of the earliest appearances of mimesis's root word, mimos, can be found in an ancient Greek tragedy in reference to dramatic impersonation, and the mim- root came to be generally associated with the musical and poetic arts by the fifth century BCE.",
+        "B": "Both Plato's and Aristotle's theorizations of mimesis examine the psychological effects that works of art induce in the viewer or listener.",
+        "C": "Although several of Plato's earliest philosophical works discuss aesthetic ideas, the term 'mimesis' doesn't appear in Plato's discussions of art until Cratylus, a relatively late work.",
+        "D": "Although Plato's writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art's capacity to envision hypothetical conditions that could, but don't yet, exist."
+      },
+      "answer": "D",
+      "explanation": "Halliwell claims 'imitation' is reductive because the ancient Greeks understood mimesis in 'multifaceted ways.' D shows Plato and Aristotle held different understandings—one viewing art as inferior copying, the other as envisioning new possibilities—supporting Halliwell's claim that mimesis means more than simple imitation."
+    },
+    {
+      "id": "pdf-702eb7e3",
+      "section": "rw",
+      "topic": "synthesis",
+      "difficulty": 3,
+      "prompt": "High levels of public uncertainty about which economic policies a country will adopt can make planning difficult for businesses, but measures of such uncertainty have not tended to be very detailed. Recently, economist Sandile Hlatshwayo analyzed trends in news reports to derive measures not only for general economic policy uncertainty but also for uncertainty related to specific areas of economic policy, like tax or trade policy. One revelation of her work is that a general measure may not fully reflect uncertainty about specific areas of policy, as in the case of the United Kingdom, where general economic policy uncertainty _____\n\nThe graph shows that in the UK in 2005, general economic policy uncertainty was around 90 while trade policy uncertainty was around 160. By 2010, general economic policy uncertainty rose to around 120 while trade policy uncertainty fell to around 75.\n\nWhich choice most effectively uses data from the graph to illustrate the claim?",
+      "choices": {
+        "A": "aligned closely with uncertainty about tax and public spending policy in 2005 but differed from uncertainty about tax and public spending policy by a large amount in 2009.",
+        "B": "was substantially lower than uncertainty about tax and public spending policy each year from 2005 to 2010.",
+        "C": "reached its highest level between 2005 and 2010 in the same year that uncertainty about trade policy and tax and public spending policy reached their lowest levels.",
+        "D": "was substantially lower than uncertainty about trade policy in 2005 and substantially higher than uncertainty about trade policy in 2010."
+      },
+      "answer": "D",
+      "explanation": "In 2005, general economic policy uncertainty (~90) was substantially lower than trade policy uncertainty (~160). By 2010, the relationship reversed: general uncertainty (~120) was substantially higher than trade policy uncertainty (~75). This divergence illustrates how a general measure can fail to reflect specific policy areas."
     }
   ]
 }
