@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0f172a" />
+<title>LectureNotes — record, get notes</title>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<main class="app">
+  <header class="hdr">
+    <h1>📚 LectureNotes</h1>
+    <p class="sub">Record the lecture · get a summary, 10 flashcards, 5 likely exam questions.</p>
+  </header>
+
+  <section id="recorder" class="card">
+    <button id="recBtn" class="big-btn">
+      <span class="dot"></span>
+      <span id="recLabel">Tap to record</span>
+    </button>
+    <div id="timer" class="timer">00:00</div>
+
+    <div class="divider"><span>or</span></div>
+
+    <label class="file-btn">
+      Upload audio file
+      <input type="file" id="fileInput" accept="audio/*,video/*" hidden />
+    </label>
+    <p id="fileName" class="file-name"></p>
+  </section>
+
+  <section id="status" class="card hidden">
+    <div class="spinner"></div>
+    <p id="statusText">Processing…</p>
+  </section>
+
+  <section id="results" class="hidden">
+    <div class="card">
+      <h2 id="noteTitle">Lecture notes</h2>
+      <div class="tabs">
+        <button class="tab active" data-tab="summary">Summary</button>
+        <button class="tab" data-tab="cards">Flashcards</button>
+        <button class="tab" data-tab="exam">Exam Qs</button>
+        <button class="tab" data-tab="transcript">Transcript</button>
+      </div>
+
+      <div id="tab-summary" class="tab-body active">
+        <article id="summaryText" class="markdown"></article>
+      </div>
+
+      <div id="tab-cards" class="tab-body">
+        <div id="cardStack" class="card-stack"></div>
+        <div class="card-nav">
+          <button id="prevCard">◀</button>
+          <span id="cardCount">1 / 10</span>
+          <button id="nextCard">▶</button>
+        </div>
+        <p class="hint">Tap the card to flip.</p>
+      </div>
+
+      <div id="tab-exam" class="tab-body">
+        <ol id="examList" class="exam-list"></ol>
+      </div>
+
+      <div id="tab-transcript" class="tab-body">
+        <pre id="transcriptText" class="transcript"></pre>
+      </div>
+    </div>
+
+    <button id="newBtn" class="secondary">← Record another</button>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

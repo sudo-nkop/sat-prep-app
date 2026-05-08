@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true,
+  "C_Cpp.intelliSenseEngine": "Tag Parser",
+  "files.associations": {
+    "*.h": "cpp",
+    "*.cpp": "cpp"
+  }
+}

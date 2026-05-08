@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Command Centre
+Comment=Personal dashboard — tasks, calendar, timer, notes and quick links
+Exec=/home/ccx0/.local/share/command-centre/command-centre.py
+Icon=office-calendar
+Terminal=false
+Categories=Office;Utility;
+Keywords=tasks;calendar;timer;notes;productivity;
+StartupNotify=true

@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Command Centre</title>
+<style>
+  /* System fonts — no network dependency */
+  :root {
+    --font-sans: 'Cantarell', 'Inter', 'Noto Sans', system-ui, sans-serif;
+    --font-mono: 'Source Code Pro', 'Fira Mono', 'DejaVu Sans Mono', monospace;
+
+    --bg: #f5f5f0; --surface: #ffffff; --surface2: #f0f0eb; --border: #e8e8e3;
+    --text: #1a1a18; --text2: #6b6b65; --text3: #a8a8a2;
+    --accent: #2d6a4f; --accent2: #52b788; --accent-soft: #d8f3dc;
+    --red: #e63946; --orange: #f4a261; --blue: #457b9d;
+    --radius: 14px; --radius-sm: 8px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); background: var(--bg); color: var(--text); min-height: 100vh; padding: 24px; overflow-x: hidden; }
+
+  /* SETUP */
+  #setupScreen { position: fixed; inset: 0; background: var(--bg); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 24px; }
+  .setup-box { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 40px; max-width: 500px; width: 100%; box-shadow: 0 8px 48px rgba(0,0,0,0.08); }
+  .setup-logo { font-size: 36px; margin-bottom: 16px; }
+  .setup-box h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 8px; }
+  .setup-box p { font-size: 14px; color: var(--text2); line-height: 1.6; margin-bottom: 24px; }
+  .setup-steps { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+  .setup-step { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; color: var(--text2); line-height: 1.5; }
+  .step-num { background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 700; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .setup-label { font-size: 11px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text3); margin-bottom: 6px; display: block; }
+  .setup-input { width: 100%; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 10px 14px; font-family: var(--font-mono); font-size: 12px; background: var(--surface2); color: var(--text); outline: none; transition: border 0.15s; margin-bottom: 6px; }
+  .setup-input:focus { border-color: var(--accent2); background: white; }
+  .setup-input::placeholder { color: var(--text3); font-family: var(--font-sans); }
+  .setup-hint { font-size: 11px; color: var(--text3); line-height: 1.5; margin-bottom: 20px; }
+  .setup-hint a { color: var(--blue); text-decoration: none; }
+  .setup-hint a:hover { text-decoration: underline; }
+  .setup-btn { width: 100%; background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; cursor: pointer; transition: background 0.15s; }
+  .setup-btn:hover { background: var(--accent2); }
+  .setup-skip { text-align: center; margin-top: 16px; font-size: 12px; color: var(--text3); }
+  .setup-skip a { color: var(--text2); cursor: pointer; text-decoration: underline; }
+  code { font-family: var(--font-mono); font-size: 11px; background: var(--surface2); padding: 1px 5px; border-radius: 3px; }
+
+  /* SYNC BAR */
+  .sync-bar { display: flex; align-items: center; gap: 8px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 100px; font-size: 12px; color: var(--text2); cursor: pointer; transition: background 0.15s; white-space: nowrap; user-select: none; }
+  .sync-bar:hover { background: var(--surface2); }
+  .sync-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--text3); flex-shrink: 0; transition: background 0.3s; }
+  .sync-dot.synced { background: var(--accent2); }
+  .sync-dot.syncing { background: var(--orange); animation: pulse 1s ease infinite; }
+  .sync-dot.error { background: var(--red); }
+  .sync-dot.offline { background: var(--text3); }
+  .sync-disconnect { font-size: 10px; color: var(--text3); margin-left: 4px; cursor: pointer; }
+  .sync-disconnect:hover { color: var(--red); }
+
+  /* HEADER */
+  .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; gap: 12px; flex-wrap: wrap; }
+  .header-left h1 { font-size: 22px; font-weight: 600; letter-spacing: -0.5px; }
+  .header-left .date-line { font-size: 13px; color: var(--text2); margin-top: 2px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .clock { font-family: var(--font-mono); font-size: 26px; font-weight: 300; letter-spacing: -1px; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+  /* CARDS */
+  .card { background: var(--surface); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); border: 1px solid var(--border); position: relative; }
+  .card-title { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--text3); margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; }
+  .card-title span { display: flex; align-items: center; gap: 6px; }
+
+  /* CALENDAR */
+  .cal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .cal-month { font-size: 15px; font-weight: 600; letter-spacing: -0.3px; }
+  .cal-nav { display: flex; gap: 4px; }
+  .cal-btn { background: var(--surface2); border: none; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 14px; color: var(--text2); display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+  .cal-btn:hover { background: var(--border); }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; }
+  .cal-day-name { text-align: center; font-size: 10px; font-weight: 600; color: var(--text3); padding: 4px 0 8px; letter-spacing: 0.5px; }
+  .cal-day { text-align: center; font-size: 13px; padding: 6px 4px; border-radius: 8px; cursor: pointer; transition: background 0.12s; color: var(--text); min-height: 36px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 2px; }
+  .cal-day:hover { background: var(--surface2); }
+  .cal-day.other-month { color: var(--text3); }
+  .cal-day.today { background: var(--accent); color: white; font-weight: 600; }
+  .cal-day.today:hover { background: var(--accent); }
+  .cal-day.selected { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  .cal-day.today.selected { background: var(--accent); color: white; }
+  .cal-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--orange); }
+  .cal-day.today .cal-dot { background: rgba(255,255,255,0.8); }
+
+  /* TASKS */
+  .tasks-card { grid-column: 3 / 4; grid-row: 1 / 3; }  /* spans rows 1–2 */
+  .task-input-row { display: flex; gap: 8px; margin-bottom: 12px; }
+  .task-input { flex: 1; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; font-family: var(--font-sans); font-size: 13px; background: var(--surface2); color: var(--text); outline: none; transition: border 0.15s, background 0.15s; }
+  .task-input:focus { border-color: var(--accent2); background: white; }
+  .task-input::placeholder { color: var(--text3); }
+  .time-input { width: 70px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px; font-family: var(--font-mono); font-size: 12px; background: var(--surface2); color: var(--text); outline: none; text-align: center; transition: border 0.15s; }
+  .time-input:focus { border-color: var(--accent2); background: white; }
+  .add-btn { background: var(--accent); color: white; border: none; border-radius: var(--radius-sm); width: 32px; height: 32px; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.15s, transform 0.1s; }
+  .add-btn:hover { background: var(--accent2); }
+  .add-btn:active { transform: scale(0.95); }
+  .task-list { display: flex; flex-direction: column; gap: 6px; max-height: 440px; overflow-y: auto; }
+  .task-list::-webkit-scrollbar { width: 4px; }
+  .task-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .task-item { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--surface2); border-radius: var(--radius-sm); border: 1px solid transparent; transition: border 0.15s, opacity 0.15s; }
+  .task-item:hover { border-color: var(--border); }
+  .task-item.done { opacity: 0.45; }
+  .task-item.done .task-name { text-decoration: line-through; }
+  .task-item.ticking { border-color: var(--accent2); background: var(--accent-soft); }
+  .task-check { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: border 0.15s, background 0.15s; cursor: pointer; }
+  .task-item:hover .task-check { border-color: var(--accent2); }
+  .task-item.done .task-check { background: var(--accent); border-color: var(--accent); }
+  .task-item.done .task-check::after { content: '✓'; color: white; font-size: 10px; font-weight: 700; }
+  .task-info { flex: 1; min-width: 0; cursor: pointer; }
+  .task-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* Individual task timer row */
+  .task-timer-row { display: flex; align-items: center; gap: 7px; margin-top: 4px; }
+  .task-mini-track { width: 52px; height: 3px; background: var(--border); border-radius: 100px; overflow: hidden; flex-shrink: 0; }
+  .task-mini-fill { height: 100%; background: var(--accent2); border-radius: 100px; transition: width 1s linear; }
+  .task-mini-fill.warn { background: var(--orange); }
+  .task-timer-val { font-family: var(--font-mono); font-size: 10px; color: var(--accent); white-space: nowrap; }
+  .task-timer-val.paused { color: var(--text3); }
+  .task-timer-val.warn { color: var(--orange); }
+  .task-time-badge { font-family: var(--font-mono); font-size: 10px; color: var(--text2); margin-top: 2px; }
+
+  .task-actions { display: flex; gap: 4px; flex-shrink: 0; }
+  .task-action-btn { background: none; border: none; cursor: pointer; width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--text3); transition: background 0.12s, color 0.12s; }
+  .task-action-btn:hover { background: var(--border); color: var(--text); }
+  .task-action-btn.play-btn { color: var(--accent); }
+  .task-action-btn.pause-btn { color: var(--accent); }
+  .task-action-btn.reset-btn { font-size: 14px; }
+
+  /* CALENDAR+SCHEDULE UNIFIED */
+  .calendar-card { grid-column: 1 / 3; grid-row: 1; }
+  .cal-body { display: flex; gap: 20px; align-items: flex-start; }
+  .cal-left { flex: 1; min-width: 0; }
+  .cal-right {
+    width: 220px; flex-shrink: 0;
+    border-left: 1px solid var(--border);
+    padding-left: 20px;
+    min-height: 240px;
+    display: flex; flex-direction: column;
+  }
+  .day-panel-date {
+    font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 12px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .day-panel-date span { font-size: 11px; font-weight: 400; color: var(--text3); }
+
+  /* Add event form */
+  .ev-add-form { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+  .ev-input {
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 7px 10px; font-family: var(--font-sans); font-size: 12px;
+    background: var(--surface2); color: var(--text); outline: none;
+    transition: border 0.15s, background 0.15s; width: 100%;
+  }
+  .ev-input:focus { border-color: var(--accent2); background: white; }
+  .ev-input::placeholder { color: var(--text3); }
+  .ev-row { display: flex; gap: 6px; }
+  .ev-mins {
+    width: 68px; flex-shrink: 0;
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 7px 8px; font-family: var(--font-mono); font-size: 12px;
+    background: var(--surface2); color: var(--text); outline: none;
+    text-align: center; transition: border 0.15s;
+  }
+  .ev-mins:focus { border-color: var(--accent2); background: white; }
+  .ev-add-btn {
+    flex: 1; background: var(--accent); color: white; border: none;
+    border-radius: var(--radius-sm); padding: 7px 10px; font-family: var(--font-sans);
+    font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s;
+  }
+  .ev-add-btn:hover { background: var(--accent2); }
+
+  /* Task quick-add pills */
+  .ev-task-pills { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .ev-pill {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 100px; padding: 3px 9px; font-size: 11px;
+    color: var(--text2); cursor: pointer; transition: background 0.12s, border 0.12s, color 0.12s;
+    white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  }
+  .ev-pill:hover { background: var(--accent-soft); border-color: var(--accent2); color: var(--accent); }
+  .ev-pill-label { font-size: 10px; color: var(--text3); margin-bottom: 4px; letter-spacing: 0.4px; }
+
+  /* Schedule list */
+  .schedule-list { display: flex; flex-direction: column; gap: 5px; flex: 1; overflow-y: auto; max-height: 200px; }
+  .schedule-list::-webkit-scrollbar { width: 3px; }
+  .schedule-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+  .schedule-empty { text-align: center; padding: 16px 0; color: var(--text3); font-size: 12px; line-height: 1.5; }
+  .schedule-item {
+    display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+    border-radius: var(--radius-sm); background: var(--surface2); border-left: 3px solid var(--accent2);
+  }
+  .schedule-item .ev-name { font-size: 12px; font-weight: 500; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .schedule-item .ev-dur { font-family: var(--font-mono); font-size: 10px; background: var(--accent-soft); padding: 2px 6px; border-radius: 100px; color: var(--accent); flex-shrink: 0; }
+  .schedule-item .del-btn { background: none; border: none; cursor: pointer; color: transparent; font-size: 13px; transition: color 0.12s; flex-shrink: 0; }
+  .schedule-item:hover .del-btn { color: var(--text3); }
+  .schedule-item:hover .del-btn:hover { color: var(--red); }
+
+  @media (max-width: 760px) {
+    .cal-body { flex-direction: column; }
+    .cal-right { width: 100%; border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 16px; margin-top: 4px; min-height: unset; }
+  }
+
+  /* FOCUS TIMER (standalone) */
+  .timer-card { grid-column: 3 / 4; grid-row: 3; }
+  .timer-display { text-align: center; padding: 10px 0 14px; }
+  .focus-label { font-size: 12px; color: var(--text2); margin-bottom: 8px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .timer-time { font-family: var(--font-mono); font-size: 48px; font-weight: 300; letter-spacing: -2px; line-height: 1; color: var(--text); transition: color 0.3s; }
+  .timer-time.warning { color: var(--orange); }
+  .timer-time.done { color: var(--accent); }
+  .timer-progress { width: 100%; height: 4px; background: var(--surface2); border-radius: 100px; margin: 12px 0; overflow: hidden; }
+  .timer-progress-bar { height: 100%; background: var(--accent2); border-radius: 100px; transition: width 0.5s linear, background 0.3s; }
+  .timer-progress-bar.warning { background: var(--orange); }
+  .timer-controls { display: flex; gap: 8px; justify-content: center; }
+  .timer-btn { border: none; border-radius: var(--radius-sm); padding: 8px 20px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; cursor: pointer; transition: background 0.15s, transform 0.1s; }
+  .timer-btn:active { transform: scale(0.97); }
+  .timer-btn.primary { background: var(--accent); color: white; }
+  .timer-btn.primary:hover { background: var(--accent2); }
+  .timer-btn.secondary { background: var(--surface2); color: var(--text2); }
+  .timer-btn.secondary:hover { background: var(--border); }
+  .timer-presets { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; }
+  .preset-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 100px; padding: 4px 12px; font-size: 11px; font-family: var(--font-mono); cursor: pointer; color: var(--text2); transition: background 0.12s, border 0.12s, color 0.12s; }
+  .preset-btn:hover { background: var(--accent-soft); border-color: var(--accent2); color: var(--accent); }
+  /* Running tasks summary in focus timer card */
+  .running-summary { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; display: flex; flex-direction: column; gap: 5px; }
+  .running-summary-title { font-size: 10px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--text3); margin-bottom: 2px; }
+  .running-task-row { display: flex; align-items: center; gap: 8px; }
+  .running-task-name { font-size: 11px; color: var(--text2); flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .running-task-time { font-family: var(--font-mono); font-size: 11px; color: var(--accent); flex-shrink: 0; }
+  .running-task-time.warn { color: var(--orange); }
+
+  /* NOTES */
+  .notes-card { grid-column: 1 / 2; grid-row: 2; }
+  .notes-area { width: 100%; min-height: 120px; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; font-family: var(--font-sans); font-size: 13px; background: var(--surface2); color: var(--text); resize: vertical; outline: none; line-height: 1.6; transition: border 0.15s, background 0.15s; }
+  .notes-area:focus { border-color: var(--accent2); background: white; }
+  .notes-area::placeholder { color: var(--text3); }
+  .notes-saved { font-size: 11px; color: var(--text3); margin-top: 6px; text-align: right; }
+
+  /* LINKS */
+  .links-card { grid-column: 2 / 3; grid-row: 2; }
+  .link-list { display: flex; flex-direction: column; gap: 6px; }
+  .link-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; background: var(--surface2); border-radius: var(--radius-sm); text-decoration: none; color: var(--text); font-size: 13px; font-weight: 500; transition: background 0.12s; border: 1px solid transparent; }
+  .link-item:hover { background: var(--accent-soft); border-color: var(--accent2); color: var(--accent); }
+  .link-emoji { font-size: 16px; width: 20px; text-align: center; }
+  .link-name { flex: 1; }
+  .link-del { background: none; border: none; cursor: pointer; color: transparent; font-size: 13px; transition: color 0.12s; }
+  .link-item:hover .link-del { color: var(--text3); }
+  .link-item:hover .link-del:hover { color: var(--red); }
+  .link-add-row { display: flex; gap: 6px; margin-top: 8px; }
+  .link-add-row input { flex: 1; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 7px 10px; font-family: var(--font-sans); font-size: 12px; background: var(--surface2); color: var(--text); outline: none; transition: border 0.15s; }
+  .link-add-row input:focus { border-color: var(--accent2); background: white; }
+  .link-add-row input::placeholder { color: var(--text3); }
+  .link-add-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 7px 10px; font-size: 12px; cursor: pointer; color: var(--text2); font-family: var(--font-sans); transition: background 0.12s; white-space: nowrap; }
+  .link-add-btn:hover { background: var(--accent-soft); color: var(--accent); }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--text); color: white; padding: 10px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease; z-index: 300; pointer-events: none; }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr 1fr; }
+    .calendar-card { grid-column: 1 / 3; grid-row: auto; }
+    .tasks-card    { grid-column: 1 / 3; grid-row: auto; }
+    .notes-card    { grid-column: 1 / 2; grid-row: auto; }
+    .links-card    { grid-column: 2 / 3; grid-row: auto; }
+    .timer-card    { grid-column: 1 / 2; grid-row: auto; }
+    .pomo-card     { grid-column: 2 / 3; grid-row: auto; }
+  }
+  @media (max-width: 600px) {
+    body { padding: 14px; }
+    .grid { grid-template-columns: 1fr; }
+    .calendar-card,.tasks-card,.timer-card,.pomo-card,.notes-card,.links-card { grid-column: 1; grid-row: auto; }
+    .clock { font-size: 20px; }
+    .sync-bar span.sync-label-text { display: none; }
+  }
+
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  @keyframes bell { 0%,100%{transform:rotate(0)} 20%{transform:rotate(15deg)} 40%{transform:rotate(-15deg)} 60%{transform:rotate(10deg)} 80%{transform:rotate(-10deg)} }
+  .ring { animation: bell 0.5s ease 3; }
+  .pulsing { animation: pulse 1.5s ease infinite; }
+
+  /* POMODORO */
+  .pomo-sessions { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+  .pomo-dot { width: 13px; height: 13px; border-radius: 50%; background: var(--border); border: 2px solid var(--border); transition: background 0.3s, border-color 0.3s; }
+  .pomo-dot.done { background: var(--red); border-color: var(--red); }
+  .pomo-dot.active { background: transparent; border-color: var(--red); animation: pulse 1.5s ease infinite; }
+  .pomo-modes { display: flex; gap: 6px; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
+  .pomo-mode-btn { background: var(--surface2); border: 1px solid var(--border); border-radius: 100px; padding: 4px 11px; font-size: 11px; cursor: pointer; color: var(--text2); transition: background 0.12s, border-color 0.12s, color 0.12s; white-space: nowrap; }
+  .pomo-mode-btn:hover { background: var(--accent-soft); border-color: var(--accent2); color: var(--accent); }
+  .pomo-mode-btn.active { background: #ffe5e5; border-color: var(--red); color: var(--red); }
+  .pomo-card { grid-column: 1 / 3; grid-row: 3; }
+  .pomo-task-label { font-size:10px; font-weight:600; letter-spacing:0.6px; text-transform:uppercase; color:var(--text3); margin-bottom:5px; margin-top:12px; }
+  .pomo-task-select { width:100%; border:1px solid var(--border); border-radius:var(--radius-sm); padding:7px 10px; font-family:var(--font-sans); font-size:12px; background:var(--surface2); color:var(--text); outline:none; cursor:pointer; transition:border 0.15s; }
+  .pomo-task-select:focus { border-color:var(--accent2); background:white; }
+  .task-item.pomo-active { border-color: var(--red) !important; background: #fff5f5 !important; }
+  .pomo-badge { font-size:11px; margin-left:4px; }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SETUP SCREEN ══════════ -->
+<div id="setupScreen">
+  <div class="setup-box">
+    <div class="setup-logo">☁️</div>
+    <h2>Set up Google Drive Sync</h2>
+    <p>Connect once, sync automatically between your devices. Your data lives in a private file in your own Google Drive.</p>
+
+    <div class="setup-steps">
+      <div class="setup-step">
+        <div class="step-num">1</div>
+        <div>Go to <strong>console.cloud.google.com</strong> → create a new project (e.g. "My Command Centre")</div>
+      </div>
+      <div class="setup-step">
+        <div class="step-num">2</div>
+        <div>Go to <strong>APIs &amp; Services → Library</strong>, search <strong>Google Drive API</strong> and click Enable</div>
+      </div>
+      <div class="setup-step">
+        <div class="step-num">3</div>
+        <div>Go to <strong>APIs &amp; Services → OAuth consent screen</strong> → External → fill in app name → save</div>
+      </div>
+      <div class="setup-step">
+        <div class="step-num">4</div>
+        <div>Go to <strong>Credentials → Create Credentials → OAuth 2.0 Client ID</strong> → Application type: <strong>Web application</strong></div>
+      </div>
+      <div class="setup-step">
+        <div class="step-num">5</div>
+        <div>Under <strong>Authorised JavaScript origins</strong>, add <code>null</code>. Copy your <strong>Client ID</strong> and paste below.</div>
+      </div>
+    </div>
+
+    <label class="setup-label">Your OAuth Client ID</label>
+    <input class="setup-input" id="clientIdInput" placeholder="123456789-xxxx.apps.googleusercontent.com">
+    <div class="setup-hint">Find it at console.cloud.google.com/apis/credentials</div>
+
+    <button class="setup-btn" onclick="saveClientId()">Save &amp; Connect Google Drive →</button>
+    <div class="setup-skip"><a onclick="skipSync()">Skip — use local storage only (no sync)</a></div>
+  </div>
+</div>
+
+<!-- ══════════ MAIN APP ══════════ -->
+<div id="app" style="display:none">
+
+  <div class="header">
+    <div class="header-left">
+      <h1 id="greeting">Good morning ✦</h1>
+      <div class="date-line" id="dateLabel"></div>
+    </div>
+    <div class="header-right">
+      <div class="sync-bar" onclick="manualSync()" title="Click to sync now">
+        <div class="sync-dot offline" id="syncDot"></div>
+        <span class="sync-label-text" id="syncLabel">Connecting…</span>
+        <span class="sync-disconnect" onclick="event.stopPropagation();disconnectDrive()" title="Disconnect Drive">✕</span>
+      </div>
+      <div class="clock" id="clock"></div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <div class="card calendar-card">
+      <div class="card-title"><span>📅 Calendar &amp; Schedule</span></div>
+      <div class="cal-body">
+        <div class="cal-left">
+          <div class="cal-header">
+            <div class="cal-month" id="calMonth"></div>
+            <div class="cal-nav">
+              <button class="cal-btn" onclick="changeMonth(-1)">‹</button>
+              <button class="cal-btn" onclick="changeMonth(1)">›</button>
+            </div>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <div class="cal-right">
+          <div class="day-panel-date">
+            <span id="dayPanelDate">Today</span>
+            <span id="dayPanelCount"></span>
+          </div>
+          <div class="ev-add-form">
+            <input class="ev-input" id="evNameInput" placeholder="Add an event or note…" onkeydown="if(event.key==='Enter')addCalEvent()">
+            <div class="ev-row">
+              <input class="ev-mins" id="evMinsInput" type="number" min="1" max="480" placeholder="min">
+              <button class="ev-add-btn" onclick="addCalEvent()">+ Add</button>
+            </div>
+          </div>
+          <div id="evPillsSection">
+            <div class="ev-pill-label">FROM TASKS</div>
+            <div class="ev-task-pills" id="evTaskPills"></div>
+          </div>
+          <div class="schedule-list" id="scheduleList"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card tasks-card">
+      <div class="card-title"><span>✓ Tasks</span><span id="taskCount" style="font-size:11px;color:var(--text3)"></span></div>
+      <div class="task-input-row">
+        <input class="task-input" id="taskNameInput" placeholder="Task name…" onkeydown="if(event.key==='Enter')addTask()">
+        <input class="time-input" id="taskTimeInput" placeholder="min" type="number" min="1" max="480">
+        <button class="add-btn" onclick="addTask()">+</button>
+      </div>
+      <div class="task-list" id="taskList"></div>
+    </div>
+
+    <!-- Focus Timer (standalone — runs independently of task timers) -->
+    <div class="card timer-card">
+      <div class="card-title"><span id="timerIcon">⏱ Focus Timer</span></div>
+      <div class="timer-display">
+        <div class="focus-label" id="focusLabel">Set a duration below</div>
+        <div class="timer-time" id="timerDisplay">00:00</div>
+        <div class="timer-progress"><div class="timer-progress-bar" id="timerBar" style="width:100%"></div></div>
+      </div>
+      <div class="timer-controls">
+        <button class="timer-btn primary" id="timerStartBtn" onclick="toggleFocusTimer()">Start</button>
+        <button class="timer-btn secondary" onclick="resetFocusTimer()">Reset</button>
+      </div>
+      <div class="timer-presets">
+        <span style="font-size:11px;color:var(--text3);align-self:center">Quick:</span>
+        <button class="preset-btn" onclick="setPreset(5)">5m</button>
+        <button class="preset-btn" onclick="setPreset(10)">10m</button>
+        <button class="preset-btn" onclick="setPreset(25)">25m</button>
+        <button class="preset-btn" onclick="setPreset(45)">45m</button>
+      </div>
+      <!-- Live list of running task timers -->
+      <div id="runningTasksSummary" class="running-summary" style="display:none"></div>
+    </div>
+
+    <!-- Pomodoro Timer -->
+    <div class="card pomo-card">
+      <div class="card-title">
+        <span>🍅 Pomodoro</span>
+        <span id="pomoCount" style="font-size:11px;color:var(--text3)"></span>
+      </div>
+      <div class="pomo-sessions" id="pomoSessions"></div>
+      <div class="timer-display">
+        <div class="focus-label" id="pomoModeLabel">Work session</div>
+        <div class="timer-time" id="pomoDisplay">25:00</div>
+        <div class="timer-progress"><div class="timer-progress-bar" id="pomoBar" style="width:100%"></div></div>
+      </div>
+      <div class="timer-controls">
+        <button class="timer-btn primary" id="pomoStartBtn" onclick="togglePomo()">Start</button>
+        <button class="timer-btn secondary" onclick="resetPomo()">Reset</button>
+      </div>
+      <div class="pomo-modes">
+        <button class="pomo-mode-btn active" id="pomoModeWork" onclick="setPomoMode('work')">Work 25m</button>
+        <button class="pomo-mode-btn" id="pomoModeShort" onclick="setPomoMode('short')">Short break 5m</button>
+        <button class="pomo-mode-btn" id="pomoModeLong" onclick="setPomoMode('long')">Long break 15m</button>
+      </div>
+      <div class="pomo-task-label">Focus on task</div>
+      <select id="pomoTaskSelect" class="pomo-task-select" onchange="onPomoTaskChange()">
+        <option value="">— No specific task —</option>
+      </select>
+    </div>
+
+    <div class="card notes-card">
+      <div class="card-title"><span>📝 Notes</span></div>
+      <textarea class="notes-area" id="notesArea" placeholder="Jot anything down…"></textarea>
+      <div class="notes-saved" id="notesSaved"></div>
+    </div>
+
+    <div class="card links-card">
+      <div class="card-title"><span>🔗 Quick Links</span></div>
+      <div class="link-list" id="linkList"></div>
+      <div class="link-add-row">
+        <input id="linkEmoji" placeholder="📌" style="width:42px;text-align:center;flex:none">
+        <input id="linkName" placeholder="Label…">
+        <input id="linkUrl" placeholder="https://…">
+        <button class="link-add-btn" onclick="addLink()">+ Add</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="https://accounts.google.com/gsi/client" async></script>
+<script>
+// ════════════════════════════════════════════
+//  CONSTANTS
+// ════════════════════════════════════════════
+const LS_KEY      = 'cmdcentre_v3';
+const LS_CLIENT   = 'cmdcentre_clientid';
+const DRIVE_FILE  = 'cmdcentre_sync.json';
+const DRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
+const SYNC_DEBOUNCE = 3000;
+const SYNC_POLL     = 30000;
+
+// ════════════════════════════════════════════
+//  STATE
+// ════════════════════════════════════════════
+let state = {
+  tasks: [],
+  notes: '',
+  links: [
+    { id:1, emoji:'🏫', name:'Google Classroom', url:'https://classroom.google.com' },
+    { id:2, emoji:'📧', name:'Gmail',            url:'https://mail.google.com' },
+  ],
+  calEvents: {},
+  nextId: 10,
+};
+
+let gToken       = null;
+let driveFileId  = null;
+let syncMode     = 'local';
+let lastSyncJSON = '';
+let syncTimer    = null;
+let pollTimer    = null;
+let selectedDate = '';
+let calYear, calMonth;
+
+// ════════════════════════════════════════════
+//  PER-TASK TIMERS
+//  taskTimers[id] = { secs, total, running, intervalId }
+// ════════════════════════════════════════════
+const taskTimers = {};
+
+function toggleTaskTimer(id) {
+  const task = state.tasks.find(t => t.id === id);
+  if (!task || !task.minutes) return;
+
+  if (!taskTimers[id]) {
+    // First start — initialise
+    taskTimers[id] = { secs: task.minutes * 60, total: task.minutes * 60, running: false, intervalId: null };
+  }
+
+  const timer = taskTimers[id];
+  if (timer.running) {
+    // Pause
+    clearInterval(timer.intervalId);
+    timer.running = false;
+  } else {
+    if (timer.secs <= 0) return; // already expired
+    // Start / resume
+    timer.running = true;
+    timer.intervalId = setInterval(() => {
+      timer.secs--;
+      if (timer.secs <= 0) taskTimerDone(id);
+      else renderTimerUI();
+    }, 1000);
+  }
+  renderTimerUI();
+}
+
+function resetTaskTimer(id) {
+  const task = state.tasks.find(t => t.id === id);
+  const timer = taskTimers[id];
+  if (!task || !timer) return;
+  clearInterval(timer.intervalId);
+  timer.secs    = task.minutes * 60;
+  timer.total   = task.minutes * 60;
+  timer.running = false;
+  renderTimerUI();
+}
+
+function taskTimerDone(id) {
+  const timer = taskTimers[id];
+  const task  = state.tasks.find(t => t.id === id);
+  if (!timer) return;
+  clearInterval(timer.intervalId);
+  timer.running = false;
+  timer.secs    = 0;
+  if (task) {
+    showToast(`⏰ "${task.name}" done! Great work.`);
+    task.done = true;
+    save();
+  }
+  delete taskTimers[id];
+  renderTimerUI();
+}
+
+function clearTaskTimer(id) {
+  const timer = taskTimers[id];
+  if (timer) { clearInterval(timer.intervalId); delete taskTimers[id]; }
+}
+
+// Re-render task list + the running-tasks summary panel
+function renderTimerUI() {
+  renderTasks();
+  renderRunningTasksSummary();
+}
+
+// Running task summary inside the Focus Timer card
+function renderRunningTasksSummary() {
+  const running = Object.entries(taskTimers).filter(([,t]) => t.running || t.secs < t.total);
+  const box = document.getElementById('runningTasksSummary');
+  if (!running.length) { box.style.display = 'none'; return; }
+  box.style.display = '';
+  const rows = running.map(([id, timer]) => {
+    const task = state.tasks.find(t => t.id === +id);
+    const name = task ? h(task.name) : 'Task';
+    const warn = timer.secs <= 60 && timer.secs > 0;
+    const icon = timer.running ? '<span class="pulsing">●</span> ' : '⏸ ';
+    return `<div class="running-task-row">
+      <span class="running-task-name">${name}</span>
+      <span class="running-task-time ${warn ? 'warn' : ''}">${icon}${fmt(timer.secs)}</span>
+    </div>`;
+  }).join('');
+  box.innerHTML = `<div class="running-summary-title">Running task timers</div>${rows}`;
+}
+
+// ════════════════════════════════════════════
+//  STANDALONE FOCUS TIMER (timer card)
+// ════════════════════════════════════════════
+let focusSecs = 0, focusTotal = 0, focusRunning = false, focusIntervalId = null;
+
+function setPreset(m) {
+  if (focusRunning) return;
+  focusSecs = m * 60; focusTotal = m * 60;
+  document.getElementById('focusLabel').textContent = `${m} minute focus`;
+  updFocusTimer();
+}
+
+function toggleFocusTimer() {
+  if (focusSecs <= 0 && !focusRunning) return;
+  if (focusRunning) {
+    focusRunning = false;
+    clearInterval(focusIntervalId);
+    document.getElementById('timerStartBtn').textContent = 'Resume';
+  } else {
+    if (focusSecs <= 0) return;
+    focusRunning = true;
+    document.getElementById('timerStartBtn').textContent = 'Pause';
+    focusIntervalId = setInterval(() => {
+      focusSecs--;
+      updFocusTimer();
+      if (focusSecs <= 0) focusTimerDone();
+    }, 1000);
+  }
+  updFocusTimer();
+}
+
+function resetFocusTimer() {
+  focusRunning = false;
+  clearInterval(focusIntervalId);
+  focusSecs = focusTotal;
+  document.getElementById('timerStartBtn').textContent = 'Start';
+  document.getElementById('timerDisplay').className = 'timer-time';
+  document.getElementById('timerBar').className = 'timer-progress-bar';
+  document.getElementById('focusLabel').textContent = focusTotal > 0
+    ? `${Math.round(focusTotal / 60)} minute focus`
+    : 'Set a duration below';
+  updFocusTimer();
+}
+
+function focusTimerDone() {
+  focusRunning = false;
+  clearInterval(focusIntervalId);
+  document.getElementById('timerStartBtn').textContent = 'Start';
+  document.getElementById('timerDisplay').classList.add('done');
+  const ic = document.getElementById('timerIcon');
+  ic.classList.add('ring'); setTimeout(() => ic.classList.remove('ring'), 2000);
+  showToast("⏰ Focus session complete!");
+}
+
+function updFocusTimer() {
+  const d = document.getElementById('timerDisplay');
+  const b = document.getElementById('timerBar');
+  d.textContent = fmt(focusSecs);
+  b.style.width = (focusTotal > 0 ? (focusSecs / focusTotal) * 100 : 100) + '%';
+  if (focusSecs <= 60 && focusSecs > 0) {
+    d.classList.add('warning'); b.classList.add('warning');
+  } else {
+    d.classList.remove('warning'); b.classList.remove('warning');
+  }
+}
+
+// ════════════════════════════════════════════
+//  LOCAL STORAGE
+// ════════════════════════════════════════════
+function lsSave() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){} }
+function lsLoad() {
+  try { const d = localStorage.getItem(LS_KEY); if (d) state = {...state, ...JSON.parse(d)}; } catch(e){}
+}
+
+// ════════════════════════════════════════════
+//  SETUP
+// ════════════════════════════════════════════
+function saveClientId() {
+  const id = document.getElementById('clientIdInput').value.trim();
+  if (!id || !id.includes('.apps.googleusercontent.com')) {
+    showToast('Please paste a valid Client ID'); return;
+  }
+  localStorage.setItem(LS_CLIENT, id);
+  showApp(); initGoogleAuth(id);
+}
+
+function skipSync() {
+  localStorage.setItem(LS_CLIENT, 'skip');
+  showApp(); syncMode = 'local'; setSyncUI('offline', 'Local only');
+}
+
+function disconnectDrive() {
+  if (!confirm("Disconnect Google Drive? Your local data stays.")) return;
+  localStorage.removeItem(LS_CLIENT);
+  gToken = null; driveFileId = null; syncMode = 'local';
+  clearTimeout(syncTimer); clearTimeout(pollTimer);
+  setSyncUI('offline', 'Disconnected'); showToast('Disconnected from Drive');
+}
+
+function showApp() {
+  document.getElementById('setupScreen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  lsLoad(); initApp();
+}
+
+// ════════════════════════════════════════════
+//  GOOGLE AUTH
+// ════════════════════════════════════════════
+function initGoogleAuth(clientId) {
+  setSyncUI('syncing', 'Connecting…');
+  const wait = setInterval(() => {
+    if (!window.google?.accounts) return;
+    clearInterval(wait);
+    const client = google.accounts.oauth2.initTokenClient({
+      client_id: clientId, scope: DRIVE_SCOPE, callback: onToken,
+    });
+    window._gClient = client;
+    client.requestAccessToken({ prompt: '' });
+  }, 200);
+}
+
+function onToken(resp) {
+  if (resp.error) {
+    if (resp.error === 'interaction_required' || resp.error === 'access_denied') {
+      window._gClient?.requestAccessToken({ prompt: 'consent' });
+    } else {
+      setSyncUI('error', 'Auth failed'); showToast('Drive auth failed: ' + resp.error);
+    }
+    return;
+  }
+  gToken = resp.access_token; syncMode = 'drive'; driveSync();
+}
+
+// ════════════════════════════════════════════
+//  DRIVE SYNC
+// ════════════════════════════════════════════
+async function driveSync() {
+  if (syncMode !== 'drive' || !gToken) return;
+  setSyncUI('syncing', 'Syncing…');
+  clearTimeout(syncTimer); clearTimeout(pollTimer);
+  try {
+    if (!driveFileId) driveFileId = await findOrCreateFile();
+    const remote = await downloadFile(driveFileId);
+    if (remote) { state = mergeStates(state, remote); lsSave(); refreshAll(); }
+    const json = JSON.stringify(state);
+    if (json !== lastSyncJSON) { await uploadFile(driveFileId, json); lastSyncJSON = json; }
+    const now = new Date();
+    setSyncUI('synced', `Synced ${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`);
+    pollTimer = setTimeout(driveSync, SYNC_POLL);
+  } catch(e) {
+    console.error('Sync error', e);
+    if (e.status === 401) { gToken = null; window._gClient?.requestAccessToken({ prompt: '' }); }
+    else { setSyncUI('error', 'Sync failed — click to retry'); pollTimer = setTimeout(driveSync, SYNC_POLL * 2); }
+  }
+}
+
+function mergeStates(local, remote) {
+  const tmap = {};
+  [...(local.tasks||[]), ...(remote.tasks||[])].forEach(t => {
+    tmap[t.id] = tmap[t.id] ? {...t, done: t.done || tmap[t.id].done} : t;
+  });
+  const lmap = {};
+  [...(local.links||[]), ...(remote.links||[])].forEach(l => { lmap[l.id] = l; });
+  const cal = {...(remote.calEvents||{}), ...(local.calEvents||{})};
+  const notes = (local.notes||'').length >= (remote.notes||'').length ? local.notes : remote.notes;
+  return { tasks: Object.values(tmap), links: Object.values(lmap), notes, calEvents: cal,
+           nextId: Math.max(local.nextId||10, remote.nextId||10) };
+}
+
+async function findOrCreateFile() {
+  const r = await gapi(`https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name='${DRIVE_FILE}'&fields=files(id)`);
+  if (r.files?.length) return r.files[0].id;
+  const f = await gapi('https://www.googleapis.com/drive/v3/files?fields=id', {
+    method:'POST', body: JSON.stringify({name: DRIVE_FILE, parents:['appDataFolder']}),
+    headers:{'Content-Type':'application/json'}
+  });
+  return f.id;
+}
+
+async function downloadFile(id) {
+  const r = await fetch(`https://www.googleapis.com/drive/v3/files/${id}?alt=media`,
+    { headers:{Authorization:`Bearer ${gToken}`} });
+  if (!r.ok) return null;
+  const t = await r.text();
+  try { return t ? JSON.parse(t) : null; } catch { return null; }
+}
+
+async function uploadFile(id, content) {
+  const r = await fetch(`https://www.googleapis.com/upload/drive/v3/files/${id}?uploadType=media`, {
+    method:'PATCH', headers:{Authorization:`Bearer ${gToken}`, 'Content-Type':'application/json'}, body:content
+  });
+  if (!r.ok) { const e = new Error('Upload failed'); e.status = r.status; throw e; }
+}
+
+async function gapi(url, opts={}) {
+  const r = await fetch(url, {...opts, headers:{Authorization:`Bearer ${gToken}`, ...(opts.headers||{})}});
+  if (!r.ok) { const e = new Error('API error'); e.status = r.status; throw e; }
+  return r.json();
+}
+
+function manualSync() {
+  if (syncMode !== 'drive') { showToast('Not connected to Drive'); return; }
+  driveSync();
+}
+
+function save() {
+  lsSave();
+  if (syncMode === 'drive' && gToken) {
+    clearTimeout(syncTimer); clearTimeout(pollTimer);
+    setSyncUI('syncing', 'Saving…');
+    syncTimer = setTimeout(driveSync, SYNC_DEBOUNCE);
+  }
+}
+
+// ════════════════════════════════════════════
+//  SYNC UI
+// ════════════════════════════════════════════
+function setSyncUI(status, label) {
+  document.getElementById('syncDot').className = 'sync-dot ' + status;
+  document.getElementById('syncLabel').textContent = label;
+}
+
+// ════════════════════════════════════════════
+//  CLOCK
+// ════════════════════════════════════════════
+function tickClock() {
+  const n = new Date();
+  document.getElementById('clock').textContent =
+    `${String(n.getHours()).padStart(2,'0')}:${String(n.getMinutes()).padStart(2,'0')}:${String(n.getSeconds()).padStart(2,'0')}`;
+  const hr = n.getHours();
+  document.getElementById('greeting').textContent =
+    (hr < 12 ? 'Good morning' : hr < 17 ? 'Good afternoon' : 'Good evening') + ' ✦';
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const mons = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('dateLabel').textContent =
+    `${days[n.getDay()]}, ${mons[n.getMonth()]} ${n.getDate()}, ${n.getFullYear()}`;
+}
+
+// ════════════════════════════════════════════
+//  CALENDAR
+// ════════════════════════════════════════════
+function dateKey(d) {
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+function initCal() { const n=new Date(); calYear=n.getFullYear(); calMonth=n.getMonth(); selectedDate=dateKey(n); renderCal(); renderDayPanel(); }
+function changeMonth(d) { calMonth+=d; if(calMonth>11){calMonth=0;calYear++;}if(calMonth<0){calMonth=11;calYear--;} renderCal(); }
+function renderCal() {
+  const mns=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('calMonth').textContent=`${mns[calMonth]} ${calYear}`;
+  const g=document.getElementById('calGrid'); g.innerHTML='';
+  ['Su','Mo','Tu','We','Th','Fr','Sa'].forEach(d=>{const e=document.createElement('div');e.className='cal-day-name';e.textContent=d;g.appendChild(e);});
+  const first=new Date(calYear,calMonth,1).getDay(), dim=new Date(calYear,calMonth+1,0).getDate(),
+        dip=new Date(calYear,calMonth,0).getDate(), today=dateKey(new Date());
+  for(let i=0;i<first;i++){const e=document.createElement('div');e.className='cal-day other-month';e.textContent=dip-first+1+i;g.appendChild(e);}
+  for(let d=1;d<=dim;d++){
+    const ds=`${calYear}-${String(calMonth+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const e=document.createElement('div');e.className='cal-day';
+    if(ds===today)e.classList.add('today');
+    if(ds===selectedDate)e.classList.add('selected');
+    e.innerHTML=`<span>${d}</span>`;
+    if(state.calEvents[ds]?.length){const dot=document.createElement('div');dot.className='cal-dot';e.appendChild(dot);}
+    e.onclick=()=>{selectedDate=ds;renderCal();renderDayPanel();};
+    g.appendChild(e);
+  }
+  for(let i=1;i<=42-first-dim;i++){const e=document.createElement('div');e.className='cal-day other-month';e.textContent=i;g.appendChild(e);}
+}
+
+// ════════════════════════════════════════════
+//  DAY PANEL
+// ════════════════════════════════════════════
+function renderDayPanel() {
+  const evs=state.calEvents[selectedDate]||[];
+  const pts=selectedDate.split('-'), d=new Date(+pts[0],+pts[1]-1,+pts[2]);
+  const days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], mons=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const isToday=selectedDate===dateKey(new Date());
+  document.getElementById('dayPanelDate').textContent=isToday?`Today — ${mons[d.getMonth()]} ${d.getDate()}`:`${days[d.getDay()]}, ${mons[d.getMonth()]} ${d.getDate()}`;
+  document.getElementById('dayPanelCount').textContent=evs.length?`${evs.length} event${evs.length>1?'s':''}` : '';
+  const alreadyIds=new Set(evs.filter(e=>e.taskId).map(e=>e.taskId));
+  const pills=document.getElementById('evTaskPills'), pillSection=document.getElementById('evPillsSection');
+  const pending=state.tasks.filter(t=>!t.done&&!alreadyIds.has(t.id));
+  if(pending.length){
+    pillSection.style.display=''; pills.innerHTML='';
+    pending.forEach(task=>{
+      const p=document.createElement('div'); p.className='ev-pill'; p.title=task.name;
+      p.textContent=task.name.length>18?task.name.slice(0,17)+'…':task.name;
+      p.onclick=()=>addToSchedule(task); pills.appendChild(p);
+    });
+  } else { pillSection.style.display='none'; }
+  const list=document.getElementById('scheduleList'); list.innerHTML='';
+  if(!evs.length){list.innerHTML='<div class="schedule-empty">No events yet.<br>Type above or pick a task.</div>'; return;}
+  evs.forEach((ev,i)=>{
+    const el=document.createElement('div'); el.className='schedule-item';
+    el.innerHTML=`<span class="ev-name">${h(ev.taskName)}</span>${ev.minutes?`<span class="ev-dur">${ev.minutes}m</span>`:''}<button class="del-btn" onclick="removeFromSchedule('${selectedDate}',${i})">✕</button>`;
+    list.appendChild(el);
+  });
+}
+function renderSchedule() { renderDayPanel(); }
+
+function addCalEvent() {
+  const name=document.getElementById('evNameInput').value.trim(), mins=parseInt(document.getElementById('evMinsInput').value)||0;
+  if(!name)return;
+  if(!state.calEvents[selectedDate])state.calEvents[selectedDate]=[];
+  state.calEvents[selectedDate].push({taskName:name,minutes:mins});
+  document.getElementById('evNameInput').value=''; document.getElementById('evMinsInput').value='';
+  save(); renderCal(); renderDayPanel();
+}
+function removeFromSchedule(ds,i){
+  state.calEvents[ds].splice(i,1);
+  if(!state.calEvents[ds].length)delete state.calEvents[ds];
+  save(); renderCal(); renderDayPanel();
+}
+function addToSchedule(task){
+  if(!state.calEvents[selectedDate])state.calEvents[selectedDate]=[];
+  if(state.calEvents[selectedDate].some(e=>e.taskId===task.id)){showToast('Already on this day');return;}
+  state.calEvents[selectedDate].push({taskId:task.id,taskName:task.name,minutes:task.minutes});
+  save(); renderCal(); renderDayPanel(); showToast('Added to schedule ✓');
+}
+
+// ════════════════════════════════════════════
+//  TASKS
+// ════════════════════════════════════════════
+function addTask() {
+  const name=document.getElementById('taskNameInput').value.trim(), mins=parseInt(document.getElementById('taskTimeInput').value)||0;
+  if(!name)return;
+  state.tasks.push({id:state.nextId++,name,minutes:mins,done:false});
+  document.getElementById('taskNameInput').value=''; document.getElementById('taskTimeInput').value='';
+  save(); renderTasks(); renderDayPanel(); renderPomoTaskSelect();
+}
+function toggleTask(id){
+  const t=state.tasks.find(t=>t.id===id);
+  if(t){
+    t.done=!t.done;
+    if(t.done){ clearTaskTimer(id); if(pomoLinkedTaskId===id){ pomoLinkedTaskId=null; resetPomo(); } }
+    save(); renderTimerUI(); renderPomoTaskSelect();
+  }
+}
+function deleteTask(id){
+  clearTaskTimer(id);
+  if(pomoLinkedTaskId===id){ pomoLinkedTaskId=null; resetPomo(); }
+  state.tasks=state.tasks.filter(t=>t.id!==id);
+  save(); renderTimerUI(); renderDayPanel(); renderPomoTaskSelect();
+}
+
+function fmt(s){ return `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`; }
+
+function renderTasks() {
+  const list=document.getElementById('taskList'), done=state.tasks.filter(t=>t.done).length;
+  document.getElementById('taskCount').textContent=`${done}/${state.tasks.length}`;
+  list.innerHTML='';
+  if(!state.tasks.length){
+    list.innerHTML='<div style="text-align:center;padding:20px;color:var(--text3);font-size:13px;">No tasks yet. Add one above!</div>';
+    return;
+  }
+  [...state.tasks].sort((a,b)=>a.done-b.done).forEach(task=>{
+    const el=document.createElement('div');
+    const timer = taskTimers[task.id];
+    const hasTimer = task.minutes > 0;
+    const isRunning = timer?.running === true;
+    const isUsed    = timer && timer.secs < timer.total;  // timer started at least once
+
+    const isPomoLinked = pomoLinkedTaskId === task.id && pomoRunning && pomoMode === 'work';
+    el.className = 'task-item' + (task.done ? ' done' : '') + (isRunning ? ' ticking' : '') + (isPomoLinked ? ' pomo-active' : '');
+
+    // Timer display inside the task info area
+    const pomoBadge = isPomoLinked ? '<span class="pomo-badge">🍅</span>' : '';
+    let timerHTML = '';
+    if (hasTimer && !task.done) {
+      if (timer) {
+        const pct  = (timer.secs / timer.total) * 100;
+        const warn = timer.secs <= 60 && timer.secs > 0;
+        const stateLabel = isRunning ? '' : ' ⏸';
+        timerHTML = `
+          <div class="task-timer-row">
+            <div class="task-mini-track"><div class="task-mini-fill ${warn?'warn':''}" style="width:${pct}%"></div></div>
+            <span class="task-timer-val ${warn?'warn':''} ${!isRunning?'paused':''}">${fmt(timer.secs)}${stateLabel}</span>
+          </div>`;
+      } else {
+        timerHTML = `<div class="task-time-badge">${task.minutes} min</div>`;
+      }
+    } else if (!hasTimer && !task.done) {
+      timerHTML = `<div class="task-time-badge">no timer</div>`;
+    }
+
+    // Play / Pause button
+    const playBtn = (hasTimer && !task.done) ? `
+      <button class="task-action-btn ${isRunning ? 'pause-btn' : 'play-btn'}"
+              onclick="toggleTaskTimer(${task.id})"
+              title="${isRunning ? 'Pause' : isUsed ? 'Resume' : 'Start timer'}">
+        ${isRunning ? '⏸' : '▶'}
+      </button>` : '';
+
+    // Reset button — only show when timer has been used
+    const resetBtn = (hasTimer && isUsed && !task.done) ? `
+      <button class="task-action-btn reset-btn" onclick="resetTaskTimer(${task.id})" title="Reset timer">↺</button>` : '';
+
+    el.innerHTML = `
+      <div class="task-check" onclick="toggleTask(${task.id})"></div>
+      <div class="task-info" onclick="toggleTask(${task.id})">
+        <div class="task-name">${h(task.name)}${pomoBadge}</div>
+        ${timerHTML}
+      </div>
+      <div class="task-actions">
+        <button class="task-action-btn" title="Add to schedule"
+                onclick='addToSchedule(${JSON.stringify({id:task.id,name:task.name,minutes:task.minutes})})'>📅</button>
+        ${playBtn}
+        ${resetBtn}
+        <button class="task-action-btn" onclick="deleteTask(${task.id})">🗑</button>
+      </div>`;
+    list.appendChild(el);
+  });
+}
+
+function h(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+// ════════════════════════════════════════════
+//  NOTES
+// ════════════════════════════════════════════
+let nTimer=null;
+function initNotes(){
+  const a=document.getElementById('notesArea'); a.value=state.notes||'';
+  a.oninput=()=>{
+    clearTimeout(nTimer); document.getElementById('notesSaved').textContent='Saving…';
+    nTimer=setTimeout(()=>{
+      state.notes=a.value; save();
+      document.getElementById('notesSaved').textContent='Saved ✓';
+      setTimeout(()=>{ document.getElementById('notesSaved').textContent=''; },2000);
+    },800);
+  };
+}
+
+// ════════════════════════════════════════════
+//  LINKS
+// ════════════════════════════════════════════
+function addLink(){
+  const emoji=document.getElementById('linkEmoji').value.trim()||'🔗';
+  const name=document.getElementById('linkName').value.trim();
+  const url=document.getElementById('linkUrl').value.trim();
+  if(!name||!url){showToast('Enter a name and URL');return;}
+  state.links.push({id:state.nextId++,emoji,name,url:url.startsWith('http')?url:'https://'+url});
+  document.getElementById('linkEmoji').value=''; document.getElementById('linkName').value=''; document.getElementById('linkUrl').value='';
+  save(); renderLinks();
+}
+function deleteLink(id){ state.links=state.links.filter(l=>l.id!==id); save(); renderLinks(); }
+function renderLinks(){
+  const list=document.getElementById('linkList'); list.innerHTML='';
+  if(!state.links.length){list.innerHTML='<div style="color:var(--text3);font-size:13px;padding:8px 0;">No links yet.</div>';return;}
+  state.links.forEach(lk=>{
+    const a=document.createElement('a'); a.className='link-item'; a.href=lk.url; a.target='_blank'; a.rel='noopener';
+    a.innerHTML=`<span class="link-emoji">${lk.emoji}</span><span class="link-name">${h(lk.name)}</span><button class="link-del" onclick="event.preventDefault();deleteLink(${lk.id})">✕</button>`;
+    list.appendChild(a);
+  });
+}
+
+// ════════════════════════════════════════════
+//  TOAST
+// ════════════════════════════════════════════
+let toastT;
+function showToast(msg){
+  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+  clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2500);
+}
+
+// ════════════════════════════════════════════
+//  POMODORO TIMER
+// ════════════════════════════════════════════
+const POMO_DURATIONS = { work: 25 * 60, short: 5 * 60, long: 15 * 60 };
+const POMO_LABELS    = { work: 'Work session', short: 'Short break', long: 'Long break' };
+const POMO_MODE_IDS  = { work: 'pomoModeWork', short: 'pomoModeShort', long: 'pomoModeLong' };
+
+let pomoMode          = 'work';
+let pomoSecs          = POMO_DURATIONS.work;
+let pomoTotal         = POMO_DURATIONS.work;
+let pomoRunning       = false;
+let pomoIntervalId    = null;
+let pomoCompleted     = 0;       // work sessions done in current cycle (resets at 4)
+let pomoLinkedTaskId  = null;    // task currently linked to this pomo session
+
+// ── Task selector ────────────────────────────────────────────────────────────
+
+function renderPomoTaskSelect() {
+  const sel = document.getElementById('pomoTaskSelect');
+  if (!sel) return;
+  const undone = state.tasks.filter(t => !t.done);
+  sel.innerHTML = '<option value="">— No specific task —</option>' +
+    undone.map(t => `<option value="${t.id}">${h(t.name)}${t.minutes ? ' · ' + t.minutes + 'm' : ''}</option>`).join('');
+  // Restore current link
+  if (pomoLinkedTaskId && undone.find(t => t.id === pomoLinkedTaskId)) {
+    sel.value = pomoLinkedTaskId;
+  }
+}
+
+function onPomoTaskChange() {
+  const sel = document.getElementById('pomoTaskSelect');
+  if (pomoRunning) { sel.value = pomoLinkedTaskId || ''; return; } // lock while running
+  pomoLinkedTaskId = sel.value ? +sel.value : null;
+  updatePomoLabel();
+}
+
+function updatePomoLabel() {
+  const lbl = document.getElementById('pomoModeLabel');
+  if (!lbl) return;
+  if (pomoMode === 'work' && pomoLinkedTaskId) {
+    const task = state.tasks.find(t => t.id === pomoLinkedTaskId);
+    lbl.textContent = task ? task.name : POMO_LABELS.work;
+  } else {
+    lbl.textContent = POMO_LABELS[pomoMode];
+  }
+}
+
+// ── Sync linked task timer ───────────────────────────────────────────────────
+
+function pomoSyncTaskStart() {
+  if (!pomoLinkedTaskId || pomoMode !== 'work') return;
+  const task = state.tasks.find(t => t.id === pomoLinkedTaskId);
+  if (!task || !task.minutes) return;
+  if (!taskTimers[pomoLinkedTaskId]) {
+    taskTimers[pomoLinkedTaskId] = { secs: task.minutes * 60, total: task.minutes * 60, running: false, intervalId: null };
+  }
+  const timer = taskTimers[pomoLinkedTaskId];
+  if (!timer.running && timer.secs > 0) {
+    timer.running = true;
+    timer.intervalId = setInterval(() => {
+      timer.secs--;
+      if (timer.secs <= 0) taskTimerDone(pomoLinkedTaskId);
+      else renderTimerUI();
+    }, 1000);
+  }
+  renderTimerUI();
+}
+
+function pomoSyncTaskPause() {
+  if (!pomoLinkedTaskId) return;
+  const timer = taskTimers[pomoLinkedTaskId];
+  if (timer?.running) {
+    clearInterval(timer.intervalId);
+    timer.running = false;
+    renderTimerUI();
+  }
+}
+
+function pomoSyncTaskStop() {
+  pomoSyncTaskPause();
+}
+
+// ── Core controls ────────────────────────────────────────────────────────────
+
+function setPomoMode(mode) {
+  if (pomoRunning) { pomoSyncTaskStop(); pomoRunning = false; clearInterval(pomoIntervalId); }
+  pomoMode  = mode;
+  pomoSecs  = POMO_DURATIONS[mode];
+  pomoTotal = POMO_DURATIONS[mode];
+  document.getElementById('pomoStartBtn').textContent = 'Start';
+  document.getElementById('pomoDisplay').className    = 'timer-time';
+  document.getElementById('pomoBar').className        = 'timer-progress-bar';
+  Object.entries(POMO_MODE_IDS).forEach(([m, id]) => {
+    document.getElementById(id).classList.toggle('active', m === mode);
+  });
+  updatePomoLabel();
+  renderPomoSessions();
+  updPomo();
+}
+
+function togglePomo() {
+  if (pomoSecs <= 0 && !pomoRunning) return;
+  if (pomoRunning) {
+    pomoRunning = false;
+    clearInterval(pomoIntervalId);
+    document.getElementById('pomoStartBtn').textContent = 'Resume';
+    pomoSyncTaskPause();
+  } else {
+    if (pomoSecs <= 0) return;
+    // Lock in selected task on first start of a session
+    if (pomoSecs === pomoTotal) {
+      const sel = document.getElementById('pomoTaskSelect');
+      pomoLinkedTaskId = sel?.value ? +sel.value : null;
+      updatePomoLabel();
+    }
+    pomoRunning = true;
+    document.getElementById('pomoStartBtn').textContent = 'Pause';
+    pomoIntervalId = setInterval(() => {
+      pomoSecs--;
+      updPomo();
+      if (pomoSecs <= 0) pomoDone();
+    }, 1000);
+    pomoSyncTaskStart();
+  }
+  renderPomoSessions();
+  updPomo();
+}
+
+function resetPomo() {
+  pomoRunning = false;
+  clearInterval(pomoIntervalId);
+  pomoSyncTaskStop();
+  pomoSecs = pomoTotal;
+  document.getElementById('pomoStartBtn').textContent = 'Start';
+  document.getElementById('pomoDisplay').className    = 'timer-time';
+  document.getElementById('pomoBar').className        = 'timer-progress-bar';
+  renderPomoSessions();
+  updPomo();
+}
+
+function pomoDone() {
+  pomoRunning = false;
+  clearInterval(pomoIntervalId);
+  pomoSyncTaskStop();
+  document.getElementById('pomoStartBtn').textContent = 'Start';
+  document.getElementById('pomoDisplay').classList.add('done');
+
+  if (pomoMode === 'work') {
+    pomoCompleted++;
+    renderPomoSessions();
+    // Notify about linked task
+    const task = pomoLinkedTaskId ? state.tasks.find(t => t.id === pomoLinkedTaskId) : null;
+    const taskSuffix = task ? ` on "${task.name}"` : '';
+    if (pomoCompleted >= 4) {
+      pomoCompleted = 0;
+      showToast(`🍅 4 pomodoros${taskSuffix} done! Long break time.`);
+      setTimeout(() => setPomoMode('long'), 1800);
+    } else {
+      showToast(`🍅 Pomodoro ${pomoCompleted}/4${taskSuffix} done! Short break.`);
+      setTimeout(() => setPomoMode('short'), 1800);
+    }
+  } else {
+    showToast('Break over — time to focus!');
+    setTimeout(() => setPomoMode('work'), 1800);
+  }
+}
+
+function updPomo() {
+  const d = document.getElementById('pomoDisplay');
+  const b = document.getElementById('pomoBar');
+  if (!d) return;
+  d.textContent = fmt(pomoSecs);
+  b.style.width = (pomoTotal > 0 ? (pomoSecs / pomoTotal) * 100 : 100) + '%';
+  const warn = pomoSecs <= 60 && pomoSecs > 0;
+  d.classList.toggle('warning', warn);
+  b.classList.toggle('warning', warn);
+}
+
+function renderPomoSessions() {
+  const box = document.getElementById('pomoSessions');
+  if (!box) return;
+  let html = '';
+  for (let i = 0; i < 4; i++) {
+    let cls = 'pomo-dot';
+    if (i < pomoCompleted) cls += ' done';
+    else if (i === pomoCompleted && pomoMode === 'work' && pomoRunning) cls += ' active';
+    html += `<div class="${cls}" title="Session ${i + 1}"></div>`;
+  }
+  box.innerHTML = html;
+  const cnt = document.getElementById('pomoCount');
+  if (cnt) cnt.textContent = pomoCompleted > 0 ? `${pomoCompleted}/4` : '';
+}
+
+// ════════════════════════════════════════════
+//  REFRESH ALL
+// ════════════════════════════════════════════
+function refreshAll(){
+  renderCal(); renderDayPanel(); renderTasks(); renderLinks();
+  document.getElementById('notesArea').value=state.notes||'';
+}
+
+// ════════════════════════════════════════════
+//  INIT
+// ════════════════════════════════════════════
+function initApp(){
+  setInterval(tickClock, 1000); tickClock();
+  initCal(); renderTasks(); initNotes(); renderLinks();
+  renderPomoSessions(); renderPomoTaskSelect(); updPomo();
+}
+
+window.addEventListener('load', () => {
+  const cid=localStorage.getItem(LS_CLIENT);
+  if(!cid) return;
+  document.getElementById('setupScreen').style.display='none';
+  document.getElementById('app').style.display='block';
+  lsLoad(); initApp();
+  if(cid==='skip'){ syncMode='local'; setSyncUI('offline','Local only'); }
+  else {
+    setSyncUI('syncing','Connecting…');
+    const wait=setInterval(()=>{
+      if(!window.google?.accounts) return; clearInterval(wait);
+      const client=google.accounts.oauth2.initTokenClient({client_id:cid,scope:DRIVE_SCOPE,callback:onToken});
+      window._gClient=client; client.requestAccessToken({prompt:''});
+    },200);
+  }
+});
+</script>
+</body>
+</html>
