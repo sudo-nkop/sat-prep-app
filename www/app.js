@@ -250,6 +250,7 @@ function renderQuiz() {
   const s = currentSession;
   s.maxIdx = Math.max(s.maxIdx ?? 0, s.idx);
   const q = s.questions[s.idx];
+  document.getElementById('quiz-calc').hidden = q.section !== 'math';
   document.getElementById('quiz-progress').textContent = `${s.idx + 1} / ${s.questions.length}`;
   const bar = document.getElementById('quiz-progress-bar');
   if (bar) bar.style.width = `${((s.idx + 1) / s.questions.length) * 100}%`;
@@ -996,6 +997,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('quiz-next').onclick = nextQuestion;
   document.getElementById('quiz-prev').onclick = prevQuestion;
   document.getElementById('quiz-flag').onclick = toggleFlag;
+
+  // calculator
+  const calcOverlay = document.getElementById('calc-overlay');
+  document.getElementById('quiz-calc').onclick = () => { calcOverlay.hidden = false; };
+  document.getElementById('calc-close').onclick = () => { calcOverlay.hidden = true; };
+  calcOverlay.addEventListener('click', (e) => { if (e.target === calcOverlay) calcOverlay.hidden = true; });
   document.getElementById('quiz-finish').onclick = () => {
     if (currentSession.mode === 'test') {
       const unanswered = currentSession.answers.filter(a => a == null).length;

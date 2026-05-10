@@ -158,7 +158,10 @@
     <div class="quiz-header">
       <span id="quiz-progress">1 / 10</span>
       <span class="timer" id="quiz-timer" hidden>00:00</span>
-      <button class="btn-link" id="quiz-flag">Flag</button>
+      <div class="quiz-header-right">
+        <button class="btn-link calc-btn" id="quiz-calc" hidden>📊 Calculator</button>
+        <button class="btn-link" id="quiz-flag">Flag</button>
+      </div>
     </div>
     <div class="progress-track"><div class="progress-fill" id="quiz-progress-bar"></div></div>
 
@@ -180,6 +183,20 @@
       <button class="btn danger" id="quiz-finish" hidden>Finish</button>
     </div>
   </section>
+
+  <!-- CALCULATOR OVERLAY -->
+  <div id="calc-overlay" hidden>
+    <div class="calc-modal">
+      <div class="calc-modal-header">
+        <span>Desmos Graphing Calculator</span>
+        <button class="btn-link" id="calc-close">✕ Close</button>
+      </div>
+      <iframe id="calc-frame"
+        src="https://www.desmos.com/calculator"
+        title="Desmos Graphing Calculator"
+        allowfullscreen></iframe>
+    </div>
+  </div>
 
   <!-- RESULTS -->
   <section class="screen" id="screen-results" hidden>
