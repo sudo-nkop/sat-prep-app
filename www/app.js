@@ -66,7 +66,7 @@ function back() {
   if (screenStack.length > 1) {
     if (screenStack[screenStack.length - 1] === 'screen-quiz' && currentSession) {
       const visitedIds = currentSession.questions
-        .slice(0, currentSession.idx + 1)
+        .slice(0, (currentSession.maxIdx ?? currentSession.idx) + 1)
         .map(q => q.id);
       addSeenIds(visitedIds);
     }
@@ -168,6 +168,7 @@ function startPractice() {
   }
 
   const qs = pickQuestions({ section, topic, difficulty, count });
+  addSeenIds(qs.map(q => q.id));
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -203,6 +204,7 @@ function startTest(kind) {
   }
 
   const qs = pickQuestions({ section, topic: 'all', difficulty: 'all', count: targetCount });
+  addSeenIds(qs.map(q => q.id));
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
@@ -246,6 +248,7 @@ function stopTimer() {
 
 function renderQuiz() {
   const s = currentSession;
+  s.maxIdx = Math.max(s.maxIdx ?? 0, s.idx);
   const q = s.questions[s.idx];
   document.getElementById('quiz-progress').textContent = `${s.idx + 1} / ${s.questions.length}`;
   const bar = document.getElementById('quiz-progress-bar');
