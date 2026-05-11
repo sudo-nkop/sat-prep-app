@@ -168,7 +168,6 @@ function startPractice() {
   }
 
   const qs = pickQuestions({ section, topic, difficulty, count });
-  addSeenIds(qs.map(q => q.id));
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -204,7 +203,6 @@ function startTest(kind) {
   }
 
   const qs = pickQuestions({ section, topic: 'all', difficulty: 'all', count: targetCount });
-  addSeenIds(qs.map(q => q.id));
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
@@ -347,9 +345,7 @@ function submitAnswer() {
   }
   s._reviewed = s._reviewed || {};
   s._reviewed[s.idx] = true;
-  // mark this question as seen so it won't appear in future sessions
   const q = s.questions[s.idx];
-  addSeenIds([q.id]);
   const stats = getStats();
   stats.answered += 1;
   if (s.answers[s.idx] === q.answer) stats.correct += 1;
