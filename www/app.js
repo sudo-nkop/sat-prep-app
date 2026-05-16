@@ -9,6 +9,7 @@ const KEY = {
   lastOpen: 'sat-app:lastOpen',
   imported: 'sat-app:imported',
   seen: 'sat-app:seen',
+  mastered: 'sat-app:mastered',
 };
 
 const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark' };
@@ -34,6 +35,12 @@ function addSeenIds(ids) {
   const seen = getSeenIds();
   ids.forEach(id => { if (id) seen.add(id); });
   save(KEY.seen, [...seen]);
+}
+function getMasteredIds() { return new Set(load(KEY.mastered, [])); }
+function addMasteredIds(ids) {
+  const mastered = getMasteredIds();
+  ids.forEach(id => { if (id) mastered.add(id); });
+  save(KEY.mastered, [...mastered]);
 }
 
 // ---------- navigation ----------
@@ -91,16 +98,16 @@ function updateUnseenLabel() {
   const section = document.getElementById('practice-section').value;
   const topic   = document.getElementById('practice-topic').value;
   const diff    = document.getElementById('practice-difficulty').value;
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic   === 'all' || q.topic   === topic)   &&
     (diff    === 'all' || q.difficulty === Number(diff))
   );
-  const unseen = pool.filter(q => !seenIds.has(q.id)).length;
+  const available = pool.filter(q => !masteredIds.has(q.id)).length;
   el.textContent = pool.length === 0
     ? 'No questions match these filters.'
-    : `${unseen} unseen question${unseen !== 1 ? 's' : ''} available (${pool.length} total)`;
+    : `${available} question${available !== 1 ? 's' : ''} available (${pool.length} total)`;
 }
 
 function populateTopicFilter() {
@@ -131,15 +138,15 @@ function shuffle(arr) {
 }
 
 function pickQuestions({ section, topic, difficulty, count }) {
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
     (difficulty === 'all' || q.difficulty === Number(difficulty))
   );
   if (pool.length === 0) return [];
-  const unseen = pool.filter(q => !seenIds.has(q.id));
-  return shuffle(unseen).slice(0, count);
+  const available = pool.filter(q => !masteredIds.has(q.id));
+  return shuffle(available).slice(0, count);
 }
 
 function startPractice() {
@@ -148,7 +155,7 @@ function startPractice() {
   const difficulty = document.getElementById('practice-difficulty').value;
   const count = Number(document.getElementById('practice-count').value);
 
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const basePool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
@@ -158,10 +165,10 @@ function startPractice() {
     alert('No questions match those filters. Try widening your criteria.');
     return;
   }
-  const unseenCount = basePool.filter(q => !seenIds.has(q.id)).length;
-  if (unseenCount === 0) {
-    if (confirm(`You've already answered all ${basePool.length} questions matching these filters!\n\nReset your question pool to see them again?`)) {
-      save(KEY.seen, []);
+  const availableCount = basePool.filter(q => !masteredIds.has(q.id)).length;
+  if (availableCount === 0) {
+    if (confirm(`You've mastered all ${basePool.length} questions matching these filters!\n\nReset your progress to practice them again?`)) {
+      save(KEY.mastered, []);
       startPractice();
     }
     return;
@@ -191,12 +198,12 @@ function startTest(kind) {
     section = 'all'; targetCount = 15; secPerQ = (20 * 60) / 15;
   }
 
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q => section === 'all' || q.section === section);
-  const unseenCount = pool.filter(q => !seenIds.has(q.id)).length;
-  if (unseenCount === 0) {
-    if (confirm(`You've seen all ${pool.length} questions in this section!\n\nReset your question pool to start fresh?`)) {
-      save(KEY.seen, []);
+  const availableCount = pool.filter(q => !masteredIds.has(q.id)).length;
+  if (availableCount === 0) {
+    if (confirm(`You've mastered all ${pool.length} questions in this section!\n\nReset your progress to start fresh?`)) {
+      save(KEY.mastered, []);
       startTest(kind);
     }
     return;
@@ -348,7 +355,10 @@ function submitAnswer() {
   const q = s.questions[s.idx];
   const stats = getStats();
   stats.answered += 1;
-  if (s.answers[s.idx] === q.answer) stats.correct += 1;
+  if (s.answers[s.idx] === q.answer) {
+    stats.correct += 1;
+    addMasteredIds([q.id]);
+  }
   // streak: count today as a practiced day
   const today = new Date().toISOString().slice(0,10);
   if (stats.lastDay !== today) {
@@ -394,8 +404,15 @@ function finishQuiz(timeUp = false) {
   s.durationMs = Date.now() - s.startedAt;
   let correct = 0;
   s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
-  // mark all questions in this session as seen
+  // mark all questions in this session as seen (for history tracking)
   addSeenIds(s.questions.map(q => q.id));
+  // in test mode, mark correctly answered questions as mastered
+  if (s.mode === 'test') {
+    const correctIds = s.questions
+      .filter((q, i) => s.answers[i] === q.answer)
+      .map(q => q.id);
+    addMasteredIds(correctIds);
+  }
   // record history
   const hist = getHistory();
   hist.unshift({
@@ -522,13 +539,13 @@ function refreshHome() {
 
 // ---------- history ----------
 function renderHistory() {
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const total = allQuestions.length;
-  const seenCount = [...seenIds].filter(id => allQuestions.some(q => q.id === id)).length;
-  const remaining = total - seenCount;
+  const masteredCount = [...masteredIds].filter(id => allQuestions.some(q => q.id === id)).length;
+  const remaining = total - masteredCount;
   const seenInfo = document.getElementById('seen-count-info');
   if (seenInfo) {
-    seenInfo.textContent = `${seenCount} of ${total} questions answered · ${remaining} remaining`;
+    seenInfo.textContent = `${masteredCount} of ${total} questions mastered · ${remaining} remaining`;
   }
 
   const list = document.getElementById('history-list');
@@ -1022,14 +1039,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     location.reload();
   };
   document.getElementById('clear-history').onclick = () => {
-    if (!confirm('Clear all history and reset question pool? You\'ll see all questions again.')) return;
+    if (!confirm('Clear all history and reset mastered questions? You\'ll see all questions again.')) return;
     save(KEY.history, []);
     save(KEY.seen, []);
+    save(KEY.mastered, []);
     renderHistory();
   };
   document.getElementById('reset-seen').onclick = () => {
-    if (!confirm('Reset question pool? All questions will become available again.')) return;
-    save(KEY.seen, []);
+    if (!confirm('Reset mastered questions? All questions will become available again.')) return;
+    save(KEY.mastered, []);
     renderHistory();
   };
 
