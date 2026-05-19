@@ -168,6 +168,7 @@ function startPractice() {
   }
 
   const qs = pickQuestions({ section, topic, difficulty, count });
+  addSeenIds(qs.map(q => q.id));
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -203,6 +204,7 @@ function startTest(kind) {
   }
 
   const qs = pickQuestions({ section, topic: 'all', difficulty: 'all', count: targetCount });
+  addSeenIds(qs.map(q => q.id));
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
