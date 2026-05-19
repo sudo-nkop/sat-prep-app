@@ -635,21 +635,22 @@ h3 {
   z-index: 1000;
   background: rgba(0,0,0,0.55);
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 16px;
 }
 #calc-overlay[hidden] { display: none; }
 
 .calc-modal {
   width: 100%;
-  max-width: 700px;
-  height: 72vh;
+  max-width: 900px;
+  height: 85vh;
+  max-height: 700px;
   background: var(--card);
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-radius: var(--radius);
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 8px 48px rgba(0,0,0,0.35);
   overflow: hidden;
 }
 .calc-modal-header {
