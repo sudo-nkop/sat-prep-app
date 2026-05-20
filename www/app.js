@@ -138,6 +138,7 @@ function shuffle(arr) {
 }
 
 function pickQuestions({ section, topic, difficulty, count }) {
+  const seenIds = getSeenIds();
   const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
@@ -146,7 +147,10 @@ function pickQuestions({ section, topic, difficulty, count }) {
   );
   if (pool.length === 0) return [];
   const available = pool.filter(q => !masteredIds.has(q.id));
-  return shuffle(available).slice(0, count);
+  // Unseen questions first, then seen-but-unmastered (for review), both shuffled
+  const unseen = shuffle(available.filter(q => !seenIds.has(q.id)));
+  const seenUnmastered = shuffle(available.filter(q => seenIds.has(q.id)));
+  return [...unseen, ...seenUnmastered].slice(0, count);
 }
 
 function startPractice() {
