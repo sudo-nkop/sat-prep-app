@@ -92,17 +92,23 @@ async function loadQuestions() {
   populateTopicFilter();
 }
 
+function getSelectedDifficulties() {
+  const active = [...document.querySelectorAll('#practice-difficulty .diff-btn.active')];
+  if (active.length === 0 || active.length === 3) return 'all';
+  return new Set(active.map(b => Number(b.dataset.diff)));
+}
+
 function updateUnseenLabel() {
   const el = document.getElementById('unseen-count-label');
   if (!el) return;
   const section = document.getElementById('practice-section').value;
   const topic   = document.getElementById('practice-topic').value;
-  const diff    = document.getElementById('practice-difficulty').value;
+  const diffs   = getSelectedDifficulties();
   const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic   === 'all' || q.topic   === topic)   &&
-    (diff    === 'all' || q.difficulty === Number(diff))
+    (diffs   === 'all' || diffs.has(q.difficulty))
   );
   const available = pool.filter(q => !masteredIds.has(q.id)).length;
   el.textContent = pool.length === 0
@@ -137,13 +143,13 @@ function shuffle(arr) {
   return a;
 }
 
-function pickQuestions({ section, topic, difficulty, count }) {
+function pickQuestions({ section, topic, difficulties, count }) {
   const seenIds = getSeenIds();
   const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
-    (difficulty === 'all' || q.difficulty === Number(difficulty))
+    (difficulties === 'all' || difficulties.has(q.difficulty))
   );
   if (pool.length === 0) return [];
   const available = pool.filter(q => !masteredIds.has(q.id));
@@ -156,14 +162,14 @@ function pickQuestions({ section, topic, difficulty, count }) {
 function startPractice() {
   const section = document.getElementById('practice-section').value;
   const topic = document.getElementById('practice-topic').value;
-  const difficulty = document.getElementById('practice-difficulty').value;
+  const difficulties = getSelectedDifficulties();
   const count = Number(document.getElementById('practice-count').value);
 
   const masteredIds = getMasteredIds();
   const basePool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
-    (difficulty === 'all' || q.difficulty === Number(difficulty))
+    (difficulties === 'all' || difficulties.has(q.difficulty))
   );
   if (basePool.length === 0) {
     alert('No questions match those filters. Try widening your criteria.');
@@ -178,7 +184,7 @@ function startPractice() {
     return;
   }
 
-  const qs = pickQuestions({ section, topic, difficulty, count });
+  const qs = pickQuestions({ section, topic, difficulties, count });
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -213,7 +219,7 @@ function startTest(kind) {
     return;
   }
 
-  const qs = pickQuestions({ section, topic: 'all', difficulty: 'all', count: targetCount });
+  const qs = pickQuestions({ section, topic: 'all', difficulties: 'all', count: targetCount });
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
@@ -999,7 +1005,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   // practice
-  document.getElementById('practice-difficulty').addEventListener('change', updateUnseenLabel);
+  document.querySelectorAll('#practice-difficulty .diff-btn').forEach(btn => {
+    btn.addEventListener('click', () => { btn.classList.toggle('active'); updateUnseenLabel(); });
+  });
   document.getElementById('practice-topic').addEventListener('change', updateUnseenLabel);
   document.getElementById('practice-start').onclick = startPractice;
 
