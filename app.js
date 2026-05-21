@@ -1023,11 +1023,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('quiz-prev').onclick = prevQuestion;
   document.getElementById('quiz-flag').onclick = toggleFlag;
 
-  // calculator
-  const calcOverlay = document.getElementById('calc-overlay');
-  document.getElementById('quiz-calc').onclick = () => { calcOverlay.hidden = false; };
-  document.getElementById('calc-close').onclick = () => { calcOverlay.hidden = true; };
-  calcOverlay.addEventListener('click', (e) => { if (e.target === calcOverlay) calcOverlay.hidden = true; });
+  // calculator panel
+  const calcPanel = document.getElementById('calc-panel');
+  const calcBackdrop = document.getElementById('calc-backdrop');
+  function openCalc() {
+    calcPanel.setAttribute('aria-hidden', 'false');
+    calcBackdrop.hidden = false;
+    document.body.classList.add('calc-open');
+  }
+  function closeCalc() {
+    calcPanel.setAttribute('aria-hidden', 'true');
+    calcBackdrop.hidden = true;
+    document.body.classList.remove('calc-open');
+  }
+  document.getElementById('quiz-calc').onclick = openCalc;
+  document.getElementById('calc-close').onclick = closeCalc;
+  calcBackdrop.addEventListener('click', closeCalc);
+
+  // theme toggle inside calc panel
+  const moonIcon = document.getElementById('calc-icon-moon');
+  const sunIcon  = document.getElementById('calc-icon-sun');
+  function syncCalcThemeIcon() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    moonIcon.hidden = isDark;
+    sunIcon.hidden  = !isDark;
+  }
+  syncCalcThemeIcon();
+  document.getElementById('calc-theme-toggle').onclick = () => {
+    const s = getSettings();
+    s.theme = s.theme === 'dark' ? 'light' : 'dark';
+    save(KEY.settings, s);
+    document.documentElement.dataset.theme = s.theme;
+    document.getElementById('theme-select').value = s.theme;
+    syncCalcThemeIcon();
+  };
   document.getElementById('quiz-finish').onclick = () => {
     if (currentSession.mode === 'test') {
       const unanswered = currentSession.answers.filter(a => a == null).length;
