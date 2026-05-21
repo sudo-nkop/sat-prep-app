@@ -381,6 +381,31 @@ h3 {
   box-shadow: 0 0 0 3px rgba(0,156,222,0.15);
 }
 
+/* ── DIFFICULTY TOGGLE ───────────────────────────────── */
+.diff-toggle {
+  display: flex;
+  gap: 8px;
+}
+.diff-btn {
+  flex: 1;
+  padding: 11px 8px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.diff-btn:hover { border-color: var(--accent); color: var(--accent); }
+.diff-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* ── BUTTONS ─────────────────────────────────────────── */
 .btn {
   background: var(--card);
@@ -613,6 +638,61 @@ h3 {
   gap: 10px;
 }
 .quiz-actions .btn { flex: 1; }
+
+.quiz-header-right { display: flex; align-items: center; gap: 14px; }
+
+.calc-btn {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 5px 10px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--card);
+  color: var(--accent-dark);
+}
+[data-theme="dark"] .calc-btn { color: var(--accent); }
+.calc-btn:hover { background: var(--bg-2); }
+
+#calc-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+#calc-overlay[hidden] { display: none; }
+
+.calc-modal {
+  width: 100%;
+  max-width: 700px;
+  height: 72vh;
+  background: var(--card);
+  border-radius: var(--radius) var(--radius) 0 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+.calc-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-strong);
+  border-bottom: 1.5px solid var(--border);
+  flex-shrink: 0;
+}
+#calc-frame {
+  flex: 1;
+  border: none;
+  width: 100%;
+}
 
 /* ── RESULTS ──────────────────────────────────────────── */
 .results-summary {

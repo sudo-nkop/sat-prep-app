@@ -107,12 +107,11 @@
 
     <label class="field">
       <span>Difficulty</span>
-      <select id="practice-difficulty">
-        <option value="all">Any</option>
-        <option value="1">Easy</option>
-        <option value="2">Medium</option>
-        <option value="3">Hard</option>
-      </select>
+      <div class="diff-toggle" id="practice-difficulty">
+        <button type="button" class="diff-btn active" data-diff="1">Easy</button>
+        <button type="button" class="diff-btn active" data-diff="2">Medium</button>
+        <button type="button" class="diff-btn active" data-diff="3">Hard</button>
+      </div>
     </label>
 
     <label class="field">
