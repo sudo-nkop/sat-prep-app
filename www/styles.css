@@ -641,57 +641,105 @@ h3 {
 
 .quiz-header-right { display: flex; align-items: center; gap: 14px; }
 
+/* ── CALCULATOR BUTTON ───────────────────────────────── */
 .calc-btn {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  padding: 5px 10px;
-  border: 1.5px solid var(--border-strong);
+  padding: 5px 12px;
+  border: 1.5px solid rgba(46,125,50,0.35);
   border-radius: var(--radius-pill);
-  background: var(--card);
-  color: var(--accent-dark);
+  background: rgba(46,125,50,0.08);
+  color: #2e7d32;
 }
-[data-theme="dark"] .calc-btn { color: var(--accent); }
-.calc-btn:hover { background: var(--bg-2); }
+[data-theme="dark"] .calc-btn {
+  border-color: rgba(102,187,106,0.35);
+  background: rgba(102,187,106,0.10);
+  color: #81c784;
+}
+.calc-btn:hover { background: rgba(46,125,50,0.16); }
+[data-theme="dark"] .calc-btn:hover { background: rgba(102,187,106,0.18); }
 
-#calc-overlay {
+/* ── CALCULATOR PANEL ────────────────────────────────── */
+#calc-panel {
   position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0;
-}
-#calc-overlay[hidden] { display: none; }
-
-.calc-modal {
-  width: 100%;
-  max-width: 700px;
-  height: 72vh;
-  background: var(--card);
-  border-radius: var(--radius) var(--radius) 0 0;
+  top: 0;
+  left: 0;
+  width: min(50vw, 620px);
+  height: 100dvh;
+  z-index: 900;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 -4px 32px rgba(0,0,0,0.25);
+  background: var(--card);
+  box-shadow: 4px 0 40px rgba(0,0,0,0.22);
+  transform: translateX(-100%);
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1);
   overflow: hidden;
 }
-.calc-modal-header {
+#calc-panel[aria-hidden="false"] { transform: translateX(0); }
+
+.calc-panel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 18px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-strong);
-  border-bottom: 1.5px solid var(--border);
+  padding: 0 18px;
+  height: 56px;
   flex-shrink: 0;
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 60%, #388e3c 100%);
+  color: #ffffff;
 }
+.calc-panel-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.calc-panel-controls { display: flex; align-items: center; gap: 6px; }
+
+.calc-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  color: #ffffff;
+  cursor: pointer;
+  transition: background .15s;
+}
+.calc-icon-btn:hover { background: rgba(255,255,255,0.22); }
+
 #calc-frame {
   flex: 1;
   border: none;
   width: 100%;
+  display: block;
+}
+
+/* Backdrop (mobile) */
+#calc-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 800;
+  background: rgba(0,0,0,0.45);
+}
+#calc-backdrop[hidden] { display: none; }
+
+/* Shift quiz content right when panel open (desktop) */
+@media (min-width: 700px) {
+  body.calc-open #screen-quiz {
+    padding-left: min(50vw, 620px);
+    transition: padding-left 0.28s cubic-bezier(0.4,0,0.2,1);
+  }
+}
+
+/* Mobile: full-width panel + backdrop */
+@media (max-width: 699px) {
+  #calc-panel { width: 100vw; }
 }
 
 /* ── RESULTS ──────────────────────────────────────────── */
