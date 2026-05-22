@@ -12,7 +12,7 @@ const KEY = {
   mastered: 'sat-app:mastered',
 };
 
-const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark' };
+const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark', accentColor: '' };
 
 // ---------- state ----------
 let allQuestions = [];
@@ -579,11 +579,32 @@ function renderHistory() {
 }
 
 // ---------- settings ----------
+function darkenHex(hex, factor) {
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return '#' + [r,g,b].map(c => Math.round(c * factor).toString(16).padStart(2,'0')).join('');
+}
+
+function applyAccentColor(hex) {
+  const root = document.documentElement;
+  if (!hex) {
+    root.style.removeProperty('--accent');
+    root.style.removeProperty('--accent-dark');
+    return;
+  }
+  root.style.setProperty('--accent', hex);
+  root.style.setProperty('--accent-dark', darkenHex(hex, 0.78));
+}
+
 function applySettings() {
   const s = getSettings();
   document.documentElement.dataset.theme = s.theme;
   document.getElementById('theme-select').value = s.theme;
   document.getElementById('reminder-interval').value = String(s.reminderHours);
+  applyAccentColor(s.accentColor || '');
+  document.getElementById('accent-color').value =
+    s.accentColor || (s.theme === 'dark' ? '#66bb6a' : '#2e7d32');
 }
 
 // ---------- import ----------
@@ -1069,6 +1090,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('theme-select').onchange = (e) => {
     const s = getSettings(); s.theme = e.target.value; save(KEY.settings, s);
     document.documentElement.dataset.theme = s.theme;
+    if (!s.accentColor) {
+      document.getElementById('accent-color').value = s.theme === 'dark' ? '#66bb6a' : '#2e7d32';
+    }
+  };
+  document.getElementById('accent-color').oninput = (e) => {
+    const s = getSettings(); s.accentColor = e.target.value; save(KEY.settings, s);
+    applyAccentColor(e.target.value);
+  };
+  document.getElementById('accent-reset').onclick = () => {
+    const s = getSettings(); s.accentColor = ''; save(KEY.settings, s);
+    applyAccentColor('');
+    document.getElementById('accent-color').value =
+      s.theme === 'dark' ? '#66bb6a' : '#2e7d32';
   };
   document.getElementById('reminder-interval').onchange = (e) => {
     const s = getSettings(); s.reminderHours = Number(e.target.value); save(KEY.settings, s);

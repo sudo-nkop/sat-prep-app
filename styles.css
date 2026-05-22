@@ -372,6 +372,23 @@ h3 {
   box-shadow: 0 0 0 3px rgba(102,187,106,0.15);
 }
 
+/* Accent color picker */
+.accent-picker-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.accent-picker-row input[type="color"] {
+  width: 48px;
+  height: 48px;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background: var(--card);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
 /* ── DIFFICULTY TOGGLE ───────────────────────────────── */
 .diff-toggle {
   display: flex;
