@@ -9,9 +9,10 @@ const KEY = {
   lastOpen: 'sat-app:lastOpen',
   imported: 'sat-app:imported',
   seen: 'sat-app:seen',
+  mastered: 'sat-app:mastered',
 };
 
-const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark' };
+const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark', accentColor: '' };
 
 // ---------- state ----------
 let allQuestions = [];
@@ -34,6 +35,12 @@ function addSeenIds(ids) {
   const seen = getSeenIds();
   ids.forEach(id => { if (id) seen.add(id); });
   save(KEY.seen, [...seen]);
+}
+function getMasteredIds() { return new Set(load(KEY.mastered, [])); }
+function addMasteredIds(ids) {
+  const mastered = getMasteredIds();
+  ids.forEach(id => { if (id) mastered.add(id); });
+  save(KEY.mastered, [...mastered]);
 }
 
 // ---------- navigation ----------
@@ -85,22 +92,28 @@ async function loadQuestions() {
   populateTopicFilter();
 }
 
+function getSelectedDifficulties() {
+  const active = [...document.querySelectorAll('#practice-difficulty .diff-btn.active')];
+  if (active.length === 0 || active.length === 3) return 'all';
+  return new Set(active.map(b => Number(b.dataset.diff)));
+}
+
 function updateUnseenLabel() {
   const el = document.getElementById('unseen-count-label');
   if (!el) return;
   const section = document.getElementById('practice-section').value;
   const topic   = document.getElementById('practice-topic').value;
-  const diff    = document.getElementById('practice-difficulty').value;
-  const seenIds = getSeenIds();
+  const diffs   = getSelectedDifficulties();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic   === 'all' || q.topic   === topic)   &&
-    (diff    === 'all' || q.difficulty === Number(diff))
+    (diffs   === 'all' || diffs.has(q.difficulty))
   );
-  const unseen = pool.filter(q => !seenIds.has(q.id)).length;
+  const available = pool.filter(q => !masteredIds.has(q.id)).length;
   el.textContent = pool.length === 0
     ? 'No questions match these filters.'
-    : `${unseen} unseen question${unseen !== 1 ? 's' : ''} available (${pool.length} total)`;
+    : `${available} question${available !== 1 ? 's' : ''} available (${pool.length} total)`;
 }
 
 function populateTopicFilter() {
@@ -130,44 +143,48 @@ function shuffle(arr) {
   return a;
 }
 
-function pickQuestions({ section, topic, difficulty, count }) {
+function pickQuestions({ section, topic, difficulties, count }) {
   const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
-    (difficulty === 'all' || q.difficulty === Number(difficulty))
+    (difficulties === 'all' || difficulties.has(q.difficulty))
   );
   if (pool.length === 0) return [];
-  const unseen = pool.filter(q => !seenIds.has(q.id));
-  return shuffle(unseen).slice(0, count);
+  const available = pool.filter(q => !masteredIds.has(q.id));
+  // Unseen questions first, then seen-but-unmastered (for review), both shuffled
+  const unseen = shuffle(available.filter(q => !seenIds.has(q.id)));
+  const seenUnmastered = shuffle(available.filter(q => seenIds.has(q.id)));
+  return [...unseen, ...seenUnmastered].slice(0, count);
 }
 
 function startPractice() {
   const section = document.getElementById('practice-section').value;
   const topic = document.getElementById('practice-topic').value;
-  const difficulty = document.getElementById('practice-difficulty').value;
+  const difficulties = getSelectedDifficulties();
   const count = Number(document.getElementById('practice-count').value);
 
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const basePool = allQuestions.filter(q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
-    (difficulty === 'all' || q.difficulty === Number(difficulty))
+    (difficulties === 'all' || difficulties.has(q.difficulty))
   );
   if (basePool.length === 0) {
     alert('No questions match those filters. Try widening your criteria.');
     return;
   }
-  const unseenCount = basePool.filter(q => !seenIds.has(q.id)).length;
-  if (unseenCount === 0) {
-    if (confirm(`You've already answered all ${basePool.length} questions matching these filters!\n\nReset your question pool to see them again?`)) {
-      save(KEY.seen, []);
+  const availableCount = basePool.filter(q => !masteredIds.has(q.id)).length;
+  if (availableCount === 0) {
+    if (confirm(`You've mastered all ${basePool.length} questions matching these filters!\n\nReset your progress to practice them again?`)) {
+      save(KEY.mastered, []);
       startPractice();
     }
     return;
   }
 
-  const qs = pickQuestions({ section, topic, difficulty, count });
+  const qs = pickQuestions({ section, topic, difficulties, count });
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -191,18 +208,18 @@ function startTest(kind) {
     section = 'all'; targetCount = 15; secPerQ = (20 * 60) / 15;
   }
 
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const pool = allQuestions.filter(q => section === 'all' || q.section === section);
-  const unseenCount = pool.filter(q => !seenIds.has(q.id)).length;
-  if (unseenCount === 0) {
-    if (confirm(`You've seen all ${pool.length} questions in this section!\n\nReset your question pool to start fresh?`)) {
-      save(KEY.seen, []);
+  const availableCount = pool.filter(q => !masteredIds.has(q.id)).length;
+  if (availableCount === 0) {
+    if (confirm(`You've mastered all ${pool.length} questions in this section!\n\nReset your progress to start fresh?`)) {
+      save(KEY.mastered, []);
       startTest(kind);
     }
     return;
   }
 
-  const qs = pickQuestions({ section, topic: 'all', difficulty: 'all', count: targetCount });
+  const qs = pickQuestions({ section, topic: 'all', difficulties: 'all', count: targetCount });
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
@@ -348,7 +365,10 @@ function submitAnswer() {
   const q = s.questions[s.idx];
   const stats = getStats();
   stats.answered += 1;
-  if (s.answers[s.idx] === q.answer) stats.correct += 1;
+  if (s.answers[s.idx] === q.answer) {
+    stats.correct += 1;
+    addMasteredIds([q.id]);
+  }
   // streak: count today as a practiced day
   const today = new Date().toISOString().slice(0,10);
   if (stats.lastDay !== today) {
@@ -394,8 +414,15 @@ function finishQuiz(timeUp = false) {
   s.durationMs = Date.now() - s.startedAt;
   let correct = 0;
   s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
-  // mark all questions in this session as seen
+  // mark all questions in this session as seen (for history tracking)
   addSeenIds(s.questions.map(q => q.id));
+  // in test mode, mark correctly answered questions as mastered
+  if (s.mode === 'test') {
+    const correctIds = s.questions
+      .filter((q, i) => s.answers[i] === q.answer)
+      .map(q => q.id);
+    addMasteredIds(correctIds);
+  }
   // record history
   const hist = getHistory();
   hist.unshift({
@@ -522,13 +549,13 @@ function refreshHome() {
 
 // ---------- history ----------
 function renderHistory() {
-  const seenIds = getSeenIds();
+  const masteredIds = getMasteredIds();
   const total = allQuestions.length;
-  const seenCount = [...seenIds].filter(id => allQuestions.some(q => q.id === id)).length;
-  const remaining = total - seenCount;
+  const masteredCount = [...masteredIds].filter(id => allQuestions.some(q => q.id === id)).length;
+  const remaining = total - masteredCount;
   const seenInfo = document.getElementById('seen-count-info');
   if (seenInfo) {
-    seenInfo.textContent = `${seenCount} of ${total} questions answered · ${remaining} remaining`;
+    seenInfo.textContent = `${masteredCount} of ${total} questions mastered · ${remaining} remaining`;
   }
 
   const list = document.getElementById('history-list');
@@ -552,11 +579,32 @@ function renderHistory() {
 }
 
 // ---------- settings ----------
+function darkenHex(hex, factor) {
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  return '#' + [r,g,b].map(c => Math.round(c * factor).toString(16).padStart(2,'0')).join('');
+}
+
+function applyAccentColor(hex) {
+  const root = document.documentElement;
+  if (!hex) {
+    root.style.removeProperty('--accent');
+    root.style.removeProperty('--accent-dark');
+    return;
+  }
+  root.style.setProperty('--accent', hex);
+  root.style.setProperty('--accent-dark', darkenHex(hex, 0.78));
+}
+
 function applySettings() {
   const s = getSettings();
   document.documentElement.dataset.theme = s.theme;
   document.getElementById('theme-select').value = s.theme;
   document.getElementById('reminder-interval').value = String(s.reminderHours);
+  applyAccentColor(s.accentColor || '');
+  document.getElementById('accent-color').value =
+    s.accentColor || (s.theme === 'dark' ? '#66bb6a' : '#2e7d32');
 }
 
 // ---------- import ----------
@@ -978,7 +1026,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   };
 
   // practice
-  document.getElementById('practice-difficulty').addEventListener('change', updateUnseenLabel);
+  document.querySelectorAll('#practice-difficulty .diff-btn').forEach(btn => {
+    btn.addEventListener('click', () => { btn.classList.toggle('active'); updateUnseenLabel(); });
+  });
   document.getElementById('practice-topic').addEventListener('change', updateUnseenLabel);
   document.getElementById('practice-start').onclick = startPractice;
 
@@ -994,11 +1044,40 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('quiz-prev').onclick = prevQuestion;
   document.getElementById('quiz-flag').onclick = toggleFlag;
 
-  // calculator
-  const calcOverlay = document.getElementById('calc-overlay');
-  document.getElementById('quiz-calc').onclick = () => { calcOverlay.hidden = false; };
-  document.getElementById('calc-close').onclick = () => { calcOverlay.hidden = true; };
-  calcOverlay.addEventListener('click', (e) => { if (e.target === calcOverlay) calcOverlay.hidden = true; });
+  // calculator panel
+  const calcPanel = document.getElementById('calc-panel');
+  const calcBackdrop = document.getElementById('calc-backdrop');
+  function openCalc() {
+    calcPanel.setAttribute('aria-hidden', 'false');
+    calcBackdrop.hidden = false;
+    document.body.classList.add('calc-open');
+  }
+  function closeCalc() {
+    calcPanel.setAttribute('aria-hidden', 'true');
+    calcBackdrop.hidden = true;
+    document.body.classList.remove('calc-open');
+  }
+  document.getElementById('quiz-calc').onclick = openCalc;
+  document.getElementById('calc-close').onclick = closeCalc;
+  calcBackdrop.addEventListener('click', closeCalc);
+
+  // theme toggle inside calc panel
+  const moonIcon = document.getElementById('calc-icon-moon');
+  const sunIcon  = document.getElementById('calc-icon-sun');
+  function syncCalcThemeIcon() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    moonIcon.hidden = isDark;
+    sunIcon.hidden  = !isDark;
+  }
+  syncCalcThemeIcon();
+  document.getElementById('calc-theme-toggle').onclick = () => {
+    const s = getSettings();
+    s.theme = s.theme === 'dark' ? 'light' : 'dark';
+    save(KEY.settings, s);
+    document.documentElement.dataset.theme = s.theme;
+    document.getElementById('theme-select').value = s.theme;
+    syncCalcThemeIcon();
+  };
   document.getElementById('quiz-finish').onclick = () => {
     if (currentSession.mode === 'test') {
       const unanswered = currentSession.answers.filter(a => a == null).length;
@@ -1011,6 +1090,19 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('theme-select').onchange = (e) => {
     const s = getSettings(); s.theme = e.target.value; save(KEY.settings, s);
     document.documentElement.dataset.theme = s.theme;
+    if (!s.accentColor) {
+      document.getElementById('accent-color').value = s.theme === 'dark' ? '#66bb6a' : '#2e7d32';
+    }
+  };
+  document.getElementById('accent-color').oninput = (e) => {
+    const s = getSettings(); s.accentColor = e.target.value; save(KEY.settings, s);
+    applyAccentColor(e.target.value);
+  };
+  document.getElementById('accent-reset').onclick = () => {
+    const s = getSettings(); s.accentColor = ''; save(KEY.settings, s);
+    applyAccentColor('');
+    document.getElementById('accent-color').value =
+      s.theme === 'dark' ? '#66bb6a' : '#2e7d32';
   };
   document.getElementById('reminder-interval').onchange = (e) => {
     const s = getSettings(); s.reminderHours = Number(e.target.value); save(KEY.settings, s);
@@ -1022,14 +1114,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     location.reload();
   };
   document.getElementById('clear-history').onclick = () => {
-    if (!confirm('Clear all history and reset question pool? You\'ll see all questions again.')) return;
+    if (!confirm('Clear all history and reset mastered questions? You\'ll see all questions again.')) return;
     save(KEY.history, []);
     save(KEY.seen, []);
+    save(KEY.mastered, []);
     renderHistory();
   };
   document.getElementById('reset-seen').onclick = () => {
-    if (!confirm('Reset question pool? All questions will become available again.')) return;
-    save(KEY.seen, []);
+    if (!confirm('Reset mastered questions? All questions will become available again.')) return;
+    save(KEY.mastered, []);
     renderHistory();
   };
 
