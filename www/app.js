@@ -143,6 +143,20 @@ function shuffle(arr) {
   return a;
 }
 
+function shuffleChoices(q) {
+  const letters = ['A', 'B', 'C', 'D'].filter(l => q.choices[l] != null);
+  const vals = letters.map(l => q.choices[l]);
+  for (let i = vals.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [vals[i], vals[j]] = [vals[j], vals[i]];
+  }
+  const correctText = q.choices[q.answer];
+  const newChoices = {};
+  letters.forEach((l, i) => { newChoices[l] = vals[i]; });
+  const newAnswer = letters.find(l => newChoices[l] === correctText);
+  return { ...q, choices: newChoices, answer: newAnswer };
+}
+
 function pickQuestions({ section, topic, difficulties, count }) {
   const seenIds = getSeenIds();
   const masteredIds = getMasteredIds();
@@ -184,7 +198,7 @@ function startPractice() {
     return;
   }
 
-  const qs = pickQuestions({ section, topic, difficulties, count });
+  const qs = pickQuestions({ section, topic, difficulties, count }).map(shuffleChoices);
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -219,7 +233,7 @@ function startTest(kind) {
     return;
   }
 
-  const qs = pickQuestions({ section, topic: 'all', difficulties: 'all', count: targetCount });
+  const qs = pickQuestions({ section, topic: 'all', difficulties: 'all', count: targetCount }).map(shuffleChoices);
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',

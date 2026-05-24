@@ -9,12 +9,12 @@
       "difficulty": 1,
       "prompt": "If $3x - 7 = 2x + 5$, what is the value of $x$?",
       "choices": {
-        "A": "$-2$",
+        "A": "$12$",
         "B": "$6$",
-        "C": "$12$",
-        "D": "$14$"
+        "C": "$14$",
+        "D": "$-2$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Subtract $2x$: $x - 7 = 5$. Add $7$: $x = 12$."
     },
     {
@@ -24,12 +24,12 @@
       "difficulty": 1,
       "prompt": "A line has a slope of $4$ and passes through $(1, -3)$. What is its $y$-intercept?",
       "choices": {
-        "A": "$-7$",
-        "B": "$-3$",
-        "C": "$1$",
-        "D": "$4$"
+        "A": "$4$",
+        "B": "$1$",
+        "C": "$-7$",
+        "D": "$-3$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "$y = mx + b \\Rightarrow -3 = 4(1) + b \\Rightarrow b = -7$."
     },
     {
@@ -39,12 +39,12 @@
       "difficulty": 2,
       "prompt": "Solve: $2x + y = 10$ and $x - y = 2$. What is $x + y$?",
       "choices": {
-        "A": "$4$",
-        "B": "$6$",
+        "A": "$6$",
+        "B": "$10$",
         "C": "$8$",
-        "D": "$10$"
+        "D": "$4$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Add equations: $3x = 12 \\Rightarrow x = 4$. Then $y = 4 - 2 = 2$. So $x + y = 6$."
     },
     {
@@ -54,12 +54,12 @@
       "difficulty": 1,
       "prompt": "A car rental costs $\\$30$ plus $\\$0.25$ per mile. Which equation gives total cost $C$ for $m$ miles?",
       "choices": {
-        "A": "$C = 30m + 0.25$",
-        "B": "$C = 0.25m + 30$",
-        "C": "$C = 30 + 25m$",
+        "A": "$C = 0.25m + 30$",
+        "B": "$C = 30 + 25m$",
+        "C": "$C = 30m + 0.25$",
         "D": "$C = 30(0.25 + m)$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Per-mile rate $\\times$ miles + flat fee $\\Rightarrow 0.25m + 30$."
     },
     {
@@ -69,12 +69,12 @@
       "difficulty": 1,
       "prompt": "If $f(x) = 2x - 5$, what is $f(7)$?",
       "choices": {
-        "A": "$4$",
-        "B": "$9$",
-        "C": "$14$",
-        "D": "$19$"
+        "A": "$9$",
+        "B": "$14$",
+        "C": "$19$",
+        "D": "$4$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$f(7) = 2(7) - 5 = 9$."
     },
     {
@@ -84,12 +84,12 @@
       "difficulty": 2,
       "prompt": "Which value of $c$ makes the system $y = 3x + 2$ and $y = cx - 4$ have NO solution?",
       "choices": {
-        "A": "$-3$",
-        "B": "$0$",
+        "A": "$0$",
+        "B": "$3$",
         "C": "$2$",
-        "D": "$3$"
+        "D": "$-3$"
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "No solution requires the lines to be parallel (same slope) but with different intercepts. So $c = 3$."
     },
     {
@@ -99,12 +99,12 @@
       "difficulty": 1,
       "prompt": "What is the $x$-intercept of $4x - 6y = 24$?",
       "choices": {
-        "A": "$(-4, 0)$",
+        "A": "$(6, 0)$",
         "B": "$(0, -4)$",
-        "C": "$(6, 0)$",
+        "C": "$(-4, 0)$",
         "D": "$(0, 6)$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Set $y = 0$: $4x = 24 \\Rightarrow x = 6$."
     },
     {
@@ -114,12 +114,12 @@
       "difficulty": 1,
       "prompt": "If $5(x - 2) = 3x + 4$, what is $x$?",
       "choices": {
-        "A": "$-7$",
-        "B": "$-3$",
-        "C": "$7$",
-        "D": "$14$"
+        "A": "$-3$",
+        "B": "$14$",
+        "C": "$-7$",
+        "D": "$7$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "$5x - 10 = 3x + 4 \\Rightarrow 2x = 14 \\Rightarrow x = 7$."
     },
     {
@@ -130,11 +130,11 @@
       "prompt": "A phone plan is $\\$40$/month plus $\\$0.10$/text. If Maria's bill was $\\$58$, how many texts did she send?",
       "choices": {
         "A": "$18$",
-        "B": "$90$",
-        "C": "$180$",
+        "B": "$180$",
+        "C": "$90$",
         "D": "$580$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$40 + 0.10t = 58 \\Rightarrow 0.10t = 18 \\Rightarrow t = 180$."
     },
     {
@@ -144,12 +144,12 @@
       "difficulty": 1,
       "prompt": "What is the slope of a line perpendicular to $y = \\tfrac{1}{2}x + 7$?",
       "choices": {
-        "A": "$-2$",
-        "B": "$-\\tfrac{1}{2}$",
-        "C": "$\\tfrac{1}{2}$",
-        "D": "$2$"
+        "A": "$\\tfrac{1}{2}$",
+        "B": "$2$",
+        "C": "$-2$",
+        "D": "$-\\tfrac{1}{2}$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "Perpendicular slopes multiply to $-1$. $\\tfrac{1}{2} \\cdot m = -1 \\Rightarrow m = -2$."
     },
     {
@@ -159,10 +159,10 @@
       "difficulty": 1,
       "prompt": "What are the solutions to $x^2 - 5x + 6 = 0$?",
       "choices": {
-        "A": "$x = 1, 6$",
+        "A": "$x = -2, -3$",
         "B": "$x = 2, 3$",
-        "C": "$x = -2, -3$",
-        "D": "$x = -1, -6$"
+        "C": "$x = -1, -6$",
+        "D": "$x = 1, 6$"
       },
       "answer": "B",
       "explanation": "Factor: $(x - 2)(x - 3) = 0 \\Rightarrow x = 2$ or $3$."
@@ -174,12 +174,12 @@
       "difficulty": 1,
       "prompt": "Which expression is equivalent to $(x + 3)(x - 4)$?",
       "choices": {
-        "A": "$x^2 + 7x - 12$",
-        "B": "$x^2 - x - 12$",
-        "C": "$x^2 - 7x + 12$",
-        "D": "$x^2 + x - 12$"
+        "A": "$x^2 + x - 12$",
+        "B": "$x^2 - 7x + 12$",
+        "C": "$x^2 - x - 12$",
+        "D": "$x^2 + 7x - 12$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$x^2 - 4x + 3x - 12 = x^2 - x - 12$."
     },
     {
@@ -189,12 +189,12 @@
       "difficulty": 1,
       "prompt": "If $f(x) = x^2 - 4x + 3$, what is $f(2)$?",
       "choices": {
-        "A": "$-1$",
+        "A": "$7$",
         "B": "$0$",
-        "C": "$3$",
-        "D": "$7$"
+        "C": "$-1$",
+        "D": "$3$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "$(2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$."
     },
     {
@@ -204,12 +204,12 @@
       "difficulty": 1,
       "prompt": "Which is equivalent to $(2x^3)(3x^4)$?",
       "choices": {
-        "A": "$5x^7$",
-        "B": "$5x^{12}$",
-        "C": "$6x^7$",
-        "D": "$6x^{12}$"
+        "A": "$6x^7$",
+        "B": "$6x^{12}$",
+        "C": "$5x^{12}$",
+        "D": "$5x^7$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Multiply coefficients: $6$. Add exponents: $x^{3+4} = x^7$. Result: $6x^7$."
     },
     {
@@ -221,8 +221,8 @@
       "choices": {
         "A": "$3$",
         "B": "$4$",
-        "C": "$5$",
-        "D": "$16$"
+        "C": "$16$",
+        "D": "$5$"
       },
       "answer": "B",
       "explanation": "$32 = 2^5$, so $x + 1 = 5 \\Rightarrow x = 4$."
@@ -234,12 +234,12 @@
       "difficulty": 2,
       "prompt": "$f(x) = (x - 3)^2 - 4$. What is the minimum value of $f$?",
       "choices": {
-        "A": "$-4$",
-        "B": "$-3$",
+        "A": "$9$",
+        "B": "$-4$",
         "C": "$3$",
-        "D": "$9$"
+        "D": "$-3$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Vertex form: minimum = the constant after the squared term, here $-4$."
     },
     {
@@ -249,12 +249,12 @@
       "difficulty": 2,
       "prompt": "Which equals $\\dfrac{x^2 - 9}{x - 3}$ for $x \\ne 3$?",
       "choices": {
-        "A": "$x - 3$",
-        "B": "$x + 3$",
+        "A": "$x + 3$",
+        "B": "$x^2 - 3$",
         "C": "$x^2 + 3$",
-        "D": "$x^2 - 3$"
+        "D": "$x - 3$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$x^2 - 9 = (x - 3)(x + 3)$. Cancel $(x - 3) \\Rightarrow x + 3$."
     },
     {
@@ -264,12 +264,12 @@
       "difficulty": 2,
       "prompt": "A quadratic has roots at $x = -2$ and $x = 5$. Which equation matches?",
       "choices": {
-        "A": "$y = (x - 2)(x + 5)$",
-        "B": "$y = (x + 2)(x - 5)$",
-        "C": "$y = (x - 2)(x - 5)$",
-        "D": "$y = (x + 2)(x + 5)$"
+        "A": "$y = (x + 2)(x - 5)$",
+        "B": "$y = (x + 2)(x + 5)$",
+        "C": "$y = (x - 2)(x + 5)$",
+        "D": "$y = (x - 2)(x - 5)$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Roots at $-2$ and $5 \\Rightarrow$ factors $(x + 2)(x - 5)$."
     },
     {
@@ -279,12 +279,12 @@
       "difficulty": 2,
       "prompt": "Which value satisfies $\\sqrt{2x + 1} = 5$?",
       "choices": {
-        "A": "$2$",
-        "B": "$5$",
-        "C": "$12$",
-        "D": "$13$"
+        "A": "$13$",
+        "B": "$12$",
+        "C": "$5$",
+        "D": "$2$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Square both sides: $2x + 1 = 25 \\Rightarrow x = 12$."
     },
     {
@@ -310,11 +310,11 @@
       "prompt": "A shirt is on sale 25% off the original price of $\\$48$. What is the sale price?",
       "choices": {
         "A": "$\\$12$",
-        "B": "$\\$23$",
-        "C": "$\\$36$",
-        "D": "$\\$40$"
+        "B": "$\\$36$",
+        "C": "$\\$40$",
+        "D": "$\\$23$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$25\\%$ of $48 = 12$. $48 - 12 = \\$36$."
     },
     {
@@ -325,9 +325,9 @@
       "prompt": "A recipe uses $3$ cups flour : $2$ cups sugar. With $9$ cups flour, how much sugar?",
       "choices": {
         "A": "$4$",
-        "B": "$5$",
+        "B": "$8$",
         "C": "$6$",
-        "D": "$8$"
+        "D": "$5$"
       },
       "answer": "C",
       "explanation": "$9/3 = 3\\times$ scale. Sugar $= 2 \\times 3 = 6$."
@@ -339,10 +339,10 @@
       "difficulty": 1,
       "prompt": "The mean of $5$ numbers is $14$. Four of them are $10, 12, 15, 18$. What is the fifth?",
       "choices": {
-        "A": "$13$",
-        "B": "$14$",
+        "A": "$14$",
+        "B": "$16$",
         "C": "$15$",
-        "D": "$16$"
+        "D": "$13$"
       },
       "answer": "C",
       "explanation": "Sum $= 5 \\times 14 = 70$. Sum of given $= 55$. Fifth $= 15$."
@@ -354,12 +354,12 @@
       "difficulty": 1,
       "prompt": "A car goes $240$ miles in $4$ hours. At the same rate, how far in $7$ hours?",
       "choices": {
-        "A": "$280$",
-        "B": "$360$",
-        "C": "$420$",
-        "D": "$480$"
+        "A": "$420$",
+        "B": "$480$",
+        "C": "$280$",
+        "D": "$360$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Rate $= 60$ mph. $60 \\times 7 = 420$."
     },
     {
@@ -369,12 +369,12 @@
       "difficulty": 1,
       "prompt": "Population grew from $12{,}000$ to $13{,}200$. By what percent did it grow?",
       "choices": {
-        "A": "$1\\%$",
-        "B": "$8\\%$",
-        "C": "$10\\%$",
+        "A": "$10\\%$",
+        "B": "$1\\%$",
+        "C": "$8\\%$",
         "D": "$12\\%$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$1200/12000 = 0.10 = 10\\%$."
     },
     {
@@ -384,12 +384,12 @@
       "difficulty": 3,
       "prompt": "A price is increased $20\\%$, then decreased $20\\%$. The final price is what percent of the original?",
       "choices": {
-        "A": "$92\\%$",
-        "B": "$96\\%$",
-        "C": "$100\\%$",
-        "D": "$104\\%$"
+        "A": "$96\\%$",
+        "B": "$104\\%$",
+        "C": "$92\\%$",
+        "D": "$100\\%$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$1.20 \\times 0.80 = 0.96 = 96\\%$."
     },
     {
@@ -399,12 +399,12 @@
       "difficulty": 2,
       "prompt": "A class has $24$ students with boys:girls = $5:3$. How many girls?",
       "choices": {
-        "A": "$8$",
-        "B": "$9$",
-        "C": "$12$",
-        "D": "$15$"
+        "A": "$15$",
+        "B": "$12$",
+        "C": "$9$",
+        "D": "$8$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Total parts $= 8$. $24/8 = 3$ per part. Girls $= 3 \\times 3 = 9$."
     },
     {
@@ -414,12 +414,12 @@
       "difficulty": 2,
       "prompt": "Which set has the LARGEST standard deviation?",
       "choices": {
-        "A": "$\\{5,5,5,5,5\\}$",
-        "B": "$\\{3,4,5,6,7\\}$",
-        "C": "$\\{1,1,5,9,9\\}$",
-        "D": "$\\{5,5,5,5,6\\}$"
+        "A": "$\\{3,4,5,6,7\\}$",
+        "B": "$\\{5,5,5,5,6\\}$",
+        "C": "$\\{5,5,5,5,5\\}$",
+        "D": "$\\{1,1,5,9,9\\}$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Largest spread from the mean $\\Rightarrow \\{1,1,5,9,9\\}$."
     },
     {
@@ -429,12 +429,12 @@
       "difficulty": 1,
       "prompt": "A circle has radius $6$. What is its area?",
       "choices": {
-        "A": "$12\\pi$",
+        "A": "$72\\pi$",
         "B": "$24\\pi$",
-        "C": "$36\\pi$",
-        "D": "$72\\pi$"
+        "C": "$12\\pi$",
+        "D": "$36\\pi$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "$A = \\pi r^2 = 36\\pi$."
     },
     {
@@ -459,12 +459,12 @@
       "difficulty": 2,
       "prompt": "A cylinder has radius $3$ and height $10$. What is its volume?",
       "choices": {
-        "A": "$30\\pi$",
-        "B": "$60\\pi$",
-        "C": "$90\\pi$",
-        "D": "$100\\pi$"
+        "A": "$90\\pi$",
+        "B": "$30\\pi$",
+        "C": "$100\\pi$",
+        "D": "$60\\pi$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$V = \\pi r^2 h = \\pi (9)(10) = 90\\pi$."
     },
     {
@@ -475,11 +475,11 @@
       "prompt": "Two angles in a triangle measure $40^\\circ$ and $75^\\circ$. What is the third?",
       "choices": {
         "A": "$55^\\circ$",
-        "B": "$65^\\circ$",
+        "B": "$115^\\circ$",
         "C": "$75^\\circ$",
-        "D": "$115^\\circ$"
+        "D": "$65^\\circ$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$180 - 40 - 75 = 65^\\circ$."
     },
     {
@@ -504,12 +504,12 @@
       "difficulty": 1,
       "prompt": "A right triangle has legs $5$ and $12$. What is the hypotenuse?",
       "choices": {
-        "A": "$7$",
-        "B": "$13$",
-        "C": "$17$",
-        "D": "$60$"
+        "A": "$13$",
+        "B": "$60$",
+        "C": "$7$",
+        "D": "$17$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Memorize the $5$-$12$-$13$ triple. $\\sqrt{25 + 144} = \\sqrt{169} = 13$."
     },
     {
@@ -519,12 +519,12 @@
       "difficulty": 1,
       "prompt": "Each of the students ___ expected to bring a calculator to the exam.",
       "choices": {
-        "A": "are",
-        "B": "is",
-        "C": "were",
+        "A": "is",
+        "B": "were",
+        "C": "are",
         "D": "have been"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "'Each' is singular → 'is'."
     },
     {
@@ -534,12 +534,12 @@
       "difficulty": 2,
       "prompt": "Identify the correctly punctuated sentence.",
       "choices": {
-        "A": "The book, which I borrowed from Sara was fascinating.",
-        "B": "The book which I borrowed from Sara, was fascinating.",
-        "C": "The book, which I borrowed from Sara, was fascinating.",
-        "D": "The book; which I borrowed from Sara, was fascinating."
+        "A": "The book which I borrowed from Sara, was fascinating.",
+        "B": "The book, which I borrowed from Sara, was fascinating.",
+        "C": "The book; which I borrowed from Sara, was fascinating.",
+        "D": "The book, which I borrowed from Sara was fascinating."
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Non-essential clause needs commas on BOTH sides."
     },
     {
@@ -549,12 +549,12 @@
       "difficulty": 1,
       "prompt": "The committee announced ___ decision yesterday.",
       "choices": {
-        "A": "it's",
-        "B": "its",
+        "A": "its",
+        "B": "it's",
         "C": "its'",
         "D": "their"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "'Its' is the possessive (no apostrophe). The committee owns its decision."
     },
     {
@@ -565,11 +565,11 @@
       "prompt": "___ down the hallway, the painting caught my attention.",
       "choices": {
         "A": "Walking",
-        "B": "When walking",
-        "C": "As I walked",
+        "B": "As I walked",
+        "C": "When walking",
         "D": "Having walked"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "A/B/D leave a dangling modifier (the painting wasn't walking). C names the subject."
     },
     {
@@ -579,12 +579,12 @@
       "difficulty": 2,
       "prompt": "Neither the manager nor the employees ___ aware of the new policy.",
       "choices": {
-        "A": "was",
-        "B": "were",
-        "C": "is",
-        "D": "has been"
+        "A": "were",
+        "B": "was",
+        "C": "has been",
+        "D": "is"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Neither/nor agrees with the NEAREST subject ('employees', plural) → 'were'."
     },
     {
@@ -594,10 +594,10 @@
       "difficulty": 1,
       "prompt": "The team practiced for six months. ___, they failed to qualify.",
       "choices": {
-        "A": "Therefore",
+        "A": "Specifically",
         "B": "Furthermore",
         "C": "Nevertheless",
-        "D": "Specifically"
+        "D": "Therefore"
       },
       "answer": "C",
       "explanation": "Practiced hard BUT failed → contrast → 'Nevertheless'."
@@ -609,12 +609,12 @@
       "difficulty": 2,
       "prompt": "Choose the most concise option.",
       "choices": {
-        "A": "In light of the fact that the road was closed due to construction",
+        "A": "Owing to the fact of the road being closed for construction",
         "B": "Due to the fact that the road was closed because of construction",
-        "C": "Since the road was closed for construction",
-        "D": "Owing to the fact of the road being closed for construction"
+        "C": "In light of the fact that the road was closed due to construction",
+        "D": "Since the road was closed for construction"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Cut wordy phrases like 'In light of the fact that' → 'Since'."
     },
     {
@@ -624,12 +624,12 @@
       "difficulty": 2,
       "prompt": "The recipe calls for three ingredients ___ flour, sugar, and butter.",
       "choices": {
-        "A": ",",
+        "A": ":",
         "B": ";",
-        "C": ":",
+        "C": ",",
         "D": "—"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "A complete sentence introducing a list → colon."
     },
     {
@@ -639,10 +639,10 @@
       "difficulty": 2,
       "prompt": "The professor recommended that each student ___ their thesis by Friday.",
       "choices": {
-        "A": "submits",
+        "A": "had submitted",
         "B": "submitted",
         "C": "submit",
-        "D": "had submitted"
+        "D": "submits"
       },
       "answer": "C",
       "explanation": "Subjunctive after 'recommend that' → base form 'submit'."
@@ -654,10 +654,10 @@
       "difficulty": 2,
       "prompt": "Economists predicted a sharp decline in spending. ___, retail sales rose 4%.",
       "choices": {
-        "A": "As expected",
-        "B": "Specifically",
+        "A": "Furthermore",
+        "B": "As expected",
         "C": "Surprisingly",
-        "D": "Furthermore"
+        "D": "Specifically"
       },
       "answer": "C",
       "explanation": "Predicted decline but spending rose → unexpected → 'Surprisingly'."
@@ -669,12 +669,12 @@
       "difficulty": 2,
       "prompt": "The mantis shrimp has 16 types of color receptors (humans have 3), enabling it to perceive colors and polarized light invisible to most species. This visual capacity helps it communicate, hunt, and navigate coral reefs with precision.\n\nWhat is the passage's main purpose?",
       "choices": {
-        "A": "To compare the mantis shrimp's vision to humans'",
-        "B": "To describe the unique and complex visual abilities of the mantis shrimp",
-        "C": "To explain how mantis shrimp hunt",
-        "D": "To argue that mantis shrimp are the most intelligent marine animal"
+        "A": "To describe the unique and complex visual abilities of the mantis shrimp",
+        "B": "To compare the mantis shrimp's vision to humans'",
+        "C": "To argue that mantis shrimp are the most intelligent marine animal",
+        "D": "To explain how mantis shrimp hunt"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "The passage is centered on the unique visual system. A is too narrow; C and D aren't supported."
     },
     {
@@ -684,12 +684,12 @@
       "difficulty": 2,
       "prompt": "The discovery prompted scientists to reconsider cephalopod evolution. The species, found at depths over 4,000m, shows traits suggesting some octopuses diverged from relatives much earlier than thought, expanding the known evolutionary tree.\n\n'Expanding' most nearly means:",
       "choices": {
-        "A": "inflating",
-        "B": "broadening",
-        "C": "prolonging",
-        "D": "magnifying"
+        "A": "prolonging",
+        "B": "inflating",
+        "C": "magnifying",
+        "D": "broadening"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "'Expanding the tree' = making the tree broader/wider."
     },
     {
@@ -699,12 +699,12 @@
       "difficulty": 3,
       "prompt": "Hobsbawm argued the 'long nineteenth century' (1789–1914) was defined less by political revolutions than by industrialization's slow remaking of daily life. He conceded revolutions and wars dominated headlines, but insisted ordinary people's experience of the era was shaped primarily by factories, railways, and wage labor. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "For Hobsbawm, the period's true legacy lay in the transformation of work and routine, not in dramatic political events.",
+        "A": "As a result, Hobsbawm dismissed the role of warfare entirely.",
         "B": "Hobsbawm believed political revolutions had little impact on ordinary citizens.",
         "C": "Hobsbawm therefore concluded that industrialization was a uniquely European phenomenon.",
-        "D": "As a result, Hobsbawm dismissed the role of warfare entirely."
+        "D": "For Hobsbawm, the period's true legacy lay in the transformation of work and routine, not in dramatic political events."
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "A continues the passage's thesis. B is too extreme; C and D contradict the text."
     },
     {
@@ -714,12 +714,12 @@
       "difficulty": 3,
       "prompt": "Text 1: A 2019 study found office workers who took regular short walks reported lower stress than those who stayed seated. The authors concluded brief activity could improve workplace wellbeing.\n\nText 2: Sociologist Maya Tran cautions against treating walking as a universal stress remedy. She doesn't dispute movement helps, but emphasizes workplace stress often stems from systemic issues — heavy workloads, unclear expectations, conflict — that walking won't resolve.\n\nHow would Tran respond to the 2019 study's conclusion?",
       "choices": {
-        "A": "By rejecting the finding that walking reduces stress.",
-        "B": "By agreeing walking should be the primary tool against workplace stress.",
-        "C": "By acknowledging the benefit while arguing it doesn't address underlying causes.",
+        "A": "By agreeing walking should be the primary tool against workplace stress.",
+        "B": "By acknowledging the benefit while arguing it doesn't address underlying causes.",
+        "C": "By rejecting the finding that walking reduces stress.",
         "D": "By suggesting the study should have been longer."
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Tran 'does not dispute' the benefit but emphasizes systemic causes."
     },
     {
@@ -729,12 +729,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• Frank Lloyd Wright completed Fallingwater in 1939.\n• It is built directly over a waterfall in Pennsylvania.\n• Wright designed it to harmonize with natural surroundings.\n• It's a defining example of 'organic architecture'.\n\nGoal: emphasize the relationship between the building and its environment. Best choice?",
       "choices": {
-        "A": "Frank Lloyd Wright completed Fallingwater in 1939.",
-        "B": "Fallingwater, completed in 1939, is in rural Pennsylvania.",
-        "C": "Frank Lloyd Wright designed Fallingwater, an example of organic architecture, to harmonize with its natural surroundings, including the waterfall it sits above.",
-        "D": "Fallingwater is a defining example of organic architecture."
+        "A": "Fallingwater is a defining example of organic architecture.",
+        "B": "Frank Lloyd Wright completed Fallingwater in 1939.",
+        "C": "Fallingwater, completed in 1939, is in rural Pennsylvania.",
+        "D": "Frank Lloyd Wright designed Fallingwater, an example of organic architecture, to harmonize with its natural surroundings, including the waterfall it sits above."
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "C combines harmony with natural surroundings + the waterfall — directly hits the goal."
     },
     {
@@ -744,12 +744,12 @@
       "difficulty": 1,
       "prompt": "The bristlecone pine, found in harsh, arid climates of the American West, can live thousands of years. Methuselah is over 4,800. Scientists attribute its longevity to slow growth and the ability to seal off damaged or diseased trunk portions, letting the rest thrive.\n\nThe pine's long lifespan is primarily due to:",
       "choices": {
-        "A": "Mild climates",
-        "B": "Rapid healing of damage",
-        "C": "Slow growth and isolation of damaged tissue",
-        "D": "Resistance to all disease"
+        "A": "Rapid healing of damage",
+        "B": "Slow growth and isolation of damaged tissue",
+        "C": "Resistance to all disease",
+        "D": "Mild climates"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Stated explicitly in the passage."
     },
     {
@@ -759,10 +759,10 @@
       "difficulty": 2,
       "prompt": "Although early critics dismissed jazz as unrefined, it has become one of America's most significant cultural contributions. Jazz draws on African rhythms, European harmonies, and the lived experiences of Black communities. ___ its complex history, jazz keeps evolving, influencing genres from hip-hop to classical.\n\nWhich choice fits the blank?",
       "choices": {
-        "A": "Because of",
+        "A": "Reflecting",
         "B": "Despite",
         "C": "Owing to",
-        "D": "Reflecting"
+        "D": "Because of"
       },
       "answer": "B",
       "explanation": "Complex history but still evolving = contrast → 'Despite'."
@@ -774,12 +774,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• Coral reefs cover <1% of the ocean floor.\n• They support ~25% of all marine species.\n• Rising ocean temperatures cause widespread bleaching.\n• Many reefs have lost more than half their coral cover since 1980.\n\nGoal: emphasize the disproportionate ecological importance of reefs. Best choice?",
       "choices": {
-        "A": "Coral reefs cover less than 1% of the ocean floor but support roughly 25% of all marine species.",
-        "B": "Rising temperatures have caused widespread coral bleaching.",
+        "A": "Rising temperatures have caused widespread coral bleaching.",
+        "B": "Coral reefs are home to many fish species.",
         "C": "Many reefs have lost more than half their coral cover since 1980.",
-        "D": "Coral reefs are home to many fish species."
+        "D": "Coral reefs cover less than 1% of the ocean floor but support roughly 25% of all marine species."
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "A juxtaposes <1% area with 25% of species — that's the disproportion."
     },
     {
@@ -790,9 +790,9 @@
       "prompt": "$$\\frac{12x+28}{4} - \\frac{s}{13} = r(x - 8)$$\n\nIn the given equation, $s$ and $r$ are constants, and $s > 0$. If the equation has infinitely many solutions, what is the value of $s$?",
       "choices": {
         "A": "$52$",
-        "B": "$156$",
+        "B": "$624$",
         "C": "$403$",
-        "D": "$624$"
+        "D": "$156$"
       },
       "answer": "C",
       "explanation": "Rewrite the left side: $3x + 7 - \\frac{s}{13} = r(x - 8)$. For infinitely many solutions, coefficients must match: coefficient of $x$ gives $3 = r$. Constant terms: $7 - \\frac{s}{13} = -8r = -24$, so $-\\frac{s}{13} = -31$, giving $s = 403$."
@@ -805,11 +805,11 @@
       "prompt": "In the $xy$-plane, two lines are graphed. One line passes through $(8, 0)$ and $(3, 4)$. The other line passes through $(8, 0)$ and $(3, 2)$. What system of linear equations is represented by the lines?",
       "choices": {
         "A": "$8x + 4y = 32$ and $-10x - 4y = -64$",
-        "B": "$8x - 4y = 32$ and $-10x + 4y = -64$",
-        "C": "$4x - 10y = 32$ and $-8x + 10y = -64$",
-        "D": "$4x + 10y = 32$ and $-8x - 10y = -64$"
+        "B": "$4x - 10y = 32$ and $-8x + 10y = -64$",
+        "C": "$4x + 10y = 32$ and $-8x - 10y = -64$",
+        "D": "$8x - 4y = 32$ and $-10x + 4y = -64$"
       },
-      "answer": "D",
+      "answer": "C",
       "explanation": "Line 1 through $(8,0)$ and $(3,4)$: slope $= \\frac{4-0}{3-8} = -\\frac{4}{5}$. Equation: $\\frac{4}{5}x + y = \\frac{32}{5} \\Rightarrow 4x + 10y = 32$. Line 2 through $(8,0)$ and $(3,2)$: slope $= -\\frac{2}{5}$. Equation: $\\frac{2}{5}x + y = \\frac{16}{5} \\Rightarrow 2x + 5y = 16$, multiply by $-4$: $-8x - 10y = -64$."
     },
     {
@@ -819,10 +819,10 @@
       "difficulty": 1,
       "prompt": "The function $f$ is defined by $f(x) = 25x + 30$. What is the value of $f(x)$ when $x = 2$?",
       "choices": {
-        "A": "$50$",
-        "B": "$57$",
+        "A": "$110$",
+        "B": "$50$",
         "C": "$80$",
-        "D": "$110$"
+        "D": "$57$"
       },
       "answer": "C",
       "explanation": "$f(2) = 25(2) + 30 = 50 + 30 = 80$."
@@ -835,11 +835,11 @@
       "prompt": "Line $k$ is defined by $y = -\\dfrac{17}{3}x + 5$. Line $j$ is perpendicular to line $k$ in the $xy$-plane. What is the slope of line $j$?",
       "choices": {
         "A": "$-\\dfrac{17}{3}$",
-        "B": "$-\\dfrac{3}{17}$",
-        "C": "$\\dfrac{3}{17}$",
-        "D": "$\\dfrac{17}{3}$"
+        "B": "$\\dfrac{17}{3}$",
+        "C": "$-\\dfrac{3}{17}$",
+        "D": "$\\dfrac{3}{17}$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "The slope of line $k$ is $-\\frac{17}{3}$. The slope of a perpendicular line is the negative reciprocal: $\\frac{3}{17} \\approx 0.176$."
     },
     {
@@ -864,12 +864,12 @@
       "difficulty": 2,
       "prompt": "A cargo helicopter delivers only 100-pound packages and 120-pound packages. For each delivery trip, the helicopter must carry at least 10 packages, and the total weight of the packages can be at most 1,100 pounds. What is the maximum number of 120-pound packages that the helicopter can carry per trip?",
       "choices": {
-        "A": "$2$",
-        "B": "$4$",
-        "C": "$5$",
-        "D": "$6$"
+        "A": "$4$",
+        "B": "$5$",
+        "C": "$6$",
+        "D": "$2$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Let $a$ = number of 120-lb packages and $b$ = number of 100-lb packages. We need $120a + 100b \\leq 1100$ and $a + b \\geq 10$. To maximize $a$, minimize $b = 10 - a$: $120a + 100(10-a) \\leq 1100 \\Rightarrow 20a \\leq 100 \\Rightarrow a \\leq 5$."
     },
     {
@@ -879,12 +879,12 @@
       "difficulty": 1,
       "prompt": "If $2x + 3 = 9$, what is the value of $6x - 1$?",
       "choices": {
-        "A": "$6$",
-        "B": "$11$",
-        "C": "$17$",
-        "D": "$27$"
+        "A": "$17$",
+        "B": "$27$",
+        "C": "$11$",
+        "D": "$6$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Multiply both sides of $2x + 3 = 9$ by $3$: $6x + 9 = 27$. Subtract $10$: $6x - 1 = 17$."
     },
     {
@@ -894,12 +894,12 @@
       "difficulty": 1,
       "prompt": "The function $f$ is defined by $f(x) = 8x$. For what value of $x$ does $f(x) = 72$?",
       "choices": {
-        "A": "$8$",
-        "B": "$9$",
+        "A": "$80$",
+        "B": "$8$",
         "C": "$64$",
-        "D": "$80$"
+        "D": "$9$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$72 = 8x \\Rightarrow x = 9$."
     },
     {
@@ -909,12 +909,12 @@
       "difficulty": 1,
       "prompt": "$$f(x) = 4x + b$$\n\nFor the linear function $f$, $b$ is a constant and $f(7) = 28$. What is the value of $b$?",
       "choices": {
-        "A": "$0$",
-        "B": "$1$",
-        "C": "$4$",
-        "D": "$7$"
+        "A": "$1$",
+        "B": "$4$",
+        "C": "$7$",
+        "D": "$0$"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "$f(7) = 4(7) + b = 28 \\Rightarrow 28 + b = 28 \\Rightarrow b = 0$."
     },
     {
@@ -924,12 +924,12 @@
       "difficulty": 3,
       "prompt": "The table below gives the coordinates of two points on a line in the $xy$-plane:\n\n| $x$ | $y$ |\n|---|---|\n| $k$ | $13$ |\n| $k+7$ | $-15$ |\n\nThe $y$-intercept of the line is $(k - 5,\\ b)$, where $k$ and $b$ are constants. What is the value of $b$?",
       "choices": {
-        "A": "$13$",
-        "B": "$19$",
-        "C": "$33$",
-        "D": "$41$"
+        "A": "$41$",
+        "B": "$33$",
+        "C": "$13$",
+        "D": "$19$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Slope $= \\frac{-15 - 13}{(k+7) - k} = \\frac{-28}{7} = -4$. Using the slope between $(k-5, b)$ and $(k, 13)$: $-4 = \\frac{13 - b}{k - (k-5)} = \\frac{13-b}{5}$. So $13 - b = -20$, giving $b = 33$."
     },
     {
@@ -939,12 +939,12 @@
       "difficulty": 1,
       "prompt": "Gabriella deposits $\\$35$ in a savings account at the end of each week. At the beginning of the 1st week of a year there was $\\$600$ in that savings account. How much money, in dollars, will be in the account at the end of the 4th week of that year?",
       "choices": {
-        "A": "$\\$460$",
-        "B": "$\\$635$",
-        "C": "$\\$639$",
-        "D": "$\\$740$"
+        "A": "$\\$635$",
+        "B": "$\\$740$",
+        "C": "$\\$460$",
+        "D": "$\\$639$"
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "Starting amount + 4 weekly deposits: $600 + 4(35) = 600 + 140 = \\$740$."
     },
     {
@@ -956,8 +956,8 @@
       "choices": {
         "A": "$x = 4y$",
         "B": "$\\dfrac{1}{3}x = 4y$",
-        "C": "$x = 12y - 15$",
-        "D": "$\\dfrac{1}{3}x = 12y - 15$"
+        "C": "$\\dfrac{1}{3}x = 12y - 15$",
+        "D": "$x = 12y - 15$"
       },
       "answer": "B",
       "explanation": "Rewrite the given equation: $x = 12y - 15$, i.e., $y = \\frac{1}{12}x + \\frac{5}{4}$. For no solution, need same slope ($\\frac{1}{12}$) but different $y$-intercept. Choice B: $\\frac{1}{3}x = 4y \\Rightarrow y = \\frac{1}{12}x$, slope $= \\frac{1}{12}$ with $y$-intercept $0 \\neq \\frac{5}{4}$. ✓"
@@ -969,12 +969,12 @@
       "difficulty": 3,
       "prompt": "$$-x + y = -3.5$$\n$$x + 3y = 9.5$$\n\nIf $(x, y)$ satisfies the system of equations above, what is the value of $y$?",
       "choices": {
-        "A": "$\\dfrac{1}{2}$",
-        "B": "$\\dfrac{3}{2}$",
+        "A": "$6$",
+        "B": "$\\dfrac{1}{2}$",
         "C": "$3$",
-        "D": "$6$"
+        "D": "$\\dfrac{3}{2}$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Adding the two equations: $4y = 6 \\Rightarrow y = \\frac{3}{2}$."
     },
     {
@@ -984,9 +984,9 @@
       "difficulty": 2,
       "prompt": "$$\\frac{1}{2}y = 4$$\n$$x - \\frac{1}{2}y = 2$$\n\nThe system of equations above has solution $(x, y)$. What is the value of $x$?",
       "choices": {
-        "A": "$3$",
+        "A": "$4$",
         "B": "$\\dfrac{7}{2}$",
-        "C": "$4$",
+        "C": "$3$",
         "D": "$6$"
       },
       "answer": "D",
@@ -999,12 +999,12 @@
       "difficulty": 1,
       "prompt": "$$x + y = 125$$\n$$x + y + y = 155$$\n\nThe solution to the given system of equations is $(x, y)$. What is the value of $y$?",
       "choices": {
-        "A": "$25$",
-        "B": "$30$",
-        "C": "$125$",
+        "A": "$30$",
+        "B": "$125$",
+        "C": "$25$",
         "D": "$155$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Substitute $x + y = 125$ into the second equation: $125 + y = 155 \\Rightarrow y = 30$."
     },
     {
@@ -1014,12 +1014,12 @@
       "difficulty": 1,
       "prompt": "A veterinarian recommends that each day a certain rabbit should eat 25 calories per pound of the rabbit's weight, plus an additional 11 calories. Which equation represents this situation, where $c$ is the total number of calories the veterinarian recommends the rabbit should eat each day if the rabbit's weight is $x$ pounds?",
       "choices": {
-        "A": "$c = 25x$",
+        "A": "$c = 25x + 11$",
         "B": "$c = 36x$",
         "C": "$c = 11x + 25$",
-        "D": "$c = 25x + 11$"
+        "D": "$c = 25x$"
       },
-      "answer": "D",
+      "answer": "A",
       "explanation": "25 calories per pound $\\times$ weight in pounds $+$ 11 additional calories $= 25x + 11$."
     },
     {
@@ -1030,11 +1030,11 @@
       "prompt": "The total cost $f(x)$, in dollars, to lease a car for 36 months from a particular car dealership is given by $f(x) = 36x + 1{,}000$, where $x$ is the monthly payment, in dollars. What is the total cost to lease a car when the monthly payment is $\\$400$?",
       "choices": {
         "A": "$\\$13{,}400$",
-        "B": "$\\$13{,}000$",
-        "C": "$\\$15{,}400$",
-        "D": "$\\$37{,}400$"
+        "B": "$\\$37{,}400$",
+        "C": "$\\$13{,}000$",
+        "D": "$\\$15{,}400$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "$f(400) = 36(400) + 1{,}000 = 14{,}400 + 1{,}000 = \\$15{,}400$."
     },
     {
@@ -1044,8 +1044,8 @@
       "difficulty": 1,
       "prompt": "A graph in the $xy$-plane shows a horizontal boundary line at $y = 36$. The region on and above the line is shaded. Which inequality represents all solutions shown in the shaded region?",
       "choices": {
-        "A": "$x \\leq 36$",
-        "B": "$x \\geq 36$",
+        "A": "$x \\geq 36$",
+        "B": "$x \\leq 36$",
         "C": "$y \\leq 36$",
         "D": "$y \\geq 36$"
       },
@@ -1059,12 +1059,12 @@
       "difficulty": 3,
       "prompt": "The graph of the equation $ax + ky = 6$ is a line in the $xy$-plane, where $a$ and $k$ are constants. If the line contains the points $(-2, -6)$ and $(0, -3)$, what is the value of $k$?",
       "choices": {
-        "A": "$-2$",
+        "A": "$2$",
         "B": "$-1$",
-        "C": "$2$",
-        "D": "$3$"
+        "C": "$3$",
+        "D": "$-2$"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "The point $(0, -3)$ is the $y$-intercept. Substituting into $ax + ky = 6$: $a(0) + k(-3) = 6 \\Rightarrow -3k = 6 \\Rightarrow k = -2$."
     },
     {
@@ -1074,12 +1074,12 @@
       "difficulty": 3,
       "prompt": "Marta Coll and colleagues' 2010 Mediterranean Sea biodiversity census reported approximately 17,000 species, nearly double the number reported in Carlo Bianchi and Carla Morri's 2000 census—a difference only partly attributable to the description of new invertebrate species in the interim. Another factor is that the morphological variability of microorganisms is poorly understood compared to that of vertebrates, invertebrates, plants, and algae, creating uncertainty about how to evaluate microorganisms as species. Researchers' decisions on such matters therefore can be highly consequential. Indeed, the two censuses reported similar counts of vertebrate, plant, and algal species, suggesting that _____\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Coll and colleagues reported a much higher number of species than Bianchi and Morri did largely due to the inclusion of invertebrate species that had not been described at the time of Bianchi and Morri's census.",
-        "B": "some differences observed in microorganisms may have been treated as variations within species by Bianchi and Morri but treated as indicative of distinct species by Coll and colleagues.",
-        "C": "Bianchi and Morri may have been less sensitive to the degree of morphological variation displayed within a typical species of microorganism than Coll and colleagues were.",
-        "D": "the absence of clarity regarding how to differentiate among species of microorganisms may have resulted in Coll and colleagues underestimating the number of microorganism species."
+        "A": "some differences observed in microorganisms may have been treated as variations within species by Bianchi and Morri but treated as indicative of distinct species by Coll and colleagues.",
+        "B": "the absence of clarity regarding how to differentiate among species of microorganisms may have resulted in Coll and colleagues underestimating the number of microorganism species.",
+        "C": "Coll and colleagues reported a much higher number of species than Bianchi and Morri did largely due to the inclusion of invertebrate species that had not been described at the time of Bianchi and Morri's census.",
+        "D": "Bianchi and Morri may have been less sensitive to the degree of morphological variation displayed within a typical species of microorganism than Coll and colleagues were."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Since non-microorganism counts were similar across the two censuses, the large overall difference must come from microorganism classification. B explains this: researcher decisions to count microorganism variations as separate species versus variations within a species accounts for the discrepancy."
     },
     {
@@ -1089,12 +1089,12 @@
       "difficulty": 2,
       "prompt": "A common assumption among art historians is that the invention of photography in the mid-nineteenth century displaced the painted portrait in the public consciousness. The diminishing popularity of the portrait miniature, which coincided with the rise of photography, seems to support this claim. However, photography's impact on the portrait miniature may be overstated. Although records from art exhibitions in the Netherlands from 1820 to 1892 show a decrease in the number of both full-sized and miniature portraits submitted, this trend was established before the invention of photography.\n\nBased on the text, what can be concluded about the diminishing popularity of the portrait miniature in the nineteenth century?",
       "choices": {
-        "A": "Factors other than the rise of photography may be more directly responsible for the portrait miniature's decline.",
-        "B": "Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit.",
-        "C": "The popularity of the portrait miniature likely persisted for longer than art historians have assumed.",
-        "D": "As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography."
+        "A": "The popularity of the portrait miniature likely persisted for longer than art historians have assumed.",
+        "B": "As demand for portrait miniatures decreased, portrait artists likely shifted their creative focus to photography.",
+        "C": "Factors other than the rise of photography may be more directly responsible for the portrait miniature's decline.",
+        "D": "Although portrait miniatures became less common than photographs, they were widely regarded as having more artistic merit."
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "The text reveals that the decline in portrait miniature submissions began before photography was invented, meaning photography cannot be the primary cause. Other factors must be more directly responsible."
     },
     {
@@ -1104,12 +1104,12 @@
       "difficulty": 2,
       "prompt": "Believing that living in an impractical space can heighten awareness and even improve health, conceptual artists Madeline Gins and Shusaku Arakawa designed an apartment building in Japan to be more fanciful than functional. A kitchen counter is chest-high on one side and knee-high on the other; a ceiling has a door to nowhere. The effect is disorienting but invigorating: after four years there, filmmaker Nobu Yamaoka reported significant health benefits.\n\nWhich choice best states the main idea of the text?",
       "choices": {
-        "A": "Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable.",
-        "B": "Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment.",
-        "C": "As a filmmaker, Yamaoka has long supported the designs of conceptual artists such as Gins and Arakawa.",
-        "D": "Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building's residents."
+        "A": "As a filmmaker, Yamaoka has long supported the designs of conceptual artists such as Gins and Arakawa.",
+        "B": "Although inhabiting a home surrounded by fanciful features such as those designed by Gins and Arakawa can be rejuvenating, it is unsustainable.",
+        "C": "Although impractical, the design of the apartment building by Gins and Arakawa may improve the well-being of the building's residents.",
+        "D": "Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment."
       },
-      "answer": "D",
+      "answer": "C",
       "explanation": "The text describes an impractical but potentially health-improving apartment design. D accurately captures this main idea. A adds an unsupported claim about unsustainability; B overstates effectiveness; C misrepresents Yamaoka's role."
     },
     {
@@ -1119,12 +1119,12 @@
       "difficulty": 2,
       "prompt": "In her 2021 article \"Throwaway History: Towards a Historiography of Ephemera,\" scholar Anne Garner discusses John Johnson (1882–1956), a devoted collector of items intended to be discarded, including bus tickets and campaign pamphlets. Johnson recognized that scholarly institutions considered his expansive collection of ephemera to be worthless—indeed, it wasn't until 1968, after Johnson's death, that Oxford University's Bodleian Library acquired the collection, having grasped the items' potential value to historians and other researchers. Hence, the example of Johnson serves to _____\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "demonstrate the difficulties faced by contemporary historians in conducting research at the Bodleian Library without access to ephemera.",
-        "B": "represent the challenge of incorporating examples of ephemera into the collections of libraries and other scholarly institutions.",
-        "C": "lend support to arguments by historians and other researchers who continue to assert that ephemera holds no value for scholars.",
-        "D": "illustrate both the relatively low scholarly regard in which ephemera was once held and the later recognition of ephemera's possible utility."
+        "A": "illustrate both the relatively low scholarly regard in which ephemera was once held and the later recognition of ephemera's possible utility.",
+        "B": "demonstrate the difficulties faced by contemporary historians in conducting research at the Bodleian Library without access to ephemera.",
+        "C": "represent the challenge of incorporating examples of ephemera into the collections of libraries and other scholarly institutions.",
+        "D": "lend support to arguments by historians and other researchers who continue to assert that ephemera holds no value for scholars."
       },
-      "answer": "D",
+      "answer": "A",
       "explanation": "Johnson's collection was dismissed as worthless during his lifetime but was later acquired by the Bodleian Library for its scholarly value. This perfectly illustrates the shift from low regard to recognized utility."
     },
     {
@@ -1134,12 +1134,12 @@
       "difficulty": 3,
       "prompt": "One recognized social norm of gift giving is that the time spent obtaining a gift will be viewed as a reflection of the gift's thoughtfulness. Marketing experts Farnoush Reshadi, Julian Givi, and Gopal Das addressed this view in their studies of norms surrounding the giving of gift cards, noting that while recipients tend to view digital gift cards as superior to physical gift cards in terms of usage, 94.8 percent of participants surveyed indicated that it is more socially acceptable to give a physical gift card to a recipient. This finding suggests that _____\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "gift givers likely overestimate the amount of effort required to use digital gift cards and thus mistakenly assume gift recipients will view them as less desirable than physical gift cards.",
-        "B": "physical gift cards are likely preferred by gift recipients because the tangible nature of those cards offers a greater psychological sense of ownership than digital gift cards do.",
-        "C": "physical gift cards are likely less desirable to gift recipients than digital gift cards are because of the perception that physical gift cards require unnecessary effort to obtain.",
-        "D": "gift givers likely perceive digital gift cards as requiring relatively low effort to obtain and thus wrongly assume gift recipients will appreciate them less than they do physical gift cards."
+        "A": "physical gift cards are likely less desirable to gift recipients than digital gift cards are because of the perception that physical gift cards require unnecessary effort to obtain.",
+        "B": "gift givers likely perceive digital gift cards as requiring relatively low effort to obtain and thus wrongly assume gift recipients will appreciate them less than they do physical gift cards.",
+        "C": "physical gift cards are likely preferred by gift recipients because the tangible nature of those cards offers a greater psychological sense of ownership than digital gift cards do.",
+        "D": "gift givers likely overestimate the amount of effort required to use digital gift cards and thus mistakenly assume gift recipients will view them as less desirable than physical gift cards."
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "The norm equates effort with thoughtfulness. Digital cards are easy to obtain online (low perceived effort), so gift givers assume recipients will appreciate them less—even though recipients actually prefer digital cards for their usability."
     },
     {
@@ -1149,12 +1149,12 @@
       "difficulty": 3,
       "prompt": "In the United States, firms often seek incentives from municipal governments to expand to those municipalities. A team of political scientists hypothesized that municipalities are much more likely to respond to firms and offer incentives if expansions can be announced before the next election to benefit local elected officials. The team contacted officials in thousands of municipalities, indicating the firm would announce its expansion either just before or just after the next election. A bar graph showed that the number of municipalities giving no response, responding to the inquiry, or offering incentives was nearly identical for both announcement timing conditions.\n\nWhich choice best describes data that weakens the team's hypothesis?",
       "choices": {
-        "A": "A large majority of the municipalities that received an inquiry mentioning plans for an announcement before the next election didn't respond to the inquiry.",
-        "B": "The proportion of municipalities that responded to the inquiry or offered incentives didn't substantially differ across the announcement timing conditions.",
+        "A": "The proportion of municipalities that responded to the inquiry or offered incentives didn't substantially differ across the announcement timing conditions.",
+        "B": "Of the municipalities that received an inquiry mentioning plans for an announcement date after the next election, more than 1,200 didn't respond and only around 100 offered incentives.",
         "C": "Only around half the municipalities that responded to inquiries mentioning plans for an announcement before the next election offered incentives.",
-        "D": "Of the municipalities that received an inquiry mentioning plans for an announcement date after the next election, more than 1,200 didn't respond and only around 100 offered incentives."
+        "D": "A large majority of the municipalities that received an inquiry mentioning plans for an announcement before the next election didn't respond to the inquiry."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "The hypothesis predicts municipalities should be much MORE responsive when the announcement is before the election. If response rates are virtually identical regardless of timing, this directly contradicts and weakens the hypothesis."
     },
     {
@@ -1164,12 +1164,12 @@
       "difficulty": 3,
       "prompt": "The most recent iteration of the immersive theater experience Sleep No More, which premiered in New York City in 2011, transforms its performance space—a five-story warehouse—into a 1930s-era hotel. Audience members, who wander through the labyrinthine venue at their own pace and follow the actors as they play out simultaneous, interweaving narrative loops, confront the impossibility of experiencing the production in its entirety. The play's refusal of narrative coherence thus hinges on the sense of spatial fragmentation that the venue's immense and intricate layout generates.\n\nWhat does the text most strongly suggest about Sleep No More's use of its performance space?",
       "choices": {
-        "A": "The choice of a New York City venue likely enabled the play's creators to experiment with the use of theatrical space in a way that venues from earlier productions could not.",
-        "B": "Audience members likely find the experience of the play disappointing because they generally cannot make their way through the entire venue.",
-        "C": "The production's dependence on a particular performance environment would likely make it difficult to reproduce exactly in a different theatrical space.",
-        "D": "Audience members who navigate the space according to a recommended itinerary will likely have a better grasp of the play's narrative than audience members who depart from that itinerary."
+        "A": "Audience members likely find the experience of the play disappointing because they generally cannot make their way through the entire venue.",
+        "B": "The production's dependence on a particular performance environment would likely make it difficult to reproduce exactly in a different theatrical space.",
+        "C": "Audience members who navigate the space according to a recommended itinerary will likely have a better grasp of the play's narrative than audience members who depart from that itinerary.",
+        "D": "The choice of a New York City venue likely enabled the play's creators to experiment with the use of theatrical space in a way that venues from earlier productions could not."
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "The text says the play's narrative refusal 'hinges on' the specific spatial fragmentation of its venue. Since the theatrical effect depends so essentially on this particular space, reproducing it in a different environment would be very difficult."
     },
     {
@@ -1180,11 +1180,11 @@
       "prompt": "During the World War II era, some Mexican American women adopted a striking new look called pachuca style. They wore altered men's jackets or zoot suits and dramatic makeup, and they combed their hair into high, rounded shapes. Some people criticized pachuca style, saying it was dangerous and women should dress traditionally. But historians see things differently. They see pachuca style as a form of rebellion against the era's rigid social expectations for women. They say that it showed a desire for self-expression and freedom on the part of women who adopted the style.\n\nAccording to the text, how do historians view pachuca style?",
       "choices": {
         "A": "They think that pachuca style was such a popular trend that it continues to influence fashion in the United States to the present day.",
-        "B": "They think that pachuca style was a way for some Mexican American women to express themselves and resist strict social expectations.",
-        "C": "They think that pachuca style was celebrated because it enabled some Mexican American women to show their support for the United States during World War II.",
+        "B": "They think that pachuca style was celebrated because it enabled some Mexican American women to show their support for the United States during World War II.",
+        "C": "They think that pachuca style was a way for some Mexican American women to express themselves and resist strict social expectations.",
         "D": "They think that pachuca style was similar to other fashion trends that different groups of women adopted in the same period."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The text explicitly states historians view pachuca style as 'a form of rebellion against the era's rigid social expectations,' reflecting a desire for 'self-expression and freedom.'"
     },
     {
@@ -1194,12 +1194,12 @@
       "difficulty": 2,
       "prompt": "Utah is home to Pando, a colony of about 47,000 quaking aspen trees that all share a single root system. Pando is one of the largest single organisms by mass on Earth, but ecologists are worried that its growth is declining in part because of grazing by animals. The ecologists say that strong fences could prevent deer from eating young trees and help Pando start thriving again.\n\nAccording to the text, why are ecologists worried about Pando?",
       "choices": {
-        "A": "It isn't growing at the same rate it used to.",
-        "B": "It isn't producing young trees anymore.",
-        "C": "It can't grow into new areas because it is blocked by fences.",
-        "D": "Its root system can't support many more new trees."
+        "A": "It can't grow into new areas because it is blocked by fences.",
+        "B": "It isn't growing at the same rate it used to.",
+        "C": "Its root system can't support many more new trees.",
+        "D": "It isn't producing young trees anymore."
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "The text states ecologists are worried because Pando's 'growth is declining in part because of grazing by animals.' This directly supports answer A. Fences are a proposed solution, not a cause of concern."
     },
     {
@@ -1209,12 +1209,12 @@
       "difficulty": 2,
       "prompt": "Although many transposons, DNA sequences that move within an organism's genome through shuffling or duplication, have become corrupted and inactive over time, those from the long interspersed nuclear elements (LINE) family appear to remain active in the genomes of some species. In humans, they are functionally important within the hippocampus, a brain structure that supports complex cognitive processes. When the results of molecular analysis of two species of octopus were announced in 2022, the confirmation of a LINE transposon in Octopus vulgaris and Octopus bimaculoides genomes prompted researchers to hypothesize that the LINE transposon family is tied to a species' capacity for advanced cognition.\n\nWhich finding, if true, would most directly support the researchers' hypothesis?",
       "choices": {
-        "A": "The LINE transposon in O. vulgaris and O. bimaculoides genomes is active in an octopus brain structure that functions similarly to the human hippocampus.",
-        "B": "The human genome contains multiple transposons from the LINE family that are all primarily active in the hippocampus.",
-        "C": "A consistent number of copies of LINE transposons is present across the genomes of most octopus species, with few known corruptions.",
-        "D": "O. vulgaris and O. bimaculoides have smaller brains than humans do relative to body size, but their genomes contain sequences from a wider variety of transposon families."
+        "A": "A consistent number of copies of LINE transposons is present across the genomes of most octopus species, with few known corruptions.",
+        "B": "The LINE transposon in O. vulgaris and O. bimaculoides genomes is active in an octopus brain structure that functions similarly to the human hippocampus.",
+        "C": "O. vulgaris and O. bimaculoides have smaller brains than humans do relative to body size, but their genomes contain sequences from a wider variety of transposon families.",
+        "D": "The human genome contains multiple transposons from the LINE family that are all primarily active in the hippocampus."
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "If the LINE transposon in octopuses is active in a brain region analogous to the human hippocampus (which supports complex cognition), this directly supports the hypothesis that LINE transposons are linked to advanced cognition across species."
     },
     {
@@ -1225,11 +1225,11 @@
       "prompt": "To understand how temperature change affects microorganism-mediated cycling of soil nutrients in alpine ecosystems, Eva Kaštovská et al. collected plant-soil cores in the Tatra Mountains at elevations around 2,100 meters and transplanted them to elevations of 1,700–1,800 meters, where the mean air temperature was warmer by 2°C. Microorganism-mediated nutrient cycling was accelerated in the transplanted cores; crucially, microorganism community composition was unchanged, allowing Kaštovská et al. to attribute the acceleration to temperature-induced increases in microorganism activity.\n\nIt can most reasonably be inferred from the text that the finding about the microorganism community composition was important for which reason?",
       "choices": {
         "A": "It provided preliminary evidence that microorganism-mediated nutrient cycling was accelerated in the transplanted cores.",
-        "B": "It suggested that temperature-induced changes in microorganism activity may be occurring at increasingly high elevations.",
-        "C": "It ruled out a potential alternative explanation for the acceleration in microorganism-mediated nutrient cycling.",
+        "B": "It ruled out a potential alternative explanation for the acceleration in microorganism-mediated nutrient cycling.",
+        "C": "It suggested that temperature-induced changes in microorganism activity may be occurring at increasingly high elevations.",
         "D": "It clarified that microorganism activity levels in the plant-soil cores varied depending on which microorganisms comprised the community."
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Because community composition was unchanged, researchers could rule out the alternative explanation that a change in which microorganisms were present (rather than temperature) caused the increased nutrient cycling. This controlled for a confounding variable."
     },
     {
@@ -1240,11 +1240,11 @@
       "prompt": "Jean-Bernard Caron and colleagues recently discovered a cache of jellyfish fossils in the Burgess Shale, a site in the Canadian Rockies rich in fossils from the Cambrian period (over 500 million years ago). Caron and colleagues claim that these are the oldest jellyfish fossils ever discovered. In the past twenty years, two sites in China and the United States have yielded fossils of a similar age that some experts believe are most likely jellyfish. But Caron and colleagues argue that the apparent tentacles in those fossils are in fact the comb rows of ctenophores, gelatinous animals only distantly related to jellyfish.\n\nWhich statement, if true, would most directly weaken the claim by Caron and colleagues about the fossils found in China and the United States?",
       "choices": {
         "A": "Sites in the Canadian Rockies from later periods than the Cambrian period have yielded fossils that have been conclusively identified as ctenophore fossils.",
-        "B": "The fossils found in China and the United States are so poorly preserved that though they cannot be conclusively identified as jellyfish, they cannot be conclusively identified as ctenophores either.",
-        "C": "While ctenophore fossils have been discovered in China and the United States, they have never been discovered in the Burgess Shale.",
-        "D": "The fossils discovered by Caron and colleagues in the Burgess Shale were better preserved than the fossils discovered by other researchers in China and the United States."
+        "B": "The fossils discovered by Caron and colleagues in the Burgess Shale were better preserved than the fossils discovered by other researchers in China and the United States.",
+        "C": "The fossils found in China and the United States are so poorly preserved that though they cannot be conclusively identified as jellyfish, they cannot be conclusively identified as ctenophores either.",
+        "D": "While ctenophore fossils have been discovered in China and the United States, they have never been discovered in the Burgess Shale."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Caron argues the Chinese and American fossils are ctenophores, not jellyfish. If the fossils are too poorly preserved to be conclusively identified as either organism, then Caron's specific claim that they are ctenophores cannot be supported."
     },
     {
@@ -1254,12 +1254,12 @@
       "difficulty": 1,
       "prompt": "The following text is from Jane Austen's 1811 novel Sense and Sensibility. Elinor lives with her younger sisters and her mother, Mrs. Dashwood.\n\n\"Elinor, this eldest daughter, whose advice was so effectual, possessed a strength of understanding, and coolness of judgment, which qualified her, though only nineteen, to be the counsellor of her mother, and enabled her frequently to counteract, to the advantage of them all, that eagerness of mind in Mrs. Dashwood which must generally have led to imprudence.\"\n\nAccording to the text, what is true about Elinor?",
       "choices": {
-        "A": "Elinor often argues with her mother but fails to change her mind.",
-        "B": "Elinor can be overly sensitive with regard to family matters.",
-        "C": "Elinor thinks her mother is a bad role model.",
-        "D": "Elinor is remarkably mature for her age."
+        "A": "Elinor thinks her mother is a bad role model.",
+        "B": "Elinor is remarkably mature for her age.",
+        "C": "Elinor often argues with her mother but fails to change her mind.",
+        "D": "Elinor can be overly sensitive with regard to family matters."
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "Though only nineteen, Elinor serves as counsellor to her mother and possesses 'strength of understanding, and coolness of judgment.' This demonstrates maturity well beyond her years."
     },
     {
@@ -1269,12 +1269,12 @@
       "difficulty": 1,
       "prompt": "To make sure they got the nutrition they needed while in space, the astronauts of NASA's Gemini missions were given menus for three meals a day (meals A, B, and C) on a four-day rotating schedule. A sample of food items from these menus is shown below:\n\n| Food item | Day | Meal |\n|---|---|---|\n| Sugar cookie cubes | 1 | B |\n| Chicken and vegetables | 2 | B |\n| Shrimp cocktail | 4 | C |\n| Hot cocoa | 3 | A |\n\nA student notes that on day 1, the menu included _____\n\nWhich choice most effectively uses data from the table to complete the statement?",
       "choices": {
-        "A": "shrimp cocktail for meal B.",
-        "B": "hot cocoa for meal C.",
-        "C": "sugar cookie cubes for meal B.",
-        "D": "chicken and vegetables for meal A."
+        "A": "chicken and vegetables for meal A.",
+        "B": "sugar cookie cubes for meal B.",
+        "C": "shrimp cocktail for meal B.",
+        "D": "hot cocoa for meal C."
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "According to the table, sugar cookie cubes appear on Day 1 for Meal B. Shrimp cocktail was Day 4 / Meal C, hot cocoa was Day 3 / Meal A, and chicken and vegetables was Day 2 / Meal B."
     },
     {
@@ -1284,12 +1284,12 @@
       "difficulty": 3,
       "prompt": "Many literary theorists distinguish between fabula, a narrative's content, and syuzhet, a narrative's arrangement and presentation of events. In the film The Godfather Part II, the fabula is the story of the Corleone family, and the syuzhet is the presentation of the story as it alternates between two timelines in 1901 and 1958. But literary theorist Mikhail Bakhtin maintained that fabula and syuzhet are insufficient to completely describe a narrative—he held that systematic categorizations of artistic phenomena discount the subtle way in which meaning is created by interactions between the artist, the work, and the audience.\n\nWhich choice best states the main idea of the text?",
       "choices": {
-        "A": "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.",
-        "B": "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people.",
-        "C": "The storytelling methods used in The Godfather Part II may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized.",
-        "D": "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically."
+        "A": "Literary theorist Mikhail Bakhtin claimed that meaning is not inherent in a narrative but is created when an audience encounters a narrative so that narratives are interpreted differently by different people.",
+        "B": "Narratives that are told out of chronological order are more difficult for audiences to understand than are narratives presented chronologically.",
+        "C": "Literary theorist Mikhail Bakhtin argued that there are important characteristics of narratives that are not fully encompassed by two concepts that other theorists have used to analyze narratives.",
+        "D": "The storytelling methods used in The Godfather Part II may seem unusually complicated, but they can be easily understood when two concepts from literary theory are utilized."
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "Bakhtin argued that fabula and syuzhet (two concepts other theorists use) are insufficient to fully describe narratives because they miss how meaning is created through artist-work-audience interactions. A best captures this main idea."
     },
     {
@@ -1299,12 +1299,12 @@
       "difficulty": 2,
       "prompt": "Biologists have predicted that birds' feather structures vary with habitat temperature, but this hadn't been tested in mountain environments. Ornithologist Sahas Barve studied feathers from 249 songbird species inhabiting different elevations—and thus experiencing different temperatures—in the Himalaya Mountains. He found that feathers of high-elevation species not only have a greater proportion of warming downy sections than do feathers of low-elevation species, but high-elevation species' feathers also tend to be longer, providing a thicker layer of insulation.\n\nWhich choice best states the main idea of the text?",
       "choices": {
-        "A": "Barve's investigation shows that some species of Himalayan songbirds have evolved feathers that better regulate body temperature than do the feathers of other species, contradicting previous predictions.",
-        "B": "Barve found an association between habitat temperature and feather structure among Himalayan songbirds, lending new support to a general prediction.",
+        "A": "Barve found an association between habitat temperature and feather structure among Himalayan songbirds, lending new support to a general prediction.",
+        "B": "Barve's investigation shows that some species of Himalayan songbirds have evolved feathers that better regulate body temperature than do the feathers of other species, contradicting previous predictions.",
         "C": "Barve discovered that songbirds have adapted to their environment by growing feathers without flat and smooth sections, complicating an earlier hypothesis.",
         "D": "The results of Barve's study suggest that the ability of birds to withstand cold temperatures is determined more strongly by feather length than feather structure, challenging an established belief."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Barve's study confirmed that feather structures vary with habitat temperature in Himalayan songbirds, supporting (not contradicting) the biologists' general prediction. This lends new evidence to that prediction."
     },
     {
@@ -1314,12 +1314,12 @@
       "difficulty": 3,
       "prompt": "The ancient Greek concept of \"mimesis,\" a term used in the works of Plato, Aristotle, and other Greek philosophers in discussions of representational art—visual, performance, or literary art that aims to depict the real world—is a foundational concept of the Western philosophy of aesthetics. Mimesis is typically translated as \"imitation\" in modern editions of ancient Greek texts, but scholar Stephen Halliwell warns that this is overly reductive: \"imitation\" implies that art merely copies a reality that exists outside and prior to the work of art, and translating \"mimesis\" this way obscures the multifaceted ways in which the ancient Greeks understood the relationship between art and reality.\n\nWhich statement, if true, would most directly support the claim by Halliwell presented in the text?",
       "choices": {
-        "A": "One of the earliest appearances of mimesis's root word, mimos, can be found in an ancient Greek tragedy in reference to dramatic impersonation, and the mim- root came to be generally associated with the musical and poetic arts by the fifth century BCE.",
-        "B": "Both Plato's and Aristotle's theorizations of mimesis examine the psychological effects that works of art induce in the viewer or listener.",
+        "A": "Both Plato's and Aristotle's theorizations of mimesis examine the psychological effects that works of art induce in the viewer or listener.",
+        "B": "Although Plato's writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art's capacity to envision hypothetical conditions that could, but don't yet, exist.",
         "C": "Although several of Plato's earliest philosophical works discuss aesthetic ideas, the term 'mimesis' doesn't appear in Plato's discussions of art until Cratylus, a relatively late work.",
-        "D": "Although Plato's writings typically characterize representational art as an inferior reflection of the physical world, Aristotle suggests that mimesis can refer to art's capacity to envision hypothetical conditions that could, but don't yet, exist."
+        "D": "One of the earliest appearances of mimesis's root word, mimos, can be found in an ancient Greek tragedy in reference to dramatic impersonation, and the mim- root came to be generally associated with the musical and poetic arts by the fifth century BCE."
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "Halliwell claims 'imitation' is reductive because the ancient Greeks understood mimesis in 'multifaceted ways.' D shows Plato and Aristotle held different understandings—one viewing art as inferior copying, the other as envisioning new possibilities—supporting Halliwell's claim that mimesis means more than simple imitation."
     },
     {
@@ -1329,12 +1329,12 @@
       "difficulty": 3,
       "prompt": "High levels of public uncertainty about which economic policies a country will adopt can make planning difficult for businesses, but measures of such uncertainty have not tended to be very detailed. Recently, economist Sandile Hlatshwayo analyzed trends in news reports to derive measures not only for general economic policy uncertainty but also for uncertainty related to specific areas of economic policy, like tax or trade policy. One revelation of her work is that a general measure may not fully reflect uncertainty about specific areas of policy, as in the case of the United Kingdom, where general economic policy uncertainty _____\n\nThe graph shows that in the UK in 2005, general economic policy uncertainty was around 90 while trade policy uncertainty was around 160. By 2010, general economic policy uncertainty rose to around 120 while trade policy uncertainty fell to around 75.\n\nWhich choice most effectively uses data from the graph to illustrate the claim?",
       "choices": {
-        "A": "aligned closely with uncertainty about tax and public spending policy in 2005 but differed from uncertainty about tax and public spending policy by a large amount in 2009.",
-        "B": "was substantially lower than uncertainty about tax and public spending policy each year from 2005 to 2010.",
-        "C": "reached its highest level between 2005 and 2010 in the same year that uncertainty about trade policy and tax and public spending policy reached their lowest levels.",
-        "D": "was substantially lower than uncertainty about trade policy in 2005 and substantially higher than uncertainty about trade policy in 2010."
+        "A": "was substantially lower than uncertainty about trade policy in 2005 and substantially higher than uncertainty about trade policy in 2010.",
+        "B": "reached its highest level between 2005 and 2010 in the same year that uncertainty about trade policy and tax and public spending policy reached their lowest levels.",
+        "C": "aligned closely with uncertainty about tax and public spending policy in 2005 but differed from uncertainty about tax and public spending policy by a large amount in 2009.",
+        "D": "was substantially lower than uncertainty about tax and public spending policy each year from 2005 to 2010."
       },
-      "answer": "D",
+      "answer": "A",
       "explanation": "In 2005, general economic policy uncertainty (~90) was substantially lower than trade policy uncertainty (~160). By 2010, the relationship reversed: general uncertainty (~120) was substantially higher than trade policy uncertainty (~75). This divergence illustrates how a general measure can fail to reflect specific policy areas."
     },
     {
@@ -1344,12 +1344,12 @@
       "difficulty": 1,
       "prompt": "What is the value of $x$ if $\\dfrac{x}{3} + 5 = 11$?",
       "choices": {
-        "A": "$2$",
-        "B": "$6$",
-        "C": "$18$",
-        "D": "$48$"
+        "A": "$18$",
+        "B": "$2$",
+        "C": "$48$",
+        "D": "$6$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$\\frac{x}{3} = 6 \\Rightarrow x = 18$."
     },
     {
@@ -1359,12 +1359,12 @@
       "difficulty": 2,
       "prompt": "If $\\dfrac{2x-1}{3} = \\dfrac{x+4}{2}$, what is $x$?",
       "choices": {
-        "A": "$-5$",
-        "B": "$1$",
+        "A": "$14$",
+        "B": "$-5$",
         "C": "$11$",
-        "D": "$14$"
+        "D": "$1$"
       },
-      "answer": "D",
+      "answer": "A",
       "explanation": "Cross-multiply: $2(2x-1) = 3(x+4) \\Rightarrow 4x - 2 = 3x + 12 \\Rightarrow x = 14$."
     },
     {
@@ -1374,12 +1374,12 @@
       "difficulty": 1,
       "prompt": "A plumber charges $\\$50$ for a service call plus $\\$75$ per hour. If the total bill was $\\$275$, how many hours did the plumber work?",
       "choices": {
-        "A": "$2$",
-        "B": "$3$",
-        "C": "$4$",
-        "D": "$5$"
+        "A": "$5$",
+        "B": "$4$",
+        "C": "$3$",
+        "D": "$2$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$50 + 75h = 275 \\Rightarrow 75h = 225 \\Rightarrow h = 3$."
     },
     {
@@ -1389,12 +1389,12 @@
       "difficulty": 2,
       "prompt": "What is the solution set of $|2x - 3| = 7$?",
       "choices": {
-        "A": "$\\{-2, 5\\}$",
+        "A": "$\\{5, -2\\}$",
         "B": "$\\{2, -5\\}$",
-        "C": "$\\{-2, -5\\}$",
-        "D": "$\\{5, -2\\}$"
+        "C": "$\\{-2, 5\\}$",
+        "D": "$\\{-2, -5\\}$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "$2x - 3 = 7 \\Rightarrow x = 5$; $2x - 3 = -7 \\Rightarrow x = -2$."
     },
     {
@@ -1405,9 +1405,9 @@
       "prompt": "Which expression is equivalent to $3(2x - 4) - 2(x + 1)$?",
       "choices": {
         "A": "$4x - 14$",
-        "B": "$4x + 14$",
-        "C": "$8x - 14$",
-        "D": "$8x - 10$"
+        "B": "$8x - 14$",
+        "C": "$8x - 10$",
+        "D": "$4x + 14$"
       },
       "answer": "A",
       "explanation": "$6x - 12 - 2x - 2 = 4x - 14$."
@@ -1420,11 +1420,11 @@
       "prompt": "If $4t = 3s$ and $s = 8$, what is $t$?",
       "choices": {
         "A": "$4$",
-        "B": "$6$",
+        "B": "$12$",
         "C": "$8$",
-        "D": "$12$"
+        "D": "$6$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$4t = 3(8) = 24 \\Rightarrow t = 6$."
     },
     {
@@ -1434,12 +1434,12 @@
       "difficulty": 2,
       "prompt": "In the equation $ax + b = cx + d$, solving for $x$ gives $x = \\dfrac{d - b}{a - c}$ provided $a \\ne c$. If $a = 5$, $b = -3$, $c = 2$, $d = 9$, what is $x$?",
       "choices": {
-        "A": "$2$",
-        "B": "$3$",
-        "C": "$4$",
+        "A": "$4$",
+        "B": "$2$",
+        "C": "$3$",
         "D": "$6$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$x = \\frac{9-(-3)}{5-2} = \\frac{12}{3} = 4$."
     },
     {
@@ -1449,12 +1449,12 @@
       "difficulty": 1,
       "prompt": "The sum of three consecutive integers is $78$. What is the largest integer?",
       "choices": {
-        "A": "$24$",
-        "B": "$25$",
-        "C": "$27$",
-        "D": "$28$"
+        "A": "$27$",
+        "B": "$28$",
+        "C": "$25$",
+        "D": "$24$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Let them be $n, n+1, n+2$. Sum: $3n+3=78 \\Rightarrow n=25$. Largest $= 27$."
     },
     {
@@ -1464,12 +1464,12 @@
       "difficulty": 2,
       "prompt": "If $\\dfrac{3}{x} + \\dfrac{5}{2x} = 1$, what is $x$?",
       "choices": {
-        "A": "$\\dfrac{1}{2}$",
-        "B": "$\\dfrac{11}{2}$",
+        "A": "$\\dfrac{11}{2}$",
+        "B": "$11$",
         "C": "$5$",
-        "D": "$11$"
+        "D": "$\\dfrac{1}{2}$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Multiply by $2x$: $6 + 5 = 2x \\Rightarrow 2x = 11 \\Rightarrow x = \\frac{11}{2}$."
     },
     {
@@ -1479,12 +1479,12 @@
       "difficulty": 3,
       "prompt": "If $2^{3x} = 64$ and $3^{y+1} = 81$, what is $x + y$?",
       "choices": {
-        "A": "$5$",
+        "A": "$8$",
         "B": "$6$",
-        "C": "$7$",
-        "D": "$8$"
+        "C": "$5$",
+        "D": "$7$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "$2^{3x} = 2^6 \\Rightarrow 3x = 6 \\Rightarrow x = 2$. $3^{y+1} = 3^4 \\Rightarrow y = 3$. Sum $= 2 + 3 = 5$."
     },
     {
@@ -1494,12 +1494,12 @@
       "difficulty": 2,
       "prompt": "Using the quadratic formula, solve $2x^2 - 5x - 3 = 0$. What are the solutions?",
       "choices": {
-        "A": "$x = 3,\\ -\\dfrac{1}{2}$",
+        "A": "$x = 3,\\ \\dfrac{1}{2}$",
         "B": "$x = -3,\\ \\dfrac{1}{2}$",
-        "C": "$x = 3,\\ \\dfrac{1}{2}$",
-        "D": "$x = -3,\\ -\\dfrac{1}{2}$"
+        "C": "$x = -3,\\ -\\dfrac{1}{2}$",
+        "D": "$x = 3,\\ -\\dfrac{1}{2}$"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "$x = \\frac{5 \\pm \\sqrt{25+24}}{4} = \\frac{5 \\pm 7}{4}$. So $x = 3$ or $x = -\\frac{1}{2}$."
     },
     {
@@ -1509,12 +1509,12 @@
       "difficulty": 2,
       "prompt": "If $g(x) = 3x + 1$ and $f(x) = x^2$, what is $f(g(2))$?",
       "choices": {
-        "A": "$7$",
+        "A": "$51$",
         "B": "$13$",
-        "C": "$49$",
-        "D": "$51$"
+        "C": "$7$",
+        "D": "$49$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "$g(2) = 7$. $f(7) = 49$."
     },
     {
@@ -1524,12 +1524,12 @@
       "difficulty": 2,
       "prompt": "Which expression is equivalent to $\\dfrac{x^2 + 5x + 6}{x + 2}$?",
       "choices": {
-        "A": "$x + 3$",
-        "B": "$x + 2$",
-        "C": "$x - 3$",
-        "D": "$x^2 + 3$"
+        "A": "$x + 2$",
+        "B": "$x + 3$",
+        "C": "$x^2 + 3$",
+        "D": "$x - 3$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$. Dividing by $(x+2)$ gives $x+3$."
     },
     {
@@ -1539,12 +1539,12 @@
       "difficulty": 3,
       "prompt": "The discriminant of $x^2 + bx + 9 = 0$ is zero. What is a possible value of $b$?",
       "choices": {
-        "A": "$-6$",
-        "B": "$3$",
-        "C": "$6$",
-        "D": "$12$"
+        "A": "$3$",
+        "B": "$-6$",
+        "C": "$12$",
+        "D": "$6$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Discriminant $= b^2 - 4(1)(9) = 0 \\Rightarrow b^2 = 36 \\Rightarrow b = \\pm 6$."
     },
     {
@@ -1554,12 +1554,12 @@
       "difficulty": 2,
       "prompt": "The parabola $y = x^2 - 6x + 5$ has vertex at $(h, k)$. What is the value of $k$?",
       "choices": {
-        "A": "$-4$",
-        "B": "$-3$",
-        "C": "$3$",
-        "D": "$5$"
+        "A": "$3$",
+        "B": "$-4$",
+        "C": "$5$",
+        "D": "$-3$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Complete the square: $y = (x-3)^2 - 4$. Vertex is $(3, -4)$, so $k = -4$."
     },
     {
@@ -1569,12 +1569,12 @@
       "difficulty": 2,
       "prompt": "Which expression equals $x^{1/2} \\cdot x^{3/2}$?",
       "choices": {
-        "A": "$x$",
-        "B": "$x^2$",
+        "A": "$x^2$",
+        "B": "$x^{3/4}$",
         "C": "$x^3$",
-        "D": "$x^{3/4}$"
+        "D": "$x$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$x^{1/2} \\cdot x^{3/2} = x^{(1/2 + 3/2)} = x^2$."
     },
     {
@@ -1584,12 +1584,12 @@
       "difficulty": 2,
       "prompt": "A bacteria population doubles every 3 hours. Starting at 500, how many bacteria are there after 9 hours?",
       "choices": {
-        "A": "$1{,}500$",
-        "B": "$2{,}000$",
-        "C": "$4{,}000$",
-        "D": "$8{,}000$"
+        "A": "$8{,}000$",
+        "B": "$1{,}500$",
+        "C": "$2{,}000$",
+        "D": "$4{,}000$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "After 9 hours = 3 doubling periods. $500 \\times 2^3 = 500 \\times 8 = 4{,}000$."
     },
     {
@@ -1599,10 +1599,10 @@
       "difficulty": 3,
       "prompt": "A population of 1,000 decays by 20% each year. Which function gives the population $P$ after $t$ years?",
       "choices": {
-        "A": "$P = 1000(0.20)^t$",
+        "A": "$P = 1000 - 200t$",
         "B": "$P = 1000(0.80)^t$",
-        "C": "$P = 1000(1.20)^t$",
-        "D": "$P = 1000 - 200t$"
+        "C": "$P = 1000(0.20)^t$",
+        "D": "$P = 1000(1.20)^t$"
       },
       "answer": "B",
       "explanation": "Decay by 20% means 80% remains each year: $P = 1000(0.80)^t$."
@@ -1614,12 +1614,12 @@
       "difficulty": 3,
       "prompt": "For what value of $x$ is $\\dfrac{3}{x-2} + \\dfrac{1}{x+2} = \\dfrac{8}{x^2-4}$ undefined?",
       "choices": {
-        "A": "$x = -2$ and $x = 2$",
-        "B": "$x = 2$ only",
-        "C": "$x = 4$ only",
+        "A": "$x = 4$ only",
+        "B": "$x = -2$ and $x = 2$",
+        "C": "$x = 2$ only",
         "D": "$x = 0$ only"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "$x^2 - 4 = (x-2)(x+2)$; undefined when $x = 2$ or $x = -2$."
     },
     {
@@ -1629,10 +1629,10 @@
       "difficulty": 2,
       "prompt": "Which is the factored form of $4x^2 - 25$?",
       "choices": {
-        "A": "$(4x - 5)(x + 5)$",
+        "A": "$(4x + 5)(x - 5)$",
         "B": "$(2x - 5)(2x + 5)$",
         "C": "$(2x + 5)^2$",
-        "D": "$(4x + 5)(x - 5)$"
+        "D": "$(4x - 5)(x + 5)$"
       },
       "answer": "B",
       "explanation": "Difference of squares: $4x^2 - 25 = (2x)^2 - 5^2 = (2x-5)(2x+5)$."
@@ -1644,12 +1644,12 @@
       "difficulty": 2,
       "prompt": "The graph of $f(x)$ is shifted 3 units right and 2 units down. If $f(x) = x^2$, what is the new equation?",
       "choices": {
-        "A": "$y = (x-3)^2 + 2$",
-        "B": "$y = (x+3)^2 - 2$",
-        "C": "$y = (x-3)^2 - 2$",
-        "D": "$y = x^2 - 5$"
+        "A": "$y = (x+3)^2 - 2$",
+        "B": "$y = x^2 - 5$",
+        "C": "$y = (x-3)^2 + 2$",
+        "D": "$y = (x-3)^2 - 2$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Right 3: replace $x$ with $(x-3)$. Down 2: subtract 2. Result: $(x-3)^2 - 2$."
     },
     {
@@ -1659,12 +1659,12 @@
       "difficulty": 2,
       "prompt": "If $p(x) = x^3 - 2x^2 + x - 2$ and $(x - 2)$ is a factor, what is the other factor?",
       "choices": {
-        "A": "$x^2 + 1$",
+        "A": "$x^2 - 2x + 1$",
         "B": "$x^2 - 1$",
-        "C": "$x^2 + 2$",
-        "D": "$x^2 - 2x + 1$"
+        "C": "$x^2 + 1$",
+        "D": "$x^2 + 2$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "Factor by grouping: $x^2(x-2) + 1(x-2) = (x-2)(x^2+1)$."
     },
     {
@@ -1675,9 +1675,9 @@
       "prompt": "What is $(3^{-2})^{-1}$ simplified?",
       "choices": {
         "A": "$-9$",
-        "B": "$\\dfrac{1}{9}$",
+        "B": "$\\dfrac{1}{6}$",
         "C": "$9$",
-        "D": "$\\dfrac{1}{6}$"
+        "D": "$\\dfrac{1}{9}$"
       },
       "answer": "C",
       "explanation": "$(3^{-2})^{-1} = 3^{(-2)(-1)} = 3^2 = 9$."
@@ -1689,12 +1689,12 @@
       "difficulty": 3,
       "prompt": "How many real solutions does $3x^2 + 6x + 4 = 0$ have?",
       "choices": {
-        "A": "$0$",
-        "B": "$1$",
+        "A": "$1$",
+        "B": "$0$",
         "C": "$2$",
         "D": "Cannot be determined"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Discriminant $= 36 - 48 = -12 < 0$. No real solutions."
     },
     {
@@ -1704,12 +1704,12 @@
       "difficulty": 2,
       "prompt": "Which expression is equivalent to $\\sqrt{50} - \\sqrt{18}$?",
       "choices": {
-        "A": "$2\\sqrt{2}$",
-        "B": "$4\\sqrt{2}$",
-        "C": "$\\sqrt{32}$",
-        "D": "$8$"
+        "A": "$4\\sqrt{2}$",
+        "B": "$\\sqrt{32}$",
+        "C": "$8$",
+        "D": "$2\\sqrt{2}$"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "$\\sqrt{50} = 5\\sqrt{2}$; $\\sqrt{18} = 3\\sqrt{2}$. Difference $= 5\\sqrt{2} - 3\\sqrt{2} = 2\\sqrt{2}$."
     },
     {
@@ -1719,12 +1719,12 @@
       "difficulty": 2,
       "prompt": "Two pipes can fill a tank. Pipe A fills it in 4 hours; Pipe B in 6 hours. How long do they take together?",
       "choices": {
-        "A": "$2$ hr $24$ min",
-        "B": "$3$ hr",
-        "C": "$3$ hr $20$ min",
-        "D": "$5$ hr"
+        "A": "$3$ hr $20$ min",
+        "B": "$5$ hr",
+        "C": "$3$ hr",
+        "D": "$2$ hr $24$ min"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "Combined rate $= \\frac{1}{4} + \\frac{1}{6} = \\frac{5}{12}$ tanks/hr. Time $= \\frac{12}{5} = 2.4$ hr $= 2$ hr $24$ min."
     },
     {
@@ -1734,12 +1734,12 @@
       "difficulty": 1,
       "prompt": "A train travels at 80 mph. How long does it take to travel 200 miles?",
       "choices": {
-        "A": "$2$ hours",
-        "B": "$2.5$ hours",
-        "C": "$3$ hours",
+        "A": "$2.5$ hours",
+        "B": "$3$ hours",
+        "C": "$2$ hours",
         "D": "$4$ hours"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Time $= \\frac{200}{80} = 2.5$ hours."
     },
     {
@@ -1749,12 +1749,12 @@
       "difficulty": 1,
       "prompt": "A room is 15 feet wide. How wide is it in yards?",
       "choices": {
-        "A": "$3$",
-        "B": "$5$",
-        "C": "$45$",
-        "D": "$180$"
+        "A": "$180$",
+        "B": "$3$",
+        "C": "$5$",
+        "D": "$45$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$15 \\div 3 = 5$ yards."
     },
     {
@@ -1764,12 +1764,12 @@
       "difficulty": 2,
       "prompt": "An item is marked up 40% from cost. If the selling price is $\\$84$, what was the cost?",
       "choices": {
-        "A": "$\\$50$",
-        "B": "$\\$60$",
-        "C": "$\\$67.20$",
-        "D": "$\\$117.60$"
+        "A": "$\\$60$",
+        "B": "$\\$117.60$",
+        "C": "$\\$50$",
+        "D": "$\\$67.20$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$1.40 \\times \\text{cost} = 84 \\Rightarrow \\text{cost} = 60$."
     },
     {
@@ -1779,12 +1779,12 @@
       "difficulty": 2,
       "prompt": "Test scores: $72, 85, 90, 68, 75$. What is the median?",
       "choices": {
-        "A": "$72$",
-        "B": "$75$",
-        "C": "$78$",
-        "D": "$85$"
+        "A": "$85$",
+        "B": "$78$",
+        "C": "$75$",
+        "D": "$72$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Sorted: $68, 72, 75, 85, 90$. Median (middle) $= 75$."
     },
     {
@@ -1794,12 +1794,12 @@
       "difficulty": 1,
       "prompt": "A set of numbers: $4, 7, 7, 9, 3$. What is the mode?",
       "choices": {
-        "A": "$3$",
-        "B": "$6$",
-        "C": "$7$",
-        "D": "$9$"
+        "A": "$9$",
+        "B": "$7$",
+        "C": "$3$",
+        "D": "$6$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "The mode is the number that appears most often. $7$ appears twice."
     },
     {
@@ -1809,12 +1809,12 @@
       "difficulty": 1,
       "prompt": "A bag has 3 red, 5 blue, and 2 green marbles. What is the probability of drawing a blue marble?",
       "choices": {
-        "A": "$\\dfrac{1}{2}$",
-        "B": "$\\dfrac{1}{3}$",
-        "C": "$\\dfrac{1}{5}$",
-        "D": "$\\dfrac{3}{10}$"
+        "A": "$\\dfrac{1}{5}$",
+        "B": "$\\dfrac{1}{2}$",
+        "C": "$\\dfrac{3}{10}$",
+        "D": "$\\dfrac{1}{3}$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "$P(\\text{blue}) = \\frac{5}{10} = \\frac{1}{2}$."
     },
     {
@@ -1825,11 +1825,11 @@
       "prompt": "A standard die is rolled. What is the probability of rolling a number greater than 4?",
       "choices": {
         "A": "$\\dfrac{1}{6}$",
-        "B": "$\\dfrac{1}{3}$",
+        "B": "$\\dfrac{2}{3}$",
         "C": "$\\dfrac{1}{2}$",
-        "D": "$\\dfrac{2}{3}$"
+        "D": "$\\dfrac{1}{3}$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Numbers greater than 4 are 5 and 6. $P = \\frac{2}{6} = \\frac{1}{3}$."
     },
     {
@@ -1839,8 +1839,8 @@
       "difficulty": 2,
       "prompt": "Paint is mixed in a red:blue ratio of $2:5$. How many liters of blue are needed to mix with 8 liters of red?",
       "choices": {
-        "A": "$10$",
-        "B": "$16$",
+        "A": "$16$",
+        "B": "$10$",
         "C": "$20$",
         "D": "$25$"
       },
@@ -1854,12 +1854,12 @@
       "difficulty": 2,
       "prompt": "A store gives a 15% discount on a $\\$120$ jacket. Then a 6% tax is applied. What is the final price?",
       "choices": {
-        "A": "$\\$101.88$",
-        "B": "$\\$107.88$",
-        "C": "$\\$108.12$",
-        "D": "$\\$114.00$"
+        "A": "$\\$107.88$",
+        "B": "$\\$114.00$",
+        "C": "$\\$101.88$",
+        "D": "$\\$108.12$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "After 15% discount: $120 \\times 0.85 = \\$102$. With 6% tax: $102 \\times 1.06 = \\$108.12$."
     },
     {
@@ -1869,12 +1869,12 @@
       "difficulty": 2,
       "prompt": "The range of $\\{3, 7, 1, 9, 5\\}$ is:",
       "choices": {
-        "A": "$4$",
+        "A": "$8$",
         "B": "$5$",
-        "C": "$8$",
+        "C": "$4$",
         "D": "$9$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Range $= \\max - \\min = 9 - 1 = 8$."
     },
     {
@@ -1884,12 +1884,12 @@
       "difficulty": 2,
       "prompt": "If 12 workers can build a wall in 8 days, how many days would 6 workers take?",
       "choices": {
-        "A": "$4$",
-        "B": "$8$",
-        "C": "$12$",
-        "D": "$16$"
+        "A": "$12$",
+        "B": "$16$",
+        "C": "$4$",
+        "D": "$8$"
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "Total work $= 12 \\times 8 = 96$ worker-days. $6$ workers need $96 \\div 6 = 16$ days."
     },
     {
@@ -1899,12 +1899,12 @@
       "difficulty": 1,
       "prompt": "A triangle has a base of 8 and a height of 5. What is its area?",
       "choices": {
-        "A": "$13$",
-        "B": "$20$",
-        "C": "$26$",
-        "D": "$40$"
+        "A": "$40$",
+        "B": "$13$",
+        "C": "$20$",
+        "D": "$26$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$A = \\frac{1}{2} \\times 8 \\times 5 = 20$."
     },
     {
@@ -1914,12 +1914,12 @@
       "difficulty": 2,
       "prompt": "Two similar triangles have corresponding sides in the ratio $3:5$. If the perimeter of the smaller triangle is 24, what is the perimeter of the larger?",
       "choices": {
-        "A": "$30$",
-        "B": "$40$",
-        "C": "$45$",
-        "D": "$72$"
+        "A": "$72$",
+        "B": "$45$",
+        "C": "$30$",
+        "D": "$40$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$\\frac{3}{5} = \\frac{24}{x} \\Rightarrow x = 40$."
     },
     {
@@ -1930,8 +1930,8 @@
       "prompt": "A circle has radius 10. What is the length of an arc subtended by a central angle of $90^\\circ$?",
       "choices": {
         "A": "$5\\pi$",
-        "B": "$10\\pi$",
-        "C": "$20\\pi$",
+        "B": "$20\\pi$",
+        "C": "$10\\pi$",
         "D": "$25\\pi$"
       },
       "answer": "A",
@@ -1944,12 +1944,12 @@
       "difficulty": 3,
       "prompt": "In the coordinate plane, what is the distance between $(1, 2)$ and $(4, 6)$?",
       "choices": {
-        "A": "$3$",
-        "B": "$4$",
-        "C": "$5$",
-        "D": "$7$"
+        "A": "$7$",
+        "B": "$5$",
+        "C": "$4$",
+        "D": "$3$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$d = \\sqrt{(4-1)^2 + (6-2)^2} = \\sqrt{9+16} = \\sqrt{25} = 5$."
     },
     {
@@ -1974,10 +1974,10 @@
       "difficulty": 1,
       "prompt": "A rectangle has length 9 and width 4. What is its perimeter?",
       "choices": {
-        "A": "$13$",
+        "A": "$36$",
         "B": "$26$",
-        "C": "$36$",
-        "D": "$40$"
+        "C": "$40$",
+        "D": "$13$"
       },
       "answer": "B",
       "explanation": "$P = 2(9 + 4) = 26$."
@@ -1990,11 +1990,11 @@
       "prompt": "A sphere has radius 3. What is its volume? ($V = \\frac{4}{3}\\pi r^3$)",
       "choices": {
         "A": "$9\\pi$",
-        "B": "$12\\pi$",
+        "B": "$36\\pi$",
         "C": "$27\\pi$",
-        "D": "$36\\pi$"
+        "D": "$12\\pi$"
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "$V = \\frac{4}{3}\\pi(3)^3 = \\frac{4}{3}\\pi(27) = 36\\pi$."
     },
     {
@@ -2004,10 +2004,10 @@
       "difficulty": 2,
       "prompt": "What is the sum of interior angles of a hexagon?",
       "choices": {
-        "A": "$540^\\circ$",
+        "A": "$900^\\circ$",
         "B": "$720^\\circ$",
-        "C": "$900^\\circ$",
-        "D": "$1080^\\circ$"
+        "C": "$1080^\\circ$",
+        "D": "$540^\\circ$"
       },
       "answer": "B",
       "explanation": "Sum $= (n-2) \\times 180 = (6-2) \\times 180 = 720^\\circ$."
@@ -2021,10 +2021,10 @@
       "choices": {
         "A": "$65^\\circ$",
         "B": "$90^\\circ$",
-        "C": "$115^\\circ$",
-        "D": "$125^\\circ$"
+        "C": "$125^\\circ$",
+        "D": "$115^\\circ$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Co-interior angles are supplementary (add to $180^\\circ$): $180 - 65 = 115^\\circ$."
     },
     {
@@ -2034,8 +2034,8 @@
       "difficulty": 1,
       "prompt": "A cone has radius 4 and height 9. What is its volume? ($V = \\frac{1}{3}\\pi r^2 h$)",
       "choices": {
-        "A": "$12\\pi$",
-        "B": "$24\\pi$",
+        "A": "$24\\pi$",
+        "B": "$12\\pi$",
         "C": "$36\\pi$",
         "D": "$48\\pi$"
       },
@@ -2049,8 +2049,8 @@
       "difficulty": 2,
       "prompt": "The table shows scores: $\\{60, 70, 70, 80, 100\\}$. Which measure is affected most by the score of 100?",
       "choices": {
-        "A": "Mode",
-        "B": "Median",
+        "A": "Median",
+        "B": "Mode",
         "C": "Mean",
         "D": "Range's lower bound"
       },
@@ -2064,10 +2064,10 @@
       "difficulty": 2,
       "prompt": "In a data set, $Q_1 = 20$ and $Q_3 = 40$. What is the IQR?",
       "choices": {
-        "A": "$10$",
+        "A": "$60$",
         "B": "$20$",
-        "C": "$30$",
-        "D": "$60$"
+        "C": "$10$",
+        "D": "$30$"
       },
       "answer": "B",
       "explanation": "$\\text{IQR} = Q_3 - Q_1 = 40 - 20 = 20$."
@@ -2079,10 +2079,10 @@
       "difficulty": 1,
       "prompt": "A scatter plot shows a positive correlation between study hours and test scores. Which statement is most accurate?",
       "choices": {
-        "A": "More study hours cause higher scores.",
-        "B": "Higher scores cause more study hours.",
+        "A": "Higher scores cause more study hours.",
+        "B": "The relationship is purely coincidental.",
         "C": "Study hours and scores tend to increase together.",
-        "D": "The relationship is purely coincidental."
+        "D": "More study hours cause higher scores."
       },
       "answer": "C",
       "explanation": "Positive correlation means the variables tend to increase together. Correlation does not imply causation."
@@ -2094,12 +2094,12 @@
       "difficulty": 2,
       "prompt": "A line of best fit has equation $\\hat{y} = 2.5x + 10$. Predict $\\hat{y}$ when $x = 6$.",
       "choices": {
-        "A": "$22$",
-        "B": "$25$",
-        "C": "$27$",
-        "D": "$30$"
+        "A": "$30$",
+        "B": "$22$",
+        "C": "$25$",
+        "D": "$27$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$\\hat{y} = 2.5(6) + 10 = 15 + 10 = 25$."
     },
     {
@@ -2111,8 +2111,8 @@
       "choices": {
         "A": "$5$",
         "B": "$10$",
-        "C": "$15$",
-        "D": "$20$"
+        "C": "$20$",
+        "D": "$15$"
       },
       "answer": "B",
       "explanation": "Like math or science $= 30 + 20 - 10 = 40$. Neither $= 50 - 40 = 10$."
@@ -2124,10 +2124,10 @@
       "difficulty": 2,
       "prompt": "A sample of 100 students is randomly selected from a school of 1,000. The sample mean GPA is 3.2. Which best describes 3.2?",
       "choices": {
-        "A": "A census parameter",
+        "A": "A biased measure of central tendency",
         "B": "A sample statistic used to estimate the population mean",
         "C": "The definitive GPA of all students",
-        "D": "A biased measure of central tendency"
+        "D": "A census parameter"
       },
       "answer": "B",
       "explanation": "3.2 is a sample statistic; we use it to estimate the true population mean GPA."
@@ -2141,8 +2141,8 @@
       "choices": {
         "A": "$60$",
         "B": "$65$",
-        "C": "$70$",
-        "D": "$80$"
+        "C": "$80$",
+        "D": "$70$"
       },
       "answer": "A",
       "explanation": "At least one $= 40 + 30 - 10 = 60$."
@@ -2155,11 +2155,11 @@
       "prompt": "A random sample gives a 95% confidence interval of $(48, 54)$ for a population mean. What does this mean?",
       "choices": {
         "A": "95% of individual data points fall between 48 and 54.",
-        "B": "We are 95% confident the true population mean lies between 48 and 54.",
-        "C": "The sample mean is definitely 51.",
-        "D": "The margin of error is 95%."
+        "B": "The margin of error is 95%.",
+        "C": "We are 95% confident the true population mean lies between 48 and 54.",
+        "D": "The sample mean is definitely 51."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "A confidence interval estimates where the true population parameter likely falls, with the stated level of confidence."
     },
     {
@@ -2169,12 +2169,12 @@
       "difficulty": 2,
       "prompt": "If $P(A) = 0.4$ and $P(B) = 0.3$ and $A$ and $B$ are independent, what is $P(A \\text{ and } B)$?",
       "choices": {
-        "A": "$0.10$",
-        "B": "$0.12$",
-        "C": "$0.58$",
-        "D": "$0.70$"
+        "A": "$0.58$",
+        "B": "$0.70$",
+        "C": "$0.10$",
+        "D": "$0.12$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Independent events: $P(A \\cap B) = P(A) \\times P(B) = 0.4 \\times 0.3 = 0.12$."
     },
     {
@@ -2184,12 +2184,12 @@
       "difficulty": 2,
       "prompt": "A jar has 4 red and 6 blue chips. Two chips are drawn without replacement. What is the probability both are red?",
       "choices": {
-        "A": "$\\dfrac{2}{15}$",
-        "B": "$\\dfrac{4}{25}$",
+        "A": "$\\dfrac{4}{25}$",
+        "B": "$\\dfrac{2}{15}$",
         "C": "$\\dfrac{2}{5}$",
         "D": "$\\dfrac{4}{9}$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "$P = \\frac{4}{10} \\times \\frac{3}{9} = \\frac{12}{90} = \\frac{2}{15}$."
     },
     {
@@ -2199,12 +2199,12 @@
       "difficulty": 1,
       "prompt": "Solve: $3x - 4 > 11$",
       "choices": {
-        "A": "$x > 5$",
-        "B": "$x < 5$",
-        "C": "$x > 3$",
-        "D": "$x < 15$"
+        "A": "$x < 15$",
+        "B": "$x > 5$",
+        "C": "$x < 5$",
+        "D": "$x > 3$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "$3x > 15 \\Rightarrow x > 5$."
     },
     {
@@ -2214,12 +2214,12 @@
       "difficulty": 1,
       "prompt": "Which values satisfy $-3 \\leq 2x + 1 < 7$?",
       "choices": {
-        "A": "$-2 \\leq x < 3$",
-        "B": "$-2 \\leq x < 4$",
-        "C": "$-1 \\leq x < 3$",
-        "D": "$-4 \\leq x < 3$"
+        "A": "$-4 \\leq x < 3$",
+        "B": "$-2 \\leq x < 3$",
+        "C": "$-2 \\leq x < 4$",
+        "D": "$-1 \\leq x < 3$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Subtract 1: $-4 \\leq 2x < 6$. Divide by 2: $-2 \\leq x < 3$."
     },
     {
@@ -2245,8 +2245,8 @@
       "prompt": "Solve $|x + 3| < 5$.",
       "choices": {
         "A": "$-8 < x < 2$",
-        "B": "$x > 2$ or $x < -8$",
-        "C": "$-2 < x < 8$",
+        "B": "$-2 < x < 8$",
+        "C": "$x > 2$ or $x < -8$",
         "D": "$-5 < x < 5$"
       },
       "answer": "A",
@@ -2260,11 +2260,11 @@
       "prompt": "A point $(3, 5)$ is tested in the inequality $y > 2x - 1$. Is it a solution?",
       "choices": {
         "A": "Yes, because $5 > 5$",
-        "B": "No, because $5 = 5$",
+        "B": "No, because strict inequality requires $y > 5$",
         "C": "Yes, because $5 > 5$ is false but boundary counts",
-        "D": "No, because strict inequality requires $y > 5$"
+        "D": "No, because $5 = 5$"
       },
-      "answer": "D",
+      "answer": "B",
       "explanation": "$2(3) - 1 = 5$. Since $y > 2x-1$ is strict, $5 > 5$ is FALSE. Not a solution."
     },
     {
@@ -2274,12 +2274,12 @@
       "difficulty": 1,
       "prompt": "If $-2x > 8$, what is the solution?",
       "choices": {
-        "A": "$x > -4$",
-        "B": "$x < -4$",
+        "A": "$x < 4$",
+        "B": "$x > -4$",
         "C": "$x > 4$",
-        "D": "$x < 4$"
+        "D": "$x < -4$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Divide by $-2$ and FLIP the inequality: $x < -4$."
     },
     {
@@ -2291,8 +2291,8 @@
       "choices": {
         "A": "$h \\geq 15$",
         "B": "$h \\geq 20$",
-        "C": "$h \\geq 33$",
-        "D": "$h \\geq 47$"
+        "C": "$h \\geq 47$",
+        "D": "$h \\geq 33$"
       },
       "answer": "B",
       "explanation": "$200 + 15h \\geq 500 \\Rightarrow 15h \\geq 300 \\Rightarrow h \\geq 20$."
@@ -2304,12 +2304,12 @@
       "difficulty": 3,
       "prompt": "In the $xy$-plane, which region satisfies both $y \\geq 2x - 3$ and $y \\leq -x + 6$?",
       "choices": {
-        "A": "Above both lines",
+        "A": "Above $y = 2x-3$ and below $y = -x+6$",
         "B": "Below both lines",
-        "C": "Above $y = 2x-3$ and below $y = -x+6$",
-        "D": "Below $y = 2x-3$ and above $y = -x+6$"
+        "C": "Below $y = 2x-3$ and above $y = -x+6$",
+        "D": "Above both lines"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$y \\geq 2x-3$ is the region at or above the first line; $y \\leq -x+6$ is at or below the second line."
     },
     {
@@ -2319,12 +2319,12 @@
       "difficulty": 1,
       "prompt": "Which input is NOT in the domain of $f(x) = \\dfrac{1}{x - 4}$?",
       "choices": {
-        "A": "$0$",
-        "B": "$1$",
-        "C": "$4$",
-        "D": "$5$"
+        "A": "$5$",
+        "B": "$4$",
+        "C": "$0$",
+        "D": "$1$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "The denominator is zero when $x = 4$, so $x = 4$ is excluded from the domain."
     },
     {
@@ -2334,12 +2334,12 @@
       "difficulty": 2,
       "prompt": "If $h(x) = 2x^2 - 3$, what is $h(-3)$?",
       "choices": {
-        "A": "$-21$",
-        "B": "$15$",
-        "C": "$21$",
-        "D": "$39$"
+        "A": "$15$",
+        "B": "$21$",
+        "C": "$39$",
+        "D": "$-21$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$h(-3) = 2(9) - 3 = 18 - 3 = 15$."
     },
     {
@@ -2349,12 +2349,12 @@
       "difficulty": 2,
       "prompt": "A function is defined by the table: $x: 1, 2, 3, 4$ and $f(x): 5, 8, 11, 14$. What is the rate of change?",
       "choices": {
-        "A": "$2$",
-        "B": "$3$",
+        "A": "$3$",
+        "B": "$2$",
         "C": "$4$",
         "D": "$5$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$f$ increases by 3 for each unit increase in $x$. Rate of change $= 3$."
     },
     {
@@ -2364,12 +2364,12 @@
       "difficulty": 2,
       "prompt": "If $f(x) = 5x - 2$, what is $f^{-1}(x)$?",
       "choices": {
-        "A": "$\\dfrac{x + 2}{5}$",
-        "B": "$\\dfrac{x - 2}{5}$",
-        "C": "$5x + 2$",
+        "A": "$5x + 2$",
+        "B": "$\\dfrac{x + 2}{5}$",
+        "C": "$\\dfrac{x - 2}{5}$",
         "D": "$\\dfrac{1}{5x - 2}$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Set $y = 5x-2$, swap $x$ and $y$: $x = 5y-2 \\Rightarrow y = \\frac{x+2}{5}$."
     },
     {
@@ -2380,8 +2380,8 @@
       "prompt": "The piecewise function $f(x) = \\begin{cases} 2x + 1 & x < 0 \\\\ x^2 & x \\geq 0 \\end{cases}$. What is $f(-3) + f(2)$?",
       "choices": {
         "A": "$-1$",
-        "B": "$0$",
-        "C": "$1$",
+        "B": "$1$",
+        "C": "$0$",
         "D": "$3$"
       },
       "answer": "A",
@@ -2394,12 +2394,12 @@
       "difficulty": 1,
       "prompt": "For $g(x) = -2x + 7$, what is $g(0)$?",
       "choices": {
-        "A": "$-7$",
-        "B": "$0$",
-        "C": "$7$",
-        "D": "$9$"
+        "A": "$9$",
+        "B": "$7$",
+        "C": "$-7$",
+        "D": "$0$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$g(0) = -2(0) + 7 = 7$."
     },
     {
@@ -2409,12 +2409,12 @@
       "difficulty": 2,
       "prompt": "If $f(x) = 4^x$, which is equivalent to $f(x + 1)$?",
       "choices": {
-        "A": "$4^x + 1$",
-        "B": "$4 \\cdot 4^x$",
-        "C": "$4^x + 4$",
-        "D": "$(4x)^{x+1}$"
+        "A": "$4^x + 4$",
+        "B": "$(4x)^{x+1}$",
+        "C": "$4 \\cdot 4^x$",
+        "D": "$4^x + 1$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$4^{x+1} = 4^x \\cdot 4^1 = 4 \\cdot 4^x$."
     },
     {
@@ -2425,11 +2425,11 @@
       "prompt": "If $f(2) = 5$ and $f(x+1) = f(x) + 3$, what is $f(5)$?",
       "choices": {
         "A": "$11$",
-        "B": "$14$",
+        "B": "$20$",
         "C": "$17$",
-        "D": "$20$"
+        "D": "$14$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$f(3) = 8$, $f(4) = 11$, $f(5) = 14$."
     },
     {
@@ -2439,12 +2439,12 @@
       "difficulty": 1,
       "prompt": "Which equation represents exponential growth starting at 200 with a growth rate of 5% per year?",
       "choices": {
-        "A": "$y = 200 + 0.05t$",
-        "B": "$y = 200(1.05)^t$",
+        "A": "$y = 200(1.05)^t$",
+        "B": "$y = 200(5)^t$",
         "C": "$y = 200(0.95)^t$",
-        "D": "$y = 200(5)^t$"
+        "D": "$y = 200 + 0.05t$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Exponential growth: $y = \\text{initial} \\times (1 + r)^t = 200(1.05)^t$."
     },
     {
@@ -2454,12 +2454,12 @@
       "difficulty": 3,
       "prompt": "If $f(x) = x + 2$ and $g(x) = x^2 - 1$, what is $(g \\circ f)(3)$?",
       "choices": {
-        "A": "$24$",
-        "B": "$25$",
-        "C": "$26$",
-        "D": "$28$"
+        "A": "$26$",
+        "B": "$28$",
+        "C": "$25$",
+        "D": "$24$"
       },
-      "answer": "A",
+      "answer": "D",
       "explanation": "$f(3) = 5$. $g(5) = 25 - 1 = 24$."
     },
     {
@@ -2499,12 +2499,12 @@
       "difficulty": 2,
       "prompt": "Convert $270^\\circ$ to radians.",
       "choices": {
-        "A": "$\\dfrac{3\\pi}{4}$",
+        "A": "$\\dfrac{3\\pi}{2}$",
         "B": "$\\pi$",
-        "C": "$\\dfrac{3\\pi}{2}$",
+        "C": "$\\dfrac{3\\pi}{4}$",
         "D": "$2\\pi$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$270^\\circ \\times \\dfrac{\\pi}{180^\\circ} = \\dfrac{3\\pi}{2}$."
     },
     {
@@ -2514,12 +2514,12 @@
       "difficulty": 2,
       "prompt": "What is $\\sin(30^\\circ)$?",
       "choices": {
-        "A": "$\\dfrac{\\sqrt{2}}{2}$",
-        "B": "$\\dfrac{\\sqrt{3}}{2}$",
-        "C": "$\\dfrac{1}{2}$",
+        "A": "$\\dfrac{1}{2}$",
+        "B": "$\\dfrac{\\sqrt{2}}{2}$",
+        "C": "$\\dfrac{\\sqrt{3}}{2}$",
         "D": "$1$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$\\sin(30^\\circ) = \\frac{1}{2}$ — a standard value to memorize."
     },
     {
@@ -2531,8 +2531,8 @@
       "choices": {
         "A": "$5$",
         "B": "$5\\sqrt{3}$",
-        "C": "$5\\sqrt{2}$",
-        "D": "$10\\sqrt{3}$"
+        "C": "$10\\sqrt{3}$",
+        "D": "$5\\sqrt{2}$"
       },
       "answer": "B",
       "explanation": "Height $= 10 \\sin(60^\\circ) = 10 \\times \\frac{\\sqrt{3}}{2} = 5\\sqrt{3}$."
@@ -2545,11 +2545,11 @@
       "prompt": "What is the slope of the line passing through $(2, 5)$ and $(6, 13)$?",
       "choices": {
         "A": "$1$",
-        "B": "$2$",
-        "C": "$3$",
-        "D": "$4$"
+        "B": "$3$",
+        "C": "$4$",
+        "D": "$2$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$m = \\frac{13-5}{6-2} = \\frac{8}{4} = 2$."
     },
     {
@@ -2559,10 +2559,10 @@
       "difficulty": 1,
       "prompt": "Which equation represents a horizontal line through $(0, 5)$?",
       "choices": {
-        "A": "$x = 5$",
+        "A": "$x + y = 5$",
         "B": "$y = 5$",
         "C": "$y = 5x$",
-        "D": "$x + y = 5$"
+        "D": "$x = 5$"
       },
       "answer": "B",
       "explanation": "A horizontal line has constant $y$-value: $y = 5$."
@@ -2575,11 +2575,11 @@
       "prompt": "A tank starts with 300 gallons and is drained at 20 gallons/hour. After how many hours is it empty?",
       "choices": {
         "A": "$10$",
-        "B": "$15$",
-        "C": "$20$",
-        "D": "$30$"
+        "B": "$20$",
+        "C": "$30$",
+        "D": "$15$"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "$300 - 20t = 0 \\Rightarrow t = 15$."
     },
     {
@@ -2589,12 +2589,12 @@
       "difficulty": 2,
       "prompt": "A line has equation $3x + 4y = 24$. What is the $y$-intercept?",
       "choices": {
-        "A": "$4$",
-        "B": "$6$",
-        "C": "$8$",
-        "D": "$24$"
+        "A": "$6$",
+        "B": "$4$",
+        "C": "$24$",
+        "D": "$8$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Set $x = 0$: $4y = 24 \\Rightarrow y = 6$."
     },
     {
@@ -2604,12 +2604,12 @@
       "difficulty": 2,
       "prompt": "Two lines: $y = 3x + 1$ and $y = 3x - 4$. How many times do they intersect?",
       "choices": {
-        "A": "$0$",
-        "B": "$1$",
-        "C": "$2$",
-        "D": "Infinitely many"
+        "A": "Infinitely many",
+        "B": "$2$",
+        "C": "$0$",
+        "D": "$1$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "Same slope ($3$) but different $y$-intercepts → parallel lines → no intersection."
     },
     {
@@ -2619,12 +2619,12 @@
       "difficulty": 2,
       "prompt": "Choose the correctly punctuated sentence.",
       "choices": {
-        "A": "She finished her homework, then she went to the gym.",
-        "B": "She finished her homework; then she went to the gym.",
+        "A": "She finished her homework; then she went to the gym.",
+        "B": "She finished her homework, then she went to the gym.",
         "C": "She finished her homework then, she went to the gym.",
         "D": "She finished her homework then she went to the gym."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Two independent clauses joined by a conjunctive adverb ('then') need a semicolon."
     },
     {
@@ -2634,12 +2634,12 @@
       "difficulty": 2,
       "prompt": "Which sentence uses correct parallel structure?",
       "choices": {
-        "A": "She likes to swim, hiking, and to run.",
-        "B": "She likes swimming, to hike, and running.",
-        "C": "She likes to swim, to hike, and to run.",
-        "D": "She likes swimming, hiking, and to run."
+        "A": "She likes to swim, to hike, and to run.",
+        "B": "She likes swimming, hiking, and to run.",
+        "C": "She likes to swim, hiking, and to run.",
+        "D": "She likes swimming, to hike, and running."
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "All verbs must be in the same form: 'to swim, to hike, and to run' are all infinitives."
     },
     {
@@ -2650,11 +2650,11 @@
       "prompt": "The ___ meeting was postponed due to weather. (Referring to the teachers)",
       "choices": {
         "A": "teachers",
-        "B": "teacher's",
-        "C": "teachers'",
+        "B": "teachers'",
+        "C": "teacher's",
         "D": "teachers's"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "Plural possessive: add apostrophe after the 's' — teachers'."
     },
     {
@@ -2664,12 +2664,12 @@
       "difficulty": 2,
       "prompt": "The results of the experiment ___ inconclusive.",
       "choices": {
-        "A": "was",
-        "B": "were",
-        "C": "is",
+        "A": "were",
+        "B": "is",
+        "C": "was",
         "D": "has been"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "'Results' is plural → 'were'."
     },
     {
@@ -2679,12 +2679,12 @@
       "difficulty": 2,
       "prompt": "By the time the guests arrived, Maria ___ the dinner.",
       "choices": {
-        "A": "prepares",
-        "B": "prepared",
-        "C": "had prepared",
+        "A": "had prepared",
+        "B": "prepares",
+        "C": "prepared",
         "D": "has prepared"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "Past perfect ('had prepared') shows an action completed before another past action."
     },
     {
@@ -2694,12 +2694,12 @@
       "difficulty": 2,
       "prompt": "It was ___ who finished the project on time.",
       "choices": {
-        "A": "them",
-        "B": "they",
-        "C": "us",
+        "A": "us",
+        "B": "them",
+        "C": "they",
         "D": "whom"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "After the verb 'to be,' use a subject pronoun: 'It was they.'"
     },
     {
@@ -2710,11 +2710,11 @@
       "prompt": "The research was extensive. ___, the conclusion was brief.",
       "choices": {
         "A": "Therefore",
-        "B": "Similarly",
-        "C": "However",
-        "D": "Consequently"
+        "B": "Consequently",
+        "C": "Similarly",
+        "D": "However"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Extensive research but brief conclusion → contrast → 'However'."
     },
     {
@@ -2724,12 +2724,12 @@
       "difficulty": 2,
       "prompt": "Choose the sentence with the correctly placed modifier.",
       "choices": {
-        "A": "Running down the street, the keys fell out of his pocket.",
-        "B": "The keys fell out of his pocket while he was running down the street.",
+        "A": "The keys fell out of his pocket while he was running down the street.",
+        "B": "Running down the street, the keys fell out of his pocket.",
         "C": "His pocket had keys fall out while running down the street.",
         "D": "Down the street, the keys ran out of his pocket."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "B correctly names the subject ('he') doing the running, avoiding the dangling modifier."
     },
     {
@@ -2739,12 +2739,12 @@
       "difficulty": 2,
       "prompt": "Choose the most concise option that preserves meaning.",
       "choices": {
-        "A": "At this point in time, the situation is such that no one can tell what will happen in the future.",
+        "A": "Currently no one can predict what will happen.",
         "B": "Currently, no one knows what will happen in the future.",
-        "C": "Currently no one can predict what will happen.",
+        "C": "At this point in time, the situation is such that no one can tell what will happen in the future.",
         "D": "No one knows the future."
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "C is concise and complete. D loses 'currently'; A and B are wordy."
     },
     {
@@ -2754,12 +2754,12 @@
       "difficulty": 2,
       "prompt": "Which sentence uses the dash correctly?",
       "choices": {
-        "A": "The scientist—who had worked for 20 years—published her findings.",
-        "B": "The scientist—who had worked for 20 years, published her findings.",
-        "C": "The scientist, who had worked for 20 years—published her findings.",
+        "A": "The scientist, who had worked for 20 years—published her findings.",
+        "B": "The scientist—who had worked for 20 years—published her findings.",
+        "C": "The scientist—who had worked for 20 years, published her findings.",
         "D": "The scientist who had worked—for 20 years—published her findings."
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Dashes set off a non-essential interrupting phrase — both need dashes on each side."
     },
     {
@@ -2770,11 +2770,11 @@
       "prompt": "The data suggests ___ own interpretation.",
       "choices": {
         "A": "it's",
-        "B": "its",
-        "C": "their",
+        "B": "their",
+        "C": "its",
         "D": "they're"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "'Data' can be treated as singular here; 'its' is the possessive pronoun (no apostrophe)."
     },
     {
@@ -2784,12 +2784,12 @@
       "difficulty": 3,
       "prompt": "Either the principal or the teachers ___ responsible for the schedule.",
       "choices": {
-        "A": "is",
-        "B": "are",
-        "C": "was",
-        "D": "have been"
+        "A": "was",
+        "B": "is",
+        "C": "have been",
+        "D": "are"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "With 'either/or,' the verb agrees with the closest subject ('teachers,' plural) → 'are'."
     },
     {
@@ -2799,12 +2799,12 @@
       "difficulty": 2,
       "prompt": "The museum ___ for renovations since last January.",
       "choices": {
-        "A": "closed",
-        "B": "has been closed",
-        "C": "closes",
-        "D": "had closed"
+        "A": "closes",
+        "B": "had closed",
+        "C": "has been closed",
+        "D": "closed"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Present perfect ('has been closed') for an action that started in the past and continues."
     },
     {
@@ -2814,12 +2814,12 @@
       "difficulty": 2,
       "prompt": "The film received poor reviews. ___, it was a box-office hit.",
       "choices": {
-        "A": "Additionally",
+        "A": "Nonetheless",
         "B": "In other words",
         "C": "As a result",
-        "D": "Nonetheless"
+        "D": "Additionally"
       },
-      "answer": "D",
+      "answer": "A",
       "explanation": "Poor reviews but a hit → unexpected contrast → 'Nonetheless'."
     },
     {
@@ -2829,12 +2829,12 @@
       "difficulty": 3,
       "prompt": "Which is a comma splice?",
       "choices": {
-        "A": "He studied all night; he passed the exam.",
-        "B": "He studied all night, he passed the exam.",
-        "C": "He studied all night, so he passed the exam.",
-        "D": "After studying all night, he passed the exam."
+        "A": "He studied all night, so he passed the exam.",
+        "B": "He studied all night; he passed the exam.",
+        "C": "After studying all night, he passed the exam.",
+        "D": "He studied all night, he passed the exam."
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "A comma splice uses only a comma to join two independent clauses, which is incorrect."
     },
     {
@@ -2844,12 +2844,12 @@
       "difficulty": 1,
       "prompt": "Dolphins use echolocation—emitting high-frequency clicks and interpreting the echoes—to detect objects in their environment. This allows them to hunt fish in murky water where visibility is limited. Scientists believe the ability evolved millions of years ago as dolphins' ancestors moved from land to sea.\n\nWhat is the main purpose of the passage?",
       "choices": {
-        "A": "To argue that dolphins are the most intelligent marine mammals",
-        "B": "To describe how dolphins use echolocation to navigate and hunt",
-        "C": "To compare dolphins' vision and hearing abilities",
-        "D": "To trace the evolutionary history of all marine mammals"
+        "A": "To trace the evolutionary history of all marine mammals",
+        "B": "To compare dolphins' vision and hearing abilities",
+        "C": "To describe how dolphins use echolocation to navigate and hunt",
+        "D": "To argue that dolphins are the most intelligent marine mammals"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The passage focuses on what echolocation is, how dolphins use it, and when it evolved. B best captures this central focus."
     },
     {
@@ -2859,10 +2859,10 @@
       "difficulty": 2,
       "prompt": "Historian Rebecca Fraser argues that the British repeal of the Corn Laws in 1846 was driven not by free-trade ideology alone but by the political crisis precipitated by the Irish famine. The famine, Fraser contends, gave repeal advocates a humanitarian argument that proved more persuasive than economic theory to wavering legislators. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Fraser suggests that abstract economic arguments were the primary tool reformers used to achieve legislative change.",
+        "A": "Fraser dismisses the role of ideology entirely, focusing solely on the famine's death toll.",
         "B": "Fraser implies that without the famine, free-trade arguments alone might not have been sufficient to secure repeal at that time.",
-        "C": "Fraser argues that the Irish famine was caused by the Corn Laws themselves.",
-        "D": "Fraser dismisses the role of ideology entirely, focusing solely on the famine's death toll."
+        "C": "Fraser suggests that abstract economic arguments were the primary tool reformers used to achieve legislative change.",
+        "D": "Fraser argues that the Irish famine was caused by the Corn Laws themselves."
       },
       "answer": "B",
       "explanation": "Fraser argues the famine added a humanitarian dimension that persuaded wavering legislators. This implies that free-trade arguments alone may have fallen short."
@@ -2875,11 +2875,11 @@
       "prompt": "The committee's decision was largely perfunctory; the outcome had been determined weeks before the formal vote was held.\n\n'Perfunctory' most nearly means:",
       "choices": {
         "A": "thorough",
-        "B": "ceremonial",
-        "C": "controversial",
-        "D": "decisive"
+        "B": "decisive",
+        "C": "ceremonial",
+        "D": "controversial"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "If the outcome was predetermined, the vote was a formality—done as a routine obligation, not with genuine deliberation. 'Ceremonial' best captures this."
     },
     {
@@ -2890,11 +2890,11 @@
       "prompt": "Text 1: Economist Nadia Haroun contends that universal basic income (UBI) would reduce poverty and allow workers to pursue more fulfilling, creative work without fear of destitution.\n\nText 2: Political scientist Marcus Tang argues that UBI could reduce the workforce incentive to accept low-wage jobs, potentially causing labor shortages in essential service sectors.\n\nHow do the two texts relate to each other?",
       "choices": {
         "A": "Both texts argue that UBI would harm the economy.",
-        "B": "Text 1 presents a benefit of UBI that Text 2 acknowledges may have an unintended downside.",
-        "C": "Text 2 fully refutes the claims made in Text 1.",
-        "D": "Text 1 focuses on economic effects while Text 2 focuses only on political effects."
+        "B": "Text 1 focuses on economic effects while Text 2 focuses only on political effects.",
+        "C": "Text 1 presents a benefit of UBI that Text 2 acknowledges may have an unintended downside.",
+        "D": "Text 2 fully refutes the claims made in Text 1."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Text 1 highlights worker freedom as a benefit; Text 2 suggests this same freedom may discourage low-wage work, creating a potential downside."
     },
     {
@@ -2904,12 +2904,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• The Roman Colosseum was completed in 80 CE.\n• It could hold an estimated 50,000 to 80,000 spectators.\n• Events included gladiatorial contests and animal hunts.\n• The outer walls stand approximately 157 feet high.\n\nGoal: emphasize the Colosseum's capacity to host massive public events. Best choice?",
       "choices": {
-        "A": "The Roman Colosseum, completed in 80 CE, stands about 157 feet tall.",
-        "B": "With the capacity to hold up to 80,000 spectators, the Colosseum hosted gladiatorial contests and animal hunts on an enormous scale.",
-        "C": "The Colosseum hosted gladiatorial contests in ancient Rome.",
-        "D": "The Roman Colosseum was completed in 80 CE and featured animal hunts."
+        "A": "The Colosseum hosted gladiatorial contests in ancient Rome.",
+        "B": "The Roman Colosseum was completed in 80 CE and featured animal hunts.",
+        "C": "With the capacity to hold up to 80,000 spectators, the Colosseum hosted gladiatorial contests and animal hunts on an enormous scale.",
+        "D": "The Roman Colosseum, completed in 80 CE, stands about 157 feet tall."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "B combines the capacity figure with the types of massive public events, directly addressing the goal."
     },
     {
@@ -2919,12 +2919,12 @@
       "difficulty": 2,
       "prompt": "The golden ratio (approximately 1.618) appears in many natural structures—the spiral of a nautilus shell, the arrangement of sunflower seeds, and the branching of trees. Artists and architects, from the ancient Greeks to Leonardo da Vinci, have also deliberately employed it in their works, believing it to produce aesthetically pleasing proportions.\n\nWhat does the passage primarily describe?",
       "choices": {
-        "A": "The mathematical proof of the golden ratio",
-        "B": "The appearance of the golden ratio in both nature and human art",
-        "C": "Why the golden ratio is more beautiful than other ratios",
-        "D": "Leonardo da Vinci's artistic techniques"
+        "A": "Why the golden ratio is more beautiful than other ratios",
+        "B": "Leonardo da Vinci's artistic techniques",
+        "C": "The appearance of the golden ratio in both nature and human art",
+        "D": "The mathematical proof of the golden ratio"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The passage covers both natural occurrences and deliberate artistic use of the golden ratio. B correctly captures both dimensions."
     },
     {
@@ -2934,10 +2934,10 @@
       "difficulty": 2,
       "prompt": "The physicist's hypothesis was initially met with skepticism, but subsequent experiments corroborated her findings, lending significant credibility to her model.\n\n'Corroborated' most nearly means:",
       "choices": {
-        "A": "contradicted",
-        "B": "modified",
+        "A": "modified",
+        "B": "published",
         "C": "confirmed",
-        "D": "published"
+        "D": "contradicted"
       },
       "answer": "C",
       "explanation": "If subsequent experiments 'lent credibility,' they supported and confirmed the findings. 'Corroborate' means to confirm or give support to."
@@ -2949,12 +2949,12 @@
       "difficulty": 3,
       "prompt": "Primatologist Jane Goodall's 1960 discovery that chimpanzees make and use tools—stripping leaves from twigs to extract termites—upended a long-held belief that toolmaking was exclusively human. When Goodall reported her observation to paleontologist Louis Leakey, he famously replied that scientists would now have to 'redefine tool, redefine Man, or accept chimpanzees as humans.' ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Leakey's remark suggests that the discovery had no immediate implications for the scientific study of humanity.",
-        "B": "Leakey's remark underscores the magnitude of the discovery by highlighting the difficult conceptual choices it forced upon the scientific community.",
-        "C": "Leakey's remark implies that chimpanzees should be reclassified as a subspecies of humans.",
-        "D": "Leakey's remark indicates his disagreement with Goodall's methodology."
+        "A": "Leakey's remark underscores the magnitude of the discovery by highlighting the difficult conceptual choices it forced upon the scientific community.",
+        "B": "Leakey's remark implies that chimpanzees should be reclassified as a subspecies of humans.",
+        "C": "Leakey's remark indicates his disagreement with Goodall's methodology.",
+        "D": "Leakey's remark suggests that the discovery had no immediate implications for the scientific study of humanity."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Leakey offered three options—redefine tool, redefine Man, or reclassify chimps—all of which were radical. This illustrates the profound challenge the discovery posed to science."
     },
     {
@@ -2964,12 +2964,12 @@
       "difficulty": 1,
       "prompt": "The following text is adapted from a 19th-century naturalist's journal.\n\n\"The Amazon basin contains more species of birds than any other region on Earth, a testament to the extraordinary variety of habitats packed within its boundaries—from dense canopy to flooded grasslands to riverbanks. One may walk for an hour and observe more species than a visitor to a temperate forest might see in a week.\"\n\nWhat does the text primarily convey?",
       "choices": {
-        "A": "The Amazon basin is too dangerous for visitors to explore.",
-        "B": "The Amazon basin has exceptional bird diversity, attributable to its varied habitats.",
+        "A": "The Amazon basin has exceptional bird diversity, attributable to its varied habitats.",
+        "B": "The naturalist spent one hour observing birds in the Amazon.",
         "C": "Temperate forests are poor habitats for birds compared to any tropical location.",
-        "D": "The naturalist spent one hour observing birds in the Amazon."
+        "D": "The Amazon basin is too dangerous for visitors to explore."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "The text claims the Amazon has more bird species than anywhere else and attributes this to habitat variety. B captures both elements."
     },
     {
@@ -2979,12 +2979,12 @@
       "difficulty": 3,
       "prompt": "Notes:\n• Scientist Marie Curie discovered polonium and radium.\n• She was the first woman to win a Nobel Prize.\n• She won Nobel Prizes in two different scientific fields: Physics (1903) and Chemistry (1911).\n• She conducted research on radioactivity.\n\nGoal: highlight what makes Curie's Nobel Prize achievements uniquely remarkable. Best choice?",
       "choices": {
-        "A": "Marie Curie discovered polonium and radium through her research on radioactivity.",
-        "B": "Marie Curie was the first woman to win a Nobel Prize.",
-        "C": "Marie Curie won Nobel Prizes in both Physics and Chemistry, making her the only person to have won the prize in two different scientific disciplines.",
-        "D": "Marie Curie conducted pioneering research on radioactivity in the early twentieth century."
+        "A": "Marie Curie won Nobel Prizes in both Physics and Chemistry, making her the only person to have won the prize in two different scientific disciplines.",
+        "B": "Marie Curie conducted pioneering research on radioactivity in the early twentieth century.",
+        "C": "Marie Curie discovered polonium and radium through her research on radioactivity.",
+        "D": "Marie Curie was the first woman to win a Nobel Prize."
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "The goal is to highlight what's unique about her Nobel accomplishments. C emphasizes the two-discipline achievement, the most remarkable distinction."
     },
     {
@@ -2994,12 +2994,12 @@
       "difficulty": 2,
       "prompt": "Although the author's prose style is often lauded as elegant, critics have also noted that it can veer into the abstruse, leaving readers to parse passages that seem designed to obscure rather than illuminate.\n\n'Abstruse' most nearly means:",
       "choices": {
-        "A": "lengthy",
-        "B": "obscure and difficult to understand",
+        "A": "obscure and difficult to understand",
+        "B": "aggressive and confrontational",
         "C": "poetic and evocative",
-        "D": "aggressive and confrontational"
+        "D": "lengthy"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Context: 'designed to obscure rather than illuminate.' 'Abstruse' means difficult to understand, hard to follow."
     },
     {
@@ -3024,12 +3024,12 @@
       "difficulty": 2,
       "prompt": "Sociologist Amara Diallo studied two neighborhoods with identical income levels but different levels of community organizations—clubs, civic associations, and volunteer groups. She found that the neighborhood with more organizations had significantly lower rates of petty crime. Diallo concluded that social cohesion, not income, was the primary protective factor. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Diallo's finding implies that reducing poverty is unnecessary for crime prevention.",
-        "B": "Diallo's finding suggests that strengthening community organizations could reduce crime even without changing residents' incomes.",
-        "C": "Diallo's finding proves that social cohesion is effective in all neighborhoods regardless of circumstance.",
-        "D": "Diallo's finding indicates that crime rates are entirely determined by neighborhood demographics."
+        "A": "Diallo's finding suggests that strengthening community organizations could reduce crime even without changing residents' incomes.",
+        "B": "Diallo's finding indicates that crime rates are entirely determined by neighborhood demographics.",
+        "C": "Diallo's finding implies that reducing poverty is unnecessary for crime prevention.",
+        "D": "Diallo's finding proves that social cohesion is effective in all neighborhoods regardless of circumstance."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "Diallo identified social cohesion as the protective factor controlling for income. This supports B: organizations can help without income changes. A is too extreme; C/D overstate the findings."
     },
     {
@@ -3039,12 +3039,12 @@
       "difficulty": 3,
       "prompt": "Text 1: Literary critic Ana Sousa argues that magical realism in Latin American fiction functions as a form of political resistance, allowing authors to critique authoritarian regimes through allegory rather than direct confrontation that could lead to censorship.\n\nText 2: Author Rodrigo Mendes disputes that all magical realism is political. For him, the genre's blending of the fantastical and real reflects an indigenous worldview in which the supernatural is simply a natural part of daily experience, not primarily a coded critique.\n\nWhat is the main point of disagreement between the two texts?",
       "choices": {
-        "A": "Whether magical realism is a legitimate literary genre",
-        "B": "Whether the primary purpose of magical realism is political resistance or cultural expression",
-        "C": "Whether Latin American fiction should be read by international audiences",
-        "D": "Whether indigenous worldviews are reflected in all Latin American literature"
+        "A": "Whether Latin American fiction should be read by international audiences",
+        "B": "Whether magical realism is a legitimate literary genre",
+        "C": "Whether indigenous worldviews are reflected in all Latin American literature",
+        "D": "Whether the primary purpose of magical realism is political resistance or cultural expression"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Sousa sees magical realism as politically motivated; Mendes argues it reflects a cultural worldview, not primarily politics. The debate is about purpose."
     },
     {
@@ -3054,12 +3054,12 @@
       "difficulty": 2,
       "prompt": "The passenger pigeon, once the most abundant bird in North America—flocks could darken the sky for hours as they passed—became extinct in 1914 when Martha, the last known specimen, died at the Cincinnati Zoo. Commercial hunting and habitat destruction in the 19th century destroyed the species' population, which had numbered in the billions.\n\nWhat does the passage primarily convey?",
       "choices": {
-        "A": "The passenger pigeon became extinct due to natural climate changes.",
-        "B": "Human activity caused the rapid extinction of the once-abundant passenger pigeon.",
-        "C": "The passenger pigeon was first discovered in Cincinnati in 1914.",
-        "D": "The Cincinnati Zoo failed to save the passenger pigeon from extinction."
+        "A": "The Cincinnati Zoo failed to save the passenger pigeon from extinction.",
+        "B": "The passenger pigeon was first discovered in Cincinnati in 1914.",
+        "C": "Human activity caused the rapid extinction of the once-abundant passenger pigeon.",
+        "D": "The passenger pigeon became extinct due to natural climate changes."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The passage identifies commercial hunting and habitat destruction—human activity—as causes of extinction for a once-thriving species. B accurately states the main point."
     },
     {
@@ -3069,12 +3069,12 @@
       "difficulty": 1,
       "prompt": "The new policy was intended to ameliorate the conditions of workers in the factory.\n\n'Ameliorate' most nearly means:",
       "choices": {
-        "A": "worsen",
-        "B": "improve",
+        "A": "improve",
+        "B": "worsen",
         "C": "document",
         "D": "challenge"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "'Ameliorate' means to make something bad or unsatisfactory better. Context supports 'improve.'"
     },
     {
@@ -3084,12 +3084,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• The Great Barrier Reef is the world's largest coral reef system.\n• It covers approximately 344,400 square kilometers.\n• It supports over 1,500 species of fish and 4,000 species of mollusk.\n• Rising ocean temperatures and pollution threaten its survival.\n\nGoal: emphasize both the reef's scale and the threats it faces. Best choice?",
       "choices": {
-        "A": "The Great Barrier Reef supports over 1,500 fish species.",
-        "B": "Covering 344,400 square kilometers, the Great Barrier Reef is the world's largest coral reef system, but rising temperatures and pollution now threaten its survival.",
+        "A": "Covering 344,400 square kilometers, the Great Barrier Reef is the world's largest coral reef system, but rising temperatures and pollution now threaten its survival.",
+        "B": "The Great Barrier Reef is home to 4,000 mollusk species and 1,500 fish species.",
         "C": "Rising ocean temperatures threaten many of the world's coral reefs.",
-        "D": "The Great Barrier Reef is home to 4,000 mollusk species and 1,500 fish species."
+        "D": "The Great Barrier Reef supports over 1,500 fish species."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "B covers scale ('world's largest,' area) and both threats, directly meeting the stated goal."
     },
     {
@@ -3099,10 +3099,10 @@
       "difficulty": 3,
       "prompt": "Anthropologist Elena Vasquez studied two groups of foragers living in similar environments but employing different food-storage strategies: Group A stored food communally; Group B stored food individually. Over a ten-year period, Group A experienced fewer periods of hunger even when overall caloric availability was similar. Vasquez concluded that communal storage effectively smoothed out individual shortfalls. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Vasquez's study implies that individual storage is more efficient because it reduces conflict over shared resources.",
+        "A": "Vasquez's study demonstrates that communal living always leads to better health outcomes.",
         "B": "Vasquez's findings suggest that sharing surplus resources across a group can reduce individual vulnerability even without increasing the total food supply.",
         "C": "Vasquez's data proves that group size determines food security more than storage strategy.",
-        "D": "Vasquez's study demonstrates that communal living always leads to better health outcomes."
+        "D": "Vasquez's study implies that individual storage is more efficient because it reduces conflict over shared resources."
       },
       "answer": "B",
       "explanation": "Equal overall calories but fewer shortfalls in the communal group suggests redistribution—not more food—reduces individual risk. B captures this precisely. D and C are too broad."
@@ -3114,12 +3114,12 @@
       "difficulty": 1,
       "prompt": "The following text is from a 2020 climate science article.\n\n\"Arctic permafrost—ground that remains frozen year-round—stores vast amounts of organic carbon. As temperatures rise, permafrost thaws, and the carbon is released as carbon dioxide and methane, greenhouse gases that further accelerate warming. Scientists describe this as a positive feedback loop.\"\n\nWhat is the passage's central idea?",
       "choices": {
-        "A": "Permafrost is found only in the Arctic region.",
-        "B": "Thawing permafrost releases greenhouse gases that worsen climate warming, creating a self-reinforcing cycle.",
+        "A": "Thawing permafrost releases greenhouse gases that worsen climate warming, creating a self-reinforcing cycle.",
+        "B": "Scientists disagree about whether permafrost contributes to climate change.",
         "C": "Carbon dioxide is a more dangerous greenhouse gas than methane.",
-        "D": "Scientists disagree about whether permafrost contributes to climate change."
+        "D": "Permafrost is found only in the Arctic region."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "The passage describes how thawing releases gases that further warm the climate—the feedback loop. B accurately captures this central idea."
     },
     {
@@ -3131,8 +3131,8 @@
       "choices": {
         "A": "hostile",
         "B": "ambiguous",
-        "C": "passionate",
-        "D": "straightforward"
+        "C": "straightforward",
+        "D": "passionate"
       },
       "answer": "B",
       "explanation": "'Equivocal' means open to more than one interpretation; deliberately vague or ambiguous—fitting the diplomatic context."
@@ -3144,10 +3144,10 @@
       "difficulty": 3,
       "prompt": "A student is writing a report on urban heat islands—areas within cities that are significantly warmer than surrounding rural areas—and wants to include a sentence about a primary cause.\n\nNotes:\n• Concrete and asphalt absorb more solar heat than vegetation.\n• Cities have fewer trees and green spaces than rural areas.\n• Waste heat from vehicles and buildings adds warmth.\n• Dark rooftops contribute to heat absorption.\n\nWhich sentence most effectively synthesizes the primary built-environment cause?",
       "choices": {
-        "A": "Cities are warmer than rural areas because of vehicle exhaust.",
+        "A": "Trees and green spaces could help reduce temperatures in some cities.",
         "B": "The replacement of vegetation with heat-absorbing surfaces like concrete, asphalt, and dark rooftops is a key driver of urban heat islands.",
-        "C": "Urban heat islands affect cities worldwide and are studied by many researchers.",
-        "D": "Trees and green spaces could help reduce temperatures in some cities."
+        "C": "Cities are warmer than rural areas because of vehicle exhaust.",
+        "D": "Urban heat islands affect cities worldwide and are studied by many researchers."
       },
       "answer": "B",
       "explanation": "B synthesizes multiple notes (concrete, asphalt, dark rooftops) into a coherent causal claim about built surfaces replacing vegetation."
@@ -3159,12 +3159,12 @@
       "difficulty": 3,
       "prompt": "Philosopher William James argued that truth is not a static property of statements but something that 'happens to an idea.' An idea becomes true, in his view, when it successfully guides action and experience—when it 'works.' Critics accused James of relativism, suggesting his view allowed any useful belief to qualify as true. James countered that workability must be assessed over the long term and across a wide range of experience, constraining what counts as genuinely true.\n\nWhich choice best states the main idea?",
       "choices": {
-        "A": "James believed truth was entirely subjective and could mean different things to different people.",
-        "B": "James proposed that truth is determined by an idea's practical success, though he added constraints to avoid a purely relativist conclusion.",
-        "C": "Critics successfully demonstrated that James's pragmatic theory of truth was philosophically untenable.",
-        "D": "James argued that all ideas that are useful in the short term should be considered true."
+        "A": "James argued that all ideas that are useful in the short term should be considered true.",
+        "B": "Critics successfully demonstrated that James's pragmatic theory of truth was philosophically untenable.",
+        "C": "James proposed that truth is determined by an idea's practical success, though he added constraints to avoid a purely relativist conclusion.",
+        "D": "James believed truth was entirely subjective and could mean different things to different people."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The text presents James's pragmatic theory (truth = workability) and his response to relativism charges (long-term, broad assessment). B accurately captures both elements."
     },
     {
@@ -3174,12 +3174,12 @@
       "difficulty": 2,
       "prompt": "Ecologist Marco Silva found that removing invasive kudzu vines from a forest plot led to a rapid resurgence of native plant species within two years—faster than his models had predicted. He attributed this to seed banks: dormant native seeds already present in the soil that had been suppressed by the kudzu. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Silva's finding implies that seed banks play a negligible role in forest recovery after invasive species removal.",
-        "B": "Silva's finding suggests that restoration can sometimes be faster than anticipated if dormant native seeds remain viable in the soil.",
-        "C": "Silva's finding demonstrates that kudzu vines permanently destroy native plant populations.",
-        "D": "Silva's finding indicates that invasive species removal should always be paired with active replanting efforts."
+        "A": "Silva's finding indicates that invasive species removal should always be paired with active replanting efforts.",
+        "B": "Silva's finding demonstrates that kudzu vines permanently destroy native plant populations.",
+        "C": "Silva's finding suggests that restoration can sometimes be faster than anticipated if dormant native seeds remain viable in the soil.",
+        "D": "Silva's finding implies that seed banks play a negligible role in forest recovery after invasive species removal."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Recovery was faster than modeled because seed banks were intact. This means soil seed reserves can accelerate restoration—supporting B."
     },
     {
@@ -3189,8 +3189,8 @@
       "difficulty": 2,
       "prompt": "Research by neuroscientist Mara Lopez found that regular aerobic exercise increases the volume of the hippocampus, a brain region critical to memory and learning. Participants who exercised three times a week for six months showed measurable hippocampal growth, while sedentary participants showed slight decline.\n\nWhat can most reasonably be inferred from the text?",
       "choices": {
-        "A": "Aerobic exercise guarantees improvement in academic grades.",
-        "B": "The hippocampus has no role in emotional regulation.",
+        "A": "The hippocampus has no role in emotional regulation.",
+        "B": "Aerobic exercise guarantees improvement in academic grades.",
         "C": "Regular aerobic exercise may support memory and learning by promoting hippocampal growth.",
         "D": "Sedentary people always experience memory loss."
       },
@@ -3204,12 +3204,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• Japanese architect Tadao Ando uses raw concrete as his primary building material.\n• He incorporates natural light through precisely positioned openings.\n• His work is often described as both austere and spiritual.\n• Notable works include the Church of the Light in Osaka.\n\nGoal: describe Ando's design philosophy and its emotional effect. Best choice?",
       "choices": {
-        "A": "Tadao Ando is a Japanese architect known for his use of concrete.",
+        "A": "Tadao Ando's architecture combines raw concrete with carefully controlled natural light, creating spaces that feel simultaneously austere and spiritual.",
         "B": "The Church of the Light is one of Ando's most notable buildings.",
-        "C": "Tadao Ando's architecture combines raw concrete with carefully controlled natural light, creating spaces that feel simultaneously austere and spiritual.",
+        "C": "Tadao Ando is a Japanese architect known for his use of concrete.",
         "D": "Ando positions openings in his buildings to allow light inside."
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "C brings together materials, technique (light), and emotional effect—the full design philosophy. A, B, and D each capture only one note."
     },
     {
@@ -3220,11 +3220,11 @@
       "prompt": "The senator's speech was a tour de force: cogent, impassioned, and remarkably succinct for a topic of such complexity.\n\n'Cogent' most nearly means:",
       "choices": {
         "A": "lengthy and elaborate",
-        "B": "clear and logically convincing",
-        "C": "emotional and personal",
+        "B": "emotional and personal",
+        "C": "clear and logically convincing",
         "D": "controversial and divisive"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "'Cogent' means clear, logical, and convincing. The context (a strong, well-received speech) supports this meaning."
     },
     {
@@ -3234,12 +3234,12 @@
       "difficulty": 3,
       "prompt": "Text 1: Psychologist David Rand argues that people's first instinct in social dilemmas is to cooperate, and that self-interest emerges only when people deliberate longer. His studies show that forcing quick decisions leads to more cooperative behavior.\n\nText 2: Researcher Zoe Liberman and colleagues found that when participants were given more time to consider their decisions, cooperation rates did not consistently decrease—suggesting that intuition does not always favor cooperation over self-interest.\n\nHow would the author of Text 2 most likely respond to Text 1's central claim?",
       "choices": {
-        "A": "By agreeing that quick decisions always increase cooperation.",
-        "B": "By questioning whether the evidence consistently supports the claim that intuition favors cooperation.",
-        "C": "By arguing that deliberation is harmful in all social contexts.",
-        "D": "By suggesting that Rand's studies were methodologically flawed."
+        "A": "By suggesting that Rand's studies were methodologically flawed.",
+        "B": "By agreeing that quick decisions always increase cooperation.",
+        "C": "By questioning whether the evidence consistently supports the claim that intuition favors cooperation.",
+        "D": "By arguing that deliberation is harmful in all social contexts."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Text 2 shows cooperation did not consistently decrease with more time, challenging the premise that intuition uniformly drives cooperation. B captures this gentle but direct challenge."
     },
     {
@@ -3249,12 +3249,12 @@
       "difficulty": 2,
       "prompt": "The placebo effect—a measurable improvement in a patient's condition following an inert treatment—has been documented across a wide range of medical conditions. Researchers have found that even when patients are told they are receiving a placebo, many still experience benefits. This 'open-label placebo' phenomenon challenges the assumption that deception is necessary for the effect to occur.\n\nWhat is the passage's central idea?",
       "choices": {
-        "A": "All medical treatments should be replaced with placebos because they are equally effective.",
-        "B": "The placebo effect can occur even without deception, complicating long-held assumptions about how it works.",
-        "C": "Placebos are only effective for psychological conditions.",
-        "D": "Doctors should never inform patients when they are receiving a placebo."
+        "A": "Doctors should never inform patients when they are receiving a placebo.",
+        "B": "Placebos are only effective for psychological conditions.",
+        "C": "The placebo effect can occur even without deception, complicating long-held assumptions about how it works.",
+        "D": "All medical treatments should be replaced with placebos because they are equally effective."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "The key finding is that open-label placebos still work, which challenges the assumption that deception is necessary. B captures this."
     },
     {
@@ -3265,11 +3265,11 @@
       "prompt": "Linguist Kwame Asante observed that in bilingual communities, speakers frequently switch between languages—a practice called code-switching—not randomly but in patterned ways tied to topic, setting, and interlocutor. Professional topics tend to elicit the language of formal education; family topics elicit the heritage language. ___\n\nWhich choice most logically completes the text?",
       "choices": {
         "A": "Asante's observation implies that code-switching is a sign of linguistic deficiency.",
-        "B": "Asante's finding suggests that code-switching reflects systematic social and contextual choices rather than random language mixing.",
-        "C": "Asante's study proves that bilingual speakers prefer one language over the other in all contexts.",
-        "D": "Asante's research indicates that bilingualism causes confusion about language rules."
+        "B": "Asante's study proves that bilingual speakers prefer one language over the other in all contexts.",
+        "C": "Asante's research indicates that bilingualism causes confusion about language rules.",
+        "D": "Asante's finding suggests that code-switching reflects systematic social and contextual choices rather than random language mixing."
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Asante found patterned, context-tied switching—not random. B correctly characterizes this as systematic and socially governed."
     },
     {
@@ -3279,10 +3279,10 @@
       "difficulty": 3,
       "prompt": "A researcher studying renewable energy wants to write a sentence arguing that wind energy growth is outpacing expectations.\n\nData from the table: Wind energy capacity (GW): 2015: 432; 2018: 591; 2021: 825; 2023: 1,017. The original forecast for 2023 was 800 GW.\n\nWhich sentence best uses the data to support the argument?",
       "choices": {
-        "A": "Wind energy capacity has grown steadily since 2015.",
+        "A": "Forecasts for wind energy growth have historically underestimated actual capacity additions.",
         "B": "Wind energy capacity reached 1,017 GW in 2023, surpassing the original forecast of 800 GW by more than 25%.",
-        "C": "Between 2015 and 2023, wind energy capacity more than doubled.",
-        "D": "Forecasts for wind energy growth have historically underestimated actual capacity additions."
+        "C": "Wind energy capacity has grown steadily since 2015.",
+        "D": "Between 2015 and 2023, wind energy capacity more than doubled."
       },
       "answer": "B",
       "explanation": "The goal is to show outpacing expectations. B provides the specific 2023 figure and compares it directly to the forecast, making the strongest case."
@@ -3294,10 +3294,10 @@
       "difficulty": 2,
       "prompt": "The artist's early sketches were tentative and exploratory, quite unlike the bold, assured strokes of her mature work.\n\n'Tentative' most nearly means:",
       "choices": {
-        "A": "careful and methodical",
+        "A": "large and ambitious",
         "B": "uncertain and hesitant",
-        "C": "colorful and expressive",
-        "D": "large and ambitious"
+        "C": "careful and methodical",
+        "D": "colorful and expressive"
       },
       "answer": "B",
       "explanation": "'Tentative' means not fully worked out or confident; uncertain. The contrast with 'bold, assured' confirms this meaning."
@@ -3310,11 +3310,11 @@
       "prompt": "Philosopher Thomas Nagel's 1974 essay 'What Is It Like to Be a Bat?' argues that no amount of objective, third-person scientific description can capture the subjective, first-person quality of experience—what philosophers call 'qualia.' Even if we knew everything about bat neurology, we still wouldn't know what it feels like to navigate by echolocation. Nagel uses the example to challenge physicalist accounts of mind that claim mental states are fully reducible to brain states.\n\nWhich choice best states the main idea?",
       "choices": {
         "A": "Nagel argues that bat neurology is too complex to be understood by human science.",
-        "B": "Nagel uses bats to illustrate that subjective experience cannot be fully captured by objective scientific description, challenging physicalist theories of mind.",
-        "C": "Nagel believes that animals have richer inner lives than humans.",
-        "D": "Nagel's essay proves that consciousness is a purely spiritual phenomenon beyond science."
+        "B": "Nagel believes that animals have richer inner lives than humans.",
+        "C": "Nagel's essay proves that consciousness is a purely spiritual phenomenon beyond science.",
+        "D": "Nagel uses bats to illustrate that subjective experience cannot be fully captured by objective scientific description, challenging physicalist theories of mind."
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "Nagel's argument is that first-person subjective experience (qualia) resists third-person scientific reduction. B accurately captures the point and the target (physicalism). A, C, and D misrepresent the argument."
     },
     {
@@ -3325,11 +3325,11 @@
       "prompt": "In an arithmetic sequence, the first term is 5 and the common difference is 4. What is the 10th term?",
       "choices": {
         "A": "$40$",
-        "B": "$41$",
-        "C": "$45$",
-        "D": "$50$"
+        "B": "$50$",
+        "C": "$41$",
+        "D": "$45$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "$a_n = a_1 + (n-1)d = 5 + 9 \\times 4 = 5 + 36 = 41$."
     },
     {
@@ -3339,10 +3339,10 @@
       "difficulty": 2,
       "prompt": "In a geometric sequence, the first term is 3 and the common ratio is 2. What is the 6th term?",
       "choices": {
-        "A": "$48$",
-        "B": "$64$",
+        "A": "$64$",
+        "B": "$192$",
         "C": "$96$",
-        "D": "$192$"
+        "D": "$48$"
       },
       "answer": "C",
       "explanation": "$a_6 = 3 \\times 2^5 = 3 \\times 32 = 96$."
@@ -3354,10 +3354,10 @@
       "difficulty": 2,
       "prompt": "After a 30% increase, a salary is $\\$65{,}000$. What was the original salary?",
       "choices": {
-        "A": "$\\$45{,}500$",
+        "A": "$\\$52{,}000$",
         "B": "$\\$50{,}000$",
-        "C": "$\\$52{,}000$",
-        "D": "$\\$55{,}000$"
+        "C": "$\\$55{,}000$",
+        "D": "$\\$45{,}500$"
       },
       "answer": "B",
       "explanation": "$1.30 \\times x = 65{,}000 \\Rightarrow x = 50{,}000$."
@@ -3369,12 +3369,12 @@
       "difficulty": 1,
       "prompt": "The mean of 4 tests is 82. If a fifth test score of 92 is added, what is the new mean?",
       "choices": {
-        "A": "$84$",
-        "B": "$85$",
+        "A": "$85$",
+        "B": "$84$",
         "C": "$86$",
         "D": "$87$"
       },
-      "answer": "A",
+      "answer": "B",
       "explanation": "Old total $= 4 \\times 82 = 328$. New total $= 328 + 92 = 420$. New mean $= 420 \\div 5 = 84$."
     },
     {
@@ -3399,12 +3399,12 @@
       "difficulty": 1,
       "prompt": "A square has side length 6. What is its area?",
       "choices": {
-        "A": "$12$",
-        "B": "$24$",
-        "C": "$36$",
+        "A": "$24$",
+        "B": "$36$",
+        "C": "$12$",
         "D": "$72$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$A = s^2 = 6^2 = 36$."
     },
     {
@@ -3414,12 +3414,12 @@
       "difficulty": 3,
       "prompt": "Simplify: $\\dfrac{2x^2 - 8}{x^2 - 4}$",
       "choices": {
-        "A": "$2$",
+        "A": "$2(x+2)/(x+2)$",
         "B": "$x - 2$",
-        "C": "$\\dfrac{2(x-2)}{x-2}$",
-        "D": "$2(x+2)/(x+2)$"
+        "C": "$2$",
+        "D": "$\\dfrac{2(x-2)}{x-2}$"
       },
-      "answer": "A",
+      "answer": "C",
       "explanation": "$\\frac{2(x^2-4)}{x^2-4} = 2$ for $x \\ne \\pm 2$."
     },
     {
@@ -3430,11 +3430,11 @@
       "prompt": "A box plot shows: min=10, Q1=20, median=35, Q3=50, max=70. What is the interquartile range (IQR)?",
       "choices": {
         "A": "$15$",
-        "B": "$25$",
-        "C": "$30$",
-        "D": "$60$"
+        "B": "$30$",
+        "C": "$60$",
+        "D": "$25$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$\\text{IQR} = Q_3 - Q_1 = 50 - 20 = 30$."
     },
     {
@@ -3476,8 +3476,8 @@
       "choices": {
         "A": "$y = \\frac{4}{3}x + 2$",
         "B": "$y = -\\frac{3}{4}x - 7$",
-        "C": "$y = \\frac{3}{4}x + 2$",
-        "D": "$y = 3x - 4$"
+        "C": "$y = 3x - 4$",
+        "D": "$y = \\frac{3}{4}x + 2$"
       },
       "answer": "B",
       "explanation": "Parallel lines have the same slope. The original slope is $-\\frac{3}{4}$; choice B has the same slope with a different intercept."
@@ -3490,11 +3490,11 @@
       "prompt": "Which graph represents $x < -2$?",
       "choices": {
         "A": "Open circle at $-2$, arrow pointing right",
-        "B": "Closed circle at $-2$, arrow pointing left",
-        "C": "Open circle at $-2$, arrow pointing left",
-        "D": "Closed circle at $-2$, arrow pointing right"
+        "B": "Closed circle at $-2$, arrow pointing right",
+        "C": "Closed circle at $-2$, arrow pointing left",
+        "D": "Open circle at $-2$, arrow pointing left"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Strict inequality ($<$) → open circle. $x < -2$ → values to the left."
     },
     {
@@ -3504,12 +3504,12 @@
       "difficulty": 2,
       "prompt": "The jury ___ announced its verdict after three days of deliberation.",
       "choices": {
-        "A": "have",
-        "B": "has",
-        "C": "were",
-        "D": "are"
+        "A": "are",
+        "B": "were",
+        "C": "have",
+        "D": "has"
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "'Jury' is a collective noun treated as singular in American English → 'has'."
     },
     {
@@ -3519,12 +3519,12 @@
       "difficulty": 2,
       "prompt": "The city built several new parks. ___, air quality in the surrounding neighborhoods improved significantly.",
       "choices": {
-        "A": "Despite this",
-        "B": "In contrast",
-        "C": "Subsequently",
-        "D": "Nevertheless"
+        "A": "In contrast",
+        "B": "Nevertheless",
+        "C": "Despite this",
+        "D": "Subsequently"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Parks were built, then air quality improved — sequential/causal → 'Subsequently'."
     },
     {
@@ -3534,12 +3534,12 @@
       "difficulty": 2,
       "prompt": "Unlike most birds, which have hollow bones to reduce weight for flight, penguins have dense, solid bones that help them dive deep. While this adaptation makes flight impossible, it is essential for their aquatic hunting style, allowing them to descend to depths of over 500 meters in search of fish.\n\nWhat is the main point of the passage?",
       "choices": {
-        "A": "Penguins cannot fly because of a genetic defect.",
-        "B": "Penguins' dense bones, while preventing flight, are an adaptation that supports their deep-diving hunting behavior.",
-        "C": "All flightless birds have adapted to aquatic environments.",
-        "D": "Hollow bones are essential for all birds that hunt underwater."
+        "A": "All flightless birds have adapted to aquatic environments.",
+        "B": "Hollow bones are essential for all birds that hunt underwater.",
+        "C": "Penguins cannot fly because of a genetic defect.",
+        "D": "Penguins' dense bones, while preventing flight, are an adaptation that supports their deep-diving hunting behavior."
       },
-      "answer": "B",
+      "answer": "D",
       "explanation": "The passage explains that dense bones, though preventing flight, serve penguin hunting by enabling deep dives. B captures this tradeoff."
     },
     {
@@ -3551,8 +3551,8 @@
       "choices": {
         "A": "physical limitation",
         "B": "self-control and deliberate withholding",
-        "C": "critical disapproval",
-        "D": "traditional approach"
+        "C": "traditional approach",
+        "D": "critical disapproval"
       },
       "answer": "B",
       "explanation": "In the context of a narrative technique, 'restraint' means deliberate holding back—not over-explaining. 'Self-control and deliberate withholding' best fits."
@@ -3564,12 +3564,12 @@
       "difficulty": 3,
       "prompt": "A committee of 3 is chosen from 5 men and 4 women. What is the probability the committee has exactly 2 women?",
       "choices": {
-        "A": "$\\dfrac{4}{21}$",
+        "A": "$\\dfrac{30}{84}$",
         "B": "$\\dfrac{10}{21}$",
-        "C": "$\\dfrac{30}{84}$",
-        "D": "$\\dfrac{1}{3}$"
+        "C": "$\\dfrac{1}{3}$",
+        "D": "$\\dfrac{4}{21}$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$\\binom{4}{2}\\binom{5}{1} = 30$ ways to choose 2 women and 1 man. Total: $\\binom{9}{3} = 84$. $P = \\frac{30}{84} = \\frac{5}{14}$."
     },
     {
@@ -3579,12 +3579,12 @@
       "difficulty": 2,
       "prompt": "A circle has circumference $16\\pi$. What is its area?",
       "choices": {
-        "A": "$16\\pi$",
-        "B": "$32\\pi$",
-        "C": "$64\\pi$",
-        "D": "$128\\pi$"
+        "A": "$64\\pi$",
+        "B": "$16\\pi$",
+        "C": "$128\\pi$",
+        "D": "$32\\pi$"
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "$C = 2\\pi r = 16\\pi \\Rightarrow r = 8$. $A = \\pi(8)^2 = 64\\pi$."
     },
     {
@@ -3594,12 +3594,12 @@
       "difficulty": 1,
       "prompt": "What is $5^0 + 4^{-1}$?",
       "choices": {
-        "A": "$\\dfrac{3}{4}$",
-        "B": "$1$",
-        "C": "$\\dfrac{5}{4}$",
-        "D": "$5$"
+        "A": "$1$",
+        "B": "$5$",
+        "C": "$\\dfrac{3}{4}$",
+        "D": "$\\dfrac{5}{4}$"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "$5^0 = 1$ and $4^{-1} = \\frac{1}{4}$. Sum $= 1 + \\frac{1}{4} = \\frac{5}{4}$."
     },
     {
@@ -3609,12 +3609,12 @@
       "difficulty": 2,
       "prompt": "Notes:\n• The Hubble Space Telescope was launched in 1990.\n• It orbits Earth at approximately 547 km altitude.\n• It has produced over 1.5 million observations.\n• Key discoveries include refining the age of the universe to about 13.8 billion years.\n\nGoal: focus on the scientific impact of Hubble. Best choice?",
       "choices": {
-        "A": "The Hubble Space Telescope orbits Earth at 547 km altitude.",
-        "B": "Launched in 1990, the Hubble Space Telescope has made over 1.5 million observations and helped establish that the universe is approximately 13.8 billion years old.",
-        "C": "The Hubble Space Telescope was launched in 1990.",
-        "D": "Hubble orbits at 547 km and was launched in 1990."
+        "A": "Launched in 1990, the Hubble Space Telescope has made over 1.5 million observations and helped establish that the universe is approximately 13.8 billion years old.",
+        "B": "Hubble orbits at 547 km and was launched in 1990.",
+        "C": "The Hubble Space Telescope orbits Earth at 547 km altitude.",
+        "D": "The Hubble Space Telescope was launched in 1990."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "B highlights the volume of observations and the key scientific discovery (universe age), directly addressing the goal of scientific impact."
     },
     {
@@ -3624,12 +3624,12 @@
       "difficulty": 2,
       "prompt": "Solve the system: $x + 2y = 10$ and $2x - y = 5$. What is $y$?",
       "choices": {
-        "A": "$1$",
-        "B": "$3$",
-        "C": "$4$",
-        "D": "$5$"
+        "A": "$3$",
+        "B": "$1$",
+        "C": "$5$",
+        "D": "$4$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "From the first equation $x = 10 - 2y$. Substitute: $2(10-2y) - y = 5 \\Rightarrow 20 - 4y - y = 5 \\Rightarrow 5y = 15 \\Rightarrow y = 3$."
     },
     {
@@ -3639,12 +3639,12 @@
       "difficulty": 1,
       "prompt": "If $y = 2x + 3$ and $x = -1$, what is $y$?",
       "choices": {
-        "A": "$-5$",
-        "B": "$-1$",
-        "C": "$1$",
+        "A": "$-1$",
+        "B": "$1$",
+        "C": "$-5$",
         "D": "$5$"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "$y = 2(-1) + 3 = -2 + 3 = 1$."
     },
     {
@@ -3655,11 +3655,11 @@
       "prompt": "I ___ the report before my manager asked for it.",
       "choices": {
         "A": "finish",
-        "B": "finished",
-        "C": "had finished",
-        "D": "was finishing"
+        "B": "was finishing",
+        "C": "finished",
+        "D": "had finished"
       },
-      "answer": "C",
+      "answer": "D",
       "explanation": "Past perfect ('had finished') is used for an action completed before another past event ('asked')."
     },
     {
@@ -3669,12 +3669,12 @@
       "difficulty": 2,
       "prompt": "Botanist Mei Lin studied two plots of native prairie grass: one restored through seeding and one that regrew naturally through succession. After five years, the naturally regenerating plot contained greater species diversity than the seeded plot, even though fewer species were planted in the natural plot's soil. Lin concluded that natural processes, guided by what was already in the seed bank, led to better outcomes than deliberate planting. ___\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "Lin's finding implies that any form of active ecological restoration is ultimately counterproductive.",
-        "B": "Lin's finding suggests that in some cases, allowing natural regeneration may produce greater ecological diversity than active planting efforts.",
-        "C": "Lin's finding demonstrates that seeded plots will always fail to match naturally regenerating plots in biodiversity.",
+        "A": "Lin's finding demonstrates that seeded plots will always fail to match naturally regenerating plots in biodiversity.",
+        "B": "Lin's finding implies that any form of active ecological restoration is ultimately counterproductive.",
+        "C": "Lin's finding suggests that in some cases, allowing natural regeneration may produce greater ecological diversity than active planting efforts.",
         "D": "Lin's finding indicates that seed banks contain too few species to support meaningful ecological restoration."
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Lin found natural regeneration produced better diversity in this case, suggesting it can sometimes outperform active planting. B states this carefully without overgeneralizing."
     },
     {
@@ -3684,12 +3684,12 @@
       "difficulty": 3,
       "prompt": "The graph of $y = ax^2 + bx + c$ opens downward and has a vertex at $(2, 5)$. Which statement must be true?",
       "choices": {
-        "A": "$a > 0$ and the maximum value is $5$",
-        "B": "$a < 0$ and the maximum value is $5$",
-        "C": "$a > 0$ and the minimum value is $5$",
-        "D": "$a < 0$ and the minimum value is $5$"
+        "A": "$a < 0$ and the minimum value is $5$",
+        "B": "$a > 0$ and the minimum value is $5$",
+        "C": "$a < 0$ and the maximum value is $5$",
+        "D": "$a > 0$ and the maximum value is $5$"
       },
-      "answer": "B",
+      "answer": "C",
       "explanation": "Opens downward means $a < 0$. Vertex is the highest point, so maximum value $= 5$."
     },
     {
@@ -3699,10 +3699,10 @@
       "difficulty": 1,
       "prompt": "Bamboo is one of the fastest-growing plants on Earth—some species can grow nearly a meter per day under optimal conditions. Despite being a grass, bamboo forms dense forests and provides habitat for numerous animals, including the giant panda, which subsists almost entirely on bamboo leaves and stems.\n\nWhat is the passage primarily about?",
       "choices": {
-        "A": "The diet of the giant panda",
+        "A": "Why grasses can grow into forests",
         "B": "The remarkable growth rate and ecological role of bamboo",
-        "C": "Why grasses can grow into forests",
-        "D": "The threat to bamboo from climate change"
+        "C": "The threat to bamboo from climate change",
+        "D": "The diet of the giant panda"
       },
       "answer": "B",
       "explanation": "The passage covers bamboo's fast growth, classification as a grass, forest formation, and role as habitat—all aspects of bamboo's nature and ecological importance. B captures this."
@@ -3714,12 +3714,12 @@
       "difficulty": 1,
       "prompt": "If $7 - 3x = 1$, what is $x$?",
       "choices": {
-        "A": "$-2$",
-        "B": "$2$",
-        "C": "$3$",
+        "A": "$2$",
+        "B": "$3$",
+        "C": "$-2$",
         "D": "$6$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$-3x = 1 - 7 = -6 \\Rightarrow x = 2$."
     },
     {
@@ -3729,12 +3729,12 @@
       "difficulty": 1,
       "prompt": "Choose the most concise version that preserves meaning.",
       "choices": {
-        "A": "At the present moment in time, the project is currently ongoing.",
-        "B": "The project is currently ongoing at this time.",
-        "C": "The project is ongoing.",
-        "D": "The project, at this moment, is in an ongoing state."
+        "A": "The project is ongoing.",
+        "B": "The project, at this moment, is in an ongoing state.",
+        "C": "At the present moment in time, the project is currently ongoing.",
+        "D": "The project is currently ongoing at this time."
       },
-      "answer": "C",
+      "answer": "A",
       "explanation": "'The project is ongoing' removes all redundancy while preserving the full meaning. A, B, and D repeat the idea of 'now' unnecessarily."
     },
     {
@@ -3744,12 +3744,12 @@
       "difficulty": 2,
       "prompt": "Researchers studying memory have found that the act of recalling information—rather than re-reading it—significantly strengthens long-term retention. This phenomenon, called the 'testing effect,' suggests that students who quiz themselves on material learn more effectively than those who simply review notes.\n\nWhat is the passage's main claim?",
       "choices": {
-        "A": "Re-reading notes is the most effective study strategy.",
-        "B": "Active recall through self-testing improves long-term memory more than passive review.",
-        "C": "Students who take more formal exams receive higher grades.",
-        "D": "Memory researchers disagree about the best way to study."
+        "A": "Active recall through self-testing improves long-term memory more than passive review.",
+        "B": "Students who take more formal exams receive higher grades.",
+        "C": "Memory researchers disagree about the best way to study.",
+        "D": "Re-reading notes is the most effective study strategy."
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "The passage argues that retrieval practice (self-testing / active recall) outperforms passive re-reading for long-term retention. B accurately captures this."
     }
   ]
