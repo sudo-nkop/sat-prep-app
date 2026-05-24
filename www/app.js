@@ -1122,6 +1122,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const s = getSettings(); s.reminderHours = Number(e.target.value); save(KEY.settings, s);
   };
   document.getElementById('enable-notifs').onclick = enableNotifications;
+  document.getElementById('clear-imported').onclick = () => {
+    const imported = load(KEY.imported, []);
+    if (imported.length === 0) { alert('No imported questions to remove.'); return; }
+    if (!confirm(`Remove all ${imported.length} imported question(s)? This won't affect your stats or progress.`)) return;
+    save(KEY.imported, []);
+    location.reload();
+  };
   document.getElementById('reset-app').onclick = () => {
     if (!confirm('Erase all stats, history, and settings?')) return;
     Object.values(KEY).forEach(k => localStorage.removeItem(k));
