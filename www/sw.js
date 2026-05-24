@@ -1,5 +1,5 @@
 // Service worker — offline cache for the app shell.
-const CACHE = 'sat-app-v14';
+const CACHE = 'sat-app-v15';
 const ASSETS = [
   './',
   './index.html',
