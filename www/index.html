@@ -134,52 +134,66 @@
   <!-- TEST SETUP -->
   <section class="screen" id="screen-test-setup" hidden>
     <h2>Timed Test</h2>
-    <p class="muted">A timed mini-section that mimics the real Digital SAT pacing.</p>
+    <p class="muted">Simulate the real Digital SAT under timed conditions.</p>
     <div class="test-options">
-      <button class="opt" data-test="rw">
-        <strong>Reading & Writing</strong>
-        <small>27 questions · 32 min</small>
+      <button class="opt opt-full" data-test="full">
+        <div class="opt-icon">🎯</div>
+        <div>
+          <strong>Full SAT Practice Test</strong>
+          <small>98 questions · ~2h 14min · 4 modules</small>
+          <div class="opt-detail">R&amp;W Module 1 → R&amp;W Module 2 → Math Module 1 → Math Module 2</div>
+        </div>
       </button>
-      <button class="opt" data-test="math">
-        <strong>Math</strong>
-        <small>22 questions · 35 min</small>
-      </button>
-      <button class="opt" data-test="mixed">
-        <strong>Mixed Mini-Test</strong>
+      <div class="test-options-row">
+        <button class="opt" data-test="rw">
+          <strong>Reading &amp; Writing</strong>
+          <small>27 questions · 32 min</small>
+        </button>
+        <button class="opt" data-test="math">
+          <strong>Math</strong>
+          <small>22 questions · 35 min</small>
+        </button>
+      </div>
+      <button class="opt opt-mini" data-test="mixed">
+        <strong>Mini Mixed Test</strong>
         <small>15 questions · 20 min</small>
       </button>
     </div>
-    <p class="muted small">During the test you can flag questions and return to them. No explanations until the end.</p>
+    <p class="muted small">During the test: navigate freely, mark questions for review, right-click choices to strike through. No explanations until after you submit.</p>
   </section>
 
   <!-- QUIZ (used for both practice and test) -->
   <section class="screen quiz-screen" id="screen-quiz" hidden>
     <div class="quiz-header">
-      <span id="quiz-progress">1 / 10</span>
+      <div class="quiz-header-left">
+        <span id="quiz-section-label" class="quiz-section-label"></span>
+        <span id="quiz-progress">1 / 10</span>
+      </div>
       <span class="timer" id="quiz-timer" hidden>00:00</span>
       <div class="quiz-header-right">
+        <button class="btn-link ref-btn" id="quiz-ref" hidden>📐 Reference</button>
         <button class="btn-link calc-btn" id="quiz-calc" hidden>📊 Calculator</button>
-        <button class="btn-link" id="quiz-flag">Flag</button>
+        <button class="btn-link nav-toggle-btn" id="quiz-nav-toggle">☰ Navigator</button>
       </div>
     </div>
     <div class="progress-track"><div class="progress-fill" id="quiz-progress-bar"></div></div>
-
     <div class="question" id="question-container">
       <div class="q-prompt" id="q-prompt"></div>
       <div class="choices" id="q-choices"></div>
     </div>
-
     <div class="explanation" id="q-explanation" hidden>
       <div class="explanation-result" id="q-result"></div>
       <p id="q-explanation-text"></p>
     </div>
-
     <div class="quiz-actions">
       <button class="btn" id="quiz-prev" hidden>← Prev</button>
       <button class="btn" id="quiz-skip" hidden>Skip</button>
       <button class="btn primary" id="quiz-submit">Submit</button>
       <button class="btn" id="quiz-next" hidden>Next →</button>
-      <button class="btn danger" id="quiz-finish" hidden>Finish</button>
+      <button class="btn danger" id="quiz-finish" hidden>Finish Test</button>
+    </div>
+    <div class="quiz-actions-secondary">
+      <button class="btn-link mark-review-btn" id="quiz-mark-review" hidden>🔖 Mark for Review</button>
     </div>
   </section>
 
@@ -206,6 +220,91 @@
       allowfullscreen></iframe>
   </div>
   <div id="calc-backdrop" hidden></div>
+
+  <!-- QUESTION NAVIGATOR OVERLAY -->
+  <div id="nav-overlay" hidden>
+    <div id="nav-panel">
+      <div class="nav-panel-header">
+        <span>Question Navigator</span>
+        <button id="nav-close" class="nav-close-btn">✕</button>
+      </div>
+      <div class="nav-legend">
+        <span class="nav-leg"><span class="nav-dot nav-dot-current"></span>Current</span>
+        <span class="nav-leg"><span class="nav-dot nav-dot-answered"></span>Answered</span>
+        <span class="nav-leg"><span class="nav-dot nav-dot-flagged"></span>For Review</span>
+        <span class="nav-leg"><span class="nav-dot nav-dot-unanswered"></span>Unanswered</span>
+      </div>
+      <div id="nav-grid" class="nav-grid"></div>
+    </div>
+  </div>
+
+  <!-- MODULE BREAK SCREEN -->
+  <section class="screen" id="screen-module-break" hidden>
+    <div class="break-card">
+      <div class="break-check">✓</div>
+      <h2 id="break-module-name">Module Complete</h2>
+      <div class="break-score-row">
+        <span id="break-score" class="break-score">—</span>
+        <span class="break-score-label">correct</span>
+      </div>
+      <div id="break-next-label" class="break-next-label muted"></div>
+      <button class="btn primary big" id="break-continue">Start Next Module</button>
+      <button class="btn" id="break-quit" style="margin-top:10px">End Test &amp; View Results</button>
+    </div>
+  </section>
+
+  <!-- PRE-SUBMIT REVIEW SCREEN -->
+  <section class="screen" id="screen-pre-review" hidden>
+    <h2>Review Before Submitting</h2>
+    <p class="muted">Check your answers before submitting this section. Click any question to return to it.</p>
+    <div id="pre-review-summary" class="pre-review-summary"></div>
+    <div id="pre-review-grid" class="nav-grid pre-review-grid"></div>
+    <div class="pre-review-actions">
+      <button class="btn" id="pre-review-back">← Return to Test</button>
+      <button class="btn primary" id="pre-review-submit">Submit Section</button>
+    </div>
+  </section>
+
+  <!-- REFERENCE SHEET MODAL -->
+  <div id="ref-panel" hidden>
+    <div class="ref-panel-header">
+      <span>Math Reference Sheet</span>
+      <button id="ref-close" class="nav-close-btn">✕</button>
+    </div>
+    <div class="ref-panel-content">
+      <div class="ref-section">
+        <h3>Given on the test</h3>
+        <div class="ref-grid">
+          <div class="ref-item"><strong>Circle</strong> A = πr², C = 2πr</div>
+          <div class="ref-item"><strong>Rectangle</strong> A = lw</div>
+          <div class="ref-item"><strong>Triangle</strong> A = ½bh</div>
+          <div class="ref-item"><strong>Pythagorean</strong> a² + b² = c²</div>
+          <div class="ref-item"><strong>30-60-90</strong> x, x√3, 2x</div>
+          <div class="ref-item"><strong>45-45-90</strong> x, x, x√2</div>
+          <div class="ref-item"><strong>Box</strong> V = lwh</div>
+          <div class="ref-item"><strong>Cylinder</strong> V = πr²h</div>
+          <div class="ref-item"><strong>Sphere</strong> V = 4/3 πr³</div>
+          <div class="ref-item"><strong>Cone</strong> V = 1/3 πr²h</div>
+        </div>
+      </div>
+      <div class="ref-section">
+        <h3>Key formulas (not given)</h3>
+        <div class="ref-grid">
+          <div class="ref-item"><strong>Slope</strong> m = (y₂−y₁)/(x₂−x₁)</div>
+          <div class="ref-item"><strong>Slope-intercept</strong> y = mx + b</div>
+          <div class="ref-item"><strong>Quadratic formula</strong> x = (−b ± √(b²−4ac)) / 2a</div>
+          <div class="ref-item"><strong>Vertex</strong> x = −b / 2a</div>
+          <div class="ref-item"><strong>Distance</strong> √((x₂−x₁)² + (y₂−y₁)²)</div>
+          <div class="ref-item"><strong>sin θ</strong> opp/hyp · <strong>cos θ</strong> adj/hyp · <strong>tan θ</strong> opp/adj</div>
+          <div class="ref-item"><strong>sin²+cos²=1</strong></div>
+          <div class="ref-item"><strong>Circle (coord)</strong> (x−h)²+(y−k)²=r²</div>
+          <div class="ref-item"><strong>Parallel</strong> same slope; <strong>Perp</strong> slopes → product = −1</div>
+        </div>
+      </div>
+      <p class="ref-note muted small">The real test provides 10 geometric formulas on screen. These "not given" formulas are ones you must know.</p>
+    </div>
+  </div>
+  <div id="ref-backdrop" hidden></div>
 
   <!-- RESULTS -->
   <section class="screen" id="screen-results" hidden>
@@ -236,6 +335,7 @@
     <h2>Session History</h2>
     <p class="muted small" id="seen-count-info"></p>
     <div id="history-list" class="history-list"></div>
+    <button class="btn" id="export-csv">Export as CSV</button>
     <button class="btn" id="reset-seen">Reset mastered questions</button>
     <button class="btn danger" id="clear-history">Clear history &amp; reset mastered</button>
   </section>
