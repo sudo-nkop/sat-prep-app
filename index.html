@@ -164,36 +164,68 @@
 
   <!-- QUIZ (used for both practice and test) -->
   <section class="screen quiz-screen" id="screen-quiz" hidden>
-    <div class="quiz-header">
-      <div class="quiz-header-left">
+
+    <!-- ── SAT-STYLE HEADER ─────────────────────────────── -->
+    <div class="sat-header">
+      <div class="sat-header-left">
+        <button class="sat-exit-btn" id="quiz-exit-btn" aria-label="Exit">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
         <span id="quiz-section-label" class="quiz-section-label"></span>
-        <span id="quiz-progress">1 / 10</span>
       </div>
-      <span class="timer" id="quiz-timer" hidden>00:00</span>
-      <div class="quiz-header-right">
-        <button class="btn-link ref-btn" id="quiz-ref" hidden>📐 Reference</button>
-        <button class="btn-link calc-btn" id="quiz-calc" hidden>📊 Calculator</button>
-        <button class="btn-link nav-toggle-btn" id="quiz-nav-toggle">☰ Navigator</button>
+      <div class="sat-header-center">
+        <div class="timer-wrap" id="quiz-timer-wrap" hidden>
+          <span class="timer" id="quiz-timer">32:00</span>
+          <button class="timer-toggle-btn" id="quiz-timer-toggle" title="Hide timer" aria-label="Toggle timer"></button>
+        </div>
+      </div>
+      <div class="sat-header-right">
+        <button class="sat-tool-btn" id="quiz-ref" hidden>Reference</button>
+        <button class="sat-tool-btn" id="quiz-calc" hidden>Calculator</button>
       </div>
     </div>
+
+    <!-- thin progress bar -->
     <div class="progress-track"><div class="progress-fill" id="quiz-progress-bar"></div></div>
-    <div class="question" id="question-container">
+
+    <!-- ── SCROLLABLE QUESTION BODY ─────────────────────── -->
+    <div class="sat-body" id="question-container">
+      <div class="sat-q-meta">
+        <span class="sat-q-num" id="sat-q-num">1</span>
+        <button class="mark-review-btn" id="quiz-mark-review" hidden>
+          <span class="mark-check"></span>
+          <span class="mark-label">Mark for Review</span>
+        </button>
+      </div>
       <div class="q-prompt" id="q-prompt"></div>
       <div class="choices" id="q-choices"></div>
+      <div class="explanation" id="q-explanation" hidden>
+        <div class="explanation-result" id="q-result"></div>
+        <p id="q-explanation-text"></p>
+      </div>
     </div>
-    <div class="explanation" id="q-explanation" hidden>
-      <div class="explanation-result" id="q-result"></div>
-      <p id="q-explanation-text"></p>
-    </div>
-    <div class="quiz-actions">
-      <button class="btn" id="quiz-prev" hidden>← Prev</button>
-      <button class="btn" id="quiz-skip" hidden>Skip</button>
-      <button class="btn primary" id="quiz-submit">Submit</button>
-      <button class="btn" id="quiz-next" hidden>Next →</button>
-      <button class="btn danger" id="quiz-finish" hidden>Finish Test</button>
-    </div>
-    <div class="quiz-actions-secondary">
-      <button class="btn-link mark-review-btn" id="quiz-mark-review" hidden>🔖 Mark for Review</button>
+
+    <!-- ── SAT-STYLE BOTTOM TOOLBAR ─────────────────────── -->
+    <div class="sat-bottom-bar">
+      <div class="sat-bottom-left">
+        <button class="elim-btn" id="quiz-eliminator" hidden title="Toggle answer eliminator">
+          <span>ABC</span>
+        </button>
+      </div>
+      <div class="sat-bottom-center">
+        <button class="sat-nav-toggle" id="quiz-nav-toggle">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          <span id="quiz-progress">1 of 27</span>
+          <svg class="nav-chevron" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 9 12 15 6 9"/></svg>
+        </button>
+      </div>
+      <div class="sat-bottom-right">
+        <button class="btn sat-nav-btn" id="quiz-prev" hidden>Back</button>
+        <button class="btn sat-nav-btn" id="quiz-skip" hidden>Skip</button>
+        <button class="btn primary sat-nav-btn" id="quiz-submit">Submit Answer</button>
+        <button class="btn sat-nav-btn" id="quiz-next" hidden>Next</button>
+        <button class="btn danger sat-nav-btn" id="quiz-finish" hidden>End Section</button>
+      </div>
     </div>
   </section>
 
