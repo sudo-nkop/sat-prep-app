@@ -19,6 +19,9 @@
 <header id="topbar">
   <button class="back-btn" id="back-btn" hidden aria-label="Back">←</button>
   <h1 id="page-title">SAT Practice</h1>
+  <button class="icon-btn" id="search-btn" aria-label="Search questions">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+  </button>
   <button class="icon-btn" id="settings-btn" aria-label="Settings">⚙</button>
 </header>
 
@@ -352,6 +355,9 @@
     <h3>Review</h3>
     <div class="review-list" id="review-list"></div>
 
+    <div class="results-export-row">
+      <button class="btn" id="export-session-csv">⬇ Export Session CSV</button>
+    </div>
     <button class="btn primary big" data-go="screen-home">Done</button>
   </section>
 
@@ -468,6 +474,29 @@ Explain: Why B is correct.</pre>
 
     <button class="btn danger" id="reset-app">Reset all data</button>
   </section>
+
+  <!-- SEARCH OVERLAY -->
+  <div id="search-overlay" hidden>
+    <div class="search-header">
+      <div class="search-input-wrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="flex-shrink:0;color:var(--muted)"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="search-input" placeholder="Search questions by keyword…" autocomplete="off" spellcheck="false">
+        <button class="search-clear-btn" id="search-clear" hidden aria-label="Clear">✕</button>
+      </div>
+      <button class="btn-link" id="search-close">Cancel</button>
+    </div>
+    <div class="search-filters" id="search-filters">
+      <button class="sf-btn active" data-sf="all">All</button>
+      <button class="sf-btn" data-sf="math">Math</button>
+      <button class="sf-btn" data-sf="rw">Reading &amp; Writing</button>
+    </div>
+    <div id="search-results" class="search-results">
+      <p class="search-hint muted small">Search across 749 questions by keyword, topic, or phrase.</p>
+    </div>
+    <div id="search-actions" class="search-actions" hidden>
+      <button class="btn primary big" id="search-practice-btn">Practice matched questions</button>
+    </div>
+  </div>
 
 </main>
 

@@ -87,12 +87,14 @@ function back() {
 
 // ---------- data load ----------
 async function loadQuestions() {
-  const res = await fetch('data/questions.json?v=17', { cache: 'no-cache' });
+  const res = await fetch('data/questions.json?v=18', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
   const imported = load(KEY.imported, []);
   allQuestions = [...data.questions, ...imported];
   populateTopicFilter();
+  const hint = document.getElementById('search-results');
+  if (hint) hint.innerHTML = `<p class="search-hint muted small">Search across ${allQuestions.length} questions by keyword, topic, or phrase.</p>`;
 }
 
 function getSelectedDifficulties() {
@@ -727,6 +729,117 @@ function showPreSubmitReview() {
     };
   });
   go('screen-pre-review');
+}
+
+// ---------- search ----------
+let _searchResults = [];
+let _searchSection = 'all';
+let _searchDebounce = null;
+
+function openSearch() {
+  document.getElementById('search-overlay').hidden = false;
+  setTimeout(() => document.getElementById('search-input').focus(), 80);
+}
+function closeSearch() {
+  document.getElementById('search-overlay').hidden = true;
+  document.getElementById('search-input').value = '';
+  document.getElementById('search-clear').hidden = true;
+  document.getElementById('search-results').innerHTML =
+    '<p class="search-hint muted small">Search across all questions by keyword, topic, or phrase.</p>';
+  document.getElementById('search-actions').hidden = true;
+  _searchResults = [];
+}
+
+function runSearch() {
+  const raw = document.getElementById('search-input').value;
+  const query = raw.trim().toLowerCase();
+  document.getElementById('search-clear').hidden = !raw;
+  const container = document.getElementById('search-results');
+  const actionsEl = document.getElementById('search-actions');
+
+  if (!query) {
+    container.innerHTML = '<p class="search-hint muted small">Search across all questions by keyword, topic, or phrase.</p>';
+    actionsEl.hidden = true;
+    _searchResults = [];
+    return;
+  }
+
+  const words = query.split(/\s+/).filter(Boolean);
+  _searchResults = allQuestions.filter(q => {
+    if (_searchSection !== 'all' && q.section !== _searchSection) return false;
+    const hay = [q.prompt, q.topic, q.explanation || '', ...Object.values(q.choices)].join(' ').toLowerCase();
+    return words.every(w => hay.includes(w));
+  });
+
+  if (_searchResults.length === 0) {
+    container.innerHTML = '<p class="search-empty muted">No questions match your search.</p>';
+    actionsEl.hidden = true;
+    return;
+  }
+
+  const shown = _searchResults.slice(0, 60);
+  container.innerHTML = shown.map(q => {
+    const sec = q.section === 'math' ? 'Math' : 'R&amp;W';
+    const diff = q.difficulty === 1 ? 'Easy' : q.difficulty === 2 ? 'Medium' : 'Hard';
+    const prompt = escapeHtml(q.prompt.length > 150 ? q.prompt.slice(0, 150) + '…' : q.prompt);
+    return `<div class="sr-item">
+      <div class="sr-tags">
+        <span class="sr-badge sr-${q.section}">${sec}</span>
+        <span class="sr-badge">${escapeHtml(q.topic.replace(/-/g,' '))}</span>
+        <span class="sr-badge sr-d${q.difficulty}">${diff}</span>
+      </div>
+      <div class="sr-prompt">${prompt}</div>
+    </div>`;
+  }).join('');
+
+  if (_searchResults.length > 60) {
+    container.insertAdjacentHTML('beforeend',
+      `<p class="muted small" style="padding:10px 16px 4px">Showing 60 of ${_searchResults.length} matches.</p>`);
+  }
+
+  const practiceN = Math.min(_searchResults.length, 50);
+  document.getElementById('search-practice-btn').textContent =
+    `Practice ${practiceN} question${practiceN !== 1 ? 's' : ''}`;
+  actionsEl.hidden = false;
+}
+
+function startSearchPractice() {
+  if (_searchResults.length === 0) return;
+  const qs = shuffle(_searchResults).slice(0, 50).map(shuffleChoices);
+  currentSession = {
+    mode: 'practice', questions: qs,
+    answers: new Array(qs.length).fill(null),
+    flagged: new Set(), idx: 0,
+    startedAt: Date.now(), durationMs: null,
+  };
+  addSeenIds(qs.map(q => q.id));
+  closeSearch();
+  go('screen-quiz');
+  renderQuiz();
+}
+
+// ---------- export ----------
+function exportSessionCSV() {
+  const s = currentSession;
+  if (!s || !s.questions || s.questions.length === 0) {
+    alert('No session data to export. Complete a practice or test first.');
+    return;
+  }
+  const rows = [
+    ['Q', 'Section', 'Topic', 'Difficulty', 'Prompt', 'Correct_Answer', 'Your_Answer', 'Result'],
+    ...s.questions.map((q, i) => {
+      const ans = s.answers[i] || '';
+      const result = !ans ? 'Skipped' : ans === q.answer ? 'Correct' : 'Incorrect';
+      return [i + 1, q.section, q.topic, q.difficulty,
+        q.prompt.replace(/"/g, '""'), q.answer, ans, result];
+    })
+  ];
+  const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = Object.assign(document.createElement('a'), { href: url, download: 'sat-session-results.csv' });
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }
 
 function exportHistoryCSV() {
@@ -1403,8 +1516,37 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (fullSatState) showFullSatResults(); else finishQuiz();
   };
 
-  // Export CSV
+  // Export history CSV
   document.getElementById('export-csv').onclick = exportHistoryCSV;
+
+  // Export session CSV (on results screen)
+  document.getElementById('export-session-csv').onclick = exportSessionCSV;
+
+  // Search
+  document.getElementById('search-btn').onclick = openSearch;
+  document.getElementById('search-close').onclick = closeSearch;
+  document.getElementById('search-clear').onclick = () => {
+    document.getElementById('search-input').value = '';
+    document.getElementById('search-clear').hidden = true;
+    runSearch();
+    document.getElementById('search-input').focus();
+  };
+  document.getElementById('search-input').addEventListener('input', () => {
+    clearTimeout(_searchDebounce);
+    _searchDebounce = setTimeout(runSearch, 220);
+  });
+  document.getElementById('search-input').addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeSearch();
+  });
+  document.getElementById('search-practice-btn').onclick = startSearchPractice;
+  document.querySelectorAll('.sf-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.sf-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      _searchSection = btn.dataset.sf;
+      runSearch();
+    };
+  });
 
   // settings
   document.getElementById('theme-select').onchange = (e) => {
