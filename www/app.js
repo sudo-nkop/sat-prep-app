@@ -87,7 +87,7 @@ function back() {
 
 // ---------- data load ----------
 async function loadQuestions() {
-  const res = await fetch('data/questions.json?v=16', { cache: 'no-cache' });
+  const res = await fetch('data/questions.json?v=17', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
   const imported = load(KEY.imported, []);
@@ -256,17 +256,24 @@ function startTest(kind) {
 
 function startTimer() {
   const timerEl = document.getElementById('quiz-timer');
+  const timerWrap = document.getElementById('quiz-timer-wrap');
   timerEl.hidden = false;
+  delete timerEl.dataset.timerHidden;
+  const toggleBtn = document.getElementById('quiz-timer-toggle');
+  if (toggleBtn) toggleBtn.classList.remove('timer-off');
+  if (timerWrap) timerWrap.hidden = false;
   function tick() {
     const remaining = currentSession.deadline - Date.now();
     if (remaining <= 0) {
-      timerEl.textContent = '00:00';
+      if (!timerEl.dataset.timerHidden) timerEl.textContent = '00:00';
       finishQuiz(true);
       return;
     }
     const m = Math.floor(remaining / 60000);
     const s = Math.floor((remaining % 60000) / 1000);
-    timerEl.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    if (!timerEl.dataset.timerHidden) {
+      timerEl.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    }
     if (remaining < 300000) timerEl.classList.add('warning');
   }
   tick();
@@ -276,6 +283,8 @@ function stopTimer() {
   if (timerHandle) { clearInterval(timerHandle); timerHandle = null; }
   document.getElementById('quiz-timer').hidden = true;
   document.getElementById('quiz-timer').classList.remove('warning');
+  const timerWrap = document.getElementById('quiz-timer-wrap');
+  if (timerWrap) timerWrap.hidden = true;
 }
 
 function renderQuiz() {
@@ -294,7 +303,9 @@ function renderQuiz() {
   document.getElementById('quiz-calc').hidden = q.section !== 'math';
   const refBtn = document.getElementById('quiz-ref');
   if (refBtn) refBtn.hidden = q.section !== 'math';
-  document.getElementById('quiz-progress').textContent = `${s.idx + 1} / ${s.questions.length}`;
+  document.getElementById('quiz-progress').textContent = `${s.idx + 1} of ${s.questions.length}`;
+  const qNumEl = document.getElementById('sat-q-num');
+  if (qNumEl) qNumEl.textContent = s.idx + 1;
   const bar = document.getElementById('quiz-progress-bar');
   if (bar) bar.style.width = `${((s.idx + 1) / s.questions.length) * 100}%`;
   const promptEl = document.getElementById('q-prompt');
@@ -313,6 +324,25 @@ function renderQuiz() {
     const struck = s._struck?.[s.idx];
     if (struck && struck.has(letter)) btn.classList.add('struck');
     btn.onclick = () => {
+      // Eliminator mode: click to toggle strikethrough
+      if (choices.classList.contains('elim-mode')) {
+        if (btn.classList.contains('correct') || btn.classList.contains('incorrect')) return;
+        s._struck = s._struck || {};
+        s._struck[s.idx] = s._struck[s.idx] || new Set();
+        if (s._struck[s.idx].has(letter)) {
+          s._struck[s.idx].delete(letter);
+          btn.classList.remove('struck');
+        } else {
+          s._struck[s.idx].add(letter);
+          btn.classList.add('struck');
+          if (s.answers[s.idx] === letter) {
+            s.answers[s.idx] = null;
+            btn.classList.remove('selected');
+          }
+        }
+        updateNavigator();
+        return;
+      }
       if (s.mode === 'practice' && s.answers[s.idx] != null && !document.getElementById('q-explanation').hidden) return;
       s.answers[s.idx] = letter;
       [...choices.children].forEach(c => c.classList.remove('selected'));
@@ -345,11 +375,13 @@ function renderQuiz() {
   const markBtn = document.getElementById('quiz-mark-review');
   if (markBtn) {
     markBtn.hidden = s.mode !== 'test';
-    markBtn.textContent = s.flagged.has(s.idx) ? '🔖 Marked for Review' : '🔖 Mark for Review';
-    markBtn.classList.toggle('marked', s.flagged.has(s.idx));
+    const isMarked = s.flagged.has(s.idx);
+    markBtn.classList.toggle('marked', isMarked);
+    const markLabel = markBtn.querySelector('.mark-label');
+    if (markLabel) markLabel.textContent = isMarked ? 'Marked for Review' : 'Mark for Review';
   }
-  const flagBtn = document.getElementById('quiz-flag');
-  if (flagBtn) flagBtn.textContent = s.flagged.has(s.idx) ? 'Flagged ★' : 'Flag ☆';
+  const elimBtn = document.getElementById('quiz-eliminator');
+  if (elimBtn) elimBtn.hidden = s.mode !== 'test';
 
   // explanation reset
   const expl = document.getElementById('q-explanation');
@@ -1307,6 +1339,35 @@ document.addEventListener('DOMContentLoaded', async () => {
       finishQuiz();
     }
   };
+
+  // Quiz exit (← back button in SAT header)
+  document.getElementById('quiz-exit-btn')?.addEventListener('click', () => {
+    if (currentSession?.mode === 'test') {
+      if (!confirm('Exit test? Your progress on this section will not be saved.')) return;
+    }
+    stopTimer();
+    back();
+  });
+
+  // Timer show/hide toggle
+  document.getElementById('quiz-timer-toggle')?.addEventListener('click', function() {
+    const timer = document.getElementById('quiz-timer');
+    if (timer.dataset.timerHidden) {
+      delete timer.dataset.timerHidden;
+      this.classList.remove('timer-off');
+    } else {
+      timer.dataset.timerHidden = '1';
+      timer.textContent = '--:--';
+      this.classList.add('timer-off');
+    }
+  });
+
+  // ABC Eliminator toggle
+  document.getElementById('quiz-eliminator')?.addEventListener('click', function() {
+    const choicesEl = document.getElementById('q-choices');
+    const active = choicesEl.classList.toggle('elim-mode');
+    this.classList.toggle('active', active);
+  });
 
   // Navigator
   document.getElementById('quiz-nav-toggle').onclick = showNavigator;
