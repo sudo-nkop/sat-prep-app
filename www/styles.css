@@ -1492,6 +1492,49 @@ hr { border: 0; border-top: 1.5px solid var(--border); margin: 22px 0; }
   flex-shrink: 0;
 }
 
+/* Difficulty badge */
+.difficulty-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+}
+.difficulty-badge[data-level="easy"] {
+  background: color-mix(in srgb, #2e7d32 12%, transparent);
+  border-color: color-mix(in srgb, #2e7d32 35%, transparent);
+  color: #2e7d32;
+}
+[data-theme="dark"] .difficulty-badge[data-level="easy"] {
+  background: color-mix(in srgb, #66bb6a 15%, transparent);
+  border-color: color-mix(in srgb, #66bb6a 35%, transparent);
+  color: #66bb6a;
+}
+.difficulty-badge[data-level="medium"] {
+  background: color-mix(in srgb, #e65100 10%, transparent);
+  border-color: color-mix(in srgb, #e65100 30%, transparent);
+  color: #c84b00;
+}
+[data-theme="dark"] .difficulty-badge[data-level="medium"] {
+  background: color-mix(in srgb, #ffa040 14%, transparent);
+  border-color: color-mix(in srgb, #ffa040 35%, transparent);
+  color: #ffa040;
+}
+.difficulty-badge[data-level="hard"] {
+  background: color-mix(in srgb, #c62828 10%, transparent);
+  border-color: color-mix(in srgb, #c62828 30%, transparent);
+  color: #c62828;
+}
+[data-theme="dark"] .difficulty-badge[data-level="hard"] {
+  background: color-mix(in srgb, #ef5350 14%, transparent);
+  border-color: color-mix(in srgb, #ef5350 35%, transparent);
+  color: #ef5350;
+}
+
 /* Mark for Review button */
 #screen-quiz .mark-review-btn {
   display: inline-flex;
