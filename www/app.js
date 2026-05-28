@@ -308,6 +308,13 @@ function renderQuiz() {
   document.getElementById('quiz-progress').textContent = `${s.idx + 1} of ${s.questions.length}`;
   const qNumEl = document.getElementById('sat-q-num');
   if (qNumEl) qNumEl.textContent = s.idx + 1;
+  const diffEl = document.getElementById('q-difficulty');
+  if (diffEl) {
+    const labels = { 1: 'Easy', 2: 'Medium', 3: 'Hard' };
+    const keys   = { 1: 'easy', 2: 'medium', 3: 'hard' };
+    diffEl.textContent = labels[q.difficulty] ?? '';
+    diffEl.dataset.level = keys[q.difficulty] ?? '';
+  }
   const bar = document.getElementById('quiz-progress-bar');
   if (bar) bar.style.width = `${((s.idx + 1) / s.questions.length) * 100}%`;
   const promptEl = document.getElementById('q-prompt');
