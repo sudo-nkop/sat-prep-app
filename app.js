@@ -45,7 +45,7 @@ function addMasteredIds(ids) {
 }
 
 // ---------- navigation ----------
-const screens = ['home', 'practice-setup', 'test-setup', 'quiz', 'results', 'cheatsheets', 'history', 'settings', 'import', 'module-break', 'pre-review'];
+const screens = ['home', 'practice-setup', 'test-setup', 'endless-setup', 'quiz', 'results', 'cheatsheets', 'history', 'settings', 'import', 'module-break', 'pre-review'];
 const screenStack = ['screen-home'];
 
 function go(id, push = true) {
@@ -59,7 +59,8 @@ function go(id, push = true) {
     'screen-home': 'SAT Practice',
     'screen-practice-setup': 'Practice',
     'screen-test-setup': 'Timed Test',
-    'screen-quiz': currentSession?.mode === 'test' ? 'Test' : 'Practice',
+    'screen-quiz': currentSession?.mode === 'test' ? 'Test' : currentSession?.mode === 'endless' ? 'Endless' : 'Practice',
+    'screen-endless-setup': 'Endless Mode',
     'screen-results': 'Results',
     'screen-cheatsheets': 'Cheatsheets',
     'screen-history': 'History',
@@ -93,6 +94,7 @@ async function loadQuestions() {
   const imported = load(KEY.imported, []);
   allQuestions = [...data.questions, ...imported];
   populateTopicFilter();
+  populateEndlessTopicFilter();
   const hint = document.getElementById('search-results');
   if (hint) hint.innerHTML = `<p class="search-hint muted small">Search across ${allQuestions.length} questions by keyword, topic, or phrase.</p>`;
 }
@@ -217,6 +219,80 @@ function startPractice() {
   renderQuiz();
 }
 
+function getSelectedEndlessDifficulties() {
+  const active = [...document.querySelectorAll('#endless-difficulty .diff-btn.active')];
+  if (active.length === 0 || active.length === 3) return 'all';
+  return new Set(active.map(b => Number(b.dataset.diff)));
+}
+
+function updateEndlessLabel() {
+  const el = document.getElementById('endless-count-label');
+  if (!el) return;
+  const section = document.getElementById('endless-section').value;
+  const topic   = document.getElementById('endless-topic').value;
+  const diffs   = getSelectedEndlessDifficulties();
+  const pool = allQuestions.filter(q =>
+    (section === 'all' || q.section === section) &&
+    (topic   === 'all' || q.topic   === topic)   &&
+    (diffs   === 'all' || diffs.has(q.difficulty))
+  );
+  el.textContent = pool.length === 0
+    ? 'No questions match these filters.'
+    : `${pool.length} question${pool.length !== 1 ? 's' : ''} in pool — will cycle when exhausted`;
+}
+
+function populateEndlessTopicFilter() {
+  const sel = document.getElementById('endless-topic');
+  const sectionSel = document.getElementById('endless-section');
+  function refresh() {
+    const sec = sectionSel.value;
+    const topics = new Set();
+    allQuestions.forEach(q => {
+      if (sec === 'all' || q.section === sec) topics.add(q.topic);
+    });
+    sel.innerHTML = '<option value="all">All topics</option>' +
+      [...topics].sort().map(t => `<option value="${t}">${t.replace('-', ' ')}</option>`).join('');
+    updateEndlessLabel();
+  }
+  sectionSel.addEventListener('change', refresh);
+  refresh();
+}
+
+function buildEndlessPool(config) {
+  const { section, topic, difficulties } = config;
+  return shuffle(allQuestions.filter(q =>
+    (section === 'all' || q.section === section) &&
+    (topic === 'all' || q.topic === topic) &&
+    (difficulties === 'all' || difficulties.has(q.difficulty))
+  )).map(shuffleChoices);
+}
+
+function startEndless() {
+  const section = document.getElementById('endless-section').value;
+  const topic = document.getElementById('endless-topic').value;
+  const difficulties = getSelectedEndlessDifficulties();
+  const config = { section, topic, difficulties };
+
+  const pool = buildEndlessPool(config);
+  if (pool.length === 0) {
+    alert('No questions match those filters. Try widening your criteria.');
+    return;
+  }
+
+  currentSession = {
+    mode: 'endless',
+    questions: pool,
+    answers: new Array(pool.length).fill(null),
+    flagged: new Set(),
+    idx: 0,
+    startedAt: Date.now(),
+    durationMs: null,
+    _endlessConfig: config,
+  };
+  go('screen-quiz');
+  renderQuiz();
+}
+
 function startTest(kind) {
   let section, targetCount, secPerQ;
   if (kind === 'rw') {
@@ -299,13 +375,18 @@ function renderQuiz() {
   if (labelEl) {
     if (s.moduleLabel) labelEl.textContent = s.moduleLabel;
     else if (s.mode === 'test') labelEl.textContent = s.kind === 'rw' ? 'Reading & Writing' : s.kind === 'math' ? 'Math' : 'Mixed';
+    else if (s.mode === 'endless') labelEl.textContent = '∞ Endless';
     else labelEl.textContent = '';
   }
 
   document.getElementById('quiz-calc').hidden = q.section !== 'math';
   const refBtn = document.getElementById('quiz-ref');
   if (refBtn) refBtn.hidden = q.section !== 'math';
-  document.getElementById('quiz-progress').textContent = `${s.idx + 1} of ${s.questions.length}`;
+  if (s.mode === 'endless') {
+    document.getElementById('quiz-progress').textContent = `Q ${s.idx + 1}`;
+  } else {
+    document.getElementById('quiz-progress').textContent = `${s.idx + 1} of ${s.questions.length}`;
+  }
   const qNumEl = document.getElementById('sat-q-num');
   if (qNumEl) qNumEl.textContent = s.idx + 1;
   const diffEl = document.getElementById('q-difficulty');
@@ -316,7 +397,7 @@ function renderQuiz() {
     diffEl.dataset.level = keys[q.difficulty] ?? '';
   }
   const bar = document.getElementById('quiz-progress-bar');
-  if (bar) bar.style.width = `${((s.idx + 1) / s.questions.length) * 100}%`;
+  if (bar) bar.style.width = s.mode === 'endless' ? '100%' : `${((s.idx + 1) / s.questions.length) * 100}%`;
   const promptEl = document.getElementById('q-prompt');
   promptEl.innerHTML = escapeHtml(q.prompt).replace(/\n/g, '<br>');
   renderMath(promptEl);
@@ -383,14 +464,14 @@ function renderQuiz() {
   // flag / mark for review visual
   const markBtn = document.getElementById('quiz-mark-review');
   if (markBtn) {
-    markBtn.hidden = s.mode !== 'test';
+    markBtn.hidden = s.mode === 'practice';
     const isMarked = s.flagged.has(s.idx);
     markBtn.classList.toggle('marked', isMarked);
     const markLabel = markBtn.querySelector('.mark-label');
     if (markLabel) markLabel.textContent = isMarked ? 'Marked for Review' : 'Mark for Review';
   }
   const elimBtn = document.getElementById('quiz-eliminator');
-  if (elimBtn) elimBtn.hidden = s.mode !== 'test';
+  if (elimBtn) elimBtn.hidden = s.mode === 'practice';
 
   // explanation reset
   const expl = document.getElementById('q-explanation');
@@ -402,9 +483,29 @@ function renderQuiz() {
   const next = document.getElementById('quiz-next');
   const prev = document.getElementById('quiz-prev');
   const finish = document.getElementById('quiz-finish');
+  // Reset button labels (may have been changed by endless mode)
+  if (s.mode !== 'endless') {
+    next.textContent = 'Next';
+    finish.textContent = 'End Section';
+  }
 
   prev.hidden = s.idx === 0;
-  if (s.mode === 'practice') {
+  if (s.mode === 'endless') {
+    finish.textContent = 'End Session';
+    if (s.answers[s.idx] != null && s._reviewed?.[s.idx]) {
+      submit.hidden = true;
+      skip.hidden = true;
+      next.hidden = false;
+      next.textContent = 'Next Question';
+      finish.hidden = false;
+      showExplanation();
+    } else {
+      submit.hidden = false;
+      skip.hidden = true;
+      next.hidden = true;
+      finish.hidden = false;
+    }
+  } else if (s.mode === 'practice') {
     if (s.answers[s.idx] != null && s._reviewed?.[s.idx]) {
       submit.hidden = true;
       skip.hidden = true;
@@ -478,8 +579,23 @@ function submitAnswer() {
 }
 
 function nextQuestion() {
-  if (currentSession.idx < currentSession.questions.length - 1) {
-    currentSession.idx += 1;
+  const s = currentSession;
+  if (s.mode === 'endless') {
+    if (s.idx < s.questions.length - 1) {
+      s.idx += 1;
+    } else {
+      // Pool exhausted — rebuild and append another cycle
+      const more = buildEndlessPool(s._endlessConfig);
+      const newIdx = s.questions.length;
+      s.questions.push(...more);
+      s.answers.push(...new Array(more.length).fill(null));
+      s.idx = newIdx;
+    }
+    renderQuiz();
+    return;
+  }
+  if (s.idx < s.questions.length - 1) {
+    s.idx += 1;
     renderQuiz();
   }
 }
@@ -629,6 +745,16 @@ function finishQuiz(timeUp = false) {
   }
   stopTimer();
   const s = currentSession;
+  // For endless mode, trim to only reviewed questions
+  if (s.mode === 'endless') {
+    const reviewedIdxs = Object.keys(s._reviewed || {}).map(Number).sort((a, b) => a - b);
+    if (reviewedIdxs.length === 0) {
+      alert('Answer at least one question before ending the session.');
+      return;
+    }
+    s.questions = reviewedIdxs.map(i => s.questions[i]);
+    s.answers = reviewedIdxs.map(i => s.answers[i]);
+  }
   s.durationMs = Date.now() - s.startedAt;
   let correct = 0;
   s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
@@ -659,11 +785,13 @@ function showResults(timeUp) {
   if (resultBar) setTimeout(() => { resultBar.style.width = pct + '%'; }, 100);
 
   const timeEl = document.getElementById('result-time');
-  if (s.mode === 'test') {
+  if (s.mode === 'test' || s.mode === 'endless') {
     const min = Math.floor(s.durationMs / 60000);
     const sec = Math.floor((s.durationMs % 60000) / 1000);
     timeEl.hidden = false;
-    timeEl.textContent = `Time: ${min}m ${sec}s${timeUp ? ' (time expired)' : ''}`;
+    timeEl.textContent = s.mode === 'endless'
+      ? `Session time: ${min}m ${sec}s`
+      : `Time: ${min}m ${sec}s${timeUp ? ' (time expired)' : ''}`;
   } else {
     timeEl.hidden = true;
   }
@@ -856,7 +984,7 @@ function exportHistoryCSV() {
     ['Date', 'Mode', 'Score', 'Total', 'Percent', 'Duration_s'],
     ...hist.map(h => {
       const d = new Date(h.when).toISOString().slice(0,10);
-      const mode = h.mode === 'test' ? `Test_${h.kind || 'mixed'}` : 'Practice';
+      const mode = h.mode === 'test' ? `Test_${h.kind || 'mixed'}` : h.mode === 'endless' ? 'Endless' : 'Practice';
       const pct = Math.round(h.score / h.total * 100);
       const dur = Math.round((h.durationMs || 0) / 1000);
       return [d, mode, h.score, h.total, pct, dur];
@@ -939,7 +1067,7 @@ function renderHistory() {
   list.innerHTML = hist.map(h => {
     const d = new Date(h.when);
     const date = d.toLocaleDateString() + ' ' + d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-    const mode = h.mode === 'test' ? `Test (${h.kind})` : 'Practice';
+    const mode = h.mode === 'test' ? `Test (${h.kind})` : h.mode === 'endless' ? 'Endless' : 'Practice';
     const pct = Math.round(h.score / h.total * 100);
     return `<div class="history-item">
       <div>
@@ -985,6 +1113,7 @@ function addImportedQuestions(newQs) {
   save(KEY.imported, [...existing, ...newQs]);
   allQuestions = [...allQuestions, ...newQs];
   populateTopicFilter();
+  populateEndlessTopicFilter();
 }
 
 function parseImportText(text) {
@@ -1404,6 +1533,16 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('practice-topic').addEventListener('change', updateUnseenLabel);
   document.getElementById('practice-start').onclick = startPractice;
 
+  // endless mode
+  document.querySelectorAll('#endless-difficulty .diff-btn').forEach(btn => {
+    btn.addEventListener('click', () => { btn.classList.toggle('active'); updateEndlessLabel(); });
+  });
+  document.getElementById('endless-section').addEventListener('change', () => {
+    populateEndlessTopicFilter();
+  });
+  document.getElementById('endless-topic').addEventListener('change', updateEndlessLabel);
+  document.getElementById('endless-start').onclick = startEndless;
+
   // test
   document.querySelectorAll('[data-test]').forEach(b => {
     b.onclick = () => {
@@ -1455,6 +1594,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('quiz-finish').onclick = () => {
     if (currentSession.mode === 'test') {
       showPreSubmitReview();
+    } else if (currentSession.mode === 'endless') {
+      if (confirm('End session and see your results?')) finishQuiz();
     } else {
       finishQuiz();
     }
@@ -1464,6 +1605,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('quiz-exit-btn')?.addEventListener('click', () => {
     if (currentSession?.mode === 'test') {
       if (!confirm('Exit test? Your progress on this section will not be saved.')) return;
+    } else if (currentSession?.mode === 'endless') {
+      if (!confirm('Exit endless session? Progress will not be saved.')) return;
     }
     stopTimer();
     back();

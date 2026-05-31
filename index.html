@@ -60,6 +60,12 @@
         <div class="tile-title">Timed Test</div>
         <div class="tile-sub">Real-test conditions</div>
       </button>
+      <button class="menu-tile" data-go="screen-endless-setup">
+        <div class="tile-icon">∞</div>
+        <div class="tile-tag">Mode 03</div>
+        <div class="tile-title">Endless</div>
+        <div class="tile-sub">Keep going until you stop</div>
+      </button>
       <button class="menu-tile" data-go="screen-cheatsheets">
         <div class="tile-icon">📋</div>
         <div class="tile-tag">Study</div>
@@ -132,6 +138,38 @@
 
     <p class="muted small" id="unseen-count-label"></p>
     <button class="btn primary big" id="practice-start">Start Practice</button>
+  </section>
+
+  <!-- ENDLESS SETUP -->
+  <section class="screen" id="screen-endless-setup" hidden>
+    <h2>Endless Mode</h2>
+    <p class="muted">Questions keep coming until you decide to stop. Full tools available — explanations shown after each answer.</p>
+
+    <label class="field">
+      <span>Section</span>
+      <select id="endless-section">
+        <option value="all">All sections</option>
+        <option value="math">Math only</option>
+        <option value="rw">Reading &amp; Writing only</option>
+      </select>
+    </label>
+
+    <label class="field">
+      <span>Topic</span>
+      <select id="endless-topic"><option value="all">All topics</option></select>
+    </label>
+
+    <label class="field">
+      <span>Difficulty</span>
+      <div class="diff-toggle" id="endless-difficulty">
+        <button type="button" class="diff-btn active" data-diff="1">Easy</button>
+        <button type="button" class="diff-btn active" data-diff="2">Medium</button>
+        <button type="button" class="diff-btn active" data-diff="3">Hard</button>
+      </div>
+    </label>
+
+    <p class="muted small" id="endless-count-label"></p>
+    <button class="btn primary big" id="endless-start">Start Endless Session</button>
   </section>
 
   <!-- TEST SETUP -->
