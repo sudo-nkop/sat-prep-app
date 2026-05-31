@@ -212,6 +212,7 @@ main#app {
 .menu-grid {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 20px;
 }
@@ -222,7 +223,7 @@ main#app {
   border: 1.5px solid var(--border);
   border-radius: var(--radius);
   padding: 16px 14px 18px;
-  flex: 1 1 0;
+  flex: 1 1 120px;
   min-width: 0;
   height: 200px;
   text-align: left;
