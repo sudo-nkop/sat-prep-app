@@ -1236,178 +1236,697 @@ function initImportScreen() {
 const CHEATSHEETS = [
   {
     id: 'math',
-    title: 'Math Formulas',
-    desc: 'Algebra, geometry, exponents, trig — what to memorize.',
-    body: `## Given on the test
+    title: 'Math: Complete Formula & Rule Guide',
+    desc: 'Every formula and rule the SAT tests — number properties, algebra, geometry, stats, trig, and more.',
+    body: `
+<h2>Number Properties &amp; Arithmetic</h2>
+<h3>Even / Odd Rules</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Operation</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Result</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Example</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even ± even</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">4+2=6</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">odd ± odd</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">3+5=8</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even ± odd</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">odd</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">4+3=7</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even × any</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">even</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">4×3=12</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">odd × odd</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">odd</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">3×5=15</td></tr>
+</table>
+<h3>Zero, Negatives, Absolute Value</h3>
+<ul>
+  <li><strong>Zero rules:</strong> $0 \\times n = 0$; $0 \\div n = 0$; $n \\div 0 =$ undefined</li>
+  <li><strong>Negative rules:</strong> neg × neg = pos; neg × pos = neg</li>
+  <li><strong>Absolute value:</strong> $|x| = x$ if $x \\ge 0$; $|x| = -x$ if $x &lt; 0$; $|ab| = |a||b|$</li>
+</ul>
+<h3>Order of Operations — PEMDAS</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  Parentheses → Exponents → Multiplication/Division (left to right) → Addition/Subtraction (left to right)
+</div>
+<h3>Divisibility Rules</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Divisor</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Rule</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">2</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Last digit is even</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">3</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sum of digits divisible by 3</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">5</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Ends in 0 or 5</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">9</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sum of digits divisible by 9</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">10</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Ends in 0</td></tr>
+</table>
+<ul>
+  <li><strong>Prime numbers:</strong> 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 … (1 is NOT prime)</li>
+  <li><strong>GCF:</strong> largest number dividing both; <strong>LCM:</strong> smallest multiple of both</li>
+</ul>
 
-$A = \\pi r^2 \\qquad C = 2\\pi r$
-$A = lw \\qquad A = \\tfrac{1}{2}bh$
-$a^2 + b^2 = c^2$  (Pythagorean)
-30-60-90: $x,\\ x\\sqrt{3},\\ 2x$   45-45-90: $x,\\ x,\\ x\\sqrt{2}$
-$V_{\\text{box}} = lwh \\qquad V_{\\text{cyl}} = \\pi r^2 h$
-$V_{\\text{sphere}} = \\tfrac{4}{3}\\pi r^3$
-$V_{\\text{cone}} = \\tfrac{1}{3}\\pi r^2 h$
+<h2>Fractions, Decimals &amp; Percentages</h2>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  Part = Percent × Whole &nbsp;&nbsp;|&nbsp;&nbsp; % change = $\\dfrac{\\text{New} - \\text{Old}}{\\text{Old}} \\times 100$
+</div>
+<ul>
+  <li>Successive % changes: multiply the factors — e.g. +20% then −10% → $1.20 \\times 0.90 = 1.08$ (+8% total)</li>
+  <li>To convert fraction to percent: divide numerator by denominator, multiply by 100</li>
+  <li>Complex fractions: $\\dfrac{a/b}{c/d} = \\dfrac{a}{b} \\times \\dfrac{d}{c}$</li>
+</ul>
 
-## NOT given — memorize
+<h2>Ratios &amp; Proportions</h2>
+<ul>
+  <li>Part : Part vs Part : Whole — know which you have</li>
+  <li>Cross-multiply to solve: $\\dfrac{a}{b} = \\dfrac{c}{d} \\Rightarrow ad = bc$</li>
+  <li>Direct proportion: $y = kx$ (as x increases, y increases)</li>
+  <li>Inverse proportion: $y = k/x$ (as x increases, y decreases)</li>
+</ul>
 
-Slope: $m = \\dfrac{y_2 - y_1}{x_2 - x_1}$
-Slope-intercept: $y = mx + b$
-Distance: $\\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$
-Midpoint: $\\left(\\dfrac{x_1+x_2}{2},\\ \\dfrac{y_1+y_2}{2}\\right)$
-Quadratic: $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$
-Discriminant $b^2 - 4ac$:
-  $> 0$  two real roots
-  $= 0$  one real root
-  $< 0$  no real roots
-Vertex of parabola: $x = -\\dfrac{b}{2a}$
+<h2>Algebra — Linear Equations</h2>
+<h3>Key Line Equations</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Form</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Equation</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Notes</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Slope-intercept</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$y = mx + b$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">m=slope, b=y-intercept</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Standard form</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$Ax + By = C$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">slope $= -A/B$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Point-slope</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$y - y_1 = m(x - x_1)$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">use when you have a point and slope</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Slope formula</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$m = \\dfrac{y_2 - y_1}{x_2 - x_1}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">rise over run</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Horizontal line</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$y = k$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">slope = 0</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Vertical line</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x = k$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">slope = undefined</td></tr>
+</table>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <strong>Parallel lines:</strong> same slope, different intercepts &nbsp;&nbsp;|&nbsp;&nbsp;
+  <strong>Perpendicular lines:</strong> slopes multiply to $-1$ (i.e., slopes are negative reciprocals)
+</div>
 
-## Exponents
-$x^a \\cdot x^b = x^{a+b}$
-$\\dfrac{x^a}{x^b} = x^{a-b}$
-$(x^a)^b = x^{ab}$
-$x^{-a} = \\dfrac{1}{x^a}$
+<h2>Systems of Equations</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Situation</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Meaning</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Graph looks like</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">One solution</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Different slopes</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Lines intersect</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">No solution</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Same slope, different intercepts</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Parallel lines</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Infinite solutions</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Same slope AND same intercept (same line)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Overlapping lines</td></tr>
+</table>
+<ul>
+  <li><strong>Substitution:</strong> solve one equation for a variable, substitute into the other</li>
+  <li><strong>Elimination:</strong> add/subtract equations to cancel a variable</li>
+</ul>
 
-## Circles (coordinate)
-$(x - h)^2 + (y - k)^2 = r^2$
+<h2>Inequalities</h2>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  <strong>Key rule:</strong> When multiplying or dividing both sides by a <em>negative number</em>, flip the inequality sign!
+</div>
+<ul>
+  <li>Compound AND: $-3 &lt; x &lt; 5$ (x is between the values)</li>
+  <li>Compound OR: $x &lt; -3$ or $x &gt; 5$ (x is outside the values)</li>
+  <li>Absolute value: $|x| &lt; a \\Rightarrow -a &lt; x &lt; a$</li>
+  <li>Absolute value: $|x| &gt; a \\Rightarrow x &lt; -a$ or $x &gt; a$</li>
+</ul>
 
-## Trig (right triangle)
-$\\sin\\theta = \\dfrac{\\text{opp}}{\\text{hyp}},\\ \\cos\\theta = \\dfrac{\\text{adj}}{\\text{hyp}},\\ \\tan\\theta = \\dfrac{\\text{opp}}{\\text{adj}}$
-$\\sin^2\\theta + \\cos^2\\theta = 1$
-$\\sin\\theta = \\cos(90^\\circ - \\theta)$
+<h2>Quadratics</h2>
+<h3>Three Forms</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Form</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Equation</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>What it reveals</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Standard</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$ax^2 + bx + c = 0$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">y-intercept = c</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Factored</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a(x - r)(x - s) = 0$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">roots/zeros: x = r and x = s</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Vertex</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a(x - h)^2 + k$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">vertex = (h, k)</td></tr>
+</table>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  Quadratic Formula: $x = \\dfrac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}$
+</div>
+<h3>Discriminant $b^2 - 4ac$</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$&gt; 0$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Two distinct real roots</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$= 0$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">One real root (tangent to x-axis)</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$&lt; 0$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">No real roots (no x-intercepts)</td></tr>
+</table>
+<ul>
+  <li>Sum of roots $= -b/a$; &nbsp; Product of roots $= c/a$</li>
+  <li>Vertex x-coordinate: $x = -b/(2a)$</li>
+  <li><strong>Difference of squares:</strong> $x^2 - a^2 = (x+a)(x-a)$</li>
+  <li><strong>Perfect square trinomials:</strong> $x^2 + 2ax + a^2 = (x+a)^2$</li>
+</ul>
 
-## Stats
-Mean = sum/count
-Median = middle of sorted list
-Lower SD = data closer to mean
+<h2>Exponents &amp; Radicals</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x^a \\cdot x^b = x^{a+b}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\dfrac{x^a}{x^b} = x^{a-b}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$(x^a)^b = x^{ab}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$(xy)^a = x^a y^a$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x^0 = 1$ (x ≠ 0)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x^{-a} = \\dfrac{1}{x^a}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x^{1/n} = \\sqrt[n]{x}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$x^{m/n} = \\sqrt[n]{x^m}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sqrt{ab} = \\sqrt{a}\\sqrt{b}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sqrt{a/b} = \\sqrt{a}/\\sqrt{b}$</td></tr>
+</table>
+<ul>
+  <li><strong>Rationalize denominators:</strong> multiply numerator and denominator by the conjugate or the radical</li>
+  <li>e.g. $\\dfrac{1}{\\sqrt{3}} = \\dfrac{\\sqrt{3}}{3}$</li>
+</ul>
 
-## Lines
-Parallel → same slope.
-Perpendicular → slopes multiply to $-1$.
-System has NO solution if slopes equal but intercepts differ.
-System has INFINITE solutions if equations are scalar multiples.`
+<h2>Polynomials</h2>
+<ul>
+  <li>Add/subtract: combine like terms (same degree)</li>
+  <li>Multiply: distribute every term (FOIL for two binomials)</li>
+  <li><strong>Remainder Theorem:</strong> $f(a)$ = remainder when $f(x) \\div (x - a)$</li>
+  <li><strong>Factor Theorem:</strong> $(x - a)$ is a factor of $f(x)$ if and only if $f(a) = 0$</li>
+</ul>
+
+<h2>Functions</h2>
+<h3>Transformation Rules</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Transformation</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Effect</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$f(x) + k$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Shift up k units</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$f(x) - k$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Shift down k units</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$f(x + k)$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Shift left k units</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$f(x - k)$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Shift right k units</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$-f(x)$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Reflect over x-axis</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$f(-x)$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Reflect over y-axis</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a \\ cdot f(x)$, $|a| &gt; 1$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Vertical stretch</td></tr>
+</table>
+<ul>
+  <li><strong>Composite functions:</strong> $f(g(x))$ — plug $g(x)$ into $f$</li>
+  <li><strong>Inverse functions:</strong> swap x and y, then solve for y; notation $f^{-1}(x)$</li>
+</ul>
+<h3>Exponential Functions</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  Growth: $y = a(1 + r)^t$ &nbsp;&nbsp; Decay: $y = a(1 - r)^t$ &nbsp;&nbsp; Continuous: $y = ae^{kt}$
+</div>
+
+<h2>Rates, Distance &amp; Unit Conversions</h2>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  $D = R \\times T$ &nbsp;&nbsp;&nbsp; Speed = Distance / Time &nbsp;&nbsp;&nbsp; Time = Distance / Rate
+</div>
+<ul>
+  <li>Unit conversion: multiply by conversion fractions until unwanted units cancel</li>
+  <li>Average speed = total distance / total time (not the average of the speeds!)</li>
+</ul>
+
+<h2>Statistics &amp; Data Analysis</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Measure</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Definition</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Mean</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sum of values ÷ count; <em>sensitive to outliers</em></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Weighted mean</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\dfrac{\\sum w_i x_i}{\\sum w_i}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Median</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Middle value when sorted; average of two middle if even count; <em>resistant to outliers</em></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Mode</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Most frequently occurring value</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Range</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Max − Min</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Standard deviation</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Measures spread; larger SD = more spread from mean</td></tr>
+</table>
+<ul>
+  <li><strong>Margin of error:</strong> larger sample size → smaller margin of error</li>
+  <li><strong>Scatter plots:</strong> positive correlation (both increase), negative (one up, one down), no correlation</li>
+</ul>
+<h3>Probability</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  $P(\\text{event}) = \\dfrac{\\text{favorable outcomes}}{\\text{total outcomes}}$
+</div>
+<ul>
+  <li>$P(A \\text{ or } B) = P(A) + P(B) - P(A \\text{ and } B)$</li>
+  <li>$P(A \\text{ and } B) = P(A) \\times P(B)$ for <em>independent</em> events</li>
+  <li>Conditional probability: $P(A|B) = \\dfrac{P(A \\text{ and } B)}{P(B)}$</li>
+  <li><strong>Two-way tables:</strong> use row/column totals for conditional probability; be careful which total to use</li>
+</ul>
+
+<h2>Geometry — Given on SAT (Reference Sheet)</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Circle area</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$A = \\pi r^2$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Circumference</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$C = 2\\pi r$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Rectangle area</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$A = lw$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Triangle area</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$A = \\tfrac{1}{2}bh$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Pythagorean theorem</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a^2 + b^2 = c^2$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">30-60-90 triangle</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sides: $x,\\ x\\sqrt{3},\\ 2x$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">45-45-90 triangle</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sides: $x,\\ x,\\ x\\sqrt{2}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Rectangular prism volume</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$V = lwh$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Cylinder volume</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$V = \\pi r^2 h$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sphere volume</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$V = \\tfrac{4}{3}\\pi r^3$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Cone volume</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$V = \\tfrac{1}{3}\\pi r^2 h$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Pyramid volume</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$V = \\tfrac{1}{3}Bh$ (B = base area)</td></tr>
+</table>
+
+<h2>Geometry — NOT Given (Must Memorize)</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Perimeter of rectangle</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$P = 2l + 2w$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Area of parallelogram</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$A = bh$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Area of trapezoid</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$A = \\tfrac{1}{2}(b_1 + b_2)h$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Diagonal of rectangle</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$d = \\sqrt{l^2 + w^2}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Distance formula</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$d = \\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Midpoint formula</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\left(\\dfrac{x_1+x_2}{2},\\ \\dfrac{y_1+y_2}{2}\\right)$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Circle equation</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$(x-h)^2 + (y-k)^2 = r^2$, center $(h,k)$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Arc length</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\dfrac{\\theta}{360} \\times 2\\pi r$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sector area</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\dfrac{\\theta}{360} \\times \\pi r^2$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sum of interior angles</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$(n-2) \\times 180°$ (n = number of sides)</td></tr>
+</table>
+<ul>
+  <li><strong>Exterior angle of triangle</strong> = sum of the two non-adjacent interior angles</li>
+  <li><strong>Central angle</strong> = arc measure; <strong>Inscribed angle</strong> = ½ × arc measure</li>
+  <li><strong>Tangent to circle</strong> is perpendicular to the radius at the point of tangency</li>
+</ul>
+
+<h2>Trigonometry</h2>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;font-family:monospace;">
+  SOH-CAH-TOA: $\\sin\\theta = \\dfrac{\\text{opp}}{\\text{hyp}}$ &nbsp;&nbsp; $\\cos\\theta = \\dfrac{\\text{adj}}{\\text{hyp}}$ &nbsp;&nbsp; $\\tan\\theta = \\dfrac{\\text{opp}}{\\text{adj}}$
+</div>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Identity</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Formula</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Pythagorean identity</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sin^2\\theta + \\cos^2\\theta = 1$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complementary angles</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sin\\theta = \\cos(90° - \\theta)$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Radian conversion</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$180° = \\pi$ rad; degrees $\\times \\dfrac{\\pi}{180}$ = radians</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Arc length (radians)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$s = r\\theta$ (θ must be in radians)</td></tr>
+</table>
+<h3>Key Trig Values</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Angle</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sin$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\cos$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tan$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">0°</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">0</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">0</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">30°</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{1}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{\\sqrt{3}}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{1}{\\sqrt{3}}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">45°</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{\\sqrt{2}}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{\\sqrt{2}}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">60°</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{\\sqrt{3}}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\tfrac{1}{2}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$\\sqrt{3}$</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">90°</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">0</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">undefined</td></tr>
+</table>
+
+<h2>Complex Numbers</h2>
+<ul>
+  <li>$i = \\sqrt{-1}$, &nbsp; $i^2 = -1$, &nbsp; $i^3 = -i$, &nbsp; $i^4 = 1$ (then repeats)</li>
+  <li>Add/subtract: combine real and imaginary parts separately</li>
+  <li>Multiply: use FOIL; replace $i^2$ with $-1$</li>
+  <li>Complex conjugate of $a + bi$ is $a - bi$; product $(a+bi)(a-bi) = a^2 + b^2$</li>
+</ul>
+
+<h2>Sequences &amp; Series</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Type</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>nth term</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Key feature</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Arithmetic</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a_n = a_1 + (n-1)d$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">constant difference d</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Geometric</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">$a_n = a_1 \\cdot r^{n-1}$</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">constant ratio r</td></tr>
+</table>
+<ul>
+  <li>Sum of arithmetic series (n terms): $S = \\dfrac{n(a_1 + a_n)}{2}$</li>
+</ul>
+`
   },
   {
     id: 'grammar',
-    title: 'Grammar & Punctuation',
-    desc: 'The finite list of rules the SAT actually tests.',
-    body: `## Punctuation decision tree
-Is BEFORE complete? Is AFTER complete?
+    title: 'Grammar & Writing: Every Rule',
+    desc: 'Punctuation, subject-verb agreement, pronouns, modifiers, parallel structure, transitions, and concision — the complete SAT grammar rulebook.',
+    body: `
+<h2>Punctuation — The Complete Decision Tree</h2>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  <strong>Step 1: Is what comes BEFORE a complete sentence (independent clause)?</strong><br>
+  <strong>Step 2: Is what comes AFTER a complete sentence?</strong>
+</div>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Before</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>After</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Punctuation Options</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Period &nbsp;|&nbsp; Semicolon &nbsp;|&nbsp; Comma + FANBOYS</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">List / explanation / example</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Colon only</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Non-essential (extra) info</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Comma pair &nbsp;|&nbsp; Em-dash pair &nbsp;|&nbsp; Parentheses</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Fragment</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Comma only (never semicolon or colon)</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Complete</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Fragment (no meaning alone)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">No punctuation needed, or dash for emphasis</td></tr>
+</table>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <strong>FANBOYS:</strong> For, And, Nor, But, Or, Yet, So
+</div>
 
-Complete + Complete → period, semicolon, OR comma+FANBOYS
-Complete + List/explanation → colon
-Complete + Fragment (extra info) → dash or comma
-Fragment + Complete → comma
-Fragment + Fragment → comma or nothing
+<h2>Commas — 6 Specific Rules</h2>
+<ol>
+  <li><strong>Before FANBOYS</strong> joining two independent clauses<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "She studied hard, <em>and</em> she passed."<br>
+    <code style="color:var(--red,#dc2626)">✗</code> "She studied hard, <em>however</em> she passed." (however is not FANBOYS)</li>
+  <li><strong>After introductory phrase or clause</strong><br>
+    <code style="color:var(--green,#16a34a)">✓</code> "After the exam<strong>,</strong> she celebrated."</li>
+  <li><strong>Around non-essential (parenthetical) information</strong><br>
+    <code style="color:var(--green,#16a34a)">✓</code> "Maria<strong>,</strong> my best friend<strong>,</strong> scored a 1500."<br>
+    Test: remove the phrase — sentence still makes sense? Then it's non-essential → use commas.</li>
+  <li><strong>Separating items in a list of three or more</strong><br>
+    <code style="color:var(--green,#16a34a)">✓</code> "She bought apples, oranges<strong>,</strong> and bananas."</li>
+  <li><strong>Between coordinate adjectives</strong> (adjectives you can reorder or join with "and")<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "a tall, dark building" (tall and dark building ✓)<br>
+    <code style="color:var(--red,#dc2626)">✗</code> "a little old house" (little and old house sounds wrong → no comma)</li>
+  <li><strong>Around direct address or appositives</strong><br>
+    <code style="color:var(--green,#16a34a)">✓</code> "Dr. Smith<strong>,</strong> the lead researcher<strong>,</strong> presented."</li>
+</ol>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  <strong>Comma Splice = ERROR:</strong> Two complete sentences joined only by a comma. Fix with period, semicolon, or comma + FANBOYS.
+</div>
 
-## Subject–verb agreement
-- Singular subject → singular verb. Plural → plural.
-- Watch for "of" phrases: "The box of nails IS heavy."
-- Either/or, neither/nor → verb agrees with NEAREST subject.
-- "Each, every, anyone, neither" → singular.
+<h2>Semicolons</h2>
+<ul>
+  <li>Only between two <em>independent clauses</em> — think of it as a "soft period"</li>
+  <li><code style="color:var(--green,#16a34a)">✓</code> "She studied all night<strong>;</strong> she still failed."</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> "She was tired<strong>;</strong> having stayed up all night." (second part is a fragment)</li>
+  <li>Also used to separate list items that already contain commas: "Paris, France<strong>;</strong> Rome, Italy<strong>;</strong> and Berlin, Germany"</li>
+</ul>
 
-## Pronouns
-- "Its" = possessive (no apostrophe). "It's" = it is.
-- They're / their / there.  Who's / whose.
+<h2>Colons</h2>
+<ul>
+  <li>Must be preceded by a <em>complete sentence</em></li>
+  <li>Introduces: a list, an explanation, a quotation, or an example</li>
+  <li><code style="color:var(--green,#16a34a)">✓</code> "She had one goal<strong>:</strong> to win."</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> "Her goals include<strong>:</strong> winning and learning." (fragment before colon)</li>
+</ul>
 
-## Modifiers
-- A modifier must sit next to what it modifies.
-- "Walking down the street, the trees..." ❌  →  "..., I saw trees..." ✓
+<h2>Em-Dashes</h2>
+<ul>
+  <li><strong>One em-dash:</strong> adds emphasis or replaces a colon — "He had one weakness—pride."</li>
+  <li><strong>Two em-dashes:</strong> surround non-essential info (like parentheses with stronger emphasis)<br>
+    "The theory—once considered radical—is now mainstream."</li>
+  <li>Both sides of a paired em-dash must be present</li>
+</ul>
 
-## Parallel structure
-- Items in a list/comparison share grammatical form.
-- "She likes hiking, swimming, and biking." ✓
+<h2>Apostrophes</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Use</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Rule</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Example</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Singular possessive</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Add 's</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">the cat's toy</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Plural possessive (ends in s)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Add ' only</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">the cats' toys</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Plural possessive (irregular)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Add 's</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">the children's toys</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Contractions</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Apostrophe marks the missing letter</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">it's=it is, they're=they are, you're=you are</td></tr>
+</table>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <strong>No apostrophe ever for:</strong> <em>its</em> (possessive), <em>their</em>, <em>your</em>, <em>whose</em>
+</div>
 
-## Concision
-- Pick the SHORTEST grammatically correct option.
-- Cut "due to the fact that" → "because"
-- Cut redundancy ("annual yearly" → "annual")
+<h2>Subject–Verb Agreement — Every Rule</h2>
+<ul>
+  <li><strong>Basic:</strong> singular subject → singular verb (adds -s); plural subject → plural verb (no -s)</li>
+  <li><strong>Prepositional phrase trap:</strong> ignore any phrase between subject and verb<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "The <u>box</u> of nails <strong>is</strong> heavy." (box = subject, not nails)</li>
+  <li><strong>Compound with AND:</strong> always plural → "Tom and Maria <strong>are</strong> ready."</li>
+  <li><strong>Compound with OR/NOR:</strong> verb agrees with nearest subject → "Neither the students nor the teacher <strong>is</strong> ready."</li>
+  <li><strong>Always singular:</strong> each, every, either, neither, anyone, someone, everyone, nobody, somebody, no one</li>
+  <li><strong>Collective nouns</strong> (team, committee, group, class): usually treated as singular in American English</li>
+  <li><strong>Inverted sentences:</strong> find the real subject after the verb → "There <strong>are</strong> many reasons." (reasons = subject)</li>
+</ul>
 
-## Transitions
-ADD: also, furthermore, moreover, in addition
-CONTRAST: however, but, yet, nevertheless, on the other hand
-CAUSE: therefore, thus, consequently, as a result
-EXAMPLE: for instance, for example
-SEQUENCE: first, next, finally`
+<h2>Pronoun Agreement &amp; Case</h2>
+<h3>Subject vs. Object Pronouns</h3>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Subject (does the action)</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">I, he, she, we, they, who</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Object (receives the action)</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">me, him, her, us, them, whom</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Possessive (no apostrophe!)</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">its, their, your, whose, his, her, our</td></tr>
+</table>
+<ul>
+  <li><strong>Who vs. whom test:</strong> substitute he/him — if "he" fits → who; if "him" fits → whom<br>
+    "Who/Whom called?" → "He called." → <code style="color:var(--green,#16a34a)">✓</code> who<br>
+    "To who/whom did you speak?" → "You spoke to him." → <code style="color:var(--green,#16a34a)">✓</code> whom</li>
+  <li><strong>Pronoun-antecedent agreement:</strong> pronoun must match its antecedent in number and gender</li>
+  <li><strong>Reflexive pronouns:</strong> himself, herself, themselves (not "hisself" or "theirselves")</li>
+</ul>
+
+<h2>Verb Tense &amp; Mood</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Tense</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Form</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>When to use</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Simple past</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">walked</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Completed action in the past</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Past perfect</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">had walked</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Earlier of two past actions</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Present perfect</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">has/have walked</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Past action with present relevance, or ongoing since past</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Simple present</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">walks</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Habitual/general/right now</td></tr>
+</table>
+<ul>
+  <li><strong>Subjunctive mood</strong> (hypothetical / contrary to fact): use "were" not "was"<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "If I <strong>were</strong> you, I would study." &nbsp;&nbsp; <code style="color:var(--red,#dc2626)">✗</code> "If I <strong>was</strong> you..."</li>
+  <li><strong>Consistent tense:</strong> don't shift tenses within a passage unless the timeline changes</li>
+</ul>
+
+<h2>Modifiers</h2>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <strong>Golden rule:</strong> A modifier must be placed immediately next to the word it modifies.
+</div>
+<ul>
+  <li><strong>Dangling modifier:</strong> the implied subject of the modifier ≠ the subject of the main clause<br>
+    <code style="color:var(--red,#dc2626)">✗</code> "Walking down the street, the trees were beautiful." (trees aren't walking)<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "Walking down the street, <strong>I</strong> saw beautiful trees."</li>
+  <li><strong>Misplaced modifier:</strong> modifier is in the wrong position<br>
+    <code style="color:var(--red,#dc2626)">✗</code> "I only eat vegetables on Tuesdays." (only modifies eat?)<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "I eat only vegetables on Tuesdays."</li>
+  <li><strong>Restrictive (essential):</strong> no commas — "The student <strong>who studies hard</strong> will pass." (tells you which student)</li>
+  <li><strong>Non-restrictive (non-essential):</strong> use commas — "Maria<strong>,</strong> who studies hard<strong>,</strong> will pass." (extra info)</li>
+</ul>
+
+<h2>Parallel Structure</h2>
+<ul>
+  <li>All items in a list or comparison must be the same grammatical form</li>
+  <li><code style="color:var(--green,#16a34a)">✓</code> "She likes <strong>hiking</strong>, <strong>swimming</strong>, and <strong>biking</strong>."</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> "She likes <strong>hiking</strong>, <strong>swimming</strong>, and <strong>to bike</strong>."</li>
+  <li><strong>Correlative conjunctions require parallel:</strong> both X and Y; either X or Y; neither X nor Y; not only X but also Y</li>
+  <li><strong>Comparisons must be like-to-like:</strong><br>
+    <code style="color:var(--red,#dc2626)">✗</code> "The cost of a car is higher than a bike." (comparing cost to bike)<br>
+    <code style="color:var(--green,#16a34a)">✓</code> "The cost of a car is higher than <strong>the cost of</strong> a bike." or "...than <strong>that of</strong> a bike."</li>
+</ul>
+
+<h2>Concision &amp; Redundancy</h2>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  <strong>SAT rule:</strong> When two choices are grammatically correct, always choose the shorter, more direct one.
+</div>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Wordy</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Concise</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">due to the fact that</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">because</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">in the event that</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">if</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">at this point in time</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">now</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">for the purpose of</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">to</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">end result / past history / future plans</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">result / history / plans</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">completely eliminate / totally destroy</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">eliminate / destroy</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">the reason why is because</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">because (or: the reason is that)</td></tr>
+</table>
+
+<h2>Sentence Boundaries</h2>
+<ul>
+  <li><strong>Run-on:</strong> two independent clauses with no punctuation, or only a comma (comma splice)<br>
+    Fix: add a period, semicolon, or comma + FANBOYS, or restructure one clause</li>
+  <li><strong>Fragment:</strong> missing a subject, a verb, or a complete thought<br>
+    Fix: add the missing element, or attach the fragment to an adjacent sentence</li>
+</ul>
+
+<h2>Transitions — The Complete List</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Purpose</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Words</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Addition</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">also, furthermore, moreover, in addition, additionally, likewise</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Contrast</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">however, but, yet, nevertheless, on the other hand, although, while, whereas, despite, in contrast, conversely</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Cause / Effect</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">therefore, thus, consequently, as a result, hence, so, for this reason</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Concession</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">although, even though, while, granted that, admittedly, to be sure</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Example</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">for instance, for example, specifically, namely, to illustrate</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Sequence</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">first, then, next, subsequently, finally, meanwhile, afterward</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Summary</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">in short, in summary, in conclusion, overall, in brief, to summarize</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Emphasis</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">indeed, in fact, certainly, above all, most importantly</td></tr>
+</table>
+
+<h2>Style &amp; Rhetoric (Writing Questions)</h2>
+<ul>
+  <li><strong>Adding/deleting information:</strong> ask — does it serve the stated goal of the passage?</li>
+  <li><strong>Sentence placement:</strong> new information should follow what sets it up logically</li>
+  <li><strong>Introductions/conclusions:</strong> must match the passage's tone, scope, and main argument</li>
+  <li><strong>Word choice (precision):</strong> choose the word whose exact meaning fits — consider connotation, not just denotation</li>
+</ul>
+`
   },
   {
     id: 'reading',
-    title: 'Reading Strategies',
-    desc: 'Question types and traps to avoid.',
-    body: `## Question types
-1. Words in context
-2. Main idea / central claim
-3. Purpose
-4. Detail / evidence
-5. "Most logically completes the text" (inference)
-6. Two-text comparison
-7. Quantitative (passage + chart)
-8. Notes-based rhetorical synthesis
+    title: 'Reading & Analysis: Complete Strategy',
+    desc: 'All 8 question types with strategies, wrong-answer traps, passage approaches, and pacing — everything you need for the Reading & Writing module.',
+    body: `
+<h2>The 8 Question Types</h2>
 
-## Universal strategy
-1. Read the QUESTION first.
-2. Read the passage actively. Mark the main claim.
-3. PREDICT an answer in your own words.
-4. Eliminate before selecting.
+<h3>1. Words in Context</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;">
+  <strong>Strategy:</strong> Cover the answer choices. Read the sentence and think of your own word that fits the context. Then match your word to the closest choice.
+</div>
+<ul>
+  <li>Plug your chosen answer back into the sentence — does it make complete sense?</li>
+  <li>Watch for <em>secondary meanings</em> — SAT loves less common meanings of common words (e.g., "novel" = new/original, not just a book)</li>
+  <li>Pay attention to positive/negative tone of the surrounding context</li>
+</ul>
 
-## Common wrong-answer traps
-- Out of scope (true-sounding, not in text)
-- Half-right (first half ok, second twists)
-- Extreme language ("always", "never")
-- Opposite (right concept, wrong direction)
-- Right answer to wrong question
-- Too narrow / too broad
+<h3>2. Main Idea / Central Claim</h3>
+<ul>
+  <li>Ask: what is the author's <em>primary</em> point across the whole passage?</li>
+  <li><code style="color:var(--green,#16a34a)">✓</code> Right answer covers the <em>entire</em> passage</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> Too narrow: covers only one detail or paragraph</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> Too broad: goes beyond what the text actually claims</li>
+  <li><code style="color:var(--red,#dc2626)">✗</code> Too extreme: uses stronger language than the author does</li>
+</ul>
 
-## Words in context
-Cover choices → substitute your own simple word → match → plug back in.
+<h3>3. Purpose / Function</h3>
+<ul>
+  <li>Why does the author include this sentence/paragraph/detail?</li>
+  <li>Common purposes: <em>to illustrate, to contrast, to introduce, to support, to qualify, to challenge, to concede, to provide evidence, to transition</em></li>
+  <li>Answer the question "why is this here?" — not "what does this say?"</li>
+</ul>
 
-## Most-logically-completes
-- Identify direction (continue / contrast / conclude).
-- Identify subject the text is leading toward.
-- Right answer mirrors both. No new ideas.
+<h3>4. Detail / Evidence (Text Evidence)</h3>
+<ul>
+  <li>Locate the <em>specific lines</em> in the text before choosing an answer</li>
+  <li>The answer must be <em>directly stated or clearly implied</em> — no inferring beyond what's written</li>
+  <li>Wrong answers often use details from the wrong part of the passage</li>
+</ul>
 
-## Notes-based synthesis
-Read the GOAL first. Right answer hits the goal exactly.
-Wrong answers are usually true but don't fulfill the goal.
+<h3>5. Inference / "Most Logically Completes the Text"</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;">
+  <strong>Strategy:</strong> Identify the <em>direction</em> of the passage before reading choices — is it setting up a contrast? Continuing a point? Reaching a conclusion? The right answer follows that direction.
+</div>
+<ul>
+  <li>Right answer is a <em>logical step forward</em> from the evidence — no new ideas introduced</li>
+  <li>Wrong answers are often too extreme, outside scope, or go in the opposite direction</li>
+</ul>
 
-## Pacing
-~70 sec per question. Don't camp on hard ones.`
+<h3>6. Two-Text Comparison</h3>
+<ul>
+  <li>Read Passage 1 fully first, then Passage 2</li>
+  <li>Identify: where do the authors <em>agree</em> and <em>disagree</em>?</li>
+  <li>"How would Author 2 respond to Author 1?" — find the relevant claim in Author 1, then find Author 2's position on it</li>
+  <li>Answer must be grounded in <em>both</em> texts</li>
+</ul>
+
+<h3>7. Quantitative (Passage + Chart/Graph)</h3>
+<ul>
+  <li>Read the data carefully — check axes, units, labels, and legend</li>
+  <li>The correct answer is <em>directly and specifically supported</em> by the data</li>
+  <li>Wrong answers often: misread a trend, cherry-pick one data point, or overstate the conclusion</li>
+  <li>The passage and the graphic must both support the answer</li>
+</ul>
+
+<h3>8. Notes-Based Rhetorical Synthesis</h3>
+<div style="background:var(--surface-alt,#f5f5f5);border-left:3px solid var(--accent,#3b82f6);padding:8px 12px;margin:6px 0;border-radius:4px;">
+  <strong>Strategy:</strong> Read the GOAL first (stated in the question). The right answer fulfills that <em>exact</em> goal — not a related one, not a better one.
+</div>
+<ul>
+  <li>Wrong answers are often factually accurate but miss the goal (wrong emphasis, wrong audience, wrong purpose)</li>
+  <li>Make sure the answer uses information from the notes</li>
+</ul>
+
+<h2>Universal Process — Every Question</h2>
+<ol>
+  <li><strong>Read the question</strong> (not the choices) — understand exactly what's being asked</li>
+  <li><strong>Read the relevant passage section</strong> (re-read if needed)</li>
+  <li><strong>Form your own answer</strong> — predict before looking at choices</li>
+  <li><strong>Match your prediction</strong> to the choices</li>
+  <li><strong>Eliminate</strong> wrong answers, then select the best remaining choice</li>
+</ol>
+
+<h2>Wrong Answer Traps — The Complete List</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Trap</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>What it looks like</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>How to catch it</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Out of scope</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">True-sounding, but not in the text</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Can you point to the line that proves it?</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Half-right</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">First part correct, second part wrong or twisted</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Read every word of the choice — all must be true</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Extreme language</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">"always," "never," "all," "none," "completely"</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Does the passage really say ALL/NEVER?</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Opposite</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Right concept, wrong direction (undermines vs. supports)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Check direction: does it support or contradict?</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Right answer, wrong question</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">True and in the text, but doesn't answer THIS question</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Re-read the question stem before confirming</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Too narrow</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Only addresses a detail, not the main point</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Does it cover the whole scope of the question?</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Too broad</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Goes beyond what the text actually claims</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Is this actually in the text, or just likely?</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Tone mismatch</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Text is neutral, answer is judgmental (or vice versa)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Match the author's level of intensity</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Paraphrase trap</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Uses the same words as the text, but changes the meaning</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Familiar words ≠ correct answer — check meaning</td></tr>
+</table>
+
+<h2>Passage Types &amp; How to Read Each</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Type</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Focus on</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Literary (fiction/narrative)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Character, tone, narrator's perspective, what's implied vs. stated</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Informational (science/history)</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Main argument, evidence used, cause/effect relationships</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Argumentative</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Claim, evidence, counterargument, how author responds to objections</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Two-passage</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Read P1 fully first, then P2; note agreement/disagreement for comparison questions</td></tr>
+</table>
+
+<h2>Vocabulary Strategy</h2>
+<ul>
+  <li>Context is everything — the same word can mean different things in different passages</li>
+  <li>Watch for positive/negative tone signals in surrounding sentences</li>
+  <li>If unsure of the meaning, use process of elimination: which choices clearly don't fit the context?</li>
+  <li>SAT especially likes: <em>novel</em> (new), <em>critical</em> (important or evaluating), <em>challenge</em> (dispute), <em>significant</em> (important or large)</li>
+</ul>
+
+<h2>Pacing Strategy</h2>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  R&amp;W: 27 questions in 32 minutes ≈ <strong>70 seconds per question</strong>
+</div>
+<ul>
+  <li>Don't spend more than 90 seconds on any single question — flag it and move on</li>
+  <li>In the last 60 seconds of each module: answer every blank (no penalty for wrong answers)</li>
+  <li>Prediction before reading choices saves time — you won't be drawn into attractive wrong answers</li>
+</ul>
+`
   },
   {
     id: 'testday',
-    title: 'Test Day Strategy',
-    desc: 'Pacing, mindset, Desmos tips.',
-    body: `## Night before
-Pack ID, ticket, charged laptop, charger, snacks, water, watch.
-Sleep 7+ hours. Don't cram.
+    title: 'Test Day: Complete Playbook',
+    desc: 'SAT format, pacing targets, Desmos tips, adaptive module strategy, skip-and-return system, and every practical tip for test day.',
+    body: `
+<h2>SAT Format — Know This Cold</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Section</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Modules</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Questions</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Time</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Reading &amp; Writing</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">2 modules</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">27 questions each</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">32 minutes each</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Math</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">2 modules</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">22 questions each</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">35 minutes each</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Break</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);" colspan="3">10 minutes between R&amp;W and Math</td></tr>
+</table>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <strong>No penalty for wrong answers.</strong> Always make a guess — never leave a blank.
+</div>
+<ul>
+  <li>Calculator is allowed for the <em>entire</em> Math section — use the built-in Desmos</li>
+  <li>The test is adaptive: Module 2 difficulty depends on your Module 1 performance</li>
+</ul>
 
-## Pacing
-R&W: 27 questions in 32 min ≈ 70 sec/q.
-Math: 22 questions in 35 min ≈ 95 sec/q.
+<h2>Pacing Targets</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Section</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Target pace</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Flag if over</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">R&amp;W</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">≈ 70 sec / question</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">80–90 sec</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Math</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">≈ 95 sec / question</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">2 min</td></tr>
+</table>
 
-## Skip-and-return
-1. First pass: answer every <90-sec question.
-2. Flag the rest.
-3. Second pass: hit flagged.
-4. Last 60 sec: bubble EVERY blank — no penalty.
+<h2>Skip-and-Return System</h2>
+<ol>
+  <li><strong>First pass:</strong> answer every question you can do in ≤ ~80 seconds (R&amp;W) or ≤ ~2 min (Math). Click the flag icon for anything harder.</li>
+  <li><strong>Second pass:</strong> return to all flagged questions with remaining time.</li>
+  <li><strong>Final 60 seconds:</strong> select an answer for every single blank — no blank should remain unanswered. There is no penalty.</li>
+</ol>
+<div style="background:var(--accent-tint,#eff6ff);border:1px solid var(--accent,#3b82f6);padding:8px 12px;border-radius:6px;margin:8px 0;">
+  Never leave a question blank. A random guess has a 25% chance of being right. A blank is 0%.
+</div>
 
-## Math
-- USE DESMOS. Graph it.
-- For "value of k": graph + slider.
-- Re-read: are they asking x or x+2?
+<h2>Desmos Calculator — Power Tips</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Task</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>How to do it in Desmos</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Graph a line</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Type y = 2x + 3 directly</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Find intersection</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Graph both equations; click the intersection point</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Solve quadratic</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Graph y = ax² + bx + c; find x-intercepts (zeros)</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Use a slider</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Type a = 1; a slider appears — drag to find the right value of k</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Evaluate a function</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Define f(x) = ..., then type f(3) to get the value</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Make a table</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Click + → Table; enter x values to see outputs</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Check trig</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Confirm degrees vs. radians mode in settings (gear icon)</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Systems of equations</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Graph both lines; click the intersection for the solution</td></tr>
+</table>
 
-## Reading
-- Predict before peeking at choices.
-- Classify transitions (add/contrast/cause).
+<h2>Adaptive Module 2 — What It Means</h2>
+<ul>
+  <li>If Module 1 goes well → Module 2 is <strong>harder</strong> — this puts you on the high-scoring track (up to 800)</li>
+  <li>If Module 1 goes poorly → Module 2 is <strong>easier</strong> — your score is capped around 600</li>
+  <li><strong>Do not panic</strong> if Module 2 feels very hard — it means you're on track for a high score</li>
+  <li>Maintain the same pacing and strategy regardless of perceived difficulty</li>
+  <li>In Module 1: aim to answer every question (no tactical skipping for adaptive purposes)</li>
+</ul>
 
-## Adaptive Module 2
-Hard Module 2 = good sign (high-scoring track).
-Don't psych yourself out.
+<h2>Math-Specific Tips</h2>
+<ul>
+  <li><strong>Re-read what they're asking:</strong> is it x, or x + 2, or 2x? SAT loves to ask for an expression, not just the variable</li>
+  <li><strong>Draw diagrams</strong> for geometry problems — even rough sketches help</li>
+  <li><strong>Backsolve:</strong> plug answer choices (start with B or C) back into the problem</li>
+  <li><strong>Pick numbers:</strong> replace variables with concrete numbers to test abstract claims</li>
+  <li><strong>Estimate:</strong> when answer choices are spread far apart, estimation is faster than exact calculation</li>
+  <li><strong>Units:</strong> watch for unit mismatches in word problems (miles vs. km, minutes vs. hours)</li>
+  <li><strong>Rate problems:</strong> always set up D = RT (or equivalent) before calculating</li>
+  <li><strong>Check your answer:</strong> for SPR (student-produced response), double-check units and reasonableness</li>
+</ul>
 
-## Score targets
-1200 ≈ 70% correct
-1400 ≈ 85%
-1500 ≈ 92%
-1550+ ≈ near-perfect`
+<h2>Reading-Specific Tips</h2>
+<ul>
+  <li><strong>Always predict</strong> before reading answer choices — prediction prevents being drawn to attractive wrong answers</li>
+  <li><strong>Classify the transition word first</strong> for transition questions (addition? contrast? cause-effect?)</li>
+  <li>For "most logically completes" questions, identify the <em>direction</em> of the passage before reading choices</li>
+  <li>For evidence questions, <em>locate the specific line</em> before choosing</li>
+  <li>When stuck between two choices, ask: which one does the text <em>directly prove</em>?</li>
+</ul>
+
+<h2>Night Before Checklist</h2>
+<div style="background:var(--surface-alt,#f5f5f5);padding:8px 12px;margin:6px 0;border-radius:6px;">
+  <ul style="margin:0;">
+    <li>Government-issued photo ID</li>
+    <li>Admission ticket (printed or on device)</li>
+    <li>Fully charged testing device + charger</li>
+    <li>Snacks and water bottle</li>
+    <li>Watch (analog or digital — no smartwatch)</li>
+    <li>No cramming — light review only</li>
+    <li>7+ hours of sleep</li>
+    <li>Know where your testing center is and how long it takes to get there</li>
+  </ul>
+</div>
+
+<h2>Score Conversion Guide</h2>
+<table style="width:100%;border-collapse:collapse;margin:8px 0;">
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Score</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Approx. % correct</strong></td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);"><strong>Context</strong></td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1200</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">~70%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">About 34/49 correct per module</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1300</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">~77%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Can miss ~11 questions per module</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1400</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">~85%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Can miss ~7 questions per module</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1500</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">~92%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Can miss ~4 questions per module</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1550+</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">~96–98%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Near-perfect; each error at this range costs ~10–20 pts</td></tr>
+  <tr><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">1600</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">100%</td><td style="padding:4px 8px;border:1px solid var(--border,#e5e7eb);">Perfect score</td></tr>
+</table>
+`
   },
 ];
 
@@ -1433,17 +1952,7 @@ function openCheatsheet(id) {
   const content = document.getElementById('cheatsheet-content');
   list.hidden = true;
   content.hidden = false;
-  // basic markdown rendering: headings + paragraphs + code lines
-  const html = c.body
-    .split('\n')
-    .map(line => {
-      if (line.startsWith('## ')) return `<h2>${escapeHtml(line.slice(3))}</h2>`;
-      if (line.startsWith('# ')) return `<h1>${escapeHtml(line.slice(2))}</h1>`;
-      if (line.trim() === '') return '<br>';
-      return `<div>${escapeHtml(line)}</div>`;
-    })
-    .join('');
-  content.innerHTML = `<h1>${escapeHtml(c.title)}</h1>${html}`;
+  content.innerHTML = `<h1>${escapeHtml(c.title)}</h1>${c.body}`;
   renderMath(content);
   document.getElementById('page-title').textContent = c.title;
 }
