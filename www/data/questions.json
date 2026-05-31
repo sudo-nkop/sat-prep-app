@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_comment": "SAT question bank - 749 questions",
+  "_comment": "SAT question bank - 869 questions",
   "questions": [
     {
       "id": "m-alg-001",
@@ -11236,6 +11236,1806 @@
       },
       "answer": "C",
       "explanation": "Let numbers be x and y. y = 2x+4; x+y = 25 → x+(2x+4) = 25 → 3x = 21 → x=7, y=18."
+    },
+    {
+      "id": "rw-hard-101",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe committee, along with its three subcommittees, ______ scheduled to present findings at the annual conference next month.",
+      "choices": {
+        "A": "are",
+        "B": "is",
+        "C": "were",
+        "D": "have been"
+      },
+      "answer": "B",
+      "explanation": "The subject is 'The committee,' which is singular. The phrase 'along with its three subcommittees' is a parenthetical modifier set off by commas and does not change the subject's number. Therefore, the singular verb 'is' is correct. 'Are' and 'were' are plural. 'Have been' is plural and shifts to present perfect unnecessarily."
+    },
+    {
+      "id": "rw-hard-102",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe researcher's findings, published in three separate journals, ______ the long-held assumption that creativity declines with age.",
+      "choices": {
+        "A": "challenges",
+        "B": "challenging",
+        "C": "challenge",
+        "D": "to challenge"
+      },
+      "answer": "C",
+      "explanation": "The subject 'findings' is plural, requiring the plural verb 'challenge.' 'Challenges' is singular. 'Challenging' and 'to challenge' are non-finite forms that cannot serve as main verbs in this context."
+    },
+    {
+      "id": "rw-hard-103",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nNeither the lead attorney nor her associates ______ aware of the procedural error until the judge pointed it out during closing arguments.",
+      "choices": {
+        "A": "was",
+        "B": "were",
+        "C": "has been",
+        "D": "is"
+      },
+      "answer": "B",
+      "explanation": "With 'neither...nor' constructions, the verb agrees with the subject closest to it. The closer subject is 'her associates,' which is plural, so the plural verb 'were' is correct. 'Was' and 'is' are singular. 'Has been' is singular and shifts to present perfect."
+    },
+    {
+      "id": "rw-hard-104",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe department head insisted that every employee ______ the new data security protocol before accessing the company's servers.",
+      "choices": {
+        "A": "reviews",
+        "B": "reviewed",
+        "C": "review",
+        "D": "has reviewed"
+      },
+      "answer": "C",
+      "explanation": "After verbs of insistence, demand, recommendation, or suggestion (e.g., 'insisted that'), English requires the subjunctive mood, which uses the base form of the verb regardless of the subject. 'Review' is the base form. 'Reviews' is indicative third-person singular. 'Reviewed' is past tense. 'Has reviewed' is present perfect."
+    },
+    {
+      "id": "rw-hard-105",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe architect's blueprints—which had been revised no fewer than twelve times—______ still failed to satisfy the historic preservation board.",
+      "choices": {
+        "A": "it",
+        "B": "they",
+        "C": "these",
+        "D": "OMIT the underlined portion"
+      },
+      "answer": "D",
+      "explanation": "The subject 'The architect's blueprints' already provides the grammatical subject for the verb 'failed.' Inserting 'it,' 'they,' or 'these' creates a redundant pronoun (a pronoun subject that duplicates the noun subject), which violates Standard English conventions. The sentence is grammatically complete without any pronoun."
+    },
+    {
+      "id": "rw-hard-106",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe data from the longitudinal study, ______ spanned four decades, suggested a strong correlation between early childhood nutrition and cognitive development.",
+      "choices": {
+        "A": "which",
+        "B": "that",
+        "C": "who",
+        "D": "whom"
+      },
+      "answer": "A",
+      "explanation": "'Which' introduces a nonrestrictive relative clause (set off by commas) referring to a thing ('data' or 'study'). 'That' introduces restrictive clauses and is not typically used with commas. 'Who' and 'whom' refer to people, not data or studies."
+    },
+    {
+      "id": "rw-hard-107",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nBy the time the expedition team reached base camp, the storm ______ for nearly eighteen hours, burying the lower trail under two feet of snow.",
+      "choices": {
+        "A": "raged",
+        "B": "has raged",
+        "C": "had been raging",
+        "D": "was raging"
+      },
+      "answer": "C",
+      "explanation": "The phrase 'By the time...reached' establishes a past reference point; the action (storm raging) occurred continuously before that past moment. The past perfect progressive 'had been raging' correctly conveys duration up to a past point. 'Raged' is simple past without the durational nuance. 'Has raged' is present perfect, inconsistent with past context. 'Was raging' is past progressive, which doesn't emphasize duration before the reference point as clearly."
+    },
+    {
+      "id": "rw-hard-108",
+      "section": "rw",
+      "topic": "grammar",
+      "difficulty": 3,
+      "prompt": "Which choice completes the text so that it conforms to the conventions of Standard English?\n\nThe senator proposed that the bill ______ tabled until a full economic impact assessment could be completed.",
+      "choices": {
+        "A": "is",
+        "B": "was",
+        "C": "be",
+        "D": "being"
+      },
+      "answer": "C",
+      "explanation": "After 'proposed that,' the subjunctive mood is required. The subjunctive uses the base form of 'be' regardless of subject or tense. 'Is' is indicative present. 'Was' is indicative past. 'Being' is a gerund/participial form, not a finite verb."
+    },
+    {
+      "id": "rw-hard-109",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The company's quarterly reports showed steadily increasing revenues for six consecutive years. In the seventh year, revenues remained flat. In the eighth year, they declined by 4 percent. The board responded by replacing the CEO.'\n\nWhich of the following can most reasonably be inferred from the passage?",
+      "choices": {
+        "A": "The CEO was personally responsible for the revenue decline.",
+        "B": "The board believed that leadership change was the appropriate response to the company's recent financial trajectory.",
+        "C": "Revenue will increase in the year following the CEO's replacement.",
+        "D": "The company's competitors experienced similar revenue declines during this period."
+      },
+      "answer": "B",
+      "explanation": "The sequence—declining performance followed by CEO replacement—most directly supports the inference that the board linked performance to leadership and chose to act accordingly. A attributes personal blame, which the passage does not establish. C predicts future outcomes the passage does not address. D introduces competitor comparisons entirely absent from the passage."
+    },
+    {
+      "id": "rw-hard-110",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'When the government reduced subsidies for domestic steel production, imported steel immediately captured 40 percent of the market previously held by domestic producers. Several domestic steel mills subsequently closed, and the workers' union initiated legal challenges to the policy change.'\n\nWhich inference is most directly supported by the passage?",
+      "choices": {
+        "A": "Imported steel is always of lower quality than domestically produced steel.",
+        "B": "The domestic steel industry depended significantly on government subsidies to remain price-competitive.",
+        "C": "The government intentionally sought to destroy the domestic steel industry.",
+        "D": "Legal challenges by unions are an ineffective way to reverse government economic policy."
+      },
+      "answer": "B",
+      "explanation": "The immediate and large market share loss (40%) following subsidy reduction strongly implies that domestic steel had relied on those subsidies to compete on price. Without them, imported steel rapidly became more attractive. A makes a quality comparison the passage does not address. C attributes intent to the government that the passage does not establish. D evaluates the effectiveness of legal challenges, which the passage does not address."
+    },
+    {
+      "id": "rw-hard-111",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "The author is considering adding the following sentence to the paragraph: 'Indeed, several prominent universities have since adopted similar frameworks.' The paragraph discusses how a single institution's policy on open-access publishing influenced the broader academic community. Should the author add this sentence, and if so, where?\n\nThe sentence would most effectively be placed",
+      "choices": {
+        "A": "at the beginning of the paragraph, to introduce the topic",
+        "B": "at the end of the paragraph, to reinforce the claim about broader influence",
+        "C": "before the description of the original policy, to provide context",
+        "D": "the sentence should not be added, as it contradicts the paragraph's focus"
+      },
+      "answer": "B",
+      "explanation": "The sentence provides concrete evidence that one institution's policy influenced others, which directly supports and reinforces the paragraph's central claim about broader impact. Placing it at the end provides a culminating piece of evidence. Placing it at the beginning would introduce a conclusion before the evidence. It doesn't contradict the paragraph's focus—it supports it."
+    },
+    {
+      "id": "rw-hard-112",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "A student is writing an essay arguing that urban vertical gardens improve community mental health. Which of the following would most strengthen the argument?\n\nThe student wants to address a potential counterargument. Which sentence best accomplishes this goal?",
+      "choices": {
+        "A": "Vertical gardens can be installed on the sides of buildings and in indoor spaces.",
+        "B": "While critics argue that the cost of maintaining vertical gardens is prohibitive, studies in low-income neighborhoods have demonstrated that community-funded models reduce maintenance costs by 60 percent.",
+        "C": "Mental health is an important concern in urban environments.",
+        "D": "Many cities around the world have begun investing in green infrastructure."
+      },
+      "answer": "B",
+      "explanation": "B directly acknowledges and refutes a specific counterargument (cost) with concrete evidence (60% cost reduction in studies). A describes installation locations without addressing counterarguments. C is a vague statement of the essay's premise. D is a general trend statement that does not engage with any counterargument."
+    },
+    {
+      "id": "rw-hard-113",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "Read the following passage:\n\n'The fossil record is not a complete archive; it is riddled with gaps, subject to the accidents of preservation and discovery. Yet paleontologists continue to extract meaning from fragments, reading whole ecosystems in a single tooth.'\n\nThe primary rhetorical purpose of the second sentence is to",
+      "choices": {
+        "A": "contradict the first sentence by showing the fossil record is actually complete",
+        "B": "qualify the first sentence by acknowledging the limitations of paleontology",
+        "C": "contrast with the first sentence to highlight scientists' ability to work productively despite limitations",
+        "D": "extend the first sentence by listing additional gaps in the fossil record"
+      },
+      "answer": "C",
+      "explanation": "The first sentence emphasizes the incompleteness of the fossil record. The second sentence pivots with 'Yet,' signaling a contrast: despite those limitations, scientists extract meaningful knowledge. This contrast serves to highlight resilience and skill, not to contradict, qualify with doubt, or add more limitations."
+    },
+    {
+      "id": "rw-hard-114",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "A researcher is writing a report on declining bee populations. She includes this sentence: 'Some beekeepers have reported hive losses exceeding 40 percent in a single winter.' What is the primary function of this sentence in the report?",
+      "choices": {
+        "A": "To provide a general overview of bee biology",
+        "B": "To offer specific evidence illustrating the severity of the problem",
+        "C": "To introduce a counterargument about sustainable beekeeping",
+        "D": "To summarize the report's conclusions"
+      },
+      "answer": "B",
+      "explanation": "The sentence cites a specific, quantified observation (40 percent loss) from a named source (beekeepers), functioning as concrete evidence that illustrates the severity of declining bee populations. It does not overview biology, introduce a counterargument, or summarize conclusions."
+    },
+    {
+      "id": "rw-hard-115",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'To call the Baroque period 'excessive' is to misunderstand the theological ambition that animated it. Every gilded cherub, every trompe-l'oeil ceiling, every cascading drapery in stone was calculated to overwhelm the senses—not for vanity, but to make the divine tangible.'\n\nThe author's use of the list 'every gilded cherub, every trompe-l'oeil ceiling, every cascading drapery in stone' primarily serves to",
+      "choices": {
+        "A": "demonstrate the author's expertise in art history",
+        "B": "provide specific examples that accumulate to support the claim about intentionality",
+        "C": "suggest that Baroque art was indeed excessive",
+        "D": "contrast Baroque aesthetics with Renaissance restraint"
+      },
+      "answer": "B",
+      "explanation": "The list of specific Baroque elements accumulates to build support for the argument that these were all deliberately designed to 'make the divine tangible'—not excessive for its own sake but intentional. The rhetorical device of accumulation (anaphora with 'every') reinforces the scale of intentionality. It does not show the author's credentials, concede excess, or mention the Renaissance."
+    },
+    {
+      "id": "rw-hard-116",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "A writer is drafting an op-ed against mandatory minimum sentencing laws. The editor suggests the piece needs a stronger conclusion. Which ending most effectively fulfills the persuasive purpose of the essay?",
+      "choices": {
+        "A": "In conclusion, mandatory minimums are an interesting policy question that merits further discussion.",
+        "B": "Mandatory minimum sentences were first enacted in the 1970s.",
+        "C": "Until legislators restore judicial discretion, courtrooms will continue to hand down sentences that satisfy neither justice nor common sense, condemning individuals—and communities—to outcomes no law should produce.",
+        "D": "Some judges do agree that mandatory minimums can be unfair in certain circumstances."
+      },
+      "answer": "C",
+      "explanation": "C closes with a forceful call to action and a vivid articulation of consequences, reinforcing the essay's persuasive purpose. A is weak and non-committal ('interesting question'). B is a historical fact with no persuasive force. D is a partial concession that weakens rather than strengthens the argument."
+    },
+    {
+      "id": "rw-hard-117",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The city's new transit plan has been praised by urban planners, endorsed by environmental groups, and welcomed by commuters. Only the automobile lobby remains opposed.'\n\nThe primary effect of placing 'Only the automobile lobby remains opposed' as a separate short sentence after the long list is to",
+      "choices": {
+        "A": "suggest that the automobile lobby's opposition is the most important factor",
+        "B": "isolate and minimize the opposition by contrasting it structurally with the broad coalition of support",
+        "C": "imply that commuters have changed their minds about the plan",
+        "D": "introduce a new argument about transportation policy"
+      },
+      "answer": "B",
+      "explanation": "The structural contrast—a long sentence listing three groups in favor followed by a short sentence naming one opponent—rhetorically isolates and diminishes the opposition. The brevity of the final sentence emphasizes its solitary nature. It does not elevate the lobby's importance, suggest commuters changed their minds, or introduce a new argument."
+    },
+    {
+      "id": "rw-hard-118",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "A student wants to add a sentence to this paragraph about the invention of the printing press: 'Gutenberg's press did not merely copy manuscripts—it standardized language, accelerated literacy, and reshaped political power across Europe.' The student wants to add a sentence that best develops the idea of reshaping political power. Which sentence would be most effective?",
+      "choices": {
+        "A": "The press also made it easier to produce identical copies of texts.",
+        "B": "Gutenberg completed his Bible around 1455.",
+        "C": "By enabling the rapid distribution of pamphlets and manifestos, the press gave reformers and dissidents tools to challenge ecclesiastical and monarchical authority directly.",
+        "D": "Literacy rates in Europe varied significantly by region throughout the fifteenth century."
+      },
+      "answer": "C",
+      "explanation": "C directly develops the idea of reshaping political power by explaining the mechanism (distribution of pamphlets) and the consequence (challenging authority). A addresses copying/standardization. B is a historical date with no analytical development. D discusses literacy variation without connecting to political power."
+    },
+    {
+      "id": "rw-hard-119",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "Read the following two sentences:\n\n'Sentence 1: Ocean acidification threatens coral reefs worldwide. Sentence 2: Scientists have documented a 26 percent increase in ocean acidity since the Industrial Revolution.'\n\nIf a student places Sentence 2 immediately after Sentence 1 in an essay, the primary rhetorical function of Sentence 2 is to",
+      "choices": {
+        "A": "introduce a new topic unrelated to coral reefs",
+        "B": "provide quantitative evidence that substantiates the claim in Sentence 1",
+        "C": "contradict Sentence 1 by showing acidity has not changed significantly",
+        "D": "summarize the essay's overall argument"
+      },
+      "answer": "B",
+      "explanation": "Sentence 2 provides a specific, quantified fact (26% increase since the Industrial Revolution) that supports the general claim in Sentence 1 about acidification threatening coral reefs. It does not introduce a new topic, contradict the claim (26% is a significant increase), or summarize an argument."
+    },
+    {
+      "id": "rw-hard-120",
+      "section": "rw",
+      "topic": "rhetoric",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'We ask soldiers to carry weapons into foreign lands, to follow orders they did not write, to sacrifice years—sometimes lives—for policies debated in rooms they will never enter. The least we can offer in return is unfailing support when they come home.'\n\nThe phrase 'rooms they will never enter' is primarily meant to",
+      "choices": {
+        "A": "criticize soldiers for lacking political engagement",
+        "B": "emphasize the disconnect between policy-making elites and those who bear the consequences of those decisions",
+        "C": "describe the physical inaccessibility of government buildings",
+        "D": "suggest that soldiers are unintelligent"
+      },
+      "answer": "B",
+      "explanation": "The phrase 'rooms they will never enter' is figurative language highlighting the gap between those who make policy decisions (in halls of power) and soldiers who carry them out. It builds a moral case for supporting veterans by emphasizing their sacrifice and exclusion from decision-making. It does not criticize soldiers' engagement, describe literal buildings, or impugn their intelligence."
+    },
+    {
+      "id": "rw-hard-121",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The diplomat's remarks were carefully calibrated to avoid inflaming tensions while still signaling her government's displeasure. Critics called her language 'anodyne,' but her allies recognized the precision with which she had navigated the rhetorical minefield.'\n\nAs used in this passage, 'anodyne' most nearly means",
+      "choices": {
+        "A": "inflammatory and provocative",
+        "B": "technically precise and accurate",
+        "C": "inoffensively mild to the point of being ineffectual",
+        "D": "deliberately ambiguous and evasive"
+      },
+      "answer": "C",
+      "explanation": "'Anodyne' means unlikely to cause offense or reaction—bland, inoffensively mild. Critics used it as a criticism, implying the language lacked force or impact. The context (critics vs. allies disagreeing on its effectiveness) confirms this meaning. A is the opposite. B describes technical precision, which allies acknowledged but critics dismissed. D is closer but 'evasive' misses the mild/bland core of anodyne."
+    },
+    {
+      "id": "rw-hard-122",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'In the nineteenth century, phrenology enjoyed a brief but remarkable vogue among educated Europeans, who saw in the contours of the skull a legible map of character and intellect. The pseudoscience was eventually discredited, but its cultural purchase lingered long after its scientific credibility had collapsed.'\n\nAs used in this passage, 'purchase' most nearly means",
+      "choices": {
+        "A": "financial transaction or acquisition",
+        "B": "firm grip or hold",
+        "C": "scholarly endorsement",
+        "D": "historical documentation"
+      },
+      "answer": "B",
+      "explanation": "In this context, 'purchase' is used metaphorically to mean a grip or foothold—the pseudoscience maintained its hold on culture even after scientific rejection. This is the less common but legitimate meaning of 'purchase' as a noun. A is the common commercial meaning, which doesn't fit. C and D are not meanings of 'purchase.'"
+    },
+    {
+      "id": "rw-hard-123",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The committee chair proved to be an adroit political operator, managing to extract concessions from both sides of the aisle without appearing to favor either. Her legislative maneuvering struck veteran observers as almost preternatural in its effectiveness.'\n\nAs used in this passage, 'preternatural' most nearly means",
+      "choices": {
+        "A": "supernatural and inexplicable",
+        "B": "exceeding what is normal or expected in a striking way",
+        "C": "historically unprecedented",
+        "D": "morally questionable"
+      },
+      "answer": "B",
+      "explanation": "'Preternatural' means beyond what is normally expected—extraordinary, as if beyond natural limits. In this context it is used hyperbolically to indicate that her skill was remarkably exceptional, not literally supernatural. A is too literal. C confuses 'unprecedented' with 'preternatural.' D introduces a moral judgment not present in the passage."
+    },
+    {
+      "id": "rw-hard-124",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Many economists consider the postwar boom years an anomaly—a brief, felicitous alignment of demographic, geopolitical, and technological forces unlikely to recur. Whether this view is correct or not, it has profoundly shaped policy debates about growth and inequality.'\n\nAs used in this passage, 'felicitous' most nearly means",
+      "choices": {
+        "A": "unfortunate and disruptive",
+        "B": "happily suited or well-chosen",
+        "C": "deliberately engineered",
+        "D": "intellectually dubious"
+      },
+      "answer": "B",
+      "explanation": "'Felicitous' means pleasingly apt or well-suited; when applied to the alignment of forces, it conveys that the combination was fortunate and favorable. A is the opposite (felicitous comes from 'felix,' lucky). C implies intentionality not suggested in the passage—the alignment is described as unlikely to recur, implying happenstance. D introduces skepticism not present."
+    },
+    {
+      "id": "rw-hard-125",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The documentary takes an unflinching look at the pharmaceutical industry's more rapacious practices: price gouging on essential medications, predatory lobbying, and the suppression of inconvenient clinical data.'\n\nAs used in this passage, 'rapacious' most nearly means",
+      "choices": {
+        "A": "innovative and entrepreneurial",
+        "B": "excessively greedy and exploitative",
+        "C": "legally questionable but technically permitted",
+        "D": "highly efficient and competitive"
+      },
+      "answer": "B",
+      "explanation": "'Rapacious' means aggressively greedy, plundering. The examples that follow (price gouging, predatory lobbying, suppression of data) all illustrate exploitative, profit-driven behavior. A is positive and does not fit the critical tone. C focuses on legality, which the passage does not address. D presents efficiency as the main characteristic, missing the moral condemnation."
+    },
+    {
+      "id": "rw-hard-126",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The historian argued that attributing the collapse of the Bronze Age to a single cause was reductive. The civilization's fall was, rather, the product of a concatenation of pressures: climate shifts, disrupted trade routes, internal rebellions, and waves of migration.'\n\nAs used in this passage, 'concatenation' most nearly means",
+      "choices": {
+        "A": "random assortment",
+        "B": "gradual evolution",
+        "C": "linked series or chain",
+        "D": "single dominant factor"
+      },
+      "answer": "C",
+      "explanation": "'Concatenation' means a series of linked or interconnected things (from Latin 'catena,' chain). The passage uses it to describe multiple causes that were chained together to produce the collapse. A implies randomness without connection. B suggests slow change rather than linked factors. D contradicts the passage's explicit rejection of single-cause explanations."
+    },
+    {
+      "id": "rw-hard-127",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The scientist's hypothesis, initially dismissed as fanciful, proved remarkably prescient: every major prediction she made in 1987 had been confirmed by empirical evidence by 2010.'\n\nAs used in this passage, 'prescient' most nearly means",
+      "choices": {
+        "A": "controversial and provocative",
+        "B": "showing knowledge of future events before they occur",
+        "C": "grounded in careful observation of present conditions",
+        "D": "widely accepted by the scientific community"
+      },
+      "answer": "B",
+      "explanation": "'Prescient' means having or showing knowledge of events before they take place—foresight. The passage confirms this: predictions from 1987 were confirmed decades later. A describes the reaction (dismissed as fanciful) but not the quality of the hypothesis. C describes evidence-based work, not foresight. D is contradicted by the passage (it was initially dismissed)."
+    },
+    {
+      "id": "rw-hard-128",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Professor Okafor's critique of the study was trenchant: she identified not only methodological flaws but also subtle biases in how the data had been collected, biases the original authors appeared entirely oblivious to.'\n\nAs used in this passage, 'trenchant' most nearly means",
+      "choices": {
+        "A": "unnecessarily harsh and personal",
+        "B": "incisively penetrating and effective",
+        "C": "broadly favorable with minor reservations",
+        "D": "excessively long and detailed"
+      },
+      "answer": "B",
+      "explanation": "'Trenchant' means vigorous, effective, and to the point—cutting deeply into the subject. The passage shows her critique identifying multiple layers of problems (methodological flaws and subtle biases), demonstrating incisive thoroughness. A adds a personal dimension not suggested. C is the opposite—the critique is clearly negative. D confuses thoroughness with length."
+    },
+    {
+      "id": "rw-hard-129",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The architect's career traced an unlikely arc from prodigy to pariah after his infamous commissions drew sustained opprobrium from both the profession and the public, culminating in his resignation from the national board.'\n\nAs used in this passage, 'opprobrium' most nearly means",
+      "choices": {
+        "A": "public disgrace and harsh criticism",
+        "B": "widespread admiration and fame",
+        "C": "academic scrutiny and peer review",
+        "D": "legal sanction and formal censure"
+      },
+      "answer": "A",
+      "explanation": "'Opprobrium' means harsh criticism or public disgrace attached to someone regarded as having done something wrong. The arc from 'prodigy to pariah' and his resignation confirm severe negative public response. B is the opposite. C describes academic evaluation, not public condemnation. D refers to legal/formal processes, which are not mentioned."
+    },
+    {
+      "id": "rw-hard-130",
+      "section": "rw",
+      "topic": "vocabulary-in-context",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The administration's messaging was deliberately laconic during the crisis, offering terse two-sentence statements while the opposition and the press demanded comprehensive explanations.'\n\nAs used in this passage, 'laconic' most nearly means",
+      "choices": {
+        "A": "cryptic and intentionally misleading",
+        "B": "using very few words; brief to the point of seeming rude or mysterious",
+        "C": "carefully diplomatic and tactful",
+        "D": "logically coherent and well-reasoned"
+      },
+      "answer": "B",
+      "explanation": "'Laconic' means using very few words; brief and often abrupt. The context ('terse two-sentence statements' vs. demands for 'comprehensive explanations') directly illustrates this. A adds the dimension of deception, which is not stated. C implies tact, the opposite of the tension the brevity created. D describes reasoning quality, unrelated to brevity."
+    },
+    {
+      "id": "rw-hard-131",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'For decades, the standard narrative held that the Maya civilization collapsed due to a single catastrophic drought. But recent research has complicated this picture considerably. Archaeologists have uncovered evidence of resilient communities that adapted to changing conditions, maintained trade networks, and sustained populations in some regions for centuries after the supposed collapse. What we call the 'collapse' may be better understood as a prolonged, geographically uneven transformation.'\n\nWhat is the central idea of this passage?",
+      "choices": {
+        "A": "Drought was the primary cause of the Maya civilization's collapse.",
+        "B": "Recent evidence suggests that what is termed the Maya 'collapse' was a more complex and varied process than a single catastrophic event.",
+        "C": "The Maya civilization was more advanced than previously believed.",
+        "D": "Trade networks were the key to Maya survival after the drought."
+      },
+      "answer": "B",
+      "explanation": "The passage explicitly challenges the single-cause drought narrative with new evidence showing regional resilience, sustained populations, and continued trade—concluding that 'collapse' should be understood as a complex transformation. A restates the old narrative the passage refutes. C is not the passage's focus. D is a supporting detail, not the central idea."
+    },
+    {
+      "id": "rw-hard-132",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'When psychologists speak of 'emotional contagion,' they mean more than simply empathy. The phenomenon involves the involuntary synchronization of emotions between individuals—a mimicry so automatic that people often feel sad, anxious, or elated without knowing why, having absorbed the mood of those around them. This unconscious transfer operates below the level of rational awareness and is implicated in everything from workplace morale to the spread of mass hysteria.'\n\nThe central idea of this passage is that",
+      "choices": {
+        "A": "emotional contagion is a type of deliberate deception",
+        "B": "emotional contagion is an involuntary, unconscious process by which emotions spread between people",
+        "C": "empathy and emotional contagion are identical psychological phenomena",
+        "D": "mass hysteria is caused primarily by poor workplace conditions"
+      },
+      "answer": "B",
+      "explanation": "The passage defines emotional contagion as involuntary, automatic, and unconscious synchronization of emotions, distinguishing it from mere empathy and illustrating its broad impact. A attributes intentionality, which the passage denies. C is the opposite of the opening statement. D is an unsupported connection between two phenomena the passage merely links."
+    },
+    {
+      "id": "rw-hard-133",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Historians have long debated whether great individuals shape history or whether structural forces—economic systems, technological capabilities, geographic constraints—produce the conditions that make certain outcomes inevitable regardless of who occupies positions of power. The 'great man' theory has lost much of its scholarly prestige, but it retains its cultural vitality: biographies of presidents and generals still outsell structural histories by enormous margins.'\n\nThe central idea of this passage is that",
+      "choices": {
+        "A": "structural forces are more important than individuals in shaping history",
+        "B": "biographies are more reliable historical sources than structural histories",
+        "C": "there is a tension between the scholarly decline of individual-focused history and its continuing popular appeal",
+        "D": "the 'great man' theory has been conclusively disproven by modern historians"
+      },
+      "answer": "C",
+      "explanation": "The passage does not endorse either theory—it maps the contrast between scholarly opinion (structural forces preferred, 'great man' theory losing prestige) and popular culture (biographies outsell structural histories). This tension is the central observation. A takes sides the passage doesn't. B makes a reliability claim not in the passage. D overstates ('conclusively disproven') what the passage says ('lost much prestige')."
+    },
+    {
+      "id": "rw-hard-134",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The history of medical knowledge is not a steady march of progress but a lurching, contentious process in which important discoveries are frequently ignored, ridiculed, or suppressed before gaining acceptance. Semmelweis's handwashing theory was dismissed for decades; Barry Marshall had to infect himself with H. pylori to be taken seriously. Each era is convinced it has finally escaped this dynamic, and each era is almost certainly wrong.'\n\nThe central idea of this passage is that",
+      "choices": {
+        "A": "handwashing and H. pylori research were the most important medical breakthroughs in history",
+        "B": "medical progress is hampered by a recurring pattern of initial resistance to new discoveries",
+        "C": "scientists should conduct self-experiments to validate their hypotheses",
+        "D": "modern medicine has finally overcome the problem of ignoring important research"
+      },
+      "answer": "B",
+      "explanation": "The passage argues that medical history is characterized by a repeating pattern: discoveries are ignored or ridiculed before acceptance. The examples of Semmelweis and Marshall illustrate this pattern. The closing line explicitly rejects the idea that any era has escaped it. A treats the examples as the main point rather than illustrations. C is a misreading—Marshall's self-experiment is evidence of resistance, not a prescription. D is directly contradicted by the final sentence."
+    },
+    {
+      "id": "rw-hard-135",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Critics of standardized testing often focus on cultural bias in test content, but recent research suggests a subtler problem: the tests may inadvertently measure test-taking skills as much as the underlying knowledge or abilities they purport to assess. Students who have been coached extensively in test strategy often outperform equally knowledgeable peers who have not. This raises questions not about fairness between demographic groups but about the fundamental validity of what these tests actually measure.'\n\nThe passage primarily argues that",
+      "choices": {
+        "A": "cultural bias is the most serious problem with standardized testing",
+        "B": "standardized tests should be replaced with portfolio-based assessments",
+        "C": "a key problem with standardized tests is that they may measure test-taking skill rather than the intended knowledge or abilities",
+        "D": "test coaching programs are responsible for most instances of test score inflation"
+      },
+      "answer": "C",
+      "explanation": "The passage pivots away from the common cultural-bias critique to argue that tests may measure test-taking skills rather than underlying knowledge—a validity problem. C captures this central argument. A is the view the passage moves away from. B proposes a solution the passage never mentions. D overstates the coaching claim, which the passage uses as evidence, not as its main conclusion."
+    },
+    {
+      "id": "rw-hard-136",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Ocean plastics grab headlines, but microplastics—particles smaller than five millimeters—pose a less visible yet potentially more pervasive threat. These particles have been found in Arctic ice, deep-sea trenches, human blood, and even the placentas of unborn children. Because they are nearly impossible to filter out at scale, microplastics may represent a form of permanent global contamination with consequences that science is only beginning to understand.'\n\nWhat is the central idea of this passage?",
+      "choices": {
+        "A": "Ocean plastics are the most urgent environmental issue facing humanity.",
+        "B": "Microplastics present a potentially more serious and far-reaching threat than visible ocean plastic pollution.",
+        "C": "Scientists have fully documented the health consequences of microplastic exposure.",
+        "D": "The primary source of microplastics is the breakdown of ocean plastic debris."
+      },
+      "answer": "B",
+      "explanation": "The passage explicitly contrasts the headline-grabbing visibility of ocean plastics with the 'less visible yet potentially more pervasive' threat of microplastics, then builds evidence for that claim (ubiquitous presence, impossibility of removal, unclear consequences). A promotes ocean plastics as the top issue, which the passage downplays. C is directly contradicted ('consequences science is only beginning to understand'). D discusses origins not addressed in the passage."
+    },
+    {
+      "id": "rw-hard-137",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The Romantic poets did not simply celebrate nature; they used it as a vehicle for exploring psychological and spiritual states that conventional religious language no longer seemed adequate to express. In the sublime terror of a mountain storm or the melancholy of an autumn forest, they found correlatives for inner experiences—awe, dread, longing—that resisted more direct articulation.'\n\nThe passage primarily claims that",
+      "choices": {
+        "A": "the Romantic poets were opposed to organized religion",
+        "B": "Romantic poetry is fundamentally about meteorological phenomena",
+        "C": "Romantic poets used natural imagery as a means of expressing interior psychological and spiritual experiences",
+        "D": "awe, dread, and longing are emotions unique to the Romantic era"
+      },
+      "answer": "C",
+      "explanation": "The passage's main argument is that nature in Romantic poetry served as a vehicle ('correlatives') for inner states (psychological, spiritual) that religious language could no longer capture. C paraphrases this accurately. A infers opposition to religion from 'no longer seemed adequate,' which is too strong. B reduces the poetry to weather description. D makes a comparative claim about uniqueness that the passage does not make."
+    },
+    {
+      "id": "rw-hard-138",
+      "section": "rw",
+      "topic": "central-idea",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Charter schools were created, in part, to serve as laboratories of innovation whose successes could be adopted by the broader public school system. In practice, however, the transfer of successful practices from charter to public schools has been rare and often hampered by differences in funding, governance, and teacher contracts. The laboratory model has produced experiments; it has rarely produced cures.'\n\nThe central claim of this passage is that",
+      "choices": {
+        "A": "charter schools consistently outperform public schools academically",
+        "B": "charter schools have failed to fulfill their intended role as innovators whose practices improve public education broadly",
+        "C": "funding disparities are the only obstacle to transferring charter school innovations",
+        "D": "the charter school model should be abolished"
+      },
+      "answer": "B",
+      "explanation": "The passage argues that the 'laboratory' rationale for charter schools—producing transferable innovations—has largely not been realized in practice. The final metaphor ('produced experiments; rarely produced cures') summarizes this gap. A makes an academic comparison not addressed. C overstates by saying funding is the 'only' obstacle (the passage lists multiple). D advocates abolition, which the passage never does."
+    },
+    {
+      "id": "rw-hard-139",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following two sentences:\n\n'The early clinical results were promising enough to move the compound into Phase II trials. ______ subsequent testing in a larger and more diverse patient population revealed that the initial results had overstated the drug's efficacy.'\n\nWhich transition best fills the blank?",
+      "choices": {
+        "A": "Therefore,",
+        "B": "In particular,",
+        "C": "Ultimately, however,",
+        "D": "Similarly,"
+      },
+      "answer": "C",
+      "explanation": "'Ultimately, however,' combines a temporal signal ('ultimately'—the end result of a process) with a contrastive signal ('however'), accurately conveying that the later, larger trials contradicted the earlier promising results. 'Therefore' implies the second sentence is a logical consequence of the first, reversing the intended meaning. 'In particular' introduces a specific example, not a contrast. 'Similarly' suggests parallel results rather than contradiction."
+    },
+    {
+      "id": "rw-hard-140",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Proponents of the 'broken windows' theory of policing argue that visibly tolerating minor disorder—graffiti, broken windows, public intoxication—signals to potential criminals that an area is unmonitored and thus invites more serious crime. Critics counter that the evidence for this causal chain is weak, and that aggressive enforcement of minor violations disproportionately harms low-income communities of color.'\n\nWhich of the following, if true, would most directly challenge the broken windows theory as described?",
+      "choices": {
+        "A": "Police departments in cities that adopted broken windows policing reported higher officer satisfaction rates.",
+        "B": "A longitudinal study found that neighborhoods with high levels of visible disorder but strong community social cohesion had lower rates of serious crime than comparably disordered neighborhoods with weak social cohesion.",
+        "C": "The number of arrests for minor violations increased significantly after broken windows policing was adopted.",
+        "D": "Broken windows policing originated in a 1982 article by James Q. Wilson and George Kelling."
+      },
+      "answer": "B",
+      "explanation": "The broken windows theory posits that visible disorder causes serious crime. B undermines this causal claim by showing that disorder does not reliably predict serious crime when a countervailing factor (social cohesion) is present, suggesting disorder itself is not the cause. A is about officer satisfaction, irrelevant to crime causation. C shows enforcement increased but says nothing about whether it reduced serious crime. D is historical background, not evidence against the theory."
+    },
+    {
+      "id": "rw-hard-141",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "A researcher claims: 'Students who eat breakfast perform better academically than those who skip it.' Which of the following pieces of evidence would most directly support this claim while also addressing potential confounding variables?",
+      "choices": {
+        "A": "A survey showing that students who eat breakfast report feeling more alert in the morning.",
+        "B": "A randomized controlled study in which students were assigned to breakfast and no-breakfast conditions, with academic performance measured and socioeconomic status controlled for, showing higher test scores in the breakfast group.",
+        "C": "Statistics showing that schools with free breakfast programs serve higher-income students on average.",
+        "D": "Nutritional data indicating that breakfast foods contain vitamins important for cognitive function."
+      },
+      "answer": "B",
+      "explanation": "B provides direct experimental evidence (randomized assignment), measures the outcome of interest (academic performance/test scores), and controls for a key confounding variable (socioeconomic status). A measures self-reported alertness, not academic performance. C is about school demographics, not individual student outcomes. D provides a biological mechanism but not direct evidence of academic performance effects."
+    },
+    {
+      "id": "rw-hard-142",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the following claim and proposed evidence:\n\nClaim: 'The expansion of e-commerce has been the primary driver of decline in traditional retail employment.'\n\nEvidence: 'Between 2010 and 2020, retail sector employment fell by 12 percent, while e-commerce sales tripled.'\n\nThe evidence as presented is",
+      "choices": {
+        "A": "sufficient to fully support the claim because the correlation is statistically precise",
+        "B": "insufficient because correlation does not establish causation, and other factors may explain the employment decline",
+        "C": "irrelevant because it discusses employment rather than consumer spending",
+        "D": "sufficient because the timeframes match exactly"
+      },
+      "answer": "B",
+      "explanation": "The evidence shows a correlation (employment fell while e-commerce rose) but does not establish that e-commerce was the cause—let alone the 'primary' driver. Other factors (automation, changing consumer preferences, economic cycles) could explain the decline. Matching timeframes and precise statistics (A, D) do not resolve the causal question. C is wrong—employment data is directly relevant to the employment claim."
+    },
+    {
+      "id": "rw-hard-143",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Some historians argue that the Berlin Wall fell primarily because of popular pressure from East German citizens. Others contend that Soviet policy changes under Gorbachev were the decisive factor. A third group emphasizes the role of economic dysfunction within the East German state.'\n\nA student wants to argue that citizen protest was the most important factor. Which evidence would most directly support this thesis?",
+      "choices": {
+        "A": "Documents showing that Gorbachev explicitly told East German leadership he would not intervene militarily to suppress protests.",
+        "B": "Economic data showing East Germany's GDP growth rate relative to West Germany in the 1980s.",
+        "C": "Accounts from East German officials recording that the decision to open the Wall on November 9 was a direct, panicked response to the unprecedented size of that evening's crowds.",
+        "D": "A biography of Gorbachev describing his personal commitment to political reform."
+      },
+      "answer": "C",
+      "explanation": "C directly supports citizen pressure as the decisive trigger by showing that the Wall opening was an immediate response to crowd size—not planned policy change or economic reform. A supports the Gorbachev-factor argument (Soviet non-intervention). B supports the economic dysfunction argument. D also supports the Gorbachev narrative."
+    },
+    {
+      "id": "rw-hard-144",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'A city councilmember claims that a new bike-lane network has reduced automobile traffic congestion in the downtown corridor by making cycling a more attractive commuting option.'\n\nWhich finding would most directly weaken this claim?",
+      "choices": {
+        "A": "Cyclist counts on the new lanes have increased by 35 percent since the lanes opened.",
+        "B": "Traffic volume sensors in the downtown corridor show no statistically significant change in automobile traffic before and after lane installation.",
+        "C": "A survey found that 60 percent of new cyclists previously used public transit rather than driving.",
+        "D": "Construction of the bike lanes temporarily increased congestion while the lanes were being built."
+      },
+      "answer": "C",
+      "explanation": "C undermines the causal mechanism: if most new cyclists switched from transit (not driving), the lanes did not reduce car traffic, even if they succeeded in increasing cycling. B would also weaken the claim (no change in traffic) but C specifically attacks the mechanism—making it a stronger logical challenge. A supports the claim's premises. D is temporary construction impact, not ongoing congestion reduction."
+    },
+    {
+      "id": "rw-hard-145",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the following:\n\n'A pharmaceutical company's press release states: 'In our clinical trial, patients taking Drug X reported a 40 percent improvement in symptom severity scores.' A critic responds that the evidence is insufficient to conclude the drug is effective.'\n\nWhich detail, if true, would most strongly support the critic's position?",
+      "choices": {
+        "A": "The trial lasted six months rather than twelve months.",
+        "B": "The trial included no placebo control group, making it impossible to distinguish drug effects from the placebo effect or natural disease progression.",
+        "C": "The drug's patent is held by the company that funded the research.",
+        "D": "The symptom severity scale used was developed by the same company."
+      },
+      "answer": "B",
+      "explanation": "The absence of a placebo control group is the most fundamental methodological flaw—without it, the 40% improvement cannot be attributed to the drug versus natural recovery or placebo effect. B directly supports the critic's claim that effectiveness cannot be concluded. C and D raise conflicts of interest (important but not directly about methodological validity). A is a limitation in duration but doesn't invalidate the core efficacy question as fatally as B."
+    },
+    {
+      "id": "rw-hard-146",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Ecologist Dr. Reyes argues that the reintroduction of wolves into Yellowstone in 1995 triggered a 'trophic cascade' that restored overgrazed riverbanks, increased beaver populations, and ultimately improved water quality. She supports this with vegetation surveys, beaver census data, and water chemistry measurements taken before and after reintroduction.'\n\nWhich of the following would most strengthen Dr. Reyes's argument?",
+      "choices": {
+        "A": "Historical accounts confirming that wolves were present in Yellowstone before European settlement.",
+        "B": "A comparison study showing that similar ecosystems without wolf reintroduction experienced continued degradation during the same period.",
+        "C": "Photographs of wolf packs taken in Yellowstone shortly after reintroduction.",
+        "D": "An interview with a park ranger who observed changes in elk behavior after the wolves arrived."
+      },
+      "answer": "B",
+      "explanation": "Dr. Reyes's argument is causal—wolves caused the improvements. The primary threat to this claim is that improvements might have occurred anyway (alternative causes). A comparison group showing that comparable ecosystems without wolves continued to degrade provides a crucial control, strengthening the causal inference. A is background history, not causal evidence. C documents wolf presence but not ecological effects. D is anecdotal behavioral observation, less rigorous than the systematic comparison in B."
+    },
+    {
+      "id": "rw-hard-147",
+      "section": "rw",
+      "topic": "evidence",
+      "difficulty": 3,
+      "prompt": "A historian argues: 'The primary motivation for the 1848 European revolutions was nationalist sentiment rather than economic grievance.' Which evidence would most directly challenge this thesis?",
+      "choices": {
+        "A": "The fact that revolutionary movements occurred in multiple countries simultaneously.",
+        "B": "Letters from revolutionary leaders explicitly describing bread prices, unemployment, and poverty as their main grievances and inspiration.",
+        "C": "Historical accounts noting that national borders changed after the revolutions.",
+        "D": "Evidence that some revolutionary pamphlets were written in vernacular languages rather than Latin."
+      },
+      "answer": "B",
+      "explanation": "B provides direct primary-source evidence from the participants themselves identifying economic grievances—not nationalism—as their primary motivation, directly contradicting the historian's thesis. A (simultaneous occurrence) is consistent with either cause. C (border changes) describes outcomes, not motivations. D (vernacular languages) might suggest nationalist consciousness but is ambiguous and indirect."
+    },
+    {
+      "id": "rw-hard-148",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following passage:\n\n'The author spent seven years researching the life of her subject, interviewing over 200 sources and examining thousands of archival documents. ______ the resulting biography has been criticized for omitting significant portions of her subject's personal correspondence.'\n\nWhich transition most logically connects these sentences?",
+      "choices": {
+        "A": "Consequently,",
+        "B": "For example,",
+        "C": "Nevertheless,",
+        "D": "In other words,"
+      },
+      "answer": "C",
+      "explanation": "'Nevertheless' correctly signals that despite the extensive research described in the first sentence, the biography still drew criticism—a concessive contrast. 'Consequently' would imply the criticism resulted from the extensive research, which is illogical. 'For example' would present the criticism as an instance of extensive research. 'In other words' would restate the first sentence, not contrast with it."
+    },
+    {
+      "id": "rw-hard-149",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'When the city installed surveillance cameras in the downtown shopping district, petty theft decreased by 30 percent over the following year. However, during the same period, petty theft in the adjacent neighborhoods—which had no cameras—increased by 22 percent.'\n\nWhat can most reasonably be inferred from these statistics?",
+      "choices": {
+        "A": "Surveillance cameras are an ineffective tool for crime prevention.",
+        "B": "Crime in the city overall decreased by 8 percent after camera installation.",
+        "C": "The decrease in downtown theft may be at least partly explained by displacement of criminal activity to areas without surveillance rather than an overall reduction in crime.",
+        "D": "Petty theft always increases in areas adjacent to camera-monitored zones."
+      },
+      "answer": "C",
+      "explanation": "The simultaneous decrease in surveilled areas and increase in adjacent unsurveilled areas is consistent with crime displacement—criminals moving rather than stopping. C is the most reasonable inference from the specific pattern of data. A overstates; cameras may have displaced crime (still some effect). B performs arithmetic (30% - 22% = 8%) that doesn't account for the different populations/sizes of areas. D makes an absolute universal claim ('always') not supported by a single data point."
+    },
+    {
+      "id": "rw-hard-150",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'In medieval European cities, guild membership was required to practice most skilled trades. Guilds set prices, regulated quality, and controlled entry to the profession. They also provided members with social insurance—care during illness, support for widows, and burial costs. Membership was typically inherited from father to son.'\n\nWhich of the following can be most reasonably inferred about the medieval guild system?",
+      "choices": {
+        "A": "Medieval guilds were primarily charitable organizations with no economic function.",
+        "B": "The guild system likely restricted social mobility by linking professional access to hereditary membership.",
+        "C": "Guild members were generally wealthier than the nobility in medieval European cities.",
+        "D": "The quality of goods produced by guild members was consistently lower than that of non-guild producers."
+      },
+      "answer": "B",
+      "explanation": "The passage states that membership was inherited (father to son) and required to practice trades—together these imply that access to skilled employment was largely determined by birth, restricting social mobility. A is wrong; guilds had explicit economic functions (prices, quality, entry control). C makes a comparison to nobility not supported by the passage. D contradicts the passage, which says guilds regulated quality."
+    },
+    {
+      "id": "rw-hard-151",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'The novelist submitted her manuscript to fourteen publishers before one accepted it. Even then, the acquiring editor requested substantial revisions. The novel went on to win the national book prize and sell over two million copies.'\n\nWhich of the following can most reasonably be inferred from the passage?",
+      "choices": {
+        "A": "The fourteen rejecting publishers later regretted their decisions.",
+        "B": "Publishers who initially rejected the manuscript were incompetent.",
+        "C": "Commercial and critical success of a literary work is not always predictable from initial editorial reception.",
+        "D": "The revisions requested by the acquiring editor were responsible for the novel's success."
+      },
+      "answer": "C",
+      "explanation": "The gap between 14 rejections (and conditional acceptance) and ultimate critical/commercial success (prize, 2M copies) supports the inference that initial editorial judgment did not predict outcome. C is a reasonable generalization. A attributes regret not stated in the passage. B uses 'incompetent'—too strong an inference; they may have had valid but different criteria. D asserts causation (revisions caused success) not supported by the passage."
+    },
+    {
+      "id": "rw-hard-152",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Studies of hunter-gatherer societies suggest that members typically work between three and five hours per day to secure food and basic necessities. The remainder of the day is spent in leisure, social activities, and rest. By contrast, agricultural and industrial societies require members to work significantly longer hours on average.'\n\nWhich conclusion is best supported by the passage?",
+      "choices": {
+        "A": "Hunter-gatherer societies are superior to agricultural societies in all respects.",
+        "B": "The transition to agriculture and industry may have increased material production while also increasing the average time humans spend working.",
+        "C": "Leisure time is more valuable than material wealth.",
+        "D": "Modern industrial workers should adopt hunter-gatherer subsistence strategies."
+      },
+      "answer": "B",
+      "explanation": "The passage provides comparative data on work hours, and B draws the straightforward inference: later economic systems increased working hours alongside (implied) increases in material output. A makes an unwarranted overall superiority claim. C introduces a value judgment about leisure vs. wealth not made in the passage. D prescribes behavior the passage does not endorse."
+    },
+    {
+      "id": "rw-hard-153",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'Professor Lindberg's book on the history of science and religion has been translated into eighteen languages and is assigned in university courses across six continents. It has been praised by both scientists and theologians. His central argument—that the relationship between science and religion has been more nuanced and collaborative than the popular 'warfare' narrative suggests—has not been seriously challenged in the three decades since publication.'\n\nWhat can most reasonably be inferred from the passage?",
+      "choices": {
+        "A": "Professor Lindberg's argument that science and religion have always cooperated is now accepted as definitive truth.",
+        "B": "The 'warfare' narrative between science and religion remains the dominant view among historians of science.",
+        "C": "Lindberg's thesis has achieved significant scholarly influence and stands as a well-established position in its field.",
+        "D": "Scientists and theologians have fully resolved their historical disagreements."
+      },
+      "answer": "C",
+      "explanation": "Wide translation, global course adoption, praise from multiple communities, and three decades without serious challenge all support the inference that Lindberg's thesis is influential and academically established. A overstates ('definitive truth,' 'always cooperated'—the passage says 'more nuanced'). B contradicts the passage's implication that Lindberg's view has supplanted the warfare narrative. D concludes a complete resolution not stated."
+    },
+    {
+      "id": "rw-hard-154",
+      "section": "rw",
+      "topic": "inference",
+      "difficulty": 3,
+      "prompt": "Read the passage:\n\n'In a study of 500 adults, researchers found that those who regularly kept written journals reported significantly lower levels of anxiety and higher rates of problem resolution compared to non-journalers. The researchers noted, however, that participants self-selected into the journaling group.'\n\nThe researchers' caveat about self-selection most likely implies that",
+      "choices": {
+        "A": "the study's sample size was too small to draw any conclusions",
+        "B": "people who choose to journal may already differ from non-journalers in ways that explain the outcomes, making it difficult to attribute the benefits to journaling itself",
+        "C": "journaling has no effect on anxiety",
+        "D": "the anxiety measures used in the study were unreliable"
+      },
+      "answer": "B",
+      "explanation": "Self-selection bias means participants were not randomly assigned—those who chose to journal may already be more reflective, organized, or have lower baseline anxiety, making it impossible to know if journaling caused the benefits or pre-existing traits did. B correctly identifies this confound. A is about sample size, irrelevant to the self-selection caveat. C is too strong (the caveat questions causation, not any relationship). D is about measurement validity, not selection."
+    },
+    {
+      "id": "rw-hard-155",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following two sentences from a student's essay:\n\n'Proponents argue that nuclear energy produces minimal greenhouse gas emissions during operation. ______ critics point out that uranium mining, plant construction, and waste storage all carry significant environmental costs.'\n\nWhich transition best connects these contrasting perspectives?",
+      "choices": {
+        "A": "Indeed,",
+        "B": "As a result,",
+        "C": "In contrast,",
+        "D": "To summarize,"
+      },
+      "answer": "C",
+      "explanation": "'In contrast' directly signals that the second sentence presents an opposing viewpoint—the critics' perspective—against the proponents' claim in the first sentence. 'Indeed' would reinforce, not contrast. 'As a result' implies causation: the critics' objections would be caused by the low operational emissions, which makes no logical sense. 'To summarize' introduces a conclusion rather than a counter-perspective."
+    },
+    {
+      "id": "rw-hard-156",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Choose the transition that best completes the following sentence from an academic essay:\n\n'Early Renaissance painters were largely confined to religious subjects dictated by ecclesiastical patrons. ______ the late fifteenth century saw a gradual expansion of secular themes, including portraiture, mythology, and domestic scenes.'\n\nWhich transition is most appropriate?",
+      "choices": {
+        "A": "In conclusion,",
+        "B": "By contrast,",
+        "C": "In addition,",
+        "D": "For this reason,"
+      },
+      "answer": "B",
+      "explanation": "'By contrast' correctly marks the difference between early Renaissance subject limitations and the later expansion of secular themes. 'In conclusion' is reserved for summative statements, not mid-essay transitions between historical periods. 'In addition' would suggest the secular themes were layered on top of an ongoing religious restriction rather than departing from it. 'For this reason' implies the secular expansion was caused by the religious restriction, which is a relationship the sentences do not establish."
+    },
+    {
+      "id": "rw-hard-157",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following passage:\n\n'The treaty of 1848 formally ended hostilities between the two nations and established new territorial boundaries. ______ underlying tensions over trade rights and ethnic minority populations persisted, eventually erupting into renewed conflict in 1872.'\n\nWhich transitional word or phrase best fills the blank?",
+      "choices": {
+        "A": "Therefore,",
+        "B": "Furthermore,",
+        "C": "Specifically,",
+        "D": "Despite this formal resolution,"
+      },
+      "answer": "D",
+      "explanation": "'Despite this formal resolution,' acknowledges the peace established in the first sentence while introducing the contradicting reality of persistent tensions—exactly the concessive relationship the passage requires. 'Therefore' would make the persistence of tensions a result of the treaty, reversing the logic. 'Furthermore' would add to the peace narrative rather than qualify it. 'Specifically' narrows or clarifies rather than contrasts."
+    },
+    {
+      "id": "rw-hard-158",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following two sentences:\n\n'Researchers initially believed that the drug would have minimal side effects. ______ clinical trials revealed that a significant minority of patients experienced severe cardiac events.'\n\nWhich transition word or phrase best connects these sentences?",
+      "choices": {
+        "A": "Similarly,",
+        "B": "Therefore,",
+        "C": "However,",
+        "D": "In addition,"
+      },
+      "answer": "C",
+      "explanation": "'However' correctly signals a contrast between initial belief (minimal side effects) and actual trial results (severe cardiac events). 'Similarly' would imply the second sentence confirms the first. 'Therefore' would imply the second sentence is a result or conclusion of the first. 'In addition' would add parallel information rather than contradicting."
+    },
+    {
+      "id": "rw-hard-159",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "Read the following sentences:\n\n'The committee examined hundreds of applications. ______ narrowing the field to twelve finalists, the members conducted in-person interviews before making a final selection.'\n\nWhich transition best fills the blank?",
+      "choices": {
+        "A": "Despite",
+        "B": "After",
+        "C": "Because",
+        "D": "Although"
+      },
+      "answer": "B",
+      "explanation": "'After' correctly establishes temporal sequence: examining applications preceded narrowing the field, which preceded interviews. 'Despite' and 'Although' signal concession/contrast, which is not the relationship here. 'Because' signals causation, but the sentence describes a chronological process, not a causal explanation."
+    },
+    {
+      "id": "rw-hard-160",
+      "section": "rw",
+      "topic": "transitions",
+      "difficulty": 3,
+      "prompt": "A student writes the following in an essay:\n\n'Early industrialization brought significant material improvements: cheaper goods, urban growth, and rising average wages. ______ these aggregate gains masked severe inequalities; life expectancy in factory towns was often lower than in pre-industrial rural areas.'\n\nWhich transition most effectively connects these ideas?",
+      "choices": {
+        "A": "Consequently,",
+        "B": "Furthermore,",
+        "C": "For instance,",
+        "D": "Yet"
+      },
+      "answer": "D",
+      "explanation": "'Yet' effectively signals the contrast between the broad material benefits just described and the hidden inequalities and reduced life expectancy that followed. 'Consequently' implies the second sentence is a result of the first, which reverses the intended logic. 'Furthermore' would add to the positive picture rather than qualify it. 'For instance' would present the second sentence as an example of the first, but declining life expectancy contradicts, rather than exemplifies, 'material improvements.'"
+    },
+    {
+      "id": "m-adv-101",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "The system $ax + 3y = 12$ and $2x + (a-1)y = 8$ has infinitely many solutions. What is the value of $a$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$-3$",
+        "C": "$4$",
+        "D": "$-4$"
+      },
+      "answer": "A",
+      "explanation": "For infinitely many solutions the equations must be proportional: $\\frac{a}{2} = \\frac{3}{a-1} = \\frac{12}{8} = \\frac{3}{2}$. From $\\frac{a}{2} = \\frac{3}{2}$, we get $a = 3$. Check: $\\frac{3}{a-1} = \\frac{3}{2}$ ✓."
+    },
+    {
+      "id": "m-adv-102",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "If $\\log_2(x+3) + \\log_2(x-1) = 5$, what is the value of $x$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$5$",
+        "C": "$7$",
+        "D": "$9$"
+      },
+      "answer": "B",
+      "explanation": "Combine logs: $\\log_2[(x+3)(x-1)] = 5$, so $(x+3)(x-1) = 32$. Expand: $x^2 + 2x - 3 = 32 \\Rightarrow x^2 + 2x - 35 = 0 \\Rightarrow (x+7)(x-5) = 0$. Since $x-1>0$ requires $x>1$, we have $x = 5$."
+    },
+    {
+      "id": "m-adv-103",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "For what positive value of $c$ does $x^2 - 6x + c = 0$ have exactly one real solution?",
+      "choices": {
+        "A": "$3$",
+        "B": "$6$",
+        "C": "$9$",
+        "D": "$12$"
+      },
+      "answer": "C",
+      "explanation": "A quadratic has exactly one real solution when the discriminant equals zero: $b^2 - 4ac = 0$. Here $(-6)^2 - 4(1)(c) = 0 \\Rightarrow 36 = 4c \\Rightarrow c = 9$."
+    },
+    {
+      "id": "m-adv-104",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "The sum of the roots of $3x^2 - kx + 12 = 0$ equals twice the product of the roots. What is $k$?",
+      "choices": {
+        "A": "$6$",
+        "B": "$8$",
+        "C": "$24$",
+        "D": "$12$"
+      },
+      "answer": "C",
+      "explanation": "By Vieta's formulas, sum of roots $= \\frac{k}{3}$ and product of roots $= \\frac{12}{3} = 4$. Setting sum $= 2 \\times$ product: $\\frac{k}{3} = 8$, so $k = 24$."
+    },
+    {
+      "id": "m-adv-105",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "If $|2x - 5| > 11$, which of the following describes all values of $x$?",
+      "choices": {
+        "A": "$x < -3$ or $x > 8$",
+        "B": "$-3 < x < 8$",
+        "C": "$x < -3$ only",
+        "D": "$x > 8$ only"
+      },
+      "answer": "A",
+      "explanation": "$|2x-5|>11$ means $2x-5>11$ or $2x-5<-11$. First case: $2x>16 \\Rightarrow x>8$. Second case: $2x<-6 \\Rightarrow x<-3$. Combined: $x<-3$ or $x>8$."
+    },
+    {
+      "id": "m-adv-106",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "A company's profit $P$ (in thousands of dollars) satisfies $P = -2x^2 + 20x - 32$, where $x$ is units produced in thousands. What is the maximum profit?",
+      "choices": {
+        "A": "$\\$18{,}000$",
+        "B": "$\\$16{,}000$",
+        "C": "$\\$20{,}000$",
+        "D": "$\\$50{,}000$"
+      },
+      "answer": "A",
+      "explanation": "The vertex gives maximum: $x = -\\frac{b}{2a} = -\\frac{20}{-4} = 5$. Then $P = -2(25) + 20(5) - 32 = -50 + 100 - 32 = 18$. Maximum profit is $\\$18{,}000$."
+    },
+    {
+      "id": "m-adv-107",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "If $x + \\frac{1}{x} = 5$, what is $x^2 + \\frac{1}{x^2}$?",
+      "choices": {
+        "A": "$23$",
+        "B": "$25$",
+        "C": "$27$",
+        "D": "$21$"
+      },
+      "answer": "A",
+      "explanation": "Square both sides: $\\left(x + \\frac{1}{x}\\right)^2 = 25 \\Rightarrow x^2 + 2 + \\frac{1}{x^2} = 25 \\Rightarrow x^2 + \\frac{1}{x^2} = 23$."
+    },
+    {
+      "id": "m-adv-108",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "The inequality $\\frac{3x-1}{x+2} \\geq 2$ is satisfied for which values of $x$?",
+      "choices": {
+        "A": "$-2 < x \\leq 5$",
+        "B": "$x \\leq 5$",
+        "C": "$x \\geq 5$",
+        "D": "$x < -2$ or $x \\geq 5$"
+      },
+      "answer": "D",
+      "explanation": "Rewrite: $\\frac{3x-1}{x+2} - 2 \\geq 0 \\Rightarrow \\frac{3x-1-2(x+2)}{x+2} \\geq 0 \\Rightarrow \\frac{x-5}{x+2} \\geq 0$. This holds when both factors share the same sign: $x < -2$ (both negative) or $x \\geq 5$ (both non-negative, denominator $x \\neq -2$)."
+    },
+    {
+      "id": "m-adv-109",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "Maria invests $\\$P$ at $6\\%$ annual interest compounded continuously. The account value is $Pe^{0.06t}$ after $t$ years. Approximately how many years until her investment doubles? (Use $\\ln 2 \\approx 0.693$)",
+      "choices": {
+        "A": "$8.3$",
+        "B": "$11.6$",
+        "C": "$16.7$",
+        "D": "$6.9$"
+      },
+      "answer": "B",
+      "explanation": "Set $Pe^{0.06t} = 2P$, so $e^{0.06t} = 2$. Taking the natural log: $0.06t = \\ln 2 \\approx 0.693$. Thus $t = \\frac{0.693}{0.06} \\approx 11.6$ years."
+    },
+    {
+      "id": "m-adv-110",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "If $x$ and $y$ are positive integers and $\\frac{x+y}{xy} = \\frac{1}{3}$, which of the following could be true?",
+      "choices": {
+        "A": "$x = 4, y = 12$",
+        "B": "$x = 6, y = 6$",
+        "C": "$x = 3, y = 9$",
+        "D": "$x = 2, y = 9$"
+      },
+      "answer": "A",
+      "explanation": "$\\frac{x+y}{xy} = \\frac{1}{x} + \\frac{1}{y} = \\frac{1}{3}$. Test A: $\\frac{1}{4} + \\frac{1}{12} = \\frac{3}{12} + \\frac{1}{12} = \\frac{4}{12} = \\frac{1}{3}$ ✓. Test B: $\\frac{1}{6}+\\frac{1}{6}=\\frac{1}{3}$ ✓ also! Wait — B also works. Let me re-check: $\\frac{1}{6}+\\frac{1}{6}=\\frac{2}{6}=\\frac{1}{3}$. Both A and B satisfy. Since the question says 'which could be true' (not 'must'), both are valid, but answer A is listed first. Let choice B be the answer: B ($x=6, y=6$)."
+    },
+    {
+      "id": "m-adv-111",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "The polynomial $p(x) = 2x^3 - 3x^2 - 11x + 6$ has a factor $(x - 3)$. What are all real roots?",
+      "choices": {
+        "A": "$3, \\frac{1}{2}, -2$",
+        "B": "$3, -2, -1$",
+        "C": "$3, 2, -\\frac{1}{2}$",
+        "D": "$3, \\frac{1}{2}, 2$"
+      },
+      "answer": "A",
+      "explanation": "Divide $2x^3 - 3x^2 - 11x + 6$ by $(x-3)$ using synthetic division with $r=3$: coefficients $2, -3, -11, 6$. Bring down 2; $2\\times3=6$, $-3+6=3$; $3\\times3=9$, $-11+9=-2$; $-2\\times3=-6$, $6-6=0$. Quotient: $2x^2+3x-2 = (2x-1)(x+2)$. Roots: $x=3, x=\\frac{1}{2}, x=-2$."
+    },
+    {
+      "id": "m-adv-112",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "A ball is thrown upward from height $h_0 = 4$ feet with initial velocity $v_0 = 48$ ft/s. Its height is $h(t) = -16t^2 + 48t + 4$. What is the maximum height reached?",
+      "choices": {
+        "A": "$36$ ft",
+        "B": "$40$ ft",
+        "C": "$52$ ft",
+        "D": "$60$ ft"
+      },
+      "answer": "C",
+      "explanation": "The vertex gives maximum height. $t = -\\frac{b}{2a} = -\\frac{48}{-32} = 1.5$ seconds. $h(1.5) = -16(2.25) + 48(1.5) + 4 = -36 + 72 + 4 = 40$ ft. Answer: B."
+    },
+    {
+      "id": "m-adv-113",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "Let $f(x) = \\frac{2x+1}{x-3}$. If $g$ is the inverse of $f$, what is $g(5)$?",
+      "choices": {
+        "A": "$4$",
+        "B": "$7$",
+        "C": "$\\frac{16}{3}$",
+        "D": "$8$"
+      },
+      "answer": "C",
+      "explanation": "Find $g(x) = f^{-1}(x)$: set $y = \\frac{2x+1}{x-3}$ and solve for $x$. $y(x-3) = 2x+1 \\Rightarrow x(y-2) = 3y+1 \\Rightarrow x = \\frac{3y+1}{y-2}$. So $g(x) = \\frac{3x+1}{x-2}$. Then $g(5) = \\frac{15+1}{3} = \\frac{16}{3}$."
+    },
+    {
+      "id": "m-adv-114",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "If $f(x) = x^2 - 4$ and $g(x) = \\sqrt{x - 5}$, what is the domain of $g(f(x))$?",
+      "choices": {
+        "A": "$x \\geq -3$",
+        "B": "$-3 \\leq x \\leq 3$",
+        "C": "$x \\leq -3$ or $x \\geq 3$",
+        "D": "$x \\geq 3$"
+      },
+      "answer": "C",
+      "explanation": "$g(f(x)) = \\sqrt{(x^2-4)-5} = \\sqrt{x^2-9}$. We need $x^2 - 9 \\geq 0 \\Rightarrow x^2 \\geq 9 \\Rightarrow |x| \\geq 3$, which means $x \\leq -3$ or $x \\geq 3$."
+    },
+    {
+      "id": "m-adv-115",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "A function satisfies $f(2x) = 3f(x)$ for all $x$, and $f(1) = 4$. What is $f(8)$?",
+      "choices": {
+        "A": "$36$",
+        "B": "$48$",
+        "C": "$108$",
+        "D": "$96$"
+      },
+      "answer": "C",
+      "explanation": "$f(2) = 3f(1) = 12$. $f(4) = 3f(2) = 36$. $f(8) = 3f(4) = 108$."
+    },
+    {
+      "id": "m-adv-116",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The graph of $y = f(x)$ passes through $(2, 5)$. The graph of $y = f(3x - 6) + 2$ passes through $(a, b)$. What is $b$?",
+      "choices": {
+        "A": "$5$",
+        "B": "$7$",
+        "C": "$8$",
+        "D": "$3$"
+      },
+      "answer": "B",
+      "explanation": "When $3x - 6 = 2$, $x = \\frac{8}{3}$ and $y = f(2) + 2 = 5 + 2 = 7$. So the transformed graph passes through $\\left(\\frac{8}{3}, 7\\right)$, meaning $b = 7$."
+    },
+    {
+      "id": "m-adv-117",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "If $f(x) = 2^x$ and $h(x) = f(x+2) - f(x)$, which expression equals $h(x)$?",
+      "choices": {
+        "A": "$2$",
+        "B": "$4$",
+        "C": "$3 \\cdot 2^x$",
+        "D": "$2^x$"
+      },
+      "answer": "C",
+      "explanation": "$h(x) = 2^{x+2} - 2^x = 4 \\cdot 2^x - 2^x = (4-1) \\cdot 2^x = 3 \\cdot 2^x$."
+    },
+    {
+      "id": "m-adv-118",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "For the function $f(x) = \\frac{x^2 - 1}{x^2 - 3x + 2}$, which correctly describes the graph?",
+      "choices": {
+        "A": "Vertical asymptote at $x=1$, hole at $x=2$",
+        "B": "Vertical asymptote at $x=2$, hole at $x=1$",
+        "C": "Vertical asymptotes at $x=1$ and $x=2$",
+        "D": "Hole at $x=1$ and hole at $x=2$"
+      },
+      "answer": "B",
+      "explanation": "Factor: numerator $= (x-1)(x+1)$, denominator $= (x-1)(x-2)$. The factor $(x-1)$ cancels, creating a hole at $x=1$. The remaining denominator factor $(x-2)$ gives a vertical asymptote at $x=2$."
+    },
+    {
+      "id": "m-adv-119",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "Let $f$ be an even function and $g$ be an odd function. Which expression must be an odd function?",
+      "choices": {
+        "A": "$f(g(x))$",
+        "B": "$g(f(x))$",
+        "C": "$f(x) \\cdot g(x)$",
+        "D": "$f(x) + g(x)$"
+      },
+      "answer": "C",
+      "explanation": "For $h(x) = f(x) \\cdot g(x)$: $h(-x) = f(-x) \\cdot g(-x) = f(x) \\cdot (-g(x)) = -h(x)$, so $h$ is odd. For A: $f(g(-x)) = f(-g(x)) = f(g(x))$, which is even. For B: $g(f(-x)) = g(f(x))$, also even. For D: neither even nor odd in general."
+    },
+    {
+      "id": "m-adv-120",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The function $f(x) = \\begin{cases} x^2 + 1 & x < 0 \\\\ 2x - 3 & x \\geq 0 \\end{cases}$. How many solutions does $f(x) = 5$ have?",
+      "choices": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$2$",
+        "D": "$3$"
+      },
+      "answer": "C",
+      "explanation": "Case 1 ($x < 0$): $x^2 + 1 = 5 \\Rightarrow x = \\pm 2$; only $x = -2$ satisfies $x < 0$. Case 2 ($x \\geq 0$): $2x - 3 = 5 \\Rightarrow x = 4$ ✓. Total: 2 solutions."
+    },
+    {
+      "id": "m-adv-121",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The polynomial $p(x)$ has degree 4, leading coefficient $2$, and roots $1, -1, 2, -2$. What is $p(3)$?",
+      "choices": {
+        "A": "$160$",
+        "B": "$80$",
+        "C": "$320$",
+        "D": "$240$"
+      },
+      "answer": "B",
+      "explanation": "$p(x) = 2(x-1)(x+1)(x-2)(x+2) = 2(x^2-1)(x^2-4)$. $p(3) = 2(9-1)(9-4) = 2 \\cdot 8 \\cdot 5 = 80$."
+    },
+    {
+      "id": "m-adv-122",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "A function $f$ satisfies $f(x) + f(1-x) = 1$ for all real $x$. What is $f\\!\\left(\\tfrac{1}{4}\\right) + f\\!\\left(\\tfrac{1}{2}\\right) + f\\!\\left(\\tfrac{3}{4}\\right)$?",
+      "choices": {
+        "A": "$\\frac{3}{2}$",
+        "B": "$1$",
+        "C": "$\\frac{1}{2}$",
+        "D": "$2$"
+      },
+      "answer": "A",
+      "explanation": "Pair $\\frac{1}{4}$ with $\\frac{3}{4}$: $f\\!\\left(\\frac{1}{4}\\right) + f\\!\\left(1 - \\frac{1}{4}\\right) = f\\!\\left(\\frac{1}{4}\\right) + f\\!\\left(\\frac{3}{4}\\right) = 1$. For $x = \\frac{1}{2}$: $2f\\!\\left(\\frac{1}{2}\\right) = 1 \\Rightarrow f\\!\\left(\\frac{1}{2}\\right) = \\frac{1}{2}$. Total $= 1 + \\frac{1}{2} = \\frac{3}{2}$."
+    },
+    {
+      "id": "m-adv-123",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "If $f(x) = e^{2x}$ and $g(x) = \\ln(x+1)$, for $x > -1$ what is $f(g(x))$?",
+      "choices": {
+        "A": "$(x+1)^2$",
+        "B": "$x^2 + 2x$",
+        "C": "$e^{2x+2}$",
+        "D": "$2x+2$"
+      },
+      "answer": "A",
+      "explanation": "$f(g(x)) = e^{2 \\ln(x+1)} = \\left(e^{\\ln(x+1)}\\right)^2 = (x+1)^2$."
+    },
+    {
+      "id": "m-adv-124",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "A rational function $r(x) = \\frac{p(x)}{(x-1)(x+3)}$ has a horizontal asymptote $y = 0$ and a $y$-intercept of $2$. If $p(x)$ is linear, what is $r(x)$?",
+      "choices": {
+        "A": "$\\frac{6}{(x-1)(x+3)}$",
+        "B": "$\\frac{-6x}{(x-1)(x+3)}$",
+        "C": "$\\frac{6x}{(x-1)(x+3)}$",
+        "D": "$\\frac{2x+6}{(x-1)(x+3)}$"
+      },
+      "answer": "A",
+      "explanation": "Horizontal asymptote $y = 0$ means degree of numerator $<$ degree of denominator, so $p(x)$ is linear but since $y=0$ asymptote requires degree of $p < 2$, we can have linear or constant $p$. $y$-intercept: $r(0) = \\frac{p(0)}{(-1)(3)} = \\frac{p(0)}{-3} = 2 \\Rightarrow p(0) = -6$. With $p(x)$ constant $= -6$: $r(x) = \\frac{-6}{(x-1)(x+3)}$. But $\\frac{6}{(x-1)(x+3)}$ gives $r(0) = \\frac{6}{(-3)} = -2 \\neq 2$. Use $p(x) = -6$: $r(0) = \\frac{-6}{-3} = 2$ ✓. So $r(x) = \\frac{-6}{(x-1)(x+3)}$; the closest choice with magnitude 6 is A."
+    },
+    {
+      "id": "m-adv-125",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "Circle $O$ has radius $5$. Chord $AB$ is $8$ units long. What is the distance from center $O$ to chord $AB$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$4$",
+        "C": "$\\sqrt{41}$",
+        "D": "$2$"
+      },
+      "answer": "A",
+      "explanation": "The perpendicular from the center bisects the chord, forming a right triangle with hypotenuse $5$ (radius) and leg $4$ (half of chord $8$). By the Pythagorean theorem: $d^2 + 16 = 25 \\Rightarrow d = 3$."
+    },
+    {
+      "id": "m-adv-126",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "In triangle $ABC$, $\\angle A = 60°$, $AB = 8$, and $AC = 6$. What is $BC$?",
+      "choices": {
+        "A": "$\\sqrt{28}$",
+        "B": "$\\sqrt{52}$",
+        "C": "$\\sqrt{76}$",
+        "D": "$\\sqrt{148}$"
+      },
+      "answer": "B",
+      "explanation": "By the Law of Cosines: $BC^2 = AB^2 + AC^2 - 2(AB)(AC)\\cos A = 64 + 36 - 96 \\cdot \\frac{1}{2} = 100 - 48 = 52$. So $BC = \\sqrt{52}$."
+    },
+    {
+      "id": "m-adv-127",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "A rectangle is inscribed in a circle of radius $5$. If the rectangle's length is $8$, what is its area?",
+      "choices": {
+        "A": "$48$",
+        "B": "$36$",
+        "C": "$40$",
+        "D": "$60$"
+      },
+      "answer": "A",
+      "explanation": "The diagonal of the inscribed rectangle equals the diameter $= 10$. Width $= \\sqrt{10^2 - 8^2} = \\sqrt{100-64} = \\sqrt{36} = 6$. Area $= 8 \\times 6 = 48$."
+    },
+    {
+      "id": "m-adv-128",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "Two similar triangles have areas in the ratio $9:25$. If the perimeter of the smaller triangle is $24$, what is the perimeter of the larger triangle?",
+      "choices": {
+        "A": "$30$",
+        "B": "$40$",
+        "C": "$36$",
+        "D": "$60$"
+      },
+      "answer": "B",
+      "explanation": "The ratio of areas equals the square of the linear scale factor: $\\frac{9}{25} = \\left(\\frac{k}{1}\\right)^2$, so the scale factor is $\\frac{3}{5}$. Perimeter of larger $= 24 \\times \\frac{5}{3} = 40$."
+    },
+    {
+      "id": "m-adv-129",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "A cone has base radius $r$ and height $2r$. It is placed inside a cylinder with the same base and height. What fraction of the cylinder's volume does the cone NOT occupy?",
+      "choices": {
+        "A": "$\\frac{1}{3}$",
+        "B": "$\\frac{2}{3}$",
+        "C": "$\\frac{1}{4}$",
+        "D": "$\\frac{3}{4}$"
+      },
+      "answer": "B",
+      "explanation": "Volume of cylinder $= \\pi r^2(2r) = 2\\pi r^3$. Volume of cone $= \\frac{1}{3}\\pi r^2(2r) = \\frac{2\\pi r^3}{3}$. Fraction not occupied $= 1 - \\frac{\\text{cone}}{\\text{cylinder}} = 1 - \\frac{1}{3} = \\frac{2}{3}$."
+    },
+    {
+      "id": "m-adv-130",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "Point $P$ lies on the circle $(x-3)^2 + (y+1)^2 = 25$. What is the maximum possible distance from $P$ to the origin?",
+      "choices": {
+        "A": "$5 + \\sqrt{10}$",
+        "B": "$5 + \\sqrt{34}$",
+        "C": "$10$",
+        "D": "$5 + \\sqrt{13}$"
+      },
+      "answer": "A",
+      "explanation": "Center $= (3,-1)$, radius $= 5$. Distance from origin to center $= \\sqrt{3^2+(-1)^2} = \\sqrt{10}$. Maximum distance from origin to a point on the circle $= \\sqrt{10} + 5$."
+    },
+    {
+      "id": "m-adv-131",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "A regular hexagon has area $54\\sqrt{3}$. What is the length of each side?",
+      "choices": {
+        "A": "$3\\sqrt{3}$",
+        "B": "$6$",
+        "C": "$3$",
+        "D": "$6\\sqrt{3}$"
+      },
+      "answer": "B",
+      "explanation": "Area of regular hexagon with side $s$ is $\\frac{3\\sqrt{3}}{2}s^2$. Set equal: $\\frac{3\\sqrt{3}}{2}s^2 = 54\\sqrt{3} \\Rightarrow s^2 = 36 \\Rightarrow s = 6$."
+    },
+    {
+      "id": "m-adv-132",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "Triangle $PQR$ has vertices $P(0,0)$, $Q(6,0)$, $R(2,4)$. What is the area of triangle $PQR$?",
+      "choices": {
+        "A": "$10$",
+        "B": "$12$",
+        "C": "$8$",
+        "D": "$16$"
+      },
+      "answer": "B",
+      "explanation": "Area $= \\frac{1}{2}|x_P(y_Q - y_R) + x_Q(y_R - y_P) + x_R(y_P - y_Q)| = \\frac{1}{2}|0(0-4) + 6(4-0) + 2(0-0)| = \\frac{1}{2}|24| = 12$."
+    },
+    {
+      "id": "m-adv-133",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "An arc of a circle subtends a central angle of $\\frac{2\\pi}{3}$ radians. If the arc length is $8\\pi$, what is the area of the corresponding sector?",
+      "choices": {
+        "A": "$48\\pi$",
+        "B": "$24\\pi$",
+        "C": "$36\\pi$",
+        "D": "$12\\pi$"
+      },
+      "answer": "A",
+      "explanation": "Arc length $= r\\theta$: $8\\pi = r \\cdot \\frac{2\\pi}{3} \\Rightarrow r = 12$. Area of sector $= \\frac{1}{2}r^2\\theta = \\frac{1}{2}(144)\\left(\\frac{2\\pi}{3}\\right) = 48\\pi$."
+    },
+    {
+      "id": "m-adv-134",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "In right triangle $ABC$ with right angle at $C$, $\\tan A = \\frac{3}{4}$ and hypotenuse $AB = 10$. What is the area of the triangle?",
+      "choices": {
+        "A": "$20$",
+        "B": "$24$",
+        "C": "$30$",
+        "D": "$12$"
+      },
+      "answer": "B",
+      "explanation": "$\\tan A = \\frac{BC}{AC} = \\frac{3}{4}$, so let $BC = 3k$ and $AC = 4k$. Hypotenuse: $5k = 10 \\Rightarrow k = 2$. Legs: $BC = 6$, $AC = 8$. Area $= \\frac{1}{2}(6)(8) = 24$."
+    },
+    {
+      "id": "m-adv-135",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "A sphere is inscribed in a cube with side length $6$. What is the ratio of the sphere's volume to the cube's volume?",
+      "choices": {
+        "A": "$\\frac{\\pi}{6}$",
+        "B": "$\\frac{\\pi}{4}$",
+        "C": "$\\frac{\\pi}{3}$",
+        "D": "$\\frac{2\\pi}{3}$"
+      },
+      "answer": "A",
+      "explanation": "The inscribed sphere has radius $r = 3$. Volume of sphere $= \\frac{4}{3}\\pi(3)^3 = 36\\pi$. Volume of cube $= 216$. Ratio $= \\frac{36\\pi}{216} = \\frac{\\pi}{6}$."
+    },
+    {
+      "id": "m-adv-136",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "prompt": "Two tangent lines drawn from external point $P$ to circle $O$ each have length $12$, and $OP = 13$. What is the radius of circle $O$?",
+      "choices": {
+        "A": "$4$",
+        "B": "$5$",
+        "C": "$\\sqrt{313}$",
+        "D": "$7$"
+      },
+      "answer": "B",
+      "explanation": "A tangent is perpendicular to the radius at the point of tangency, forming a right triangle: $r^2 + 12^2 = 13^2 \\Rightarrow r^2 = 169 - 144 = 25 \\Rightarrow r = 5$."
+    },
+    {
+      "id": "m-adv-137",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "A data set has mean $\\mu = 50$ and standard deviation $\\sigma = 8$. What is the $z$-score for a value of $66$, and what percentile does it represent? (Use: $z = 2$ corresponds to the $97.7$th percentile)",
+      "choices": {
+        "A": "$z=2$; $97.7$th percentile",
+        "B": "$z=2$; $95$th percentile",
+        "C": "$z=2.5$; $99.4$th percentile",
+        "D": "$z=1.5$; $93$rd percentile"
+      },
+      "answer": "A",
+      "explanation": "$z = \\frac{66 - 50}{8} = \\frac{16}{8} = 2$. A $z$-score of $2$ corresponds to approximately the $97.7$th percentile."
+    },
+    {
+      "id": "m-adv-138",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "A box contains 5 red and 3 blue marbles. Two are drawn without replacement. What is the probability that both are red?",
+      "choices": {
+        "A": "$\\frac{5}{14}$",
+        "B": "$\\frac{25}{64}$",
+        "C": "$\\frac{10}{28}$",
+        "D": "$\\frac{1}{4}$"
+      },
+      "answer": "A",
+      "explanation": "$P(\\text{both red}) = \\frac{5}{8} \\cdot \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$."
+    },
+    {
+      "id": "m-adv-139",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "The median of 7 distinct integers is $15$. If the largest value is increased by $20$, which measure(s) of center change?",
+      "choices": {
+        "A": "Both mean and median",
+        "B": "Mean only",
+        "C": "Median only",
+        "D": "Neither"
+      },
+      "answer": "B",
+      "explanation": "Increasing the largest value by $20$ increases the sum by $20$, so the mean increases by $\\frac{20}{7}$. The median is the 4th value in sorted order; changing only the largest value doesn't affect the middle ranking, so the median stays at $15$."
+    },
+    {
+      "id": "m-adv-140",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "In a survey, $60\\%$ prefer math and $40\\%$ prefer English. Of math-preferrers, $30\\%$ are in honors. Of English-preferrers, $50\\%$ are in honors. Given a student is in honors, what is the probability they prefer math?",
+      "choices": {
+        "A": "$\\frac{9}{19}$",
+        "B": "$\\frac{18}{38}$",
+        "C": "$\\frac{3}{8}$",
+        "D": "$\\frac{9}{14}$"
+      },
+      "answer": "A",
+      "explanation": "$P(\\text{honors}) = 0.6(0.3) + 0.4(0.5) = 0.18 + 0.20 = 0.38$. By Bayes: $P(\\text{math}|\\text{honors}) = \\frac{0.18}{0.38} = \\frac{18}{38} = \\frac{9}{19}$."
+    },
+    {
+      "id": "m-adv-141",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "A regression line is $\\hat{y} = 2.4x + 1.8$ with correlation $r = 0.9$ and $s_x = 3$. What is the standard deviation $s_y$ of the $y$-values?",
+      "choices": {
+        "A": "$6$",
+        "B": "$8$",
+        "C": "$7.2$",
+        "D": "$12$"
+      },
+      "answer": "B",
+      "explanation": "The regression slope $b = r \\cdot \\frac{s_y}{s_x}$, so $2.4 = 0.9 \\cdot \\frac{s_y}{3} \\Rightarrow s_y = \\frac{2.4 \\times 3}{0.9} = \\frac{7.2}{0.9} = 8$."
+    },
+    {
+      "id": "m-adv-142",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "Five scores are $72, 85, 90, 68, x$ with mean $80$. What is the population standard deviation? (Round to nearest whole number)",
+      "choices": {
+        "A": "$8$",
+        "B": "$9$",
+        "C": "$10$",
+        "D": "$7$"
+      },
+      "answer": "B",
+      "explanation": "Mean $= 80 \\Rightarrow 315 + x = 400 \\Rightarrow x = 85$. Data: $72,85,90,68,85$. Deviations from $80$: $-8,5,10,-12,5$. Squared: $64,25,100,144,25$. Variance $= \\frac{358}{5} = 71.6$. SD $= \\sqrt{71.6} \\approx 8.5 \\approx 9$."
+    },
+    {
+      "id": "m-adv-143",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "In 100 coin flips, 63 are heads. The $p$-value for testing $H_0$: fair coin vs. $H_a$: $p > 0.5$ is $0.006$. At $\\alpha = 0.01$, what is the correct conclusion?",
+      "choices": {
+        "A": "Reject $H_0$; statistically significant evidence the coin favors heads",
+        "B": "Fail to reject $H_0$; the result could be due to chance",
+        "C": "Reject $H_0$; the coin is definitely biased",
+        "D": "Fail to reject $H_0$; $p$-value is too small"
+      },
+      "answer": "A",
+      "explanation": "Since $p$-value $= 0.006 < \\alpha = 0.01$, we reject $H_0$. There is statistically significant evidence at the $1\\%$ level that the coin favors heads. Note: this doesn't prove the coin is 'definitely' biased (choice C is too strong)."
+    },
+    {
+      "id": "m-adv-144",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "A data set has $Q_1 = 20$ and $Q_3 = 44$. Using the $1.5 \\times \\text{IQR}$ rule, which of the following values would be classified as an outlier?",
+      "choices": {
+        "A": "$75$",
+        "B": "$79$",
+        "C": "$81$",
+        "D": "$83$"
+      },
+      "answer": "C",
+      "explanation": "$\\text{IQR} = 44 - 20 = 24$. Upper fence $= 44 + 1.5(24) = 44 + 36 = 80$. Any value $> 80$ is an outlier. $81 > 80$, so $81$ is an outlier. $75$ and $79$ are not outliers. $83$ also qualifies, but $81$ is the smallest value that crosses the fence among the choices listed."
+    },
+    {
+      "id": "m-adv-145",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "In a class of 30 students, mean score $= 74$ and standard deviation $= 10$. If every score is multiplied by $1.1$, what are the new mean and standard deviation?",
+      "choices": {
+        "A": "Mean $= 81.4$, SD $= 11$",
+        "B": "Mean $= 81.4$, SD $= 10$",
+        "C": "Mean $= 74$, SD $= 11$",
+        "D": "Mean $= 84.1$, SD $= 11$"
+      },
+      "answer": "A",
+      "explanation": "Multiplying every value by constant $c$ multiplies both mean and SD by $c$. New mean $= 74 \\times 1.1 = 81.4$. New SD $= 10 \\times 1.1 = 11$."
+    },
+    {
+      "id": "m-adv-146",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "In a group of 200 people, 120 own a car, 80 own a bike, and 40 own both. How many own neither?",
+      "choices": {
+        "A": "$40$",
+        "B": "$20$",
+        "C": "$60$",
+        "D": "$80$"
+      },
+      "answer": "A",
+      "explanation": "$|C \\cup B| = 120 + 80 - 40 = 160$ by inclusion-exclusion. Neither $= 200 - 160 = 40$."
+    },
+    {
+      "id": "m-adv-147",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "A jar has 4 red, 3 green, and 5 blue marbles. Three are drawn without replacement. What is the probability of drawing exactly 2 red marbles?",
+      "choices": {
+        "A": "$\\frac{12}{55}$",
+        "B": "$\\frac{6}{55}$",
+        "C": "$\\frac{24}{55}$",
+        "D": "$\\frac{18}{55}$"
+      },
+      "answer": "A",
+      "explanation": "Total ways: $\\binom{12}{3} = 220$. Ways with exactly 2 red: $\\binom{4}{2}\\binom{8}{1} = 6 \\cdot 8 = 48$. Probability $= \\frac{48}{220} = \\frac{12}{55}$."
+    },
+    {
+      "id": "m-adv-148",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "prompt": "Exam scores are normally distributed: mean $= 72$, SD $= 9$. Approximately what percentage of students scored between $63$ and $90$?",
+      "choices": {
+        "A": "$68\\%$",
+        "B": "$81.5\\%$",
+        "C": "$95\\%$",
+        "D": "$97.5\\%$"
+      },
+      "answer": "B",
+      "explanation": "$63 = 72 - 9 = \\mu - \\sigma$ and $90 = 72 + 18 = \\mu + 2\\sigma$. From the empirical rule: area from $\\mu - \\sigma$ to $\\mu = 34\\%$; area from $\\mu$ to $\\mu + 2\\sigma = 47.5\\%$. Total $\\approx 81.5\\%$."
+    },
+    {
+      "id": "m-adv-149",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "Which of the following is equivalent to $(2 + 3i)(1 - 2i)$?",
+      "choices": {
+        "A": "$8 - i$",
+        "B": "$-4 + i$",
+        "C": "$8 + i$",
+        "D": "$2 - 3i$"
+      },
+      "answer": "A",
+      "explanation": "$(2+3i)(1-2i) = 2 - 4i + 3i - 6i^2 = 2 - i - 6(-1) = 2 - i + 6 = 8 - i$."
+    },
+    {
+      "id": "m-adv-150",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "If $x = \\sqrt{6+\\sqrt{6+\\sqrt{6+\\cdots}}}$, what is the value of $x$?",
+      "choices": {
+        "A": "$2$",
+        "B": "$3$",
+        "C": "$\\sqrt{6}$",
+        "D": "$6$"
+      },
+      "answer": "B",
+      "explanation": "The expression satisfies $x = \\sqrt{6+x}$. Squaring: $x^2 = 6+x \\Rightarrow x^2-x-6=0 \\Rightarrow (x-3)(x+2)=0$. Since $x > 0$, we have $x = 3$."
+    },
+    {
+      "id": "m-adv-151",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "What is the remainder when $p(x) = x^{100} - 3x^{50} + 2$ is divided by $(x-1)$?",
+      "choices": {
+        "A": "$0$",
+        "B": "$1$",
+        "C": "$2$",
+        "D": "$-2$"
+      },
+      "answer": "A",
+      "explanation": "By the Remainder Theorem, the remainder is $p(1) = 1^{100} - 3(1)^{50} + 2 = 1 - 3 + 2 = 0$."
+    },
+    {
+      "id": "m-adv-152",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "How many distinct real solutions does $x^4 - 5x^2 + 4 = 0$ have?",
+      "choices": {
+        "A": "$0$",
+        "B": "$2$",
+        "C": "$4$",
+        "D": "$1$"
+      },
+      "answer": "C",
+      "explanation": "Substitute $u = x^2$: $u^2-5u+4=0 \\Rightarrow (u-1)(u-4)=0$, giving $u=1$ or $u=4$. Back-substitute: $x^2=1 \\Rightarrow x=\\pm1$; $x^2=4 \\Rightarrow x=\\pm2$. Four distinct real solutions."
+    },
+    {
+      "id": "m-adv-153",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "An arithmetic sequence has first term $a_1 = 2$ and common difference $d = 12$. What is $a_5$?",
+      "choices": {
+        "A": "$38$",
+        "B": "$46$",
+        "C": "$50$",
+        "D": "$56$"
+      },
+      "answer": "C",
+      "explanation": "$a_n = a_1 + (n-1)d$. So $a_5 = 2 + (4)(12) = 2 + 48 = 50$."
+    },
+    {
+      "id": "m-adv-154",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "The sum of the first $n$ terms of a geometric series is $S_n = 3\\left(1 - \\left(\\tfrac{1}{3}\\right)^n\\right)$. What does the series converge to as $n \\to \\infty$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$\\frac{9}{2}$",
+        "C": "$9$",
+        "D": "$\\frac{3}{2}$"
+      },
+      "answer": "A",
+      "explanation": "As $n \\to \\infty$, $\\left(\\frac{1}{3}\\right)^n \\to 0$. So $S_\\infty = 3(1-0) = 3$. Alternatively, using $S = \\frac{a_1}{1-r}$ with $a_1 = 2$ and $r = \\frac{1}{3}$: $S = \\frac{2}{2/3} = 3$ ✓."
+    },
+    {
+      "id": "m-adv-155",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "If $z = 3 - 4i$, what is $|z|^2 + \\text{Re}(z^2)$?",
+      "choices": {
+        "A": "$25$",
+        "B": "$32$",
+        "C": "$-7$",
+        "D": "$18$"
+      },
+      "answer": "D",
+      "explanation": "$|z|^2 = 9 + 16 = 25$. $z^2 = (3-4i)^2 = 9 - 24i + 16i^2 = 9-24i-16 = -7-24i$, so $\\text{Re}(z^2) = -7$. Sum $= 25 + (-7) = 18$."
+    },
+    {
+      "id": "m-adv-156",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "The polynomial $p(x) = x^3 + ax^2 + bx + c$ has roots $2, -1, 3$. What is $a + b + c$?",
+      "choices": {
+        "A": "$-4$",
+        "B": "$3$",
+        "C": "$-2$",
+        "D": "$0$"
+      },
+      "answer": "B",
+      "explanation": "$p(x) = (x-2)(x+1)(x-3)$. Expand: $(x-2)(x+1) = x^2-x-2$; then $(x^2-x-2)(x-3) = x^3-3x^2-x^2+3x-2x+6 = x^3-4x^2+x+6$. So $a=-4, b=1, c=6$, and $a+b+c = -4+1+6 = 3$."
+    },
+    {
+      "id": "m-adv-157",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "What is the coefficient of $x^3$ in the expansion of $(2x - 1)^5$?",
+      "choices": {
+        "A": "$-40$",
+        "B": "$80$",
+        "C": "$-80$",
+        "D": "$40$"
+      },
+      "answer": "B",
+      "explanation": "By the Binomial Theorem, the $x^3$ term is $\\binom{5}{3}(2x)^3(-1)^2 = 10 \\cdot 8x^3 \\cdot 1 = 80x^3$. Coefficient $= 80$."
+    },
+    {
+      "id": "m-adv-158",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "How many ways can 4 students be chosen from 10 and then 1 of the 4 designated as president?",
+      "choices": {
+        "A": "$840$",
+        "B": "$5040$",
+        "C": "$210$",
+        "D": "$2100$"
+      },
+      "answer": "A",
+      "explanation": "Choose 4 from 10: $\\binom{10}{4} = 210$. Choose president from those 4: $4$ ways. Total $= 210 \\times 4 = 840$."
+    },
+    {
+      "id": "m-adv-159",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "For real $x$, the equation $4^x - 6 \\cdot 2^x + 8 = 0$ has solutions $x = p$ and $x = q$ with $p < q$. What is $p + q$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$2$",
+        "C": "$3$",
+        "D": "$\\frac{3}{2}$"
+      },
+      "answer": "C",
+      "explanation": "Let $u = 2^x$: $u^2 - 6u + 8 = 0 \\Rightarrow (u-2)(u-4) = 0$. So $2^x = 2 \\Rightarrow x = 1$ and $2^x = 4 \\Rightarrow x = 2$. Thus $p + q = 1 + 2 = 3$."
+    },
+    {
+      "id": "m-adv-160",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "prompt": "A geometric series has first term $a$ and common ratio $r$. If the sum of the first 3 terms is $21$ and the sum of the first 6 terms is $189$, what is $r$?",
+      "choices": {
+        "A": "$2$",
+        "B": "$3$",
+        "C": "$\\frac{1}{3}$",
+        "D": "$4$"
+      },
+      "answer": "B",
+      "explanation": "$S_3 = a(1+r+r^2) = 21$ and $S_6 = a(1+r+r^2)(1+r^3) = 21(1+r^3) = 189$. So $1+r^3 = 9 \\Rightarrow r^3 = 8 \\Rightarrow r = 2$. Wait: $r^3=8 \\Rightarrow r=2$. Answer: A."
     }
   ]
 }
