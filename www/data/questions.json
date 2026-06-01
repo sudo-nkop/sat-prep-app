@@ -804,13 +804,13 @@
       "difficulty": 3,
       "prompt": "In the $xy$-plane, two lines are graphed. One line passes through $(8, 0)$ and $(3, 4)$. The other line passes through $(8, 0)$ and $(3, 2)$. What system of linear equations is represented by the lines?",
       "choices": {
-        "A": "$8x + 4y = 32$ and $-10x - 4y = -64$",
-        "B": "$4x - 10y = 32$ and $-8x + 10y = -64$",
-        "C": "$4x + 10y = 32$ and $-8x - 10y = -64$",
-        "D": "$8x - 4y = 32$ and $-10x + 4y = -64$"
+        "A": "$4x + 5y = 32$ and $2x + 5y = 16$",
+        "B": "$4x - 5y = 32$ and $2x - 5y = 16$",
+        "C": "$5x + 4y = 32$ and $5x + 2y = 16$",
+        "D": "$4x + 5y = 40$ and $2x + 5y = 20$"
       },
-      "answer": "C",
-      "explanation": "Line 1 through $(8,0)$ and $(3,4)$: slope $= \\frac{4-0}{3-8} = -\\frac{4}{5}$. Equation: $\\frac{4}{5}x + y = \\frac{32}{5} \\Rightarrow 4x + 10y = 32$. Line 2 through $(8,0)$ and $(3,2)$: slope $= -\\frac{2}{5}$. Equation: $\\frac{2}{5}x + y = \\frac{16}{5} \\Rightarrow 2x + 5y = 16$, multiply by $-4$: $-8x - 10y = -64$."
+      "answer": "A",
+      "explanation": "Line 1 through $(8,0)$ and $(3,4)$: slope $= \\frac{4-0}{3-8} = -\\frac{4}{5}$. Equation: $y = -\\frac{4}{5}(x-8) \\Rightarrow 5y = -4x+32 \\Rightarrow 4x+5y=32$. Verify: $4(8)+5(0)=32$ ✓ and $4(3)+5(4)=32$ ✓. Line 2 through $(8,0)$ and $(3,2)$: slope $= \\frac{2-0}{3-8} = -\\frac{2}{5}$. Equation: $y = -\\frac{2}{5}(x-8) \\Rightarrow 5y = -2x+16 \\Rightarrow 2x+5y=16$. Verify: $2(8)+5(0)=16$ ✓ and $2(3)+5(2)=16$ ✓."
     },
     {
       "id": "pdf-3d1070c9",
@@ -3897,10 +3897,10 @@
         "A": "11/10",
         "B": "13/10",
         "C": "26/11",
-        "D": "26/10"
+        "D": "10"
       },
       "answer": "D",
-      "explanation": "For no solution, the lines must be parallel: same slope but different y-intercepts. Setting the ratios of coefficients equal (10/r = 26/13) and solving gives r = 10×13/26 = 130/26... the correct value is r = 26/10 based on proportionality of the x-coefficients to the constants."
+      "explanation": "For no solution, the lines must be parallel (same slope, different y-intercepts). Rewrite both equations in slope-intercept form: 10x − 11y = 26 → y = (10/11)x − 26/11; rx − 11y = 13 → y = (r/11)x − 13/11. For the slopes to be equal: r/11 = 10/11, so r = 10. Check: the y-intercepts (−26/11 ≠ −13/11) confirm the lines are parallel and not the same line, giving no solution."
     },
     {
       "id": "m-geom-003",
