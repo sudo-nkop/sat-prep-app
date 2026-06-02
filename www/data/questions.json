@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_comment": "SAT question bank - 869 questions",
+  "_comment": "SAT question bank - 860 questions",
   "questions": [
     {
       "id": "m-alg-001",
@@ -12616,6 +12616,291 @@
       },
       "answer": "B",
       "explanation": "$S_3 = a(1+r+r^2) = 21$ and $S_6 = a(1+r+r^2)(1+r^3) = 21(1+r^3) = 189$. So $1+r^3 = 9 \\Rightarrow r^3 = 8 \\Rightarrow r = 2$. Wait: $r^3=8 \\Rightarrow r=2$. Answer: A."
+    },
+    {
+      "id": "m-trig-006",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 3,
+      "prompt": "In a right triangle, $\\sin\\theta = \\frac{5}{13}$. What is $\\cos\\theta$?",
+      "choices": {
+        "A": "$\\frac{12}{13}$",
+        "B": "$\\frac{5}{12}$",
+        "C": "$\\frac{13}{12}$",
+        "D": "$\\frac{8}{13}$"
+      },
+      "answer": "A",
+      "explanation": "Using the Pythagorean identity: $\\cos\\theta = \\sqrt{1-\\sin^2\\theta} = \\sqrt{1-\\frac{25}{169}} = \\sqrt{\\frac{144}{169}} = \\frac{12}{13}$."
+    },
+    {
+      "id": "m-trig-007",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 3,
+      "prompt": "If $\\tan\\theta = \\frac{3}{4}$ and $0 < \\theta < \\frac{\\pi}{2}$, what is $\\sin(2\\theta)$?",
+      "choices": {
+        "A": "$\\frac{24}{25}$",
+        "B": "$\\frac{7}{25}$",
+        "C": "$\\frac{12}{25}$",
+        "D": "$\\frac{6}{25}$"
+      },
+      "answer": "A",
+      "explanation": "$\\sin\\theta = \\frac{3}{5}$, $\\cos\\theta = \\frac{4}{5}$. $\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta = 2 \\cdot \\frac{3}{5} \\cdot \\frac{4}{5} = \\frac{24}{25}$."
+    },
+    {
+      "id": "m-trig-008",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 3,
+      "prompt": "Which values of $x$ in $[0, 2\\pi)$ satisfy $2\\cos^2 x - \\cos x - 1 = 0$?",
+      "choices": {
+        "A": "$x = 0$, $x = \\frac{2\\pi}{3}$, $x = \\frac{4\\pi}{3}$",
+        "B": "$x = \\pi$ only",
+        "C": "$x = \\frac{\\pi}{3}$ and $x = \\pi$",
+        "D": "$x = \\frac{\\pi}{2}$ only"
+      },
+      "answer": "A",
+      "explanation": "Factor: $(2\\cos x + 1)(\\cos x - 1) = 0$. So $\\cos x = 1$ giving $x=0$, or $\\cos x = -\\frac{1}{2}$ giving $x = \\frac{2\\pi}{3}$ and $x = \\frac{4\\pi}{3}$."
+    },
+    {
+      "id": "m-ps-024",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 3,
+      "prompt": "A bag contains 4 red and 6 blue marbles. Two marbles are drawn without replacement. What is the probability both are red?",
+      "choices": {
+        "A": "$\\frac{2}{15}$",
+        "B": "$\\frac{4}{25}$",
+        "C": "$\\frac{1}{6}$",
+        "D": "$\\frac{2}{25}$"
+      },
+      "answer": "A",
+      "explanation": "$P = \\frac{4}{10} \\cdot \\frac{3}{9} = \\frac{12}{90} = \\frac{2}{15}$."
+    },
+    {
+      "id": "m-ps-025",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 3,
+      "prompt": "Events $A$ and $B$ are independent. $P(A) = 0.4$ and $P(B) = 0.5$. What is $P(A \\cup B)$?",
+      "choices": {
+        "A": "$0.70$",
+        "B": "$0.90$",
+        "C": "$0.20$",
+        "D": "$0.45$"
+      },
+      "answer": "A",
+      "explanation": "$P(A \\cup B) = P(A) + P(B) - P(A)P(B) = 0.4 + 0.5 - 0.2 = 0.70$."
+    },
+    {
+      "id": "m-pct-002",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 3,
+      "prompt": "A store increases a price by 20%, then decreases the new price by 20%. The final price is what percent of the original?",
+      "choices": {
+        "A": "$96\\%$",
+        "B": "$100\\%$",
+        "C": "$104\\%$",
+        "D": "$80\\%$"
+      },
+      "answer": "A",
+      "explanation": "$1.20 \\times 0.80 = 0.96$, so the final price is $96\\%$ of the original."
+    },
+    {
+      "id": "m-pct-003",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 3,
+      "prompt": "If $x$ is $40\\%$ more than $y$ and $y$ is $25\\%$ less than $z$, then $x$ is what percent of $z$?",
+      "choices": {
+        "A": "$105\\%$",
+        "B": "$115\\%$",
+        "C": "$95\\%$",
+        "D": "$120\\%$"
+      },
+      "answer": "A",
+      "explanation": "$y = 0.75z$, $x = 1.4y = 1.4 \\times 0.75z = 1.05z$, so $x$ is $105\\%$ of $z$."
+    },
+    {
+      "id": "m-exp-002",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 3,
+      "prompt": "A town's population doubles every 12 years. If the current population is 5,000, what will it be in 36 years?",
+      "choices": {
+        "A": "$40{,}000$",
+        "B": "$20{,}000$",
+        "C": "$15{,}000$",
+        "D": "$10{,}000$"
+      },
+      "answer": "A",
+      "explanation": "36 years is 3 doubling periods: $5000 \\times 2^3 = 5000 \\times 8 = 40{,}000$."
+    },
+    {
+      "id": "m-exp-003",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 3,
+      "prompt": "If $f(x) = 3^x$, what is $f(4) - f(2)$?",
+      "choices": {
+        "A": "$72$",
+        "B": "$18$",
+        "C": "$54$",
+        "D": "$80$"
+      },
+      "answer": "A",
+      "explanation": "$f(4) = 3^4 = 81$, $f(2) = 3^2 = 9$. $81 - 9 = 72$."
+    },
+    {
+      "id": "m-rat-002",
+      "section": "math",
+      "topic": "rational",
+      "difficulty": 3,
+      "prompt": "Simplify: $\\frac{x^2-9}{x^2-x-6}$ (where defined)",
+      "choices": {
+        "A": "$\\frac{x+3}{x+2}$",
+        "B": "$\\frac{x-3}{x-2}$",
+        "C": "$\\frac{x+3}{x-2}$",
+        "D": "$\\frac{x-3}{x+2}$"
+      },
+      "answer": "A",
+      "explanation": "Factor: $\\frac{(x-3)(x+3)}{(x-3)(x+2)} = \\frac{x+3}{x+2}$ (for $x \\neq 3$)."
+    },
+    {
+      "id": "m-ineq-010",
+      "section": "math",
+      "topic": "inequalities",
+      "difficulty": 3,
+      "prompt": "The solution to $x^2 - 5x + 6 < 0$ is:",
+      "choices": {
+        "A": "$2 < x < 3$",
+        "B": "$x < 2$ or $x > 3$",
+        "C": "$-3 < x < -2$",
+        "D": "$x < -3$ or $x > 2$"
+      },
+      "answer": "A",
+      "explanation": "Factor: $(x-2)(x-3) < 0$. The quadratic is negative between its roots, so $2 < x < 3$."
+    },
+    {
+      "id": "m-line-003",
+      "section": "math",
+      "topic": "lines",
+      "difficulty": 3,
+      "prompt": "Line $\\ell$ passes through $(2, 5)$ and is perpendicular to $3x - 4y = 12$. What is the $y$-intercept of $\\ell$?",
+      "choices": {
+        "A": "$\\frac{23}{3}$",
+        "B": "$-\\frac{7}{3}$",
+        "C": "$\\frac{3}{4}$",
+        "D": "$3$"
+      },
+      "answer": "A",
+      "explanation": "Slope of given line: $\\frac{3}{4}$, so perpendicular slope is $-\\frac{4}{3}$. $y-5 = -\\frac{4}{3}(x-2) \\Rightarrow y = -\\frac{4}{3}x + \\frac{23}{3}$. $y$-intercept is $\\frac{23}{3}$."
+    },
+    {
+      "id": "m-lsys-005",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "For what value of $k$ does the system $2x + ky = 6$ and $4x + 2y = 12$ have infinitely many solutions?",
+      "choices": {
+        "A": "$1$",
+        "B": "$2$",
+        "C": "$3$",
+        "D": "$-1$"
+      },
+      "answer": "A",
+      "explanation": "For infinitely many solutions, the equations must be proportional. Multiply the first by 2: $4x + 2ky = 12$. For this to match $4x + 2y = 12$, we need $2k = 2$, so $k = 1$."
+    },
+    {
+      "id": "m-lsys-006",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "prompt": "The sum of two numbers is 50 and their difference is 14. What is the product of the two numbers?",
+      "choices": {
+        "A": "$576$",
+        "B": "$600$",
+        "C": "$484$",
+        "D": "$625$"
+      },
+      "answer": "A",
+      "explanation": "$x+y=50$, $x-y=14$. Solving: $x=32$, $y=18$. Product: $32 \\times 18 = 576$."
+    },
+    {
+      "id": "m-quad-004",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "prompt": "What is the vertex of $f(x) = 2x^2 - 8x + 5$?",
+      "choices": {
+        "A": "$(2, -3)$",
+        "B": "$(4, 5)$",
+        "C": "$(2, 5)$",
+        "D": "$(-2, -3)$"
+      },
+      "answer": "A",
+      "explanation": "$x$-coordinate of vertex: $-\\frac{b}{2a} = \\frac{8}{4} = 2$. $f(2) = 2(4)-16+5 = -3$. Vertex: $(2, -3)$."
+    },
+    {
+      "id": "m-quad-005",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "prompt": "How many real solutions does $3x^2 - 6x + 5 = 0$ have?",
+      "choices": {
+        "A": "No real solutions",
+        "B": "Exactly one real solution",
+        "C": "Exactly two real solutions",
+        "D": "Three real solutions"
+      },
+      "answer": "A",
+      "explanation": "Discriminant: $b^2-4ac = 36 - 60 = -24 < 0$. A negative discriminant means no real solutions."
+    },
+    {
+      "id": "m-quad-006",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "prompt": "If the roots of $x^2 + px + q = 0$ are $r$ and $s$, what is $r^2 + s^2$?",
+      "choices": {
+        "A": "$p^2 - 2q$",
+        "B": "$p^2 + 2q$",
+        "C": "$q^2 - 2p$",
+        "D": "$p - 2q$"
+      },
+      "answer": "A",
+      "explanation": "By Vieta's formulas: $r+s = -p$ and $rs = q$. Then $r^2+s^2 = (r+s)^2 - 2rs = (-p)^2 - 2q = p^2 - 2q$."
+    },
+    {
+      "id": "m-alg-h-001",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "If $f(x) = \\frac{2x+3}{x-1}$, what is $f^{-1}(5)$?",
+      "choices": {
+        "A": "$\\frac{8}{3}$",
+        "B": "$2$",
+        "C": "$4$",
+        "D": "$3$"
+      },
+      "answer": "A",
+      "explanation": "Set $y = \\frac{2x+3}{x-1}$, solve for $x$: $y(x-1) = 2x+3 \\Rightarrow x(y-2) = y+3 \\Rightarrow x = \\frac{y+3}{y-2}$. So $f^{-1}(5) = \\frac{5+3}{5-2} = \\frac{8}{3}$."
+    },
+    {
+      "id": "m-alg-h-002",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "prompt": "The sum of three consecutive odd integers is 111. What is the largest of the three?",
+      "choices": {
+        "A": "$39$",
+        "B": "$37$",
+        "C": "$41$",
+        "D": "$35$"
+      },
+      "answer": "A",
+      "explanation": "Let integers be $n, n+2, n+4$. Then $3n+6=111 \\Rightarrow n=35$. Largest: $35+4=39$."
     }
   ]
 }
