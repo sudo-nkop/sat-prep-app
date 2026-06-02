@@ -1,0 +1,43 @@
+name: Auto-fix issues with Claude
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  fix:
+    # Only run when labeled "claude" OR when first opened (adjust to taste)
+    if: |
+      github.event.action == 'labeled' && github.event.label.name == 'claude' ||
+      github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          trigger_phrase: ""   # empty = run on every matched issue
+          assignees: ${{ github.event.issue.user.login }}
+          timeout_minutes: "30"
+          direct_prompt: |
+            You are fixing a bug or feature request in the SAT Prep App.
+            The app is pure HTML/CSS/JavaScript — no framework, no build step.
+            Key files: www/index.html, www/app.js, www/styles.css, www/data/questions.json
+            It deploys via GitHub Pages from the www/ directory.
+
+            Issue #${{ github.event.issue.number }}: ${{ github.event.issue.title }}
+
+            ${{ github.event.issue.body }}
+
+            Instructions:
+            1. Understand the issue and locate the relevant code.
+            2. Implement a fix — minimal, targeted, no unrelated changes.
+            3. Commit your changes with a clear message referencing the issue number.
+            4. Open a pull request against main so a human can review before merging.
