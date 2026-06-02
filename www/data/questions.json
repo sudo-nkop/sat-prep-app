@@ -168,21 +168,6 @@
       "explanation": "Factor: $(x - 2)(x - 3) = 0 \\Rightarrow x = 2$ or $3$."
     },
     {
-      "id": "m-adv-002",
-      "section": "math",
-      "topic": "polynomials",
-      "difficulty": 1,
-      "prompt": "Which expression is equivalent to $(x + 3)(x - 4)$?",
-      "choices": {
-        "A": "$x^2 + x - 12$",
-        "B": "$x^2 - 7x + 12$",
-        "C": "$x^2 - x - 12$",
-        "D": "$x^2 + 7x - 12$"
-      },
-      "answer": "C",
-      "explanation": "$x^2 - 4x + 3x - 12 = x^2 - x - 12$."
-    },
-    {
       "id": "m-adv-003",
       "section": "math",
       "topic": "functions",
@@ -196,21 +181,6 @@
       },
       "answer": "C",
       "explanation": "$(2)^2 - 4(2) + 3 = 4 - 8 + 3 = -1$."
-    },
-    {
-      "id": "m-adv-004",
-      "section": "math",
-      "topic": "exponents",
-      "difficulty": 1,
-      "prompt": "Which is equivalent to $(2x^3)(3x^4)$?",
-      "choices": {
-        "A": "$6x^7$",
-        "B": "$6x^{12}$",
-        "C": "$5x^{12}$",
-        "D": "$5x^7$"
-      },
-      "answer": "A",
-      "explanation": "Multiply coefficients: $6$. Add exponents: $x^{3+4} = x^7$. Result: $6x^7$."
     },
     {
       "id": "m-adv-005",
@@ -241,21 +211,6 @@
       },
       "answer": "B",
       "explanation": "Vertex form: minimum = the constant after the squared term, here $-4$."
-    },
-    {
-      "id": "m-adv-007",
-      "section": "math",
-      "topic": "rational",
-      "difficulty": 2,
-      "prompt": "Which equals $\\dfrac{x^2 - 9}{x - 3}$ for $x \\ne 3$?",
-      "choices": {
-        "A": "$x + 3$",
-        "B": "$x^2 - 3$",
-        "C": "$x^2 + 3$",
-        "D": "$x - 3$"
-      },
-      "answer": "A",
-      "explanation": "$x^2 - 9 = (x - 3)(x + 3)$. Cancel $(x - 3) \\Rightarrow x + 3$."
     },
     {
       "id": "m-adv-008",
@@ -1518,21 +1473,6 @@
       "explanation": "$g(2) = 7$. $f(7) = 49$."
     },
     {
-      "id": "m-adv-013",
-      "section": "math",
-      "topic": "polynomials",
-      "difficulty": 2,
-      "prompt": "Which expression is equivalent to $\\dfrac{x^2 + 5x + 6}{x + 2}$?",
-      "choices": {
-        "A": "$x + 2$",
-        "B": "$x + 3$",
-        "C": "$x^2 + 3$",
-        "D": "$x - 3$"
-      },
-      "answer": "B",
-      "explanation": "$x^2 + 5x + 6 = (x+2)(x+3)$. Dividing by $(x+2)$ gives $x+3$."
-    },
-    {
       "id": "m-adv-014",
       "section": "math",
       "topic": "quadratics",
@@ -1561,21 +1501,6 @@
       },
       "answer": "B",
       "explanation": "Complete the square: $y = (x-3)^2 - 4$. Vertex is $(3, -4)$, so $k = -4$."
-    },
-    {
-      "id": "m-adv-016",
-      "section": "math",
-      "topic": "exponents",
-      "difficulty": 2,
-      "prompt": "Which expression equals $x^{1/2} \\cdot x^{3/2}$?",
-      "choices": {
-        "A": "$x^2$",
-        "B": "$x^{3/4}$",
-        "C": "$x^3$",
-        "D": "$x$"
-      },
-      "answer": "A",
-      "explanation": "$x^{1/2} \\cdot x^{3/2} = x^{(1/2 + 3/2)} = x^2$."
     },
     {
       "id": "m-adv-017",
@@ -1621,21 +1546,6 @@
       },
       "answer": "B",
       "explanation": "$x^2 - 4 = (x-2)(x+2)$; undefined when $x = 2$ or $x = -2$."
-    },
-    {
-      "id": "m-adv-020",
-      "section": "math",
-      "topic": "polynomials",
-      "difficulty": 2,
-      "prompt": "Which is the factored form of $4x^2 - 25$?",
-      "choices": {
-        "A": "$(4x + 5)(x - 5)$",
-        "B": "$(2x - 5)(2x + 5)$",
-        "C": "$(2x + 5)^2$",
-        "D": "$(4x - 5)(x + 5)$"
-      },
-      "answer": "B",
-      "explanation": "Difference of squares: $4x^2 - 25 = (2x)^2 - 5^2 = (2x-5)(2x+5)$."
     },
     {
       "id": "m-adv-021",
@@ -1696,21 +1606,6 @@
       },
       "answer": "B",
       "explanation": "Discriminant $= 36 - 48 = -12 < 0$. No real solutions."
-    },
-    {
-      "id": "m-adv-025",
-      "section": "math",
-      "topic": "radicals",
-      "difficulty": 2,
-      "prompt": "Which expression is equivalent to $\\sqrt{50} - \\sqrt{18}$?",
-      "choices": {
-        "A": "$4\\sqrt{2}$",
-        "B": "$\\sqrt{32}$",
-        "C": "$8$",
-        "D": "$2\\sqrt{2}$"
-      },
-      "answer": "D",
-      "explanation": "$\\sqrt{50} = 5\\sqrt{2}$; $\\sqrt{18} = 3\\sqrt{2}$. Difference $= 5\\sqrt{2} - 3\\sqrt{2} = 2\\sqrt{2}$."
     },
     {
       "id": "m-ps-009",
@@ -2461,36 +2356,6 @@
       },
       "answer": "C",
       "explanation": "$\\tan = \\dfrac{\\text{opposite}}{\\text{adjacent}} = \\dfrac{3}{4}$."
-    },
-    {
-      "id": "m-trig-002",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 2,
-      "prompt": "Which identity is always true?",
-      "choices": {
-        "A": "$\\sin^2\\theta + \\cos^2\\theta = 0$",
-        "B": "$\\sin^2\\theta + \\cos^2\\theta = 1$",
-        "C": "$\\sin\\theta = \\cos\\theta$",
-        "D": "$\\tan\\theta = \\sin\\theta \\cdot \\cos\\theta$"
-      },
-      "answer": "B",
-      "explanation": "The Pythagorean identity: $\\sin^2\\theta + \\cos^2\\theta = 1$ always holds."
-    },
-    {
-      "id": "m-trig-003",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 2,
-      "prompt": "Convert $270^\\circ$ to radians.",
-      "choices": {
-        "A": "$\\dfrac{3\\pi}{2}$",
-        "B": "$\\pi$",
-        "C": "$\\dfrac{3\\pi}{4}$",
-        "D": "$2\\pi$"
-      },
-      "answer": "A",
-      "explanation": "$270^\\circ \\times \\dfrac{\\pi}{180^\\circ} = \\dfrac{3\\pi}{2}$."
     },
     {
       "id": "m-trig-005",
@@ -3376,21 +3241,6 @@
       },
       "answer": "B",
       "explanation": "$A = s^2 = 6^2 = 36$."
-    },
-    {
-      "id": "m-adv-028",
-      "section": "math",
-      "topic": "rational",
-      "difficulty": 3,
-      "prompt": "Simplify: $\\dfrac{2x^2 - 8}{x^2 - 4}$",
-      "choices": {
-        "A": "$2(x+2)/(x+2)$",
-        "B": "$x - 2$",
-        "C": "$2$",
-        "D": "$\\dfrac{2(x-2)}{x-2}$"
-      },
-      "answer": "C",
-      "explanation": "$\\frac{2(x^2-4)}{x^2-4} = 2$ for $x \\ne \\pm 2$."
     },
     {
       "id": "m-stat-011",
@@ -10263,21 +10113,6 @@
       "explanation": "Adjacent side = hypotenuse × cos(30°) = 2 × (√3/2) = √3."
     },
     {
-      "id": "m-trig-016",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "What is sec(x) in terms of cosine?",
-      "choices": {
-        "A": "sin(x)/cos(x)",
-        "B": "cos(x)/sin(x)",
-        "C": "1/cos(x)",
-        "D": "1/sin(x)"
-      },
-      "answer": "C",
-      "explanation": "sec(x) = 1/cos(x) by definition."
-    },
-    {
       "id": "m-trig-017",
       "section": "math",
       "topic": "trigonometry",
@@ -10293,21 +10128,6 @@
       "explanation": "Opposite = hypotenuse × sin(60°) = 10 × (√3/2) = 5√3."
     },
     {
-      "id": "m-trig-019",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "In which quadrant is sin > 0 and cos < 0?",
-      "choices": {
-        "A": "I",
-        "B": "II",
-        "C": "III",
-        "D": "IV"
-      },
-      "answer": "B",
-      "explanation": "In Quadrant II, x is negative (cos < 0) and y is positive (sin > 0)."
-    },
-    {
       "id": "m-trig-021",
       "section": "math",
       "topic": "trigonometry",
@@ -10321,21 +10141,6 @@
       },
       "answer": "C",
       "explanation": "cos(37°) = adjacent/hypotenuse → hypotenuse = 8/0.8 = 10."
-    },
-    {
-      "id": "m-trig-022",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 2,
-      "prompt": "Which of the following equals cos(90° − θ)?",
-      "choices": {
-        "A": "cos(θ)",
-        "B": "−cos(θ)",
-        "C": "sin(θ)",
-        "D": "−sin(θ)"
-      },
-      "answer": "C",
-      "explanation": "Co-function identity: cos(90°−θ) = sin(θ)."
     },
     {
       "id": "m-trig-024",
@@ -10486,21 +10291,6 @@
       },
       "answer": "B",
       "explanation": "Primes between 10 and 30: 11, 13, 17, 19, 23 — that is 5 primes."
-    },
-    {
-      "id": "m-alge-056",
-      "section": "math",
-      "topic": "algebra",
-      "difficulty": 1,
-      "prompt": "What is the greatest common factor (GCF) of 36 and 48?",
-      "choices": {
-        "A": "6",
-        "B": "8",
-        "C": "12",
-        "D": "18"
-      },
-      "answer": "C",
-      "explanation": "Factors of 36: 1,2,3,4,6,9,12,18,36. Factors of 48: 1,2,3,4,6,8,12,16,24,48. GCF = 12."
     },
     {
       "id": "m-stat-049",
