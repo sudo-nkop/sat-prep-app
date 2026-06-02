@@ -89,7 +89,7 @@ function back() {
 
 // ---------- data load ----------
 async function loadQuestions() {
-  const res = await fetch('data/questions.json?v=19', { cache: 'no-cache' });
+  const res = await fetch('data/questions.json?v=20', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
   const imported = load(KEY.imported, []);
