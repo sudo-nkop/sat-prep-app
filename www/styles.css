@@ -1041,6 +1041,68 @@ hr { border: 0; border-top: 1.5px solid var(--border); margin: 22px 0; }
 }
 #mq-status { margin-top: 8px; min-height: 20px; }
 
+/* ── MANAGE QUESTIONS ──────────────────────────────────── */
+.manage-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.manage-search-input {
+  flex: 1;
+  min-width: 160px;
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+.manage-filter-select {
+  padding: 8px 10px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+}
+.manage-question-card {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.manage-question-meta {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+.manage-tag {
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 20px;
+  background: var(--border);
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.imported-tag {
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  color: var(--accent);
+}
+.manage-question-prompt {
+  font-size: 13px;
+  margin: 0 0 10px;
+  line-height: 1.5;
+  color: var(--text);
+}
+.btn.small {
+  padding: 5px 12px;
+  font-size: 12px;
+}
+
 /* ── QUIZ SECTION LABEL ────────────────────────────────── */
 .quiz-section-label {
   font-size: 11px;
