@@ -260,13 +260,19 @@ function populateEndlessTopicFilter() {
   refresh();
 }
 
-function buildEndlessPool(config) {
+function buildEndlessPool(config, excludeIds = new Set()) {
   const { section, topic, difficulties } = config;
-  return shuffle(allQuestions.filter(q =>
+  const matches = q =>
     (section === 'all' || q.section === section) &&
     (topic === 'all' || q.topic === topic) &&
-    (difficulties === 'all' || difficulties.has(q.difficulty))
-  )).map(shuffleChoices);
+    (difficulties === 'all' || difficulties.has(q.difficulty));
+  let pool = allQuestions.filter(q => matches(q) && !excludeIds.has(q.id));
+  if (pool.length === 0) {
+    // All questions seen this cycle — reset and start a new cycle
+    excludeIds.clear();
+    pool = allQuestions.filter(matches);
+  }
+  return shuffle(pool).map(shuffleChoices);
 }
 
 function startEndless() {
@@ -290,6 +296,7 @@ function startEndless() {
     startedAt: Date.now(),
     durationMs: null,
     _endlessConfig: config,
+    _seenIds: new Set(pool.map(q => q.id)),
   };
   go('screen-quiz');
   renderQuiz();
@@ -586,8 +593,9 @@ function nextQuestion() {
     if (s.idx < s.questions.length - 1) {
       s.idx += 1;
     } else {
-      // Pool exhausted — rebuild and append another cycle
-      const more = buildEndlessPool(s._endlessConfig);
+      // Pool exhausted — rebuild excluding already-seen questions this cycle
+      const more = buildEndlessPool(s._endlessConfig, s._seenIds);
+      more.forEach(q => s._seenIds.add(q.id));
       const newIdx = s.questions.length;
       s.questions.push(...more);
       s.answers.push(...new Array(more.length).fill(null));
