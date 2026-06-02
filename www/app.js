@@ -2147,6 +2147,21 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.getElementById('calc-close').onclick = closeCalc;
   calcBackdrop.addEventListener('click', closeCalc);
 
+  // report button
+  document.getElementById('quiz-report').onclick = () => {
+    const q = currentSession?.questions[currentSession?.idx];
+    const title = encodeURIComponent('Bad question report');
+    const body = encodeURIComponent(
+      `**Question ID:** ${q?.id ?? 'unknown'}\n\n` +
+      `**Question:** ${q?.prompt ?? ''}\n\n` +
+      `**Issue:**\n<!-- Describe what's wrong: incorrect answer, bad wording, not SAT-relevant, etc. -->`
+    );
+    window.open(
+      `https://github.com/sudo-nkop/sat-prep-app/issues/new?labels=bad-question&title=${title}&body=${body}`,
+      '_blank', 'noopener'
+    );
+  };
+
   // theme toggle inside calc panel
   const moonIcon = document.getElementById('calc-icon-moon');
   const sunIcon  = document.getElementById('calc-icon-sun');
