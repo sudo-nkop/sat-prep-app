@@ -10,6 +10,7 @@ const KEY = {
   imported: 'sat-app:imported',
   seen: 'sat-app:seen',
   mastered: 'sat-app:mastered',
+  deleted: 'sat-app:deleted',
 };
 
 const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark', accentColor: '' };
@@ -88,11 +89,12 @@ function back() {
 
 // ---------- data load ----------
 async function loadQuestions() {
-  const res = await fetch('data/questions.json?v=18', { cache: 'no-cache' });
+  const res = await fetch('data/questions.json?v=19', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
   const imported = load(KEY.imported, []);
-  allQuestions = [...data.questions, ...imported];
+  const deletedIds = new Set(load(KEY.deleted, []));
+  allQuestions = [...data.questions, ...imported].filter(q => !deletedIds.has(q.id));
   populateTopicFilter();
   populateEndlessTopicFilter();
   const hint = document.getElementById('search-results');
@@ -1152,6 +1154,63 @@ function parseImportText(text) {
   return { results, errors };
 }
 
+function deleteQuestion(id) {
+  // Remove from imported list if it's a custom question
+  const imported = load(KEY.imported, []);
+  const newImported = imported.filter(q => q.id !== id);
+  save(KEY.imported, newImported);
+
+  // Track deleted built-in question IDs
+  const deleted = load(KEY.deleted, []);
+  if (!deleted.includes(id)) {
+    save(KEY.deleted, [...deleted, id]);
+  }
+
+  allQuestions = allQuestions.filter(q => q.id !== id);
+  populateTopicFilter();
+  populateEndlessTopicFilter();
+  renderManageList();
+}
+
+function renderManageList() {
+  const search = (document.getElementById('manage-search')?.value || '').toLowerCase();
+  const section = document.getElementById('manage-section-filter')?.value || 'all';
+  const list = document.getElementById('manage-question-list');
+  const countEl = document.getElementById('manage-count');
+  if (!list) return;
+
+  let display = allQuestions.filter(q =>
+    (section === 'all' || q.section === section) &&
+    (!search || q.prompt.toLowerCase().includes(search) || (q.topic || '').toLowerCase().includes(search))
+  );
+
+  countEl.textContent = `Showing ${display.length} of ${allQuestions.length} questions`;
+
+  if (display.length === 0) {
+    list.innerHTML = '<p class="muted">No questions match.</p>';
+    return;
+  }
+
+  list.innerHTML = display.map(q => {
+    const isImported = q.id.startsWith('imported-');
+    const tag = isImported ? '<span class="manage-tag imported-tag">Custom</span>' : '';
+    const diff = ['', 'Easy', 'Medium', 'Hard'][q.difficulty] || '';
+    return `<div class="manage-question-card" data-id="${escapeHtml(q.id)}">
+      <div class="manage-question-meta">${tag}<span class="manage-tag">${(q.section || '').toUpperCase()}</span><span class="manage-tag">${escapeHtml(q.topic || '')}</span><span class="manage-tag">${diff}</span></div>
+      <p class="manage-question-prompt">${escapeHtml(q.prompt)}</p>
+      <button class="btn danger small delete-q-btn" data-id="${escapeHtml(q.id)}">Delete</button>
+    </div>`;
+  }).join('');
+
+  list.querySelectorAll('.delete-q-btn').forEach(btn => {
+    btn.onclick = () => {
+      if (confirm('Delete this question? This cannot be undone.')) {
+        deleteQuestion(btn.dataset.id);
+      }
+    };
+  });
+}
+
 function initImportScreen() {
   // tab switching
   document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -1161,8 +1220,13 @@ function initImportScreen() {
       const tab = btn.dataset.tab;
       document.getElementById('import-paste-panel').hidden = tab !== 'paste';
       document.getElementById('import-manual-panel').hidden = tab !== 'manual';
+      document.getElementById('import-manage-panel').hidden = tab !== 'manage';
+      if (tab === 'manage') renderManageList();
     };
   });
+
+  document.getElementById('manage-search').addEventListener('input', renderManageList);
+  document.getElementById('manage-section-filter').addEventListener('change', renderManageList);
 
   // parse button
   let parsedQuestions = [];
