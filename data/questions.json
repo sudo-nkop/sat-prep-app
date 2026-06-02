@@ -1743,21 +1743,6 @@
       "explanation": "Time $= \\frac{200}{80} = 2.5$ hours."
     },
     {
-      "id": "m-ps-011",
-      "section": "math",
-      "topic": "unit-conversion",
-      "difficulty": 1,
-      "prompt": "A room is 15 feet wide. How wide is it in yards?",
-      "choices": {
-        "A": "$180$",
-        "B": "$3$",
-        "C": "$5$",
-        "D": "$45$"
-      },
-      "answer": "C",
-      "explanation": "$15 \\div 3 = 5$ yards."
-    },
-    {
       "id": "m-ps-012",
       "section": "math",
       "topic": "percents",
@@ -2506,21 +2491,6 @@
       },
       "answer": "A",
       "explanation": "$270^\\circ \\times \\dfrac{\\pi}{180^\\circ} = \\dfrac{3\\pi}{2}$."
-    },
-    {
-      "id": "m-trig-004",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 2,
-      "prompt": "What is $\\sin(30^\\circ)$?",
-      "choices": {
-        "A": "$\\dfrac{1}{2}$",
-        "B": "$\\dfrac{\\sqrt{2}}{2}$",
-        "C": "$\\dfrac{\\sqrt{3}}{2}$",
-        "D": "$1$"
-      },
-      "answer": "A",
-      "explanation": "$\\sin(30^\\circ) = \\frac{1}{2}$ — a standard value to memorize."
     },
     {
       "id": "m-trig-005",
@@ -10263,51 +10233,6 @@
       "explanation": "Slope of given line: −2/3. Perpendicular slope = 3/2. Through origin: y = (3/2)x."
     },
     {
-      "id": "m-trig-006",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "sin(30°) = ?",
-      "choices": {
-        "A": "1/4",
-        "B": "√3/2",
-        "C": "1/2",
-        "D": "√2/2"
-      },
-      "answer": "C",
-      "explanation": "sin(30°) = 1/2 — a standard angle value."
-    },
-    {
-      "id": "m-trig-007",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "cos(60°) = ?",
-      "choices": {
-        "A": "1/2",
-        "B": "√2/2",
-        "C": "√3/2",
-        "D": "1"
-      },
-      "answer": "A",
-      "explanation": "cos(60°) = 1/2 — a standard angle value."
-    },
-    {
-      "id": "m-trig-008",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "tan(45°) = ?",
-      "choices": {
-        "A": "0",
-        "B": "1/2",
-        "C": "1",
-        "D": "√2"
-      },
-      "answer": "C",
-      "explanation": "tan(45°) = sin(45°)/cos(45°) = (√2/2)/(√2/2) = 1."
-    },
-    {
       "id": "m-trig-009",
       "section": "math",
       "topic": "trigonometry",
@@ -10323,66 +10248,6 @@
       "explanation": "sin = opposite/hypotenuse = 6/10 = 3/5."
     },
     {
-      "id": "m-trig-010",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "cos(0°) = ?",
-      "choices": {
-        "A": "0",
-        "B": "1/2",
-        "C": "√3/2",
-        "D": "1"
-      },
-      "answer": "D",
-      "explanation": "cos(0°) = 1."
-    },
-    {
-      "id": "m-trig-011",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "sin(90°) = ?",
-      "choices": {
-        "A": "0",
-        "B": "1/2",
-        "C": "√2/2",
-        "D": "1"
-      },
-      "answer": "D",
-      "explanation": "sin(90°) = 1."
-    },
-    {
-      "id": "m-trig-012",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "sin(60°) = ?",
-      "choices": {
-        "A": "1/2",
-        "B": "√2/2",
-        "C": "√3/2",
-        "D": "1"
-      },
-      "answer": "C",
-      "explanation": "sin(60°) = √3/2."
-    },
-    {
-      "id": "m-trig-013",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "cos(30°) = ?",
-      "choices": {
-        "A": "1/2",
-        "B": "√3/2",
-        "C": "√2/2",
-        "D": "1"
-      },
-      "answer": "B",
-      "explanation": "cos(30°) = √3/2."
-    },
-    {
       "id": "m-trig-014",
       "section": "math",
       "topic": "trigonometry",
@@ -10396,21 +10261,6 @@
       },
       "answer": "C",
       "explanation": "Adjacent side = hypotenuse × cos(30°) = 2 × (√3/2) = √3."
-    },
-    {
-      "id": "m-trig-015",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "The period of y = sin(x) is:",
-      "choices": {
-        "A": "π",
-        "B": "2π",
-        "C": "π/2",
-        "D": "4π"
-      },
-      "answer": "B",
-      "explanation": "The sine function completes one full cycle every 2π radians (360°)."
     },
     {
       "id": "m-trig-016",
@@ -10443,21 +10293,6 @@
       "explanation": "Opposite = hypotenuse × sin(60°) = 10 × (√3/2) = 5√3."
     },
     {
-      "id": "m-trig-018",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "tan(0°) = ?",
-      "choices": {
-        "A": "−1",
-        "B": "0",
-        "C": "1",
-        "D": "undefined"
-      },
-      "answer": "B",
-      "explanation": "tan(0°) = sin(0°)/cos(0°) = 0/1 = 0."
-    },
-    {
       "id": "m-trig-019",
       "section": "math",
       "topic": "trigonometry",
@@ -10471,21 +10306,6 @@
       },
       "answer": "B",
       "explanation": "In Quadrant II, x is negative (cos < 0) and y is positive (sin > 0)."
-    },
-    {
-      "id": "m-trig-020",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 2,
-      "prompt": "What is the law of cosines?",
-      "choices": {
-        "A": "a² = b² + c² − 2bc cos(A)",
-        "B": "a = b sin(A)/sin(B)",
-        "C": "a² = b² + c²",
-        "D": "sin²A + cos²A = 1"
-      },
-      "answer": "A",
-      "explanation": "The law of cosines: a² = b² + c² − 2bc cos(A), relating all three sides and one angle."
     },
     {
       "id": "m-trig-021",
@@ -10516,21 +10336,6 @@
       },
       "answer": "C",
       "explanation": "Co-function identity: cos(90°−θ) = sin(θ)."
-    },
-    {
-      "id": "m-trig-023",
-      "section": "math",
-      "topic": "trigonometry",
-      "difficulty": 1,
-      "prompt": "tan(60°) = ?",
-      "choices": {
-        "A": "1/2",
-        "B": "1",
-        "C": "√2",
-        "D": "√3"
-      },
-      "answer": "D",
-      "explanation": "tan(60°) = sin(60°)/cos(60°) = (√3/2)/(1/2) = √3."
     },
     {
       "id": "m-trig-024",
@@ -10786,21 +10591,6 @@
       },
       "answer": "C",
       "explanation": "3+7 = 4x−2x → 10 = 2x → x = 5."
-    },
-    {
-      "id": "m-alge-059",
-      "section": "math",
-      "topic": "algebra",
-      "difficulty": 1,
-      "prompt": "What is 30% of 250?",
-      "choices": {
-        "A": "60",
-        "B": "70",
-        "C": "75",
-        "D": "80"
-      },
-      "answer": "C",
-      "explanation": "0.30 × 250 = 75."
     },
     {
       "id": "m-alge-060",
