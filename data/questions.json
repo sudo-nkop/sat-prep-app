@@ -8272,7 +8272,7 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 2,
-      "prompt": "What is the maximum height of the ball in the previous problem?",
+      "prompt": "A ball is thrown upward with height $h(t) = -16t^2 + 64t + 80$ feet. What is the maximum height of the ball?",
       "choices": {
         "A": "128 feet",
         "B": "136 feet",
