@@ -3714,13 +3714,13 @@
       "difficulty": 3,
       "prompt": "A system of two linear equations has no solution. One equation is 10x − 11y = 26 and the other is rx − 11y = 13. What is the value of r?",
       "choices": {
-        "A": "11/10",
-        "B": "13/10",
-        "C": "26/11",
-        "D": "26/10"
+        "A": "10",
+        "B": "5",
+        "C": "13",
+        "D": "20"
       },
-      "answer": "D",
-      "explanation": "For no solution, the lines must be parallel: same slope but different y-intercepts. Setting the ratios of coefficients equal (10/r = 26/13) and solving gives r = 10×13/26 = 130/26... the correct value is r = 26/10 based on proportionality of the x-coefficients to the constants."
+      "answer": "A",
+      "explanation": "For no solution, the lines must be parallel: same slope, different y-intercepts. Both equations have the same y-coefficient (−11y), so the x-coefficients must also be equal: r = 10. Verify the lines aren't identical: 26/13 = 2 ≠ 1, so they're parallel but distinct. ✓"
     },
     {
       "id": "m-geom-003",
