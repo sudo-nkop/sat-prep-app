@@ -3712,15 +3712,15 @@
       "section": "math",
       "topic": "algebra",
       "difficulty": 3,
-      "prompt": "A system of two linear equations has no solution. One equation is 10x − 11y = 26 and the other is rx − 11y = 13. What is the value of r?",
+      "prompt": "A system of two linear equations has no solution. One equation is $6x - 5y = 10$ and the other is $9x - ry = 4$. What is the value of $r$?",
       "choices": {
-        "A": "10",
-        "B": "5",
-        "C": "13",
-        "D": "20"
+        "A": "$\\dfrac{15}{2}$",
+        "B": "$5$",
+        "C": "$6$",
+        "D": "$\\dfrac{10}{3}$"
       },
       "answer": "A",
-      "explanation": "For no solution, the lines must be parallel: same slope, different y-intercepts. Both equations have the same y-coefficient (−11y), so the x-coefficients must also be equal: r = 10. Verify the lines aren't identical: 26/13 = 2 ≠ 1, so they're parallel but distinct. ✓"
+      "explanation": "For no solution, the lines must be parallel: same slope, different y-intercepts. Slope of line 1: $\\frac{6}{5}$. Slope of line 2: $\\frac{9}{r}$. Setting equal: $\\frac{6}{5} = \\frac{9}{r} \\Rightarrow r = \\frac{45}{6} = \\frac{15}{2}$. Verify not identical: y-intercepts are $-2$ and $-\\frac{8}{15}$, which differ. ✓"
     },
     {
       "id": "m-geom-003",
@@ -4904,8 +4904,8 @@
         "C": "around 40% urban in 1970 to more than 70% urban in 2020",
         "D": "around 50% urban in 1970 to around 90% urban in 2020"
       },
-      "answer": "A",
-      "explanation": "Algeria going from less than 20% to more than 50% urban represents the dramatic increase referenced, consistent with being a major contributor to world urbanization growth."
+      "answer": "C",
+      "explanation": "Algeria's urban population rose from roughly 40% in 1970 to over 70% by 2020 — a large absolute increase that supports the claim that such countries were major contributors to global urbanization during this period."
     },
     {
       "id": "rw-quan-002",
@@ -9194,8 +9194,8 @@
         "C": "Equal times are spent at each speed",
         "D": "The speeds are very different"
       },
-      "answer": "C",
-      "explanation": "Average speed = total distance / total time. If equal times are spent, simple average works. If equal distances are covered, use the harmonic mean."
+      "answer": "B",
+      "explanation": "Average speed = total distance / total time. When equal **distances** are traveled at different speeds, the true average speed is the harmonic mean $\\frac{2v_1 v_2}{v_1 + v_2}$, not the arithmetic average. When equal **times** are spent at each speed, the arithmetic average $\\frac{v_1 + v_2}{2}$ is correct."
     },
     {
       "id": "m-stat-039",
@@ -12427,15 +12427,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 3,
-      "prompt": "Exam scores are normally distributed: mean $= 72$, SD $= 9$. Approximately what percentage of students scored between $63$ and $90$?",
+      "prompt": "Which of the following data sets has the greatest standard deviation?",
       "choices": {
-        "A": "$68\\%$",
-        "B": "$81.5\\%$",
-        "C": "$95\\%$",
-        "D": "$97.5\\%$"
+        "A": "$\\{1, 1, 1, 1, 1\\}$",
+        "B": "$\\{1, 2, 3, 4, 5\\}$",
+        "C": "$\\{2, 2, 2, 2, 12\\}$",
+        "D": "$\\{10, 20, 30, 40, 50\\}$"
       },
-      "answer": "B",
-      "explanation": "$63 = 72 - 9 = \\mu - \\sigma$ and $90 = 72 + 18 = \\mu + 2\\sigma$. From the empirical rule: area from $\\mu - \\sigma$ to $\\mu = 34\\%$; area from $\\mu$ to $\\mu + 2\\sigma = 47.5\\%$. Total $\\approx 81.5\\%$."
+      "answer": "D",
+      "explanation": "Standard deviation measures how spread out values are from the mean. Set A has SD $= 0$ (all values identical). Set B has SD $\\approx 1.4$. Set C has SD $= 4$. Set D has mean $= 30$ with values spaced $10$ apart, giving SD $\\approx 14.1$ — the greatest of the four."
     },
     {
       "id": "m-adv-149",
