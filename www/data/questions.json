@@ -3639,13 +3639,13 @@
       "difficulty": 3,
       "prompt": "A warehouse stores plastic boxes (11 per shelf weigh at least 25 lbs, across 8 shelves) and cardboard boxes (12 per shelf weigh at least 25 lbs, across 7 shelves). If a box weighing at least 25 lbs is chosen at random, what is the probability it is a plastic box?",
       "choices": {
-        "A": "11/19",
-        "B": "22/43",
-        "C": "44/86",
-        "D": "88/172"
+        "A": "$\\frac{11}{19}$",
+        "B": "$\\frac{22}{43}$",
+        "C": "$\\frac{44}{86}$",
+        "D": "$\\frac{88}{172}$"
       },
       "answer": "B",
-      "explanation": "Total heavy plastic boxes: 8×11 = 88. Total heavy cardboard boxes: 7×12 = 84. Grand total: 172. P(plastic | ≥25 lbs) = 88/172 = 22/43."
+      "explanation": "Total heavy plastic boxes: $8 \\times 11 = 88$. Total heavy cardboard boxes: $7 \\times 12 = 84$. Grand total: $172$. $P(\\text{plastic} \\mid \\geq 25\\ \\text{lbs}) = \\frac{88}{172} = \\frac{22}{43}$."
     },
     {
       "id": "m-adva-001",
@@ -3789,13 +3789,13 @@
       "difficulty": 2,
       "prompt": "A box contains 6 red blocks (numbered 1–6), 4 blue blocks (numbered 1–4), and 5 purple blocks (numbered 1–5). One block is chosen at random. What is P(purple OR numbered 3)?",
       "choices": {
-        "A": "6/15",
-        "B": "7/15",
-        "C": "8/15",
-        "D": "9/15"
+        "A": "$\\frac{6}{15}$",
+        "B": "$\\frac{7}{15}$",
+        "C": "$\\frac{8}{15}$",
+        "D": "$\\frac{9}{15}$"
       },
       "answer": "B",
-      "explanation": "P(purple OR 3) = P(purple)+P(3)−P(purple AND 3) = 5/15+3/15−1/15 = 7/15. There are 5 purple blocks, 3 blocks labeled 3 (one per color), and 1 block that is both purple and numbered 3."
+      "explanation": "$P(\\text{purple OR 3}) = P(\\text{purple}) + P(3) - P(\\text{purple AND 3}) = \\frac{5}{15} + \\frac{3}{15} - \\frac{1}{15} = \\frac{7}{15}$. There are 5 purple blocks, 3 blocks labeled 3 (one per color), and 1 block that is both purple and numbered 3."
     },
     {
       "id": "m-geom-005",
@@ -7477,7 +7477,7 @@
       "section": "math",
       "topic": "algebra",
       "difficulty": 1,
-      "prompt": "If 2/3 · x = 10, what is x?",
+      "prompt": "If $\\frac{2}{3}x = 10$, what is $x$?",
       "choices": {
         "A": "12",
         "B": "15",
@@ -7485,7 +7485,7 @@
         "D": "20"
       },
       "answer": "B",
-      "explanation": "x = 10 × 3/2 = 15."
+      "explanation": "$x = 10 \\times \\frac{3}{2} = 15$."
     },
     {
       "id": "m-alge-016",
@@ -7972,30 +7972,30 @@
       "section": "math",
       "topic": "algebra",
       "difficulty": 1,
-      "prompt": "Which line is parallel to y = 3x + 2?",
+      "prompt": "Which line is parallel to $y = 3x + 2$?",
       "choices": {
-        "A": "y = −3x + 2",
-        "B": "y = (1/3)x + 2",
-        "C": "y = 3x − 5",
-        "D": "y = 3x + 2"
+        "A": "$y = -3x + 2$",
+        "B": "$y = \\frac{1}{3}x + 2$",
+        "C": "$y = 3x - 5$",
+        "D": "$y = 3x + 2$"
       },
       "answer": "C",
-      "explanation": "Parallel lines have the same slope (3). y=3x−5 has slope 3 and a different y-intercept."
+      "explanation": "Parallel lines have the same slope ($3$). $y = 3x - 5$ has slope $3$ and a different $y$-intercept."
     },
     {
       "id": "m-alge-049",
       "section": "math",
       "topic": "algebra",
       "difficulty": 1,
-      "prompt": "What is the slope of a line perpendicular to y = (2/3)x + 1?",
+      "prompt": "What is the slope of a line perpendicular to $y = \\frac{2}{3}x + 1$?",
       "choices": {
-        "A": "2/3",
-        "B": "−2/3",
-        "C": "3/2",
-        "D": "−3/2"
+        "A": "$\\frac{2}{3}$",
+        "B": "$-\\frac{2}{3}$",
+        "C": "$\\frac{3}{2}$",
+        "D": "$-\\frac{3}{2}$"
       },
       "answer": "D",
-      "explanation": "Perpendicular slopes are negative reciprocals: −3/2."
+      "explanation": "Perpendicular slopes are negative reciprocals: $-\\frac{3}{2}$."
     },
     {
       "id": "m-alge-050",
@@ -8122,15 +8122,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 2,
-      "prompt": "What are the solutions to 2x² + 5x − 3 = 0?",
+      "prompt": "What are the solutions to $2x^2 + 5x - 3 = 0$?",
       "choices": {
-        "A": "x = 1/2 or x = −3",
-        "B": "x = −1/2 or x = 3",
-        "C": "x = 3/2 or x = −1",
-        "D": "x = 1 or x = −3/2"
+        "A": "$x = \\frac{1}{2}$ or $x = -3$",
+        "B": "$x = -\\frac{1}{2}$ or $x = 3$",
+        "C": "$x = \\frac{3}{2}$ or $x = -1$",
+        "D": "$x = 1$ or $x = -\\frac{3}{2}$"
       },
       "answer": "A",
-      "explanation": "Factor: (2x−1)(x+3) = 0 → x = 1/2 or x = −3."
+      "explanation": "Factor: $(2x - 1)(x + 3) = 0 \\Rightarrow x = \\frac{1}{2}$ or $x = -3$."
     },
     {
       "id": "m-adva-007",
@@ -8617,15 +8617,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 1,
-      "prompt": "If 3^(2x) = 27, what is x?",
+      "prompt": "If $3^{2x} = 27$, what is $x$?",
       "choices": {
-        "A": "1",
-        "B": "3/2",
-        "C": "2",
-        "D": "3"
+        "A": "$1$",
+        "B": "$\\frac{3}{2}$",
+        "C": "$2$",
+        "D": "$3$"
       },
       "answer": "B",
-      "explanation": "3^(2x) = 3^3 → 2x = 3 → x = 3/2."
+      "explanation": "$3^{2x} = 3^3 \\Rightarrow 2x = 3 \\Rightarrow x = \\frac{3}{2}$."
     },
     {
       "id": "m-adva-040",
@@ -8812,15 +8812,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 1,
-      "prompt": "If f(x) = 2^x, what is f(−3)?",
+      "prompt": "If $f(x) = 2^x$, what is $f(-3)$?",
       "choices": {
-        "A": "−8",
-        "B": "1/6",
-        "C": "1/8",
-        "D": "−6"
+        "A": "$-8$",
+        "B": "$\\frac{1}{6}$",
+        "C": "$\\frac{1}{8}$",
+        "D": "$-6$"
       },
       "answer": "C",
-      "explanation": "f(−3) = 2^(−3) = 1/8."
+      "explanation": "$f(-3) = 2^{-3} = \\frac{1}{8}$."
     },
     {
       "id": "m-stat-014",
@@ -8964,13 +8964,13 @@
       "difficulty": 1,
       "prompt": "A fair coin is flipped 3 times. What is the probability of getting all heads?",
       "choices": {
-        "A": "1/4",
-        "B": "1/6",
-        "C": "1/8",
-        "D": "1/16"
+        "A": "$\\frac{1}{4}$",
+        "B": "$\\frac{1}{6}$",
+        "C": "$\\frac{1}{8}$",
+        "D": "$\\frac{1}{16}$"
       },
       "answer": "C",
-      "explanation": "P = (1/2)³ = 1/8."
+      "explanation": "$P = \\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$."
     },
     {
       "id": "m-stat-024",
@@ -8979,13 +8979,13 @@
       "difficulty": 1,
       "prompt": "A standard die is rolled once. What is the probability of rolling an even number?",
       "choices": {
-        "A": "1/3",
-        "B": "1/2",
-        "C": "2/3",
-        "D": "1/6"
+        "A": "$\\frac{1}{3}$",
+        "B": "$\\frac{1}{2}$",
+        "C": "$\\frac{2}{3}$",
+        "D": "$\\frac{1}{6}$"
       },
       "answer": "B",
-      "explanation": "Even faces: {2,4,6} = 3 out of 6. P = 1/2."
+      "explanation": "Even faces: $\\{2, 4, 6\\} = 3$ out of $6$. $P = \\frac{1}{2}$."
     },
     {
       "id": "m-stat-025",
@@ -8994,13 +8994,13 @@
       "difficulty": 1,
       "prompt": "A bag has 3 red, 4 blue, 5 green balls. What is the probability of drawing red?",
       "choices": {
-        "A": "1/4",
-        "B": "1/3",
-        "C": "5/12",
-        "D": "1/2"
+        "A": "$\\frac{1}{4}$",
+        "B": "$\\frac{1}{3}$",
+        "C": "$\\frac{5}{12}$",
+        "D": "$\\frac{1}{2}$"
       },
       "answer": "A",
-      "explanation": "P = 3/12 = 1/4."
+      "explanation": "$P = \\frac{3}{12} = \\frac{1}{4}$."
     },
     {
       "id": "m-stat-026",
@@ -9024,13 +9024,13 @@
       "difficulty": 1,
       "prompt": "What is P(at least one head) in 3 coin flips?",
       "choices": {
-        "A": "1/2",
-        "B": "3/4",
-        "C": "7/8",
-        "D": "3/8"
+        "A": "$\\frac{1}{2}$",
+        "B": "$\\frac{3}{4}$",
+        "C": "$\\frac{7}{8}$",
+        "D": "$\\frac{3}{8}$"
       },
       "answer": "C",
-      "explanation": "P(at least one) = 1 − P(none) = 1 − 1/8 = 7/8."
+      "explanation": "$P(\\text{at least one}) = 1 - P(\\text{none}) = 1 - \\frac{1}{8} = \\frac{7}{8}$."
     },
     {
       "id": "m-stat-028",
@@ -9084,13 +9084,13 @@
       "difficulty": 3,
       "prompt": "Drawing 2 cards without replacement from a 52-card deck, what is P(both aces)?",
       "choices": {
-        "A": "1/169",
-        "B": "1/221",
-        "C": "1/270",
-        "D": "4/52"
+        "A": "$\\frac{1}{169}$",
+        "B": "$\\frac{1}{221}$",
+        "C": "$\\frac{1}{270}$",
+        "D": "$\\frac{4}{52}$"
       },
       "answer": "B",
-      "explanation": "(4/52)×(3/51) = 12/2652 = 1/221."
+      "explanation": "$\\frac{4}{52} \\times \\frac{3}{51} = \\frac{12}{2652} = \\frac{1}{221}$."
     },
     {
       "id": "m-stat-032",
@@ -9099,13 +9099,13 @@
       "difficulty": 2,
       "prompt": "A bag has 5 red and 3 blue balls. P(red then blue, without replacement)?",
       "choices": {
-        "A": "5/24",
-        "B": "15/56",
-        "C": "15/64",
-        "D": "5/8"
+        "A": "$\\frac{5}{24}$",
+        "B": "$\\frac{15}{56}$",
+        "C": "$\\frac{15}{64}$",
+        "D": "$\\frac{5}{8}$"
       },
       "answer": "B",
-      "explanation": "(5/8)×(3/7) = 15/56."
+      "explanation": "$\\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}$."
     },
     {
       "id": "m-stat-033",
@@ -9204,13 +9204,13 @@
       "difficulty": 2,
       "prompt": "A jar has 10 marbles: 6 red and 4 blue. Two are drawn without replacement. What is the probability both are blue?",
       "choices": {
-        "A": "2/15",
-        "B": "4/25",
-        "C": "1/5",
-        "D": "2/5"
+        "A": "$\\frac{2}{15}$",
+        "B": "$\\frac{4}{25}$",
+        "C": "$\\frac{1}{5}$",
+        "D": "$\\frac{2}{5}$"
       },
       "answer": "A",
-      "explanation": "(4/10)×(3/9) = 12/90 = 2/15."
+      "explanation": "$\\frac{4}{10} \\times \\frac{3}{9} = \\frac{12}{90} = \\frac{2}{15}$."
     },
     {
       "id": "m-stat-040",
@@ -9309,13 +9309,13 @@
       "difficulty": 1,
       "prompt": "A bag contains 4 red, 3 blue, 2 green balls. If one is drawn at random, P(not red) = ?",
       "choices": {
-        "A": "4/9",
-        "B": "5/9",
-        "C": "1/3",
-        "D": "2/3"
+        "A": "$\\frac{4}{9}$",
+        "B": "$\\frac{5}{9}$",
+        "C": "$\\frac{1}{3}$",
+        "D": "$\\frac{2}{3}$"
       },
       "answer": "B",
-      "explanation": "P(not red) = 1 − 4/9 = 5/9."
+      "explanation": "$P(\\text{not red}) = 1 - \\frac{4}{9} = \\frac{5}{9}$."
     },
     {
       "id": "m-stat-047",
@@ -9339,13 +9339,13 @@
       "difficulty": 1,
       "prompt": "If a die is rolled twice, what is the probability of getting a 6 both times?",
       "choices": {
-        "A": "1/6",
-        "B": "1/12",
-        "C": "1/36",
-        "D": "1/18"
+        "A": "$\\frac{1}{6}$",
+        "B": "$\\frac{1}{12}$",
+        "C": "$\\frac{1}{36}$",
+        "D": "$\\frac{1}{18}$"
       },
       "answer": "C",
-      "explanation": "(1/6)×(1/6) = 1/36."
+      "explanation": "$\\frac{1}{6} \\times \\frac{1}{6} = \\frac{1}{36}$."
     },
     {
       "id": "m-geom-006",
@@ -10072,30 +10072,30 @@
       "section": "math",
       "topic": "geometry",
       "difficulty": 2,
-      "prompt": "A line is perpendicular to 2x + 3y = 6 and passes through (0, 0). What is its equation?",
+      "prompt": "A line is perpendicular to $2x + 3y = 6$ and passes through $(0, 0)$. What is its equation?",
       "choices": {
-        "A": "y = −(2/3)x",
-        "B": "y = (3/2)x",
-        "C": "y = (2/3)x",
-        "D": "y = −(3/2)x"
+        "A": "$y = -\\frac{2}{3}x$",
+        "B": "$y = \\frac{3}{2}x$",
+        "C": "$y = \\frac{2}{3}x$",
+        "D": "$y = -\\frac{3}{2}x$"
       },
       "answer": "B",
-      "explanation": "Slope of given line: −2/3. Perpendicular slope = 3/2. Through origin: y = (3/2)x."
+      "explanation": "Slope of given line: $-\\frac{2}{3}$. Perpendicular slope $= \\frac{3}{2}$. Through origin: $y = \\frac{3}{2}x$."
     },
     {
       "id": "m-trig-009",
       "section": "math",
       "topic": "trigonometry",
       "difficulty": 1,
-      "prompt": "In a right triangle, hypotenuse = 10, opposite leg = 6. What is sin of the angle opposite the 6-leg?",
+      "prompt": "In a right triangle, the hypotenuse $= 10$ and one leg $= 6$. What is $\\sin$ of the angle opposite the leg of length 6?",
       "choices": {
-        "A": "3/4",
-        "B": "3/5",
-        "C": "4/5",
-        "D": "6/10"
+        "A": "$\\frac{3}{4}$",
+        "B": "$\\frac{3}{5}$",
+        "C": "$\\frac{4}{5}$",
+        "D": "$\\frac{6}{10}$"
       },
       "answer": "B",
-      "explanation": "sin = opposite/hypotenuse = 6/10 = 3/5."
+      "explanation": "$\\sin\\theta = \\dfrac{\\text{opposite}}{\\text{hypotenuse}} = \\dfrac{6}{10} = \\dfrac{3}{5}$."
     },
     {
       "id": "m-trig-014",
@@ -10207,7 +10207,7 @@
       "section": "math",
       "topic": "data-analysis",
       "difficulty": 1,
-      "prompt": "A recipe needs 2/3 cup of sugar per batch. How many cups for 4.5 batches?",
+      "prompt": "A recipe needs $\\frac{2}{3}$ cup of sugar per batch. How many cups are needed for 4.5 batches?",
       "choices": {
         "A": "2.5",
         "B": "3",
@@ -10215,7 +10215,7 @@
         "D": "4"
       },
       "answer": "B",
-      "explanation": "(2/3) × 4.5 = 3 cups."
+      "explanation": "$\\frac{2}{3} \\times 4.5 = 3$ cups."
     },
     {
       "id": "m-data-006",
@@ -10299,13 +10299,13 @@
       "difficulty": 2,
       "prompt": "A box contains 3 yellow and 5 purple pens. A pen is drawn, not replaced, then another is drawn. What is P(both purple)?",
       "choices": {
-        "A": "1/4",
-        "B": "5/14",
-        "C": "5/16",
-        "D": "25/64"
+        "A": "$\\frac{1}{4}$",
+        "B": "$\\frac{5}{14}$",
+        "C": "$\\frac{5}{16}$",
+        "D": "$\\frac{25}{64}$"
       },
       "answer": "B",
-      "explanation": "(5/8)×(4/7) = 20/56 = 5/14."
+      "explanation": "$\\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$."
     },
     {
       "id": "m-data-010",
@@ -10492,7 +10492,7 @@
       "section": "math",
       "topic": "algebra",
       "difficulty": 1,
-      "prompt": "A line passes through (4, 6) and has slope 1/2. What is its y-intercept?",
+      "prompt": "A line passes through $(4, 6)$ and has slope $\\frac{1}{2}$. What is its $y$-intercept?",
       "choices": {
         "A": "2",
         "B": "3",
@@ -10500,7 +10500,7 @@
         "D": "5"
       },
       "answer": "C",
-      "explanation": "y − 6 = (1/2)(x − 4) → y = x/2 + 4. y-intercept = 4."
+      "explanation": "$y - 6 = \\frac{1}{2}(x - 4) \\Rightarrow y = \\frac{x}{2} + 4$. The $y$-intercept is $4$."
     },
     {
       "id": "m-adva-054",
@@ -10749,13 +10749,13 @@
       "difficulty": 1,
       "prompt": "A card is drawn from a 52-card deck. P(red king) = ?",
       "choices": {
-        "A": "1/26",
-        "B": "1/13",
-        "C": "2/52",
-        "D": "1/52"
+        "A": "$\\frac{1}{26}$",
+        "B": "$\\frac{1}{13}$",
+        "C": "$\\frac{2}{52}$",
+        "D": "$\\frac{1}{52}$"
       },
       "answer": "A",
-      "explanation": "There are 2 red kings out of 52 cards: 2/52 = 1/26."
+      "explanation": "There are 2 red kings out of 52 cards: $\\frac{2}{52} = \\frac{1}{26}$."
     },
     {
       "id": "m-stat-053",
@@ -11860,12 +11860,12 @@
       "prompt": "If $x$ and $y$ are positive integers and $\\frac{x+y}{xy} = \\frac{1}{3}$, which of the following could be true?",
       "choices": {
         "A": "$x = 4, y = 12$",
-        "B": "$x = 6, y = 6$",
+        "B": "$x = 6,\\ y = 9$",
         "C": "$x = 3, y = 9$",
         "D": "$x = 2, y = 9$"
       },
       "answer": "A",
-      "explanation": "$\\frac{x+y}{xy} = \\frac{1}{x} + \\frac{1}{y} = \\frac{1}{3}$. Test A: $\\frac{1}{4} + \\frac{1}{12} = \\frac{3}{12} + \\frac{1}{12} = \\frac{4}{12} = \\frac{1}{3}$ ✓. Test B: $\\frac{1}{6}+\\frac{1}{6}=\\frac{1}{3}$ ✓ also! Wait — B also works. Let me re-check: $\\frac{1}{6}+\\frac{1}{6}=\\frac{2}{6}=\\frac{1}{3}$. Both A and B satisfy. Since the question says 'which could be true' (not 'must'), both are valid, but answer A is listed first. Let choice B be the answer: B ($x=6, y=6$)."
+      "explanation": "$\\frac{x+y}{xy} = \\frac{1}{x}+\\frac{1}{y} = \\frac{1}{3}$. Test A: $\\frac{1}{4}+\\frac{1}{12} = \\frac{3}{12}+\\frac{1}{12} = \\frac{4}{12} = \\frac{1}{3}$ ✓. Test B: $\\frac{1}{6}+\\frac{1}{9} = \\frac{3}{18}+\\frac{2}{18} = \\frac{5}{18} \\neq \\frac{1}{3}$ ✗. Test C: $\\frac{1}{3}+\\frac{1}{9} = \\frac{3}{9}+\\frac{1}{9} = \\frac{4}{9} \\neq \\frac{1}{3}$ ✗. Test D: $\\frac{1}{2}+\\frac{1}{9} = \\frac{9}{18}+\\frac{2}{18} = \\frac{11}{18} \\neq \\frac{1}{3}$ ✗. Only A works."
     },
     {
       "id": "m-adv-111",
@@ -12530,17 +12530,17 @@
     {
       "id": "m-adv-155",
       "section": "math",
-      "topic": "advanced-math",
+      "topic": "quadratics",
       "difficulty": 3,
-      "prompt": "If $z = 3 - 4i$, what is $|z|^2 + \\text{Re}(z^2)$?",
+      "prompt": "If $r$ and $s$ are the two roots of $x^2 - 5x + 3 = 0$, what is the value of $r^2 + s^2$?",
       "choices": {
-        "A": "$25$",
-        "B": "$32$",
-        "C": "$-7$",
-        "D": "$18$"
+        "A": "$13$",
+        "B": "$19$",
+        "C": "$22$",
+        "D": "$25$"
       },
-      "answer": "D",
-      "explanation": "$|z|^2 = 9 + 16 = 25$. $z^2 = (3-4i)^2 = 9 - 24i + 16i^2 = 9-24i-16 = -7-24i$, so $\\text{Re}(z^2) = -7$. Sum $= 25 + (-7) = 18$."
+      "answer": "B",
+      "explanation": "By Vieta's formulas: $r + s = 5$ and $rs = 3$. Then $r^2 + s^2 = (r+s)^2 - 2rs = 25 - 6 = 19$."
     },
     {
       "id": "m-adv-156",
@@ -12637,30 +12637,30 @@
       "section": "math",
       "topic": "trigonometry",
       "difficulty": 3,
-      "prompt": "If $\\tan\\theta = \\frac{3}{4}$ and $0 < \\theta < \\frac{\\pi}{2}$, what is $\\sin(2\\theta)$?",
+      "prompt": "In a right triangle, the hypotenuse is $13$ and one leg is $5$. What is $\\sin$ of the angle opposite the leg of length $5$?",
       "choices": {
-        "A": "$\\frac{24}{25}$",
-        "B": "$\\frac{7}{25}$",
-        "C": "$\\frac{12}{25}$",
-        "D": "$\\frac{6}{25}$"
+        "A": "$\\dfrac{5}{13}$",
+        "B": "$\\dfrac{12}{13}$",
+        "C": "$\\dfrac{5}{12}$",
+        "D": "$\\dfrac{13}{5}$"
       },
       "answer": "A",
-      "explanation": "$\\sin\\theta = \\frac{3}{5}$, $\\cos\\theta = \\frac{4}{5}$. $\\sin(2\\theta) = 2\\sin\\theta\\cos\\theta = 2 \\cdot \\frac{3}{5} \\cdot \\frac{4}{5} = \\frac{24}{25}$."
+      "explanation": "The missing leg is $\\sqrt{13^2 - 5^2} = 12$ (a 5-12-13 right triangle). $\\sin\\theta = \\dfrac{\\text{opposite}}{\\text{hypotenuse}} = \\dfrac{5}{13}$."
     },
     {
       "id": "m-trig-008",
       "section": "math",
       "topic": "trigonometry",
       "difficulty": 3,
-      "prompt": "Which values of $x$ in $[0, 2\\pi)$ satisfy $2\\cos^2 x - \\cos x - 1 = 0$?",
+      "prompt": "In a right triangle, $\\sin\\theta = \\dfrac{4}{5}$. What is $\\tan\\theta$?",
       "choices": {
-        "A": "$x = 0$, $x = \\frac{2\\pi}{3}$, $x = \\frac{4\\pi}{3}$",
-        "B": "$x = \\pi$ only",
-        "C": "$x = \\frac{\\pi}{3}$ and $x = \\pi$",
-        "D": "$x = \\frac{\\pi}{2}$ only"
+        "A": "$\\dfrac{4}{3}$",
+        "B": "$\\dfrac{3}{4}$",
+        "C": "$\\dfrac{5}{4}$",
+        "D": "$\\dfrac{3}{5}$"
       },
       "answer": "A",
-      "explanation": "Factor: $(2\\cos x + 1)(\\cos x - 1) = 0$. So $\\cos x = 1$ giving $x=0$, or $\\cos x = -\\frac{1}{2}$ giving $x = \\frac{2\\pi}{3}$ and $x = \\frac{4\\pi}{3}$."
+      "explanation": "Since $\\sin\\theta = \\frac{4}{5}$, the opposite leg is 4 and hypotenuse is 5. The adjacent leg is $\\sqrt{5^2-4^2}=3$. So $\\tan\\theta = \\dfrac{4}{3}$."
     },
     {
       "id": "m-ps-024",
