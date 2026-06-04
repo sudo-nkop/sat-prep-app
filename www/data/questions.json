@@ -9194,8 +9194,8 @@
         "C": "Equal times are spent at each speed",
         "D": "The speeds are very different"
       },
-      "answer": "C",
-      "explanation": "Average speed = total distance / total time. If equal times are spent, simple average works. If equal distances are covered, use the harmonic mean."
+      "answer": "B",
+      "explanation": "Average speed = total distance / total time. When equal distances are covered at each speed, the true average is the harmonic mean 2v₁v₂/(v₁+v₂) — not the simple arithmetic average. When equal times are spent at each speed, the arithmetic average (v₁+v₂)/2 is correct."
     },
     {
       "id": "m-stat-039",
