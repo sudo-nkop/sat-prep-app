@@ -11,6 +11,7 @@ const KEY = {
   seen: 'sat-app:seen',
   mastered: 'sat-app:mastered',
   deleted: 'sat-app:deleted',
+  questionLog: 'sat-app:question-log',
 };
 
 const DEFAULT_SETTINGS = { reminderHours: 24, theme: 'dark', accentColor: '' };
@@ -32,6 +33,18 @@ function save(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 function getSettings() { return { ...DEFAULT_SETTINGS, ...load(KEY.settings, {}) }; }
 function getStats() { return load(KEY.stats, { answered: 0, correct: 0, streak: 0, lastDay: null }); }
 function getHistory() { return load(KEY.history, []); }
+function getQuestionLog() { return load(KEY.questionLog, []); }
+function appendQuestionLog(sessionId, when, mode, questions, answers) {
+  const log = getQuestionLog();
+  questions.forEach((q, i) => {
+    const ans = answers[i] || '';
+    log.push([sessionId, when, mode, q.id, q.section, q.topic, q.difficulty,
+      q.prompt, q.choices.A, q.choices.B, q.choices.C, q.choices.D,
+      q.answer, ans, !ans ? 'Skipped' : ans === q.answer ? 'Correct' : 'Incorrect']);
+  });
+  // keep newest 5000 rows to stay within localStorage limits
+  save(KEY.questionLog, log.length > 5000 ? log.slice(log.length - 5000) : log);
+}
 function getSeenIds() { return new Set(load(KEY.seen, [])); }
 function addSeenIds(ids) {
   const seen = getSeenIds();
@@ -697,6 +710,9 @@ function showModuleBreak() {
   let correct = 0;
   s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct++; });
   fullSatState.results.push({ label: mod.label, score: correct, total: s.questions.length, durationMs: Date.now() - s.startedAt });
+  if (!fullSatState.questionData) fullSatState.questionData = { questions: [], answers: [] };
+  fullSatState.questionData.questions.push(...s.questions);
+  fullSatState.questionData.answers.push(...s.answers);
   addSeenIds(s.questions.map(q => q.id));
   addMasteredIds(s.questions.filter((q, i) => s.answers[i] === q.answer).map(q => q.id));
   const nextIdx = s.moduleIdx + 1;
@@ -740,9 +756,14 @@ function showFullSatResults() {
     `<div class="breakdown-item"><strong>${r.score}/${r.total}</strong>${r.label}</div>`
   ).join('');
   document.getElementById('review-list').innerHTML = '<p class="muted" style="text-align:center">Full test complete — see section breakdowns above.</p>';
+  const sessionTs = Date.now();
   const hist = getHistory();
-  hist.unshift({ when: Date.now(), mode: 'test', kind: 'full', score: totalCorrect, total: totalQ, durationMs: totalMs });
+  hist.unshift({ when: sessionTs, mode: 'test', kind: 'full', score: totalCorrect, total: totalQ, durationMs: totalMs });
   save(KEY.history, hist.slice(0, 50));
+  if (fullSatState.questionData) {
+    appendQuestionLog(sessionTs, new Date(sessionTs).toISOString(), 'Test_full',
+      fullSatState.questionData.questions, fullSatState.questionData.answers);
+  }
   fullSatState = null;
   go('screen-results');
 }
@@ -773,9 +794,12 @@ function finishQuiz(timeUp = false) {
     const correctIds = s.questions.filter((q, i) => s.answers[i] === q.answer).map(q => q.id);
     addMasteredIds(correctIds);
   }
+  const sessionTs = Date.now();
   const hist = getHistory();
-  hist.unshift({ when: Date.now(), mode: s.mode, kind: s.kind || null, score: correct, total: s.questions.length, durationMs: s.durationMs });
+  hist.unshift({ when: sessionTs, mode: s.mode, kind: s.kind || null, score: correct, total: s.questions.length, durationMs: s.durationMs });
   save(KEY.history, hist.slice(0, 50));
+  const modeLabel = s.mode === 'test' ? `Test_${s.kind || 'mixed'}` : s.mode === 'endless' ? 'Endless' : 'Practice';
+  appendQuestionLog(sessionTs, new Date(sessionTs).toISOString(), modeLabel, s.questions, s.answers);
   showResults(timeUp);
 }
 
@@ -988,22 +1012,18 @@ function exportSessionCSV() {
 }
 
 function exportHistoryCSV() {
-  const hist = getHistory();
-  if (hist.length === 0) { alert('No history to export.'); return; }
-  const rows = [
-    ['Date', 'Mode', 'Score', 'Total', 'Percent', 'Duration_s'],
-    ...hist.map(h => {
-      const d = new Date(h.when).toISOString().slice(0,10);
-      const mode = h.mode === 'test' ? `Test_${h.kind || 'mixed'}` : h.mode === 'endless' ? 'Endless' : 'Practice';
-      const pct = Math.round(h.score / h.total * 100);
-      const dur = Math.round((h.durationMs || 0) / 1000);
-      return [d, mode, h.score, h.total, pct, dur];
-    })
-  ];
-  const csv = rows.map(r => r.join(',')).join('\n');
+  const log = getQuestionLog();
+  if (log.length === 0) {
+    alert('No question data to export yet. Complete a session first — future sessions will be logged with full question details.');
+    return;
+  }
+  const header = ['Session_ID', 'DateTime', 'Mode', 'Question_ID', 'Section', 'Topic', 'Difficulty',
+    'Prompt', 'Choice_A', 'Choice_B', 'Choice_C', 'Choice_D', 'Correct_Answer', 'Your_Answer', 'Result'];
+  const rows = [header, ...log];
+  const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  const a = Object.assign(document.createElement('a'), { href: url, download: 'sat-history.csv' });
+  const a = Object.assign(document.createElement('a'), { href: url, download: 'sat-full-history.csv' });
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
@@ -2326,6 +2346,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     save(KEY.history, []);
     save(KEY.seen, []);
     save(KEY.mastered, []);
+    save(KEY.questionLog, []);
     renderHistory();
   };
   document.getElementById('reset-seen').onclick = () => {
