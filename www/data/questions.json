@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_comment": "SAT question bank - 860 questions",
+  "_comment": "SAT question bank - 960 questions",
   "questions": [
     {
       "id": "m-alg-001",
@@ -12901,6 +12901,1006 @@
       },
       "answer": "A",
       "explanation": "Let integers be $n, n+2, n+4$. Then $3n+6=111 \\Rightarrow n=35$. Largest: $35+4=39$."
+    },
+    {
+      "id": "m-fr-001",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $5x + 3 = 28$, what is the value of $x$?",
+      "answer": "5",
+      "explanation": "Subtract 3: $5x = 25$. Divide by 5: $x = 5$."
+    },
+    {
+      "id": "m-fr-002",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $\\frac{x}{4} - 2 = 3$, what is the value of $x$?",
+      "answer": "20",
+      "explanation": "Add 2: $\\frac{x}{4} = 5$. Multiply by 4: $x = 20$."
+    },
+    {
+      "id": "m-fr-003",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A store sells notebooks for $\\$3$ each. If Maria spends $\\$21$, how many notebooks does she buy?",
+      "answer": "7",
+      "explanation": "$21 \\div 3 = 7$ notebooks."
+    },
+    {
+      "id": "m-fr-004",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $2(x + 5) = 18$, what is the value of $x$?",
+      "answer": "4",
+      "explanation": "Divide by 2: $x + 5 = 9$. Subtract 5: $x = 4$."
+    },
+    {
+      "id": "m-fr-005",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the value of $x$ if $7x - 4 = 3x + 16$?",
+      "answer": "5",
+      "explanation": "Subtract $3x$: $4x - 4 = 16$. Add 4: $4x = 20$. Divide: $x = 5$."
+    },
+    {
+      "id": "m-fr-006",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "In the system $x + y = 10$ and $x - y = 4$, what is the value of $x$?",
+      "answer": "7",
+      "explanation": "Add the equations: $2x = 14$, so $x = 7$."
+    },
+    {
+      "id": "m-fr-007",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $2x + y = 11$ and $y = 3$, what is the value of $x$?",
+      "answer": "4",
+      "explanation": "Substitute $y = 3$: $2x + 3 = 11$, so $2x = 8$, $x = 4$."
+    },
+    {
+      "id": "m-fr-008",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is $40\\%$ of $85$?",
+      "answer": "34",
+      "explanation": "$0.40 \\times 85 = 34$."
+    },
+    {
+      "id": "m-fr-009",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A jacket costs $\\$80$. It is on sale for $25\\%$ off. What is the sale price in dollars?",
+      "answer": "60",
+      "explanation": "$25\\%$ of $80 = 20$. Sale price $= 80 - 20 = 60$."
+    },
+    {
+      "id": "m-fr-010",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A student scored $45$ out of $60$ on a test. What percent did the student score?",
+      "answer": "75",
+      "explanation": "$\\frac{45}{60} \\times 100 = 75\\%$."
+    },
+    {
+      "id": "m-fr-011",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "The ratio of boys to girls in a class is $3:5$. If there are $15$ boys, how many girls are there?",
+      "answer": "25",
+      "explanation": "$\\frac{3}{5} = \\frac{15}{g}$, so $g = 25$."
+    },
+    {
+      "id": "m-fr-012",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A recipe uses $2$ cups of flour for every $3$ cups of sugar. How many cups of flour are needed if $9$ cups of sugar are used?",
+      "answer": "6",
+      "explanation": "$\\frac{2}{3} = \\frac{f}{9}$, so $f = 6$."
+    },
+    {
+      "id": "m-fr-013",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A rectangle has a length of $12$ and a width of $7$. What is its area?",
+      "answer": "84",
+      "explanation": "Area $= 12 \\times 7 = 84$."
+    },
+    {
+      "id": "m-fr-014",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A circle has a radius of $5$. What is its area in terms of $\\pi$? Enter the coefficient of $\\pi$.",
+      "answer": "25",
+      "explanation": "Area $= \\pi r^2 = 25\\pi$, coefficient is $25$."
+    },
+    {
+      "id": "m-fr-015",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "Two angles of a triangle measure $55°$ and $80°$. What is the measure, in degrees, of the third angle?",
+      "answer": "45",
+      "explanation": "$180 - 55 - 80 = 45°$."
+    },
+    {
+      "id": "m-fr-016",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $f(x) = 3x - 4$, what is the value of $f(6)$?",
+      "answer": "14",
+      "explanation": "$f(6) = 3(6) - 4 = 18 - 4 = 14$."
+    },
+    {
+      "id": "m-fr-017",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $g(x) = x^2 + 2$, what is $g(3)$?",
+      "answer": "11",
+      "explanation": "$g(3) = 9 + 2 = 11$."
+    },
+    {
+      "id": "m-fr-018",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the mean of the data set $\\{4, 8, 6, 10, 12\\}$?",
+      "answer": "8",
+      "explanation": "Sum $= 40$. Mean $= 40 \\div 5 = 8$."
+    },
+    {
+      "id": "m-fr-019",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the median of the data set $\\{3, 7, 9, 15, 21\\}$?",
+      "answer": "9",
+      "explanation": "The middle value in the ordered list is $9$."
+    },
+    {
+      "id": "m-fr-020",
+      "section": "math",
+      "topic": "data-analysis",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A survey of $200$ students found that $60$ preferred math. What fraction (in lowest terms) preferred math? Enter the numerator if the denominator is $10$.",
+      "answer": "3",
+      "explanation": "$\\frac{60}{200} = \\frac{3}{10}$, so the numerator is $3$."
+    },
+    {
+      "id": "m-fr-021",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A bag contains $4$ red marbles and $6$ blue marbles. If one marble is chosen at random, what is the probability it is red? Enter your answer as a decimal.",
+      "answer": "0.4",
+      "explanation": "$P(\\text{red}) = \\frac{4}{10} = 0.4$."
+    },
+    {
+      "id": "m-fr-022",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $2^x = 32$, what is the value of $x$?",
+      "answer": "5",
+      "explanation": "$2^5 = 32$, so $x = 5$."
+    },
+    {
+      "id": "m-fr-023",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $\\frac{2x + 1}{3} = \\frac{x + 5}{2}$, what is the value of $x$?",
+      "answer": "13",
+      "explanation": "Cross-multiply: $2(2x+1) = 3(x+5)$. $4x+2 = 3x+15$. $x = 13$."
+    },
+    {
+      "id": "m-fr-024",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "The sum of three consecutive even integers is $78$. What is the largest of the three integers?",
+      "answer": "28",
+      "explanation": "Let integers be $n, n+2, n+4$. $3n+6=78$, $n=24$. Largest $= 28$."
+    },
+    {
+      "id": "m-fr-025",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $|2x - 5| = 9$, what is the positive value of $x$?",
+      "answer": "7",
+      "explanation": "$2x - 5 = 9$ gives $x = 7$; $2x-5=-9$ gives $x=-2$. Positive value: $7$."
+    },
+    {
+      "id": "m-fr-026",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A line passes through $(2, 3)$ and $(6, 11)$. What is its slope?",
+      "answer": "2",
+      "explanation": "Slope $= \\frac{11-3}{6-2} = \\frac{8}{4} = 2$."
+    },
+    {
+      "id": "m-fr-027",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $4x - 3y = 18$ and $y = 2$, what is the value of $x$?",
+      "answer": "6",
+      "explanation": "$4x - 6 = 18$, so $4x = 24$, $x = 6$."
+    },
+    {
+      "id": "m-fr-028",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "What is the positive solution to $x^2 - 5x - 14 = 0$?",
+      "answer": "7",
+      "explanation": "Factor: $(x-7)(x+2)=0$. Solutions: $x=7$ or $x=-2$. Positive: $7$."
+    },
+    {
+      "id": "m-fr-029",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $x^2 - 6x + 9 = 0$, what is the value of $x$?",
+      "answer": "3",
+      "explanation": "$(x-3)^2 = 0$, so $x = 3$."
+    },
+    {
+      "id": "m-fr-030",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "The vertex of the parabola $y = x^2 - 4x + 7$ is at $(h, k)$. What is the value of $k$?",
+      "answer": "3",
+      "explanation": "$h = -\\frac{-4}{2} = 2$. $k = 4 - 8 + 7 = 3$."
+    },
+    {
+      "id": "m-fr-031",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "What is the sum of the solutions to $x^2 - 7x + 10 = 0$?",
+      "answer": "7",
+      "explanation": "By Vieta's formulas, sum of roots $= 7$."
+    },
+    {
+      "id": "m-fr-032",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $f(x) = 2x^2 - 3x + 1$, what is $f(-2)$?",
+      "answer": "15",
+      "explanation": "$f(-2) = 2(4) - 3(-2) + 1 = 8 + 6 + 1 = 15$."
+    },
+    {
+      "id": "m-fr-033",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $f(x) = \\frac{x+3}{x-1}$, what is $f(5)$?",
+      "answer": "2",
+      "explanation": "$f(5) = \\frac{8}{4} = 2$."
+    },
+    {
+      "id": "m-fr-034",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A function is defined by $h(t) = -16t^2 + 64t$. What is the maximum value of $h(t)$?",
+      "answer": "64",
+      "explanation": "Vertex at $t = \\frac{64}{32} = 2$. $h(2) = -16(4)+128 = -64+128 = 64$."
+    },
+    {
+      "id": "m-fr-035",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A right triangle has legs of length $6$ and $8$. What is the length of the hypotenuse?",
+      "answer": "10",
+      "explanation": "$\\sqrt{6^2 + 8^2} = \\sqrt{36+64} = \\sqrt{100} = 10$."
+    },
+    {
+      "id": "m-fr-036",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A cylinder has a radius of $3$ and a height of $5$. What is the volume in terms of $\\pi$? Enter the coefficient of $\\pi$.",
+      "answer": "45",
+      "explanation": "$V = \\pi r^2 h = \\pi(9)(5) = 45\\pi$."
+    },
+    {
+      "id": "m-fr-037",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "In a circle with radius $r$, a chord is $6$ units long and is $4$ units from the center. What is $r$?",
+      "answer": "5",
+      "explanation": "Half-chord $= 3$. By Pythagorean theorem: $r = \\sqrt{3^2 + 4^2} = 5$."
+    },
+    {
+      "id": "m-fr-038",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "The area of a triangle is $30$ and its base is $10$. What is its height?",
+      "answer": "6",
+      "explanation": "$A = \\frac{1}{2}bh$: $30 = \\frac{1}{2}(10)h$, so $h = 6$."
+    },
+    {
+      "id": "m-fr-039",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "In the system $2x + y = 13$ and $x - y = 2$, what is the value of $x$?",
+      "answer": "5",
+      "explanation": "Add the equations: $3x = 15$, so $x = 5$."
+    },
+    {
+      "id": "m-fr-040",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A population of $500$ increases by $20\\%$ each year. What is the population after $2$ years?",
+      "answer": "720",
+      "explanation": "Year 1: $500 \\times 1.2 = 600$. Year 2: $600 \\times 1.2 = 720$."
+    },
+    {
+      "id": "m-fr-041",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A price increased from $\\$40$ to $\\$52$. What is the percent increase?",
+      "answer": "30",
+      "explanation": "$\\frac{52-40}{40} \\times 100 = \\frac{12}{40} \\times 100 = 30\\%$."
+    },
+    {
+      "id": "m-fr-042",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A car travels $150$ miles in $3$ hours. At the same rate, how many miles will it travel in $5$ hours?",
+      "answer": "250",
+      "explanation": "Rate $= 50$ mph. Distance $= 50 \\times 5 = 250$ miles."
+    },
+    {
+      "id": "m-fr-043",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $\\frac{a}{b} = \\frac{3}{4}$ and $b = 20$, what is $a$?",
+      "answer": "15",
+      "explanation": "$a = \\frac{3}{4} \\times 20 = 15$."
+    },
+    {
+      "id": "m-fr-044",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "The mean of five numbers is $12$. If four of the numbers are $8, 10, 14,$ and $15$, what is the fifth number?",
+      "answer": "13",
+      "explanation": "Sum $= 60$. Known sum $= 47$. Fifth $= 60 - 47 = 13$."
+    },
+    {
+      "id": "m-fr-045",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "The median of the set $\\{5, 8, x, 14, 18\\}$ is $11$. What is $x$?",
+      "answer": "11",
+      "explanation": "For the median to be $11$, $x$ must equal $11$ (the middle value)."
+    },
+    {
+      "id": "m-fr-046",
+      "section": "math",
+      "topic": "data-analysis",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A scatterplot shows that when $x = 0$, $y = 4$, and the line of best fit has slope $2$. What is the predicted value of $y$ when $x = 7$?",
+      "answer": "18",
+      "explanation": "$y = 2(7) + 4 = 14 + 4 = 18$."
+    },
+    {
+      "id": "m-fr-047",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A fair die is rolled twice. What is the probability that both rolls show a $6$? Enter your answer as a fraction with numerator over $36$.",
+      "answer": "1",
+      "explanation": "$P = \\frac{1}{6} \\times \\frac{1}{6} = \\frac{1}{36}$. Numerator is $1$."
+    },
+    {
+      "id": "m-fr-048",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A bacteria culture starts with $200$ bacteria and doubles every hour. How many bacteria are there after $3$ hours?",
+      "answer": "1600",
+      "explanation": "$200 \\times 2^3 = 200 \\times 8 = 1600$."
+    },
+    {
+      "id": "m-fr-049",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $3^{x+1} = 81$, what is the value of $x$?",
+      "answer": "3",
+      "explanation": "$81 = 3^4$, so $x+1 = 4$, $x = 3$."
+    },
+    {
+      "id": "m-fr-050",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "In a right triangle, $\\sin(\\theta) = \\frac{3}{5}$. What is $\\cos(\\theta)$? Enter your answer as a fraction — give the numerator if the denominator is $5$.",
+      "answer": "4",
+      "explanation": "$\\cos(\\theta) = \\frac{4}{5}$ (since $3^2+4^2=5^2$). Numerator is $4$."
+    },
+    {
+      "id": "m-fr-051",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $x^3 = 64$, what is the value of $x$?",
+      "answer": "4",
+      "explanation": "$4^3 = 64$, so $x = 4$."
+    },
+    {
+      "id": "m-fr-052",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "Simplify: $(2x^3)(3x^2)$. What is the coefficient of $x^5$?",
+      "answer": "6",
+      "explanation": "$(2)(3) = 6$ and $x^3 \\cdot x^2 = x^5$. Coefficient is $6$."
+    },
+    {
+      "id": "m-fr-053",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $\\sqrt{x+5} = 4$, what is the value of $x$?",
+      "answer": "11",
+      "explanation": "Square both sides: $x + 5 = 16$, so $x = 11$."
+    },
+    {
+      "id": "m-fr-054",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $\\frac{3}{x-2} + \\frac{2}{x+2} = 1$ and $x > 2$, what is the value of $x$?",
+      "answer": "6",
+      "explanation": "Multiply through by $(x-2)(x+2)$: $3(x+2)+2(x-2) = x^2-4$. $5x+2 = x^2-4$. $x^2-5x-6=0$. $(x-6)(x+1)=0$. Since $x>2$, $x=6$."
+    },
+    {
+      "id": "m-fr-055",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The linear function $f$ satisfies $f(1) = 4$ and $f(4) = 13$. What is the value of $f(0)$?",
+      "answer": "1",
+      "explanation": "Slope $= \\frac{13-4}{4-1} = 3$. $f(x) = 3x + b$. $f(1)=3+b=4$, $b=1$. $f(0) = 1$."
+    },
+    {
+      "id": "m-fr-056",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "For what value of $k$ does the equation $kx + 3 = 2x + k$ have no solution?",
+      "answer": "2",
+      "explanation": "Rearranging: $(k-2)x = k-3$. No solution when $k-2=0$ and $k-3 \\ne 0$, i.e., $k=2$."
+    },
+    {
+      "id": "m-fr-057",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $f(x) = ax + b$ satisfies $f(2) = 7$ and $f(5) = 16$, what is $b$?",
+      "answer": "1",
+      "explanation": "Slope $a = \\frac{16-7}{3} = 3$. $f(2)=6+b=7$, so $b=1$."
+    },
+    {
+      "id": "m-fr-058",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If the quadratic $x^2 + bx + 9 = 0$ has exactly one real solution, what is the positive value of $b$?",
+      "answer": "6",
+      "explanation": "Discriminant $= b^2 - 36 = 0$. $b = \\pm 6$. Positive value: $6$."
+    },
+    {
+      "id": "m-fr-059",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The product of two consecutive positive integers is $182$. What is the smaller integer?",
+      "answer": "13",
+      "explanation": "$n(n+1)=182$. $n^2+n-182=0$. $(n-13)(n+14)=0$. $n=13$."
+    },
+    {
+      "id": "m-fr-060",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $2x^2 - 5x - 3 = 0$, what is the positive value of $x$?",
+      "answer": "3",
+      "explanation": "Factor: $(2x+1)(x-3)=0$. $x = 3$ or $x = -\\frac{1}{2}$. Positive: $3$."
+    },
+    {
+      "id": "m-fr-061",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $f(x) = x^3 - 3x^2 + 2x$, for how many values of $x$ in the interval $[0, 3]$ does $f(x) = 0$?",
+      "answer": "3",
+      "explanation": "$f(x) = x(x-1)(x-2)$. Roots at $x=0,1,2$, all in $[0,3]$: 3 values."
+    },
+    {
+      "id": "m-fr-062",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "What is the remainder when $x^3 - 4x^2 + 5x - 2$ is divided by $x - 2$?",
+      "answer": "0",
+      "explanation": "By the Remainder Theorem, substitute $x=2$: $8-16+10-2=0$."
+    },
+    {
+      "id": "m-fr-063",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $f(x) = \\frac{x^2 - 1}{x - 1}$ for $x \\ne 1$, and $f$ is extended to be continuous at $x=1$, what is $f(1)$?",
+      "answer": "2",
+      "explanation": "$\\frac{x^2-1}{x-1} = x+1$. At $x=1$: $f(1) = 2$."
+    },
+    {
+      "id": "m-fr-064",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The polynomial $p(x) = x^3 - 6x^2 + 11x - 6$ has roots $1, 2,$ and $c$. What is $c$?",
+      "answer": "3",
+      "explanation": "By Vieta's, product of roots $= 6 = 1 \\cdot 2 \\cdot c$, so $c = 3$."
+    },
+    {
+      "id": "m-fr-065",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $f(f(x)) = x$ for all $x$ and $f(3) = 7$, what is $f(7)$?",
+      "answer": "3",
+      "explanation": "$f(f(3)) = 3$, so $f(7) = 3$."
+    },
+    {
+      "id": "m-fr-066",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The function $g$ is defined by $g(x) = \\frac{2x+1}{x-3}$. For what value of $x$ is $g(x)$ undefined?",
+      "answer": "3",
+      "explanation": "The denominator equals zero when $x - 3 = 0$, so $x = 3$."
+    },
+    {
+      "id": "m-fr-067",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $f(x) = 3x - 2$ and $g(x) = x^2$, what is $g(f(2))$?",
+      "answer": "16",
+      "explanation": "$f(2) = 4$. $g(4) = 16$."
+    },
+    {
+      "id": "m-fr-068",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "In the system $5x - 2y = 16$ and $3x + y = 14$, what is the value of $y$?",
+      "answer": "2",
+      "explanation": "From $y = 14-3x$: $5x-2(14-3x)=16$, $5x-28+6x=16$, $11x=44$, $x=4$. $y=14-12=2$."
+    },
+    {
+      "id": "m-fr-069",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $6x - y = 20$ and $2x + y = 12$, what is $x + y$?",
+      "answer": "8",
+      "explanation": "Add equations: $8x = 32$, $x = 4$. $y = 12 - 2(4) = 4$. $x+y = 8$."
+    },
+    {
+      "id": "m-fr-070",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "In the system $3x + 2y = 19$ and $x + y = 8$, what is the value of $x$?",
+      "answer": "3",
+      "explanation": "From $y = 8-x$: $3x+2(8-x)=19$, $x+16=19$, $x=3$."
+    },
+    {
+      "id": "m-fr-071",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A sphere has a volume of $\\frac{256\\pi}{3}$. What is its radius?",
+      "answer": "4",
+      "explanation": "$\\frac{4}{3}\\pi r^3 = \\frac{256\\pi}{3}$. $r^3 = 64$. $r = 4$."
+    },
+    {
+      "id": "m-fr-072",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "In the coordinate plane, what is the distance between $(-1, 2)$ and $(5, 10)$?",
+      "answer": "10",
+      "explanation": "$d = \\sqrt{(5-(-1))^2 + (10-2)^2} = \\sqrt{36+64} = \\sqrt{100} = 10$."
+    },
+    {
+      "id": "m-fr-073",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A cone has a radius of $6$ and a height of $8$. What is its slant height?",
+      "answer": "10",
+      "explanation": "Slant height $= \\sqrt{6^2 + 8^2} = \\sqrt{100} = 10$."
+    },
+    {
+      "id": "m-fr-074",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "An arc of a circle subtends a central angle of $60°$. If the radius is $12$, what is the arc length in terms of $\\pi$? Enter the coefficient of $\\pi$.",
+      "answer": "4",
+      "explanation": "Arc $= \\frac{60}{360} \\times 2\\pi(12) = \\frac{1}{6} \\times 24\\pi = 4\\pi$."
+    },
+    {
+      "id": "m-fr-075",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "In a right triangle, the two acute angles satisfy $\\sin(\\alpha) = \\cos(\\beta)$. If $\\alpha = 3x + 10$ and $\\beta = 2x + 15$ (in degrees), what is $x$?",
+      "answer": "13",
+      "explanation": "$\\alpha + \\beta = 90°$. $(3x+10)+(2x+15) = 90$. $5x+25=90$. $5x=65$. $x=13$."
+    },
+    {
+      "id": "m-fr-076",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $\\tan(\\theta) = \\frac{5}{12}$ and $\\theta$ is an acute angle, what is $\\sin(\\theta)$? Enter the numerator if the denominator is $13$.",
+      "answer": "5",
+      "explanation": "Hypotenuse $= \\sqrt{5^2+12^2} = 13$. $\\sin(\\theta) = \\frac{5}{13}$."
+    },
+    {
+      "id": "m-fr-077",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A data set has mean $50$ and standard deviation $5$. A value is $2.4$ standard deviations above the mean. What is that value?",
+      "answer": "62",
+      "explanation": "$50 + 2.4 \\times 5 = 50 + 12 = 62$."
+    },
+    {
+      "id": "m-fr-078",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The table below shows test scores. If a student scoring $90$ is added, the new mean becomes $82$. If there were originally $4$ students with a mean of $80$, what is the new mean after adding the student? (Just compute: 5 students, original sum $= 320$, new sum $= 410$. What is the new mean?)",
+      "answer": "82",
+      "explanation": "New sum $= 320 + 90 = 410$. New mean $= 410 / 5 = 82$."
+    },
+    {
+      "id": "m-fr-079",
+      "section": "math",
+      "topic": "data-analysis",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A line of best fit for a set of data passes through $(2, 11)$ and $(8, 29)$. What is the slope of the line?",
+      "answer": "3",
+      "explanation": "Slope $= \\frac{29-11}{8-2} = \\frac{18}{6} = 3$."
+    },
+    {
+      "id": "m-fr-080",
+      "section": "math",
+      "topic": "data-analysis",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "In a two-way table, $120$ students were surveyed. $70$ play sports, $50$ play instruments, and $20$ do both. How many students do neither?",
+      "answer": "20",
+      "explanation": "By inclusion-exclusion: $|S \\cup I| = 70+50-20=100$. Neither $= 120-100=20$."
+    },
+    {
+      "id": "m-fr-081",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A bag has $3$ red, $4$ blue, and $5$ green marbles. Two are drawn without replacement. What is the probability both are blue? Enter the numerator if the denominator is $66$.",
+      "answer": "6",
+      "explanation": "$\\binom{4}{2} = 6$, $\\binom{12}{2} = 66$. Probability $= \\frac{6}{66}$."
+    },
+    {
+      "id": "m-fr-082",
+      "section": "math",
+      "topic": "probability",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "A card is drawn from a standard $52$-card deck. Given that it is a face card, what is the probability it is a king? Enter your answer as a fraction — give the numerator if the denominator is $3$.",
+      "answer": "1",
+      "explanation": "There are $12$ face cards and $4$ kings. $P = \\frac{4}{12} = \\frac{1}{3}$."
+    },
+    {
+      "id": "m-fr-083",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "An investment grows according to $A = 1000 \\cdot 1.05^t$. After how many years will the investment first exceed $\\$1276$? (Use the fact that $1.05^5 \\approx 1.276$.) Enter the number of years.",
+      "answer": "5",
+      "explanation": "$1000 \\cdot 1.05^5 \\approx 1276$. So $t = 5$ years."
+    },
+    {
+      "id": "m-fr-084",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "If $4^x = 8$, what is the value of $x$? Enter your answer as a fraction — give the numerator if the denominator is $2$.",
+      "answer": "3",
+      "explanation": "$4^x = 2^{2x} = 8 = 2^3$, so $2x = 3$, $x = \\frac{3}{2}$."
+    },
+    {
+      "id": "m-fr-085",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $9 - 4x = 1$, what is the value of $x$?",
+      "answer": "2",
+      "explanation": "$-4x = -8$, so $x = 2$."
+    },
+    {
+      "id": "m-fr-086",
+      "section": "math",
+      "topic": "algebra",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $3(x - 4) = 15$, what is $x$?",
+      "answer": "9",
+      "explanation": "$x - 4 = 5$, so $x = 9$."
+    },
+    {
+      "id": "m-fr-087",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the perimeter of a square with side length $7$?",
+      "answer": "28",
+      "explanation": "Perimeter $= 4 \\times 7 = 28$."
+    },
+    {
+      "id": "m-fr-088",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $h(x) = 4x + 1$, what is $h(0)$?",
+      "answer": "1",
+      "explanation": "$h(0) = 4(0) + 1 = 1$."
+    },
+    {
+      "id": "m-fr-089",
+      "section": "math",
+      "topic": "quadratics",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the positive solution to $x^2 = 49$?",
+      "answer": "7",
+      "explanation": "$x = \\sqrt{49} = 7$."
+    },
+    {
+      "id": "m-fr-090",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "What is the value of $\\sqrt{144}$?",
+      "answer": "12",
+      "explanation": "$12^2 = 144$, so $\\sqrt{144} = 12$."
+    },
+    {
+      "id": "m-fr-091",
+      "section": "math",
+      "topic": "statistics",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A data set contains: $2, 5, 5, 7, 9, 9, 9, 11$. What is the mode?",
+      "answer": "9",
+      "explanation": "$9$ appears three times, more than any other value."
+    },
+    {
+      "id": "m-fr-092",
+      "section": "math",
+      "topic": "exponential",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "Evaluate $5^3$.",
+      "answer": "125",
+      "explanation": "$5^3 = 5 \\times 5 \\times 5 = 125$."
+    },
+    {
+      "id": "m-fr-093",
+      "section": "math",
+      "topic": "trigonometry",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "In a right triangle with legs $3$ and $4$, and hypotenuse $5$, what is $\\sin$ of the angle opposite the leg of length $3$? Enter the numerator if the denominator is $5$.",
+      "answer": "3",
+      "explanation": "$\\sin(\\theta) = \\frac{\\text{opposite}}{\\text{hypotenuse}} = \\frac{3}{5}$."
+    },
+    {
+      "id": "m-fr-094",
+      "section": "math",
+      "topic": "percents",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "After a $20\\%$ increase followed by a $20\\%$ decrease, a value of $\\$100$ becomes what amount?",
+      "answer": "96",
+      "explanation": "$100 \\times 1.2 = 120$. $120 \\times 0.8 = 96$."
+    },
+    {
+      "id": "m-fr-095",
+      "section": "math",
+      "topic": "ratios",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "Three people split a prize in the ratio $2:3:5$. If the total prize is $\\$1200$, how much does the person with the largest share receive?",
+      "answer": "600",
+      "explanation": "Largest share $= \\frac{5}{10} \\times 1200 = 600$."
+    },
+    {
+      "id": "m-fr-096",
+      "section": "math",
+      "topic": "data-analysis",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "A bar chart shows that Category A has $45$ items and Category B has $30$ items. How many more items does A have than B?",
+      "answer": "15",
+      "explanation": "$45 - 30 = 15$."
+    },
+    {
+      "id": "m-fr-097",
+      "section": "math",
+      "topic": "advanced-math",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "If $(x+3)^2 = 25$, what is the positive value of $x$?",
+      "answer": "2",
+      "explanation": "$x+3 = \\pm 5$. $x = 2$ or $x = -8$. Positive value: $2$."
+    },
+    {
+      "id": "m-fr-098",
+      "section": "math",
+      "topic": "linear-systems",
+      "difficulty": 1,
+      "type": "free-response",
+      "prompt": "If $x + y = 15$ and $x = 9$, what is $y$?",
+      "answer": "6",
+      "explanation": "$y = 15 - 9 = 6$."
+    },
+    {
+      "id": "m-fr-099",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "type": "free-response",
+      "prompt": "The function $f(x) = ax^2 + bx + c$ has vertex $(2, -3)$ and passes through $(0, 5)$. What is $a$?",
+      "answer": "2",
+      "explanation": "$f(x) = a(x-2)^2 - 3$. $f(0) = 4a - 3 = 5$, so $4a = 8$, $a = 2$."
+    },
+    {
+      "id": "m-fr-100",
+      "section": "math",
+      "topic": "geometry",
+      "difficulty": 2,
+      "type": "free-response",
+      "prompt": "A trapezoid has parallel bases of length $8$ and $12$ and a height of $5$. What is its area?",
+      "answer": "50",
+      "explanation": "Area $= \\frac{1}{2}(b_1+b_2) \\cdot h = \\frac{1}{2}(8+12)(5) = \\frac{1}{2}(20)(5) = 50$."
     }
   ]
 }
