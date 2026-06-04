@@ -10060,12 +10060,12 @@
       "prompt": "Which point lies on the line 3x − 2y = 6?",
       "choices": {
         "A": "(0, 3)",
-        "B": "(2, 0)",
+        "B": "(2, 1)",
         "C": "(1, 2)",
         "D": "(4, 3)"
       },
       "answer": "D",
-      "explanation": "Check (4,3): 3(4)−2(3) = 12−6 = 6 ✓."
+      "explanation": "Check each point in 3x − 2y = 6. Only (4, 3) works: 3(4) − 2(3) = 12 − 6 = 6 ✓. The others fail: (0,3)→−6, (2,1)→4, (1,2)→−1."
     },
     {
       "id": "m-geom-054",
