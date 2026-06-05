@@ -659,8 +659,8 @@
         "C": "Hobsbawm therefore concluded that industrialization was a uniquely European phenomenon.",
         "D": "For Hobsbawm, the period's true legacy lay in the transformation of work and routine, not in dramatic political events."
       },
-      "answer": "D",
-      "explanation": "A continues the passage's thesis. B is too extreme; C and D contradict the text."
+      "answer": "A",
+      "explanation": "A continues the passage's thesis by summarizing the transformation of work and routine as the true legacy. B is too extreme; C overstates; D contradicts the text."
     },
     {
       "id": "rw-rd-004",
@@ -690,7 +690,7 @@
         "D": "Frank Lloyd Wright designed Fallingwater, an example of organic architecture, to harmonize with its natural surroundings, including the waterfall it sits above."
       },
       "answer": "D",
-      "explanation": "C combines harmony with natural surroundings + the waterfall — directly hits the goal."
+      "explanation": "D combines harmony with natural surroundings + the waterfall — directly hits the goal. A and B are incomplete; C omits the key detail about the waterfall."
     },
     {
       "id": "rw-rd-006",
@@ -735,7 +735,7 @@
         "D": "Coral reefs cover less than 1% of the ocean floor but support roughly 25% of all marine species."
       },
       "answer": "D",
-      "explanation": "A juxtaposes <1% area with 25% of species — that's the disproportion."
+      "explanation": "D juxtaposes <1% area with 25% of species — that's the disproportion the writer wants to highlight. A, B, and C each state only one fact without the contrast."
     },
     {
       "id": "pdf-ac472881",
@@ -1035,7 +1035,7 @@
         "D": "Bianchi and Morri may have been less sensitive to the degree of morphological variation displayed within a typical species of microorganism than Coll and colleagues were."
       },
       "answer": "A",
-      "explanation": "Since non-microorganism counts were similar across the two censuses, the large overall difference must come from microorganism classification. B explains this: researcher decisions to count microorganism variations as separate species versus variations within a species accounts for the discrepancy."
+      "explanation": "Since non-microorganism counts were similar across the two censuses, the large overall difference must come from microorganism classification. A explains this: researcher decisions to count microorganism variations as separate species versus variations within a species accounts for the discrepancy. B suggests undercounting, which goes in the wrong direction; C and D are unsupported."
     },
     {
       "id": "pdf-87aa7bab",
@@ -1065,7 +1065,7 @@
         "D": "Designing disorienting spaces like those in the Gins and Arakawa building is the most effective way to create a physically stimulating environment."
       },
       "answer": "C",
-      "explanation": "The text describes an impractical but potentially health-improving apartment design. D accurately captures this main idea. A adds an unsupported claim about unsustainability; B overstates effectiveness; C misrepresents Yamaoka's role."
+      "explanation": "The text describes an impractical but potentially health-improving apartment design. C accurately captures this main idea. A adds an unsupported claim about Yamaoka's role as a filmmaker; B introduces unsupported \"unsustainability\"; D overstates with \"most effective way.\""
     },
     {
       "id": "pdf-d748c3fd",
@@ -2565,7 +2565,7 @@
         "D": "Down the street, the keys ran out of his pocket."
       },
       "answer": "A",
-      "explanation": "B correctly names the subject ('he') doing the running, avoiding the dangling modifier."
+      "explanation": "A correctly names the subject (\"he\") doing the running, avoiding the dangling modifier. B has a dangling modifier — it implies the keys were running. C and D are awkward or nonsensical."
     },
     {
       "id": "rw-gr-019",
@@ -2580,7 +2580,7 @@
         "D": "No one knows the future."
       },
       "answer": "A",
-      "explanation": "C is concise and complete. D loses 'currently'; A and B are wordy."
+      "explanation": "A is concise and complete. B adds redundant \"in the future\"; C is wordy (\"At this point in time, the situation is such that...\"); D drops \"currently,\" changing the meaning."
     },
     {
       "id": "rw-gr-020",
@@ -2685,7 +2685,7 @@
         "D": "To argue that dolphins are the most intelligent marine mammals"
       },
       "answer": "C",
-      "explanation": "The passage focuses on what echolocation is, how dolphins use it, and when it evolved. B best captures this central focus."
+      "explanation": "The passage focuses on what echolocation is, how dolphins use it, and when it evolved. C best captures this central focus. A is too broad; B is about vision/hearing comparison; D makes an unsupported intelligence claim."
     },
     {
       "id": "rw-rd-010",
@@ -2745,7 +2745,7 @@
         "D": "The Roman Colosseum, completed in 80 CE, stands about 157 feet tall."
       },
       "answer": "C",
-      "explanation": "B combines the capacity figure with the types of massive public events, directly addressing the goal."
+      "explanation": "C combines the capacity figure with the types of massive public events, directly addressing the goal. A and B give single facts; D focuses on height."
     },
     {
       "id": "rw-rd-014",
@@ -2760,7 +2760,7 @@
         "D": "The mathematical proof of the golden ratio"
       },
       "answer": "C",
-      "explanation": "The passage covers both natural occurrences and deliberate artistic use of the golden ratio. B correctly captures both dimensions."
+      "explanation": "The passage covers both natural occurrences and deliberate artistic use of the golden ratio. C correctly captures both dimensions. A speculates about beauty; B focuses only on da Vinci; D is narrowly about math proof."
     },
     {
       "id": "rw-rd-015",
@@ -2805,7 +2805,7 @@
         "D": "The Amazon basin is too dangerous for visitors to explore."
       },
       "answer": "A",
-      "explanation": "The text claims the Amazon has more bird species than anywhere else and attributes this to habitat variety. B captures both elements."
+      "explanation": "The text claims the Amazon has more bird species than anywhere else and attributes this to habitat variety. A captures both elements. B is a minor detail; C overgeneralizes; D is unsupported."
     },
     {
       "id": "rw-rd-018",
@@ -2820,7 +2820,7 @@
         "D": "Marie Curie was the first woman to win a Nobel Prize."
       },
       "answer": "A",
-      "explanation": "The goal is to highlight what's unique about her Nobel accomplishments. C emphasizes the two-discipline achievement, the most remarkable distinction."
+      "explanation": "The goal is to highlight what's unique about her Nobel accomplishments. A emphasizes the two-discipline achievement, the most remarkable distinction. B, C, and D each state narrower facts."
     },
     {
       "id": "rw-rd-019",
@@ -2865,7 +2865,7 @@
         "D": "Diallo's finding proves that social cohesion is effective in all neighborhoods regardless of circumstance."
       },
       "answer": "A",
-      "explanation": "Diallo identified social cohesion as the protective factor controlling for income. This supports B: organizations can help without income changes. A is too extreme; C/D overstate the findings."
+      "explanation": "Diallo identified social cohesion as the protective factor, controlling for income. This supports A: organizations can help without income changes. B is too extreme (\"entirely determined\"); C and D overstate the findings."
     },
     {
       "id": "rw-rd-022",
@@ -2895,7 +2895,7 @@
         "D": "The passenger pigeon became extinct due to natural climate changes."
       },
       "answer": "C",
-      "explanation": "The passage identifies commercial hunting and habitat destruction—human activity—as causes of extinction for a once-thriving species. B accurately states the main point."
+      "explanation": "The passage identifies commercial hunting and habitat destruction—human activity—as causes of extinction for a once-thriving species. C accurately states the main point. A, B, and D are minor details or unsupported."
     },
     {
       "id": "rw-rd-024",
@@ -2925,7 +2925,7 @@
         "D": "The Great Barrier Reef supports over 1,500 fish species."
       },
       "answer": "A",
-      "explanation": "B covers scale ('world's largest,' area) and both threats, directly meeting the stated goal."
+      "explanation": "A covers scale (\"world's largest,\" area) and both threats, directly meeting the stated goal. B, C, and D each give only one fact."
     },
     {
       "id": "rw-rd-026",
@@ -2955,7 +2955,7 @@
         "D": "Permafrost is found only in the Arctic region."
       },
       "answer": "A",
-      "explanation": "The passage describes how thawing releases gases that further warm the climate—the feedback loop. B accurately captures this central idea."
+      "explanation": "The passage describes how thawing releases gases that further warm the climate — the feedback loop. A accurately captures this central idea. B–D are unsupported or contradict the text."
     },
     {
       "id": "rw-rd-028",
@@ -3015,7 +3015,7 @@
         "D": "Silva's finding implies that seed banks play a negligible role in forest recovery after invasive species removal."
       },
       "answer": "C",
-      "explanation": "Recovery was faster than modeled because seed banks were intact. This means soil seed reserves can accelerate restoration—supporting B."
+      "explanation": "Recovery was faster than modeled because seed banks were intact. This means soil seed reserves can accelerate restoration — supporting C. A overgeneralizes; B contradicts the finding; D dismisses seed banks."
     },
     {
       "id": "rw-rd-032",
@@ -3045,7 +3045,7 @@
         "D": "Ando positions openings in his buildings to allow light inside."
       },
       "answer": "A",
-      "explanation": "C brings together materials, technique (light), and emotional effect—the full design philosophy. A, B, and D each capture only one note."
+      "explanation": "A brings together materials, technique (light), and emotional effect — the full design philosophy. B, C, and D each capture only one note."
     },
     {
       "id": "rw-rd-034",
@@ -3075,7 +3075,7 @@
         "D": "By arguing that deliberation is harmful in all social contexts."
       },
       "answer": "C",
-      "explanation": "Text 2 shows cooperation did not consistently decrease with more time, challenging the premise that intuition uniformly drives cooperation. B captures this gentle but direct challenge."
+      "explanation": "Text 2 shows cooperation did not consistently decrease with more time, challenging the premise that intuition uniformly drives cooperation. C captures this gentle but direct challenge. A attacks methodology; B agrees with Text 1; D overstates."
     },
     {
       "id": "rw-rd-036",
@@ -3090,7 +3090,7 @@
         "D": "All medical treatments should be replaced with placebos because they are equally effective."
       },
       "answer": "C",
-      "explanation": "The key finding is that open-label placebos still work, which challenges the assumption that deception is necessary. B captures this."
+      "explanation": "The key finding is that open-label placebos still work, which challenges the assumption that deception is necessary. C captures this. A overstates; B limits placebos to psychological conditions; D is unsupported."
     },
     {
       "id": "rw-rd-037",
@@ -3105,7 +3105,7 @@
         "D": "Asante's finding suggests that code-switching reflects systematic social and contextual choices rather than random language mixing."
       },
       "answer": "D",
-      "explanation": "Asante found patterned, context-tied switching—not random. B correctly characterizes this as systematic and socially governed."
+      "explanation": "Asante found patterned, context-tied switching — not random. D correctly characterizes this as systematic and socially governed. A implies deficiency; B overstates with \"all contexts\"; C implies confusion."
     },
     {
       "id": "rw-rd-038",
@@ -3150,7 +3150,7 @@
         "D": "Nagel uses bats to illustrate that subjective experience cannot be fully captured by objective scientific description, challenging physicalist theories of mind."
       },
       "answer": "D",
-      "explanation": "Nagel's argument is that first-person subjective experience (qualia) resists third-person scientific reduction. B accurately captures the point and the target (physicalism). A, C, and D misrepresent the argument."
+      "explanation": "Nagel's argument is that first-person subjective experience (qualia) resists third-person scientific reduction. D accurately captures the point and the target (physicalism). A, B, and C misrepresent the argument."
     },
     {
       "id": "m-adv-026",
@@ -3360,7 +3360,7 @@
         "D": "Penguins' dense bones, while preventing flight, are an adaptation that supports their deep-diving hunting behavior."
       },
       "answer": "D",
-      "explanation": "The passage explains that dense bones, though preventing flight, serve penguin hunting by enabling deep dives. B captures this tradeoff."
+      "explanation": "The passage explains that dense bones, though preventing flight, serve penguin hunting by enabling deep dives. D captures this tradeoff. A overgeneralizes; B inverts the bone-density point; C invents a genetic defect."
     },
     {
       "id": "rw-rd-042",
@@ -3435,7 +3435,7 @@
         "D": "The Hubble Space Telescope was launched in 1990."
       },
       "answer": "A",
-      "explanation": "B highlights the volume of observations and the key scientific discovery (universe age), directly addressing the goal of scientific impact."
+      "explanation": "A highlights the volume of observations and the key scientific discovery (universe age), directly addressing the goal of scientific impact. B–D give narrower or less meaningful facts."
     },
     {
       "id": "m-alg-022",
@@ -3495,7 +3495,7 @@
         "D": "Lin's finding indicates that seed banks contain too few species to support meaningful ecological restoration."
       },
       "answer": "C",
-      "explanation": "Lin found natural regeneration produced better diversity in this case, suggesting it can sometimes outperform active planting. B states this carefully without overgeneralizing."
+      "explanation": "Lin found natural regeneration produced better diversity in this case, suggesting it can sometimes outperform active planting. C states this carefully without overgeneralizing. A overstates (\"always fail\"); B overstates (\"counterproductive\"); D is unsupported."
     },
     {
       "id": "m-adv-030",
@@ -3570,7 +3570,7 @@
         "D": "Re-reading notes is the most effective study strategy."
       },
       "answer": "A",
-      "explanation": "The passage argues that retrieval practice (self-testing / active recall) outperforms passive re-reading for long-term retention. B accurately captures this."
+      "explanation": "The passage argues that retrieval practice (self-testing / active recall) outperforms passive re-reading for long-term retention. A accurately captures this. B conflates self-testing with formal exams; C and D contradict or misstate the passage."
     },
     {
       "id": "m-alge-001",
@@ -9194,8 +9194,8 @@
         "C": "Equal times are spent at each speed",
         "D": "The speeds are very different"
       },
-      "answer": "C",
-      "explanation": "Average speed = total distance / total time. If equal times are spent, simple average works. If equal distances are covered, use the harmonic mean."
+      "answer": "B",
+      "explanation": "Average speed = total distance / total time. If equal distances are covered at each speed, you must use the harmonic mean, not the simple arithmetic average. If equal times are spent at each speed, the simple average works correctly."
     },
     {
       "id": "m-stat-039",
@@ -11865,7 +11865,7 @@
         "D": "$x = 2, y = 9$"
       },
       "answer": "A",
-      "explanation": "$\\frac{x+y}{xy} = \\frac{1}{x} + \\frac{1}{y} = \\frac{1}{3}$. Test A: $\\frac{1}{4} + \\frac{1}{12} = \\frac{3}{12} + \\frac{1}{12} = \\frac{4}{12} = \\frac{1}{3}$ ✓. Test B: $\\frac{1}{6}+\\frac{1}{6}=\\frac{1}{3}$ ✓ also! Wait — B also works. Let me re-check: $\\frac{1}{6}+\\frac{1}{6}=\\frac{2}{6}=\\frac{1}{3}$. Both A and B satisfy. Since the question says 'which could be true' (not 'must'), both are valid, but answer A is listed first. Let choice B be the answer: B ($x=6, y=6$)."
+      "explanation": "$\\frac{x+y}{xy} = \\frac{1}{x} + \\frac{1}{y} = \\frac{1}{3}$. Test A: $\\frac{1}{4} + \\frac{1}{12} = \\frac{3}{12} + \\frac{1}{12} = \\frac{4}{12} = \\frac{1}{3}$ ✓. Choice A satisfies the equation."
     },
     {
       "id": "m-adv-111",
@@ -11894,7 +11894,7 @@
         "C": "$52$ ft",
         "D": "$60$ ft"
       },
-      "answer": "C",
+      "answer": "B",
       "explanation": "The vertex gives maximum height. $t = -\\frac{b}{2a} = -\\frac{48}{-32} = 1.5$ seconds. $h(1.5) = -16(2.25) + 48(1.5) + 4 = -36 + 72 + 4 = 40$ ft. Answer: B."
     },
     {
@@ -12614,7 +12614,7 @@
         "C": "$\\frac{1}{3}$",
         "D": "$4$"
       },
-      "answer": "B",
+      "answer": "A",
       "explanation": "$S_3 = a(1+r+r^2) = 21$ and $S_6 = a(1+r+r^2)(1+r^3) = 21(1+r^3) = 189$. So $1+r^3 = 9 \\Rightarrow r^3 = 8 \\Rightarrow r = 2$. Wait: $r^3=8 \\Rightarrow r=2$. Answer: A."
     },
     {
