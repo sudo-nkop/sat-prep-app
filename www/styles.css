@@ -1721,6 +1721,27 @@ hr { border: 0; border-top: 1.5px solid var(--border); margin: 22px 0; }
 #screen-quiz .choice.struck { opacity: 0.4; }
 #screen-quiz .choice.struck .ctxt { text-decoration: line-through; }
 
+/* Free-response (grid-in) answer input */
+.fr-answer { display: flex; flex-direction: column; gap: 8px; }
+.fr-input {
+  background: var(--card);
+  border: 2px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 15px 20px;
+  font: inherit;
+  font-size: 16px;
+  color: inherit;
+  width: 100%;
+  max-width: 260px;
+  transition: border-color .12s, background .12s;
+}
+.fr-input:focus { outline: none; border-color: #003087; }
+[data-theme="dark"] .fr-input:focus { border-color: var(--accent); }
+.fr-input.correct { border-color: var(--good); background: color-mix(in srgb, var(--good) 10%, transparent); }
+.fr-input.incorrect { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 8%, transparent); }
+.fr-input:disabled { cursor: default; opacity: 0.9; }
+.fr-correct-line { color: var(--good); font-size: 14px; font-weight: 600; }
+
 /* Explanation inside sat-body */
 #screen-quiz .explanation {
   border-radius: var(--radius);
