@@ -39,8 +39,8 @@ function appendQuestionLog(sessionId, when, mode, questions, answers) {
   questions.forEach((q, i) => {
     const ans = answers[i] || '';
     log.push([sessionId, when, mode, q.id, q.section, q.topic, q.difficulty,
-      q.prompt, q.choices.A, q.choices.B, q.choices.C, q.choices.D,
-      q.answer, ans, !ans ? 'Skipped' : ans === q.answer ? 'Correct' : 'Incorrect']);
+      q.prompt, q.choices?.A || '', q.choices?.B || '', q.choices?.C || '', q.choices?.D || '',
+      q.answer, ans, !ans ? 'Skipped' : isCorrectAnswer(q, ans) ? 'Correct' : 'Incorrect']);
   });
   // keep newest 5000 rows to stay within localStorage limits
   save(KEY.questionLog, log.length > 5000 ? log.slice(log.length - 5000) : log);
@@ -165,7 +165,20 @@ function shuffle(arr) {
   return a;
 }
 
+function isFreeResponse(q) { return q.type === 'free-response' || !q.choices; }
+
+function isCorrectAnswer(q, given) {
+  if (given == null) return false;
+  const a = String(given).trim();
+  const b = String(q.answer).trim();
+  if (a === b) return true;
+  if (!isFreeResponse(q)) return false;
+  const na = Number(a), nb = Number(b);
+  return a !== '' && !Number.isNaN(na) && !Number.isNaN(nb) && na === nb;
+}
+
 function shuffleChoices(q) {
+  if (isFreeResponse(q)) return q;
   const letters = ['A', 'B', 'C', 'D'].filter(l => q.choices[l] != null);
   const vals = letters.map(l => q.choices[l]);
   for (let i = vals.length - 1; i > 0; i--) {
@@ -425,6 +438,10 @@ function renderQuiz() {
   renderMath(promptEl);
   const choices = document.getElementById('q-choices');
   choices.innerHTML = '';
+  if (isFreeResponse(q)) {
+    renderFreeResponseInput(s, q, choices);
+    renderMath(choices);
+  } else {
   ['A','B','C','D'].forEach(letter => {
     if (!q.choices[letter]) return;
     const btn = document.createElement('button');
@@ -482,6 +499,7 @@ function renderQuiz() {
     choices.appendChild(btn);
   });
   renderMath(choices);
+  }
 
   // flag / mark for review visual
   const markBtn = document.getElementById('quiz-mark-review');
@@ -493,7 +511,7 @@ function renderQuiz() {
     if (markLabel) markLabel.textContent = isMarked ? 'Marked for Review' : 'Mark for Review';
   }
   const elimBtn = document.getElementById('quiz-eliminator');
-  if (elimBtn) elimBtn.hidden = s.mode === 'practice';
+  if (elimBtn) elimBtn.hidden = s.mode === 'practice' || isFreeResponse(q);
 
   // explanation reset
   const expl = document.getElementById('q-explanation');
@@ -555,7 +573,7 @@ function showExplanation() {
   const s = currentSession;
   const q = s.questions[s.idx];
   const ans = s.answers[s.idx];
-  const correct = ans === q.answer;
+  const correct = isCorrectAnswer(q, ans);
   // mark choices
   [...document.getElementById('q-choices').children].forEach(btn => {
     const l = btn.dataset.letter;
@@ -574,6 +592,44 @@ function showExplanation() {
   renderMath(explText);
 }
 
+function renderFreeResponseInput(s, q, container) {
+  const wrap = document.createElement('div');
+  wrap.className = 'fr-answer';
+  const input = document.createElement('input');
+  input.type = 'text';
+  input.inputMode = 'decimal';
+  input.className = 'fr-input';
+  input.placeholder = 'Enter your answer';
+  input.autocomplete = 'off';
+  input.spellcheck = false;
+  input.value = s.answers[s.idx] ?? '';
+  const reviewed = s.answers[s.idx] != null && s._reviewed?.[s.idx];
+  if (reviewed) {
+    input.disabled = true;
+    input.classList.add(isCorrectAnswer(q, s.answers[s.idx]) ? 'correct' : 'incorrect');
+  } else {
+    input.addEventListener('input', () => {
+      s.answers[s.idx] = input.value.trim() === '' ? null : input.value;
+      updateNavigator();
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('quiz-submit').click();
+      }
+    });
+  }
+  wrap.appendChild(input);
+  if (reviewed && !isCorrectAnswer(q, s.answers[s.idx])) {
+    const correctLine = document.createElement('div');
+    correctLine.className = 'fr-correct-line';
+    correctLine.textContent = `Correct answer: ${q.answer}`;
+    wrap.appendChild(correctLine);
+  }
+  container.appendChild(wrap);
+  if (!reviewed) setTimeout(() => input.focus(), 0);
+}
+
 function submitAnswer() {
   const s = currentSession;
   if (s.answers[s.idx] == null) {
@@ -585,7 +641,7 @@ function submitAnswer() {
   const q = s.questions[s.idx];
   const stats = getStats();
   stats.answered += 1;
-  if (s.answers[s.idx] === q.answer) {
+  if (isCorrectAnswer(q, s.answers[s.idx])) {
     stats.correct += 1;
     addMasteredIds([q.id]);
   }
@@ -708,13 +764,13 @@ function showModuleBreak() {
   const s = currentSession;
   const mod = fullSatState.modules[s.moduleIdx];
   let correct = 0;
-  s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct++; });
+  s.questions.forEach((q, i) => { if (isCorrectAnswer(q, s.answers[i])) correct++; });
   fullSatState.results.push({ label: mod.label, score: correct, total: s.questions.length, durationMs: Date.now() - s.startedAt });
   if (!fullSatState.questionData) fullSatState.questionData = { questions: [], answers: [] };
   fullSatState.questionData.questions.push(...s.questions);
   fullSatState.questionData.answers.push(...s.answers);
   addSeenIds(s.questions.map(q => q.id));
-  addMasteredIds(s.questions.filter((q, i) => s.answers[i] === q.answer).map(q => q.id));
+  addMasteredIds(s.questions.filter((q, i) => isCorrectAnswer(q, s.answers[i])).map(q => q.id));
   const nextIdx = s.moduleIdx + 1;
   const isLast = nextIdx >= fullSatState.modules.length;
   document.getElementById('break-module-name').textContent = mod.label;
@@ -788,10 +844,10 @@ function finishQuiz(timeUp = false) {
   }
   s.durationMs = Date.now() - s.startedAt;
   let correct = 0;
-  s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
+  s.questions.forEach((q, i) => { if (isCorrectAnswer(q, s.answers[i])) correct += 1; });
   addSeenIds(s.questions.map(q => q.id));
   if (s.mode === 'test') {
-    const correctIds = s.questions.filter((q, i) => s.answers[i] === q.answer).map(q => q.id);
+    const correctIds = s.questions.filter((q, i) => isCorrectAnswer(q, s.answers[i])).map(q => q.id);
     addMasteredIds(correctIds);
   }
   const sessionTs = Date.now();
@@ -806,7 +862,7 @@ function finishQuiz(timeUp = false) {
 function showResults(timeUp) {
   const s = currentSession;
   let correct = 0;
-  s.questions.forEach((q, i) => { if (s.answers[i] === q.answer) correct += 1; });
+  s.questions.forEach((q, i) => { if (isCorrectAnswer(q, s.answers[i])) correct += 1; });
   const pct = Math.round(correct / s.questions.length * 100);
   document.getElementById('result-score').textContent = `${correct} / ${s.questions.length}`;
   document.getElementById('result-pct').textContent = pct + '%';
@@ -836,7 +892,7 @@ function showResults(timeUp) {
     const key = q.section;
     if (!buckets[key]) buckets[key] = { correct: 0, total: 0 };
     buckets[key].total += 1;
-    if (s.answers[i] === q.answer) buckets[key].correct += 1;
+    if (isCorrectAnswer(q, s.answers[i])) buckets[key].correct += 1;
   });
   const bd = document.getElementById('result-breakdown');
   bd.innerHTML = Object.entries(buckets).map(([k, v]) => `
@@ -851,12 +907,14 @@ function showResults(timeUp) {
   review.innerHTML = s.questions.map((q, i) => {
     const ans = s.answers[i];
     const correctChoice = q.answer;
-    const cls = ans == null ? 'unanswered' : (ans === correctChoice ? 'correct' : 'incorrect');
-    const status = ans == null ? 'Skipped' : (ans === correctChoice ? 'Correct' : `Your answer: ${ans}`);
+    const correct = isCorrectAnswer(q, ans);
+    const cls = ans == null ? 'unanswered' : (correct ? 'correct' : 'incorrect');
+    const status = ans == null ? 'Skipped' : (correct ? 'Correct' : `Your answer: ${escapeHtml(String(ans))}`);
+    const correctDisplay = isFreeResponse(q) ? escapeHtml(String(correctChoice)) : `${correctChoice} (${escapeHtml(q.choices[correctChoice] || '')})`;
     return `
       <div class="review-item ${cls}">
         <div class="review-q">${i + 1}. ${escapeHtml(q.prompt)}</div>
-        <div class="review-meta"><strong>${status}</strong> · Correct: ${correctChoice} (${escapeHtml(q.choices[correctChoice] || '')})</div>
+        <div class="review-meta"><strong>${status}</strong> · Correct: ${correctDisplay}</div>
         <div class="review-expl">${escapeHtml(q.explanation || '')}</div>
       </div>
     `;
@@ -936,7 +994,7 @@ function runSearch() {
   const words = query.split(/\s+/).filter(Boolean);
   _searchResults = allQuestions.filter(q => {
     if (_searchSection !== 'all' && q.section !== _searchSection) return false;
-    const hay = [q.prompt, q.topic, q.explanation || '', ...Object.values(q.choices)].join(' ').toLowerCase();
+    const hay = [q.prompt, q.topic, q.explanation || '', q.answer || '', ...(q.choices ? Object.values(q.choices) : [])].join(' ').toLowerCase();
     return words.every(w => hay.includes(w));
   });
 
@@ -998,7 +1056,7 @@ function exportSessionCSV() {
     ['Q', 'Section', 'Topic', 'Difficulty', 'Prompt', 'Correct_Answer', 'Your_Answer', 'Result'],
     ...s.questions.map((q, i) => {
       const ans = s.answers[i] || '';
-      const result = !ans ? 'Skipped' : ans === q.answer ? 'Correct' : 'Incorrect';
+      const result = !ans ? 'Skipped' : isCorrectAnswer(q, ans) ? 'Correct' : 'Incorrect';
       return [i + 1, q.section, q.topic, q.difficulty,
         q.prompt.replace(/"/g, '""'), q.answer, ans, result];
     })
