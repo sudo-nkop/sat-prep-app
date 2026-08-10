@@ -31,8 +31,24 @@ function load(key, fallback) {
 function save(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
 function getSettings() { return { ...DEFAULT_SETTINGS, ...load(KEY.settings, {}) }; }
-function getStats() { return load(KEY.stats, { answered: 0, correct: 0, streak: 0, lastDay: null }); }
 function getHistory() { return load(KEY.history, []); }
+function getStats() {
+  const hist = getHistory();
+  let answered = 0, correct = 0;
+  hist.forEach(h => { answered += h.total; correct += h.score; });
+
+  // streak = consecutive calendar days, ending today or yesterday, with at least one session
+  const days = new Set(hist.map(h => new Date(h.when).toISOString().slice(0, 10)));
+  let streak = 0;
+  const cursor = new Date();
+  cursor.setHours(0, 0, 0, 0);
+  if (!days.has(cursor.toISOString().slice(0, 10))) cursor.setDate(cursor.getDate() - 1);
+  while (days.has(cursor.toISOString().slice(0, 10))) {
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return { answered, correct, streak };
+}
 function getQuestionLog() { return load(KEY.questionLog, []); }
 function appendQuestionLog(sessionId, when, mode, questions, answers) {
   const log = getQuestionLog();
@@ -639,20 +655,9 @@ function submitAnswer() {
   s._reviewed = s._reviewed || {};
   s._reviewed[s.idx] = true;
   const q = s.questions[s.idx];
-  const stats = getStats();
-  stats.answered += 1;
   if (isCorrectAnswer(q, s.answers[s.idx])) {
-    stats.correct += 1;
     addMasteredIds([q.id]);
   }
-  // streak: count today as a practiced day
-  const today = new Date().toISOString().slice(0,10);
-  if (stats.lastDay !== today) {
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
-    stats.streak = (stats.lastDay === yesterday) ? (stats.streak + 1) : 1;
-    stats.lastDay = today;
-  }
-  save(KEY.stats, stats);
   renderQuiz();
 }
 
@@ -2406,6 +2411,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     save(KEY.mastered, []);
     save(KEY.questionLog, []);
     renderHistory();
+    refreshHome();
   };
   document.getElementById('reset-seen').onclick = () => {
     if (!confirm('Reset mastered questions? All questions will become available again.')) return;
