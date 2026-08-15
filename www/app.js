@@ -2405,6 +2405,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     save(KEY.seen, []);
     save(KEY.mastered, []);
     save(KEY.questionLog, []);
+    save(KEY.stats, { answered: 0, correct: 0, streak: 0, lastDay: null });
     renderHistory();
   };
   document.getElementById('reset-seen').onclick = () => {
