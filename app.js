@@ -630,6 +630,20 @@ function renderFreeResponseInput(s, q, container) {
   if (!reviewed) setTimeout(() => input.focus(), 0);
 }
 
+// Adds to lifetime answered/correct totals and bumps the daily streak.
+function bumpStats(count, correctCount) {
+  const stats = getStats();
+  stats.answered += count;
+  stats.correct += correctCount;
+  const today = new Date().toISOString().slice(0,10);
+  if (stats.lastDay !== today) {
+    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
+    stats.streak = (stats.lastDay === yesterday) ? (stats.streak + 1) : 1;
+    stats.lastDay = today;
+  }
+  save(KEY.stats, stats);
+}
+
 function submitAnswer() {
   const s = currentSession;
   if (s.answers[s.idx] == null) {
@@ -639,20 +653,9 @@ function submitAnswer() {
   s._reviewed = s._reviewed || {};
   s._reviewed[s.idx] = true;
   const q = s.questions[s.idx];
-  const stats = getStats();
-  stats.answered += 1;
-  if (isCorrectAnswer(q, s.answers[s.idx])) {
-    stats.correct += 1;
-    addMasteredIds([q.id]);
-  }
-  // streak: count today as a practiced day
-  const today = new Date().toISOString().slice(0,10);
-  if (stats.lastDay !== today) {
-    const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0,10);
-    stats.streak = (stats.lastDay === yesterday) ? (stats.streak + 1) : 1;
-    stats.lastDay = today;
-  }
-  save(KEY.stats, stats);
+  const correct = isCorrectAnswer(q, s.answers[s.idx]);
+  if (correct) addMasteredIds([q.id]);
+  bumpStats(1, correct ? 1 : 0);
   renderQuiz();
 }
 
@@ -812,6 +815,7 @@ function showFullSatResults() {
     `<div class="breakdown-item"><strong>${r.score}/${r.total}</strong>${r.label}</div>`
   ).join('');
   document.getElementById('review-list').innerHTML = '<p class="muted" style="text-align:center">Full test complete — see section breakdowns above.</p>';
+  bumpStats(totalQ, totalCorrect);
   const sessionTs = Date.now();
   const hist = getHistory();
   hist.unshift({ when: sessionTs, mode: 'test', kind: 'full', score: totalCorrect, total: totalQ, durationMs: totalMs });
@@ -849,6 +853,9 @@ function finishQuiz(timeUp = false) {
   if (s.mode === 'test') {
     const correctIds = s.questions.filter((q, i) => isCorrectAnswer(q, s.answers[i])).map(q => q.id);
     addMasteredIds(correctIds);
+    // Test mode has no per-question Submit step, so lifetime stats are
+    // only recorded here, once, for the whole section.
+    bumpStats(s.questions.length, correct);
   }
   const sessionTs = Date.now();
   const hist = getHistory();
