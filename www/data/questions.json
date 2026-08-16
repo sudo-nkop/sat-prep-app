@@ -8403,36 +8403,6 @@
       "explanation": "(3x)²−2(3x)(2)+4 = 9x²−12x+4."
     },
     {
-      "id": "m-adva-025",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 2,
-      "prompt": "Factor x³ − 27.",
-      "choices": {
-        "A": "(x − 3)(x² + 9)",
-        "B": "(x − 3)(x² + 3x + 9)",
-        "C": "(x + 3)(x² − 3x + 9)",
-        "D": "(x − 3)(x² − 3x + 9)"
-      },
-      "answer": "B",
-      "explanation": "Difference of cubes: a³−b³=(a−b)(a²+ab+b²)."
-    },
-    {
-      "id": "m-adva-026",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 2,
-      "prompt": "Factor x³ + 8.",
-      "choices": {
-        "A": "(x + 2)(x² − 2x + 4)",
-        "B": "(x − 2)(x² + 2x + 4)",
-        "C": "(x + 2)(x² + 2x + 4)",
-        "D": "(x + 2)(x² − 2x − 4)"
-      },
-      "answer": "A",
-      "explanation": "Sum of cubes: a³+b³=(a+b)(a²−ab+b²)."
-    },
-    {
       "id": "m-adva-027",
       "section": "math",
       "topic": "advanced-math",
@@ -8463,21 +8433,6 @@
       "explanation": "By Remainder Theorem, P(1) = 1−3+2 = 0."
     },
     {
-      "id": "m-adva-029",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 2,
-      "prompt": "Factor completely: 2x³ − 8x.",
-      "choices": {
-        "A": "2x(x² − 4)",
-        "B": "2x(x − 2)(x + 2)",
-        "C": "x(2x − 4)(x + 2)",
-        "D": "2(x³ − 4x)"
-      },
-      "answer": "B",
-      "explanation": "2x³−8x = 2x(x²−4) = 2x(x−2)(x+2)."
-    },
-    {
       "id": "m-adva-030",
       "section": "math",
       "topic": "advanced-math",
@@ -8491,21 +8446,6 @@
       },
       "answer": "C",
       "explanation": "Highest degree term: 2x³ · x² = 2x⁵, so degree 5."
-    },
-    {
-      "id": "m-adva-031",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 1,
-      "prompt": "Simplify (x² − 1)/(x − 1) for x ≠ 1.",
-      "choices": {
-        "A": "x − 1",
-        "B": "x + 1",
-        "C": "x",
-        "D": "x²"
-      },
-      "answer": "B",
-      "explanation": "(x+1)(x−1)/(x−1) = x+1."
     },
     {
       "id": "m-adva-032",
@@ -8733,21 +8673,6 @@
       "explanation": "x = 2^5 = 32."
     },
     {
-      "id": "m-adva-047",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 1,
-      "prompt": "Simplify √50.",
-      "choices": {
-        "A": "5√2",
-        "B": "5√10",
-        "C": "10√5",
-        "D": "25√2"
-      },
-      "answer": "A",
-      "explanation": "√50 = √(25·2) = 5√2."
-    },
-    {
       "id": "m-adva-048",
       "section": "math",
       "topic": "advanced-math",
@@ -8776,36 +8701,6 @@
       },
       "answer": "B",
       "explanation": "2x−1 = 9 → x = 5."
-    },
-    {
-      "id": "m-adva-050",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 1,
-      "prompt": "Simplify (3 + √5)(3 − √5).",
-      "choices": {
-        "A": "4",
-        "B": "6",
-        "C": "9",
-        "D": "14"
-      },
-      "answer": "A",
-      "explanation": "Difference of squares: 9 − 5 = 4."
-    },
-    {
-      "id": "m-adva-051",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 1,
-      "prompt": "Simplify √72 / √2.",
-      "choices": {
-        "A": "4",
-        "B": "5",
-        "C": "6",
-        "D": "8"
-      },
-      "answer": "C",
-      "explanation": "√72/√2 = √36 = 6."
     },
     {
       "id": "m-adva-052",
@@ -10546,21 +10441,6 @@
       },
       "answer": "B",
       "explanation": "(f∘g)(3) = f(g(3)) = f(9) = 9+2 = 11."
-    },
-    {
-      "id": "m-adva-057",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 1,
-      "prompt": "Simplify: (x² − 4) / (x + 2) for x ≠ −2.",
-      "choices": {
-        "A": "x − 2",
-        "B": "x + 2",
-        "C": "x",
-        "D": "x − 4"
-      },
-      "answer": "A",
-      "explanation": "x²−4 = (x+2)(x−2). Dividing by (x+2) gives x−2."
     },
     {
       "id": "m-adva-058",
@@ -12753,21 +12633,6 @@
       "explanation": "$f(4) = 3^4 = 81$, $f(2) = 3^2 = 9$. $81 - 9 = 72$."
     },
     {
-      "id": "m-rat-002",
-      "section": "math",
-      "topic": "rational",
-      "difficulty": 3,
-      "prompt": "Simplify: $\\frac{x^2-9}{x^2-x-6}$ (where defined)",
-      "choices": {
-        "A": "$\\frac{x+3}{x+2}$",
-        "B": "$\\frac{x-3}{x-2}$",
-        "C": "$\\frac{x+3}{x-2}$",
-        "D": "$\\frac{x-3}{x+2}$"
-      },
-      "answer": "A",
-      "explanation": "Factor: $\\frac{(x-3)(x+3)}{(x-3)(x+2)} = \\frac{x+3}{x+2}$ (for $x \\neq 3$)."
-    },
-    {
       "id": "m-ineq-010",
       "section": "math",
       "topic": "inequalities",
@@ -13411,16 +13276,6 @@
       "prompt": "If $x^3 = 64$, what is the value of $x$?",
       "answer": "4",
       "explanation": "$4^3 = 64$, so $x = 4$."
-    },
-    {
-      "id": "m-fr-052",
-      "section": "math",
-      "topic": "advanced-math",
-      "difficulty": 2,
-      "type": "free-response",
-      "prompt": "Simplify: $(2x^3)(3x^2)$. What is the coefficient of $x^5$?",
-      "answer": "6",
-      "explanation": "$(2)(3) = 6$ and $x^3 \\cdot x^2 = x^5$. Coefficient is $6$."
     },
     {
       "id": "m-fr-053",
