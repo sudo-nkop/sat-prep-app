@@ -2,3 +2,6 @@
 *.apk
 node_modules/
 .DS_Store
+scripts/.filter_checkpoint.jsonl
+www/data/questions.filtered.json
+www/data/questions.removed.json
