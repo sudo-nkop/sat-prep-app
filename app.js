@@ -102,7 +102,7 @@ function back() {
 
 // ---------- data load ----------
 async function loadQuestions() {
-  const res = await fetch('data/questions.json?v=20', { cache: 'no-cache' });
+  const res = await fetch('data/questions.json?v=21', { cache: 'no-cache' });
   if (!res.ok) throw new Error('Failed to load questions');
   const data = await res.json();
   const imported = load(KEY.imported, []);
@@ -234,6 +234,7 @@ function startPractice() {
   }
 
   const qs = pickQuestions({ section, topic, difficulties, count }).map(shuffleChoices);
+  addSeenIds(qs.map(q => q.id));
   currentSession = {
     mode: 'practice',
     questions: qs,
@@ -350,6 +351,7 @@ function startTest(kind) {
   }
 
   const qs = pickQuestions({ section, topic: 'all', difficulties: 'all', count: targetCount }).map(shuffleChoices);
+  addSeenIds(qs.map(q => q.id));
   const durationMs = Math.round(qs.length * secPerQ * 1000);
   currentSession = {
     mode: 'test',
