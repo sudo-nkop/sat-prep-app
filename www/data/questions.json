@@ -12337,15 +12337,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 3,
-      "prompt": "If $x = \\sqrt{6+\\sqrt{6+\\sqrt{6+\\cdots}}}$, what is the value of $x$?",
+      "prompt": "A ball is thrown into the air so that its height, in feet, after $t$ seconds is modeled by $h(t) = -16t^2 + 64t + 5$. What is the maximum height, in feet, the ball reaches?",
       "choices": {
-        "A": "$2$",
-        "B": "$3$",
-        "C": "$\\sqrt{6}$",
-        "D": "$6$"
+        "A": "$64$",
+        "B": "$69$",
+        "C": "$73$",
+        "D": "$80$"
       },
       "answer": "B",
-      "explanation": "The expression satisfies $x = \\sqrt{6+x}$. Squaring: $x^2 = 6+x \\Rightarrow x^2-x-6=0 \\Rightarrow (x-3)(x+2)=0$. Since $x > 0$, we have $x = 3$."
+      "explanation": "The maximum occurs at $t = -\\frac{b}{2a} = -\\frac{64}{2(-16)} = 2$. Then $h(2) = -16(4) + 64(2) + 5 = -64 + 128 + 5 = 69$."
     },
     {
       "id": "m-adv-151",
@@ -12412,15 +12412,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 3,
-      "prompt": "If $z = 3 - 4i$, what is $|z|^2 + \\text{Re}(z^2)$?",
+      "prompt": "If $f(x) = 2x^2 - 3x + 1$ and $g(x) = x + 2$, what is the value of $f(g(1))$?",
       "choices": {
-        "A": "$25$",
-        "B": "$32$",
-        "C": "$-7$",
-        "D": "$18$"
+        "A": "$10$",
+        "B": "$8$",
+        "C": "$12$",
+        "D": "$6$"
       },
-      "answer": "D",
-      "explanation": "$|z|^2 = 9 + 16 = 25$. $z^2 = (3-4i)^2 = 9 - 24i + 16i^2 = 9-24i-16 = -7-24i$, so $\\text{Re}(z^2) = -7$. Sum $= 25 + (-7) = 18$."
+      "answer": "A",
+      "explanation": "First, $g(1) = 1 + 2 = 3$. Then $f(g(1)) = f(3) = 2(3)^2 - 3(3) + 1 = 18 - 9 + 1 = 10$."
     },
     {
       "id": "m-adv-156",

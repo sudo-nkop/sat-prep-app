@@ -33,6 +33,15 @@ function save(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 function getSettings() { return { ...DEFAULT_SETTINGS, ...load(KEY.settings, {}) }; }
 function getStats() { return load(KEY.stats, { answered: 0, correct: 0, streak: 0, lastDay: null }); }
 function getHistory() { return load(KEY.history, []); }
+// Derives the scoreboard (questions answered + accuracy) straight from the
+// history list, so it always stays in sync when sessions are cleared or deleted.
+function computeScoreboard() {
+  const hist = getHistory();
+  const answered = hist.reduce((sum, h) => sum + (h.total || 0), 0);
+  const correct = hist.reduce((sum, h) => sum + (h.score || 0), 0);
+  const accuracy = answered ? Math.round((correct / answered) * 100) : null;
+  return { answered, correct, accuracy };
+}
 function getQuestionLog() { return load(KEY.questionLog, []); }
 function appendQuestionLog(sessionId, when, mode, questions, answers) {
   const log = getQuestionLog();
@@ -1118,10 +1127,11 @@ function renderMath(el) {
 // ---------- home stats ----------
 function refreshHome() {
   const stats = getStats();
+  const scoreboard = computeScoreboard();
   document.getElementById('streak-num').textContent = stats.streak || 0;
-  document.getElementById('stat-questions').textContent = stats.answered || 0;
+  document.getElementById('stat-questions').textContent = scoreboard.answered;
   document.getElementById('stat-accuracy').textContent =
-    stats.answered ? Math.round((stats.correct / stats.answered) * 100) + '%' : '—';
+    scoreboard.accuracy != null ? scoreboard.accuracy + '%' : '—';
 
   // reminder banner
   const settings = getSettings();
@@ -1155,6 +1165,12 @@ function renderHistory() {
     seenInfo.textContent = `${masteredCount} of ${total} questions mastered · ${remaining} remaining`;
   }
 
+  const scoreboard = computeScoreboard();
+  const scoreQEl = document.getElementById('scoreboard-questions');
+  const scoreAEl = document.getElementById('scoreboard-accuracy');
+  if (scoreQEl) scoreQEl.textContent = scoreboard.answered;
+  if (scoreAEl) scoreAEl.textContent = scoreboard.accuracy != null ? scoreboard.accuracy + '%' : '—';
+
   const list = document.getElementById('history-list');
   const hist = getHistory();
   if (hist.length === 0) {
@@ -1171,8 +1187,49 @@ function renderHistory() {
         <strong>${h.score} / ${h.total}</strong> <span class="history-item-meta">· ${pct}% · ${mode}</span>
         <div class="history-item-meta">${date}</div>
       </div>
+      <button class="icon-btn delete-history-btn" data-when="${h.when}" title="Delete this session" aria-label="Delete this session">🗑</button>
     </div>`;
   }).join('');
+
+  list.querySelectorAll('.delete-history-btn').forEach(btn => {
+    btn.onclick = () => {
+      if (confirm('Delete this session from history? This cannot be undone.')) {
+        deleteHistorySession(Number(btn.dataset.when));
+      }
+    };
+  });
+}
+
+// Removes one session from history along with its logged questions, and
+// demotes any seen/mastered question IDs that are no longer backed by
+// another remaining session, then refreshes every view that depends on it.
+function deleteHistorySession(when) {
+  const hist = getHistory();
+  const newHist = hist.filter(h => h.when !== when);
+  if (newHist.length === hist.length) return;
+  save(KEY.history, newHist);
+
+  const log = getQuestionLog();
+  const removedRows = log.filter(row => row[0] === when);
+  if (removedRows.length) {
+    const remainingLog = log.filter(row => row[0] !== when);
+    save(KEY.questionLog, remainingLog);
+
+    const seen = getSeenIds();
+    const mastered = getMasteredIds();
+    const touchedIds = new Set(removedRows.map(row => row[3]));
+    touchedIds.forEach(id => {
+      const stillLogged = remainingLog.some(row => row[3] === id);
+      const stillCorrect = remainingLog.some(row => row[3] === id && row[14] === 'Correct');
+      if (!stillLogged) seen.delete(id);
+      if (!stillCorrect) mastered.delete(id);
+    });
+    save(KEY.seen, [...seen]);
+    save(KEY.mastered, [...mastered]);
+  }
+
+  renderHistory();
+  refreshHome();
 }
 
 // ---------- settings ----------
@@ -2416,6 +2473,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     save(KEY.questionLog, []);
     save(KEY.stats, { answered: 0, correct: 0, streak: 0, lastDay: null });
     renderHistory();
+    refreshHome();
   };
   document.getElementById('reset-seen').onclick = () => {
     if (!confirm('Reset mastered questions? All questions will become available again.')) return;
