@@ -922,7 +922,9 @@ h3 {
 }
 
 /* ── HISTORY ──────────────────────────────────────────── */
+.scoreboard-card { margin-bottom: 14px; }
 .history-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.delete-history-btn { flex-shrink: 0; margin-left: 12px; }
 .history-item {
   background: var(--card);
   border: 1.5px solid var(--border);
