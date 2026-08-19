@@ -3382,15 +3382,15 @@
       "section": "math",
       "topic": "probability",
       "difficulty": 3,
-      "prompt": "A committee of 3 is chosen from 5 men and 4 women. What is the probability the committee has exactly 2 women?",
+      "prompt": "A store's inventory includes 40 shirts, of which 15 are on sale, and 60 pairs of pants, of which 24 are on sale. If an item is chosen at random from the store's on-sale inventory, what is the probability that it is a shirt?",
       "choices": {
-        "A": "$\\dfrac{30}{84}$",
-        "B": "$\\dfrac{10}{21}$",
-        "C": "$\\dfrac{1}{3}$",
-        "D": "$\\dfrac{4}{21}$"
+        "A": "3/20",
+        "B": "5/13",
+        "C": "3/8",
+        "D": "8/13"
       },
-      "answer": "A",
-      "explanation": "$\\binom{4}{2}\\binom{5}{1} = 30$ ways to choose 2 women and 1 man. Total: $\\binom{9}{3} = 84$. $P = \\frac{30}{84} = \\frac{5}{14}$."
+      "answer": "B",
+      "explanation": "Total on-sale items: $15 + 24 = 39$. On-sale shirts: 15. $P(\\text{shirt} \\mid \\text{on sale}) = 15/39 = 5/13$."
     },
     {
       "id": "m-geo-019",
@@ -9007,15 +9007,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 2,
-      "prompt": "How many ways can a committee of 3 be chosen from 10 people?",
+      "prompt": "A set of 7 test scores has a mean of 82. If an eighth score of 98 is added to the set, what is the new mean?",
       "choices": {
-        "A": "30",
-        "B": "60",
-        "C": "120",
-        "D": "720"
+        "A": "82",
+        "B": "83",
+        "C": "84",
+        "D": "85"
       },
       "answer": "C",
-      "explanation": "C(10,3) = 10!/(3!7!) = 120."
+      "explanation": "The original sum is $82 \\times 7 = 574$. Adding the new score gives $574 + 98 = 672$. The new mean is $672 / 8 = 84$."
     },
     {
       "id": "m-stat-034",
@@ -9217,15 +9217,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 1,
-      "prompt": "In how many ways can 5 students line up in a row?",
+      "prompt": "The number of hours 5 students spent studying last week is 2, 4, 4, 6, and 9. What is the median number of hours studied?",
       "choices": {
-        "A": "25",
-        "B": "60",
-        "C": "100",
-        "D": "120"
+        "A": "2",
+        "B": "4",
+        "C": "5",
+        "D": "6"
       },
-      "answer": "D",
-      "explanation": "5! = 120 ways."
+      "answer": "B",
+      "explanation": "Ordered from least to greatest: 2, 4, 4, 6, 9. The median is the middle value, 4."
     },
     {
       "id": "m-stat-048",
@@ -10597,15 +10597,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 1,
-      "prompt": "If you choose 2 books from a shelf of 8 different books, how many combinations are possible?",
+      "prompt": "A data set contains the values 3, 5, 5, 7, and 10. What is the range of the data set?",
       "choices": {
-        "A": "16",
-        "B": "28",
-        "C": "56",
-        "D": "112"
+        "A": "5",
+        "B": "7",
+        "C": "8",
+        "D": "10"
       },
       "answer": "B",
-      "explanation": "C(8,2) = 8!/(2!×6!) = 28."
+      "explanation": "The range is the greatest value minus the least value: $10 - 3 = 7$."
     },
     {
       "id": "m-stat-051",
@@ -12300,7 +12300,7 @@
         "D": "$\\frac{18}{55}$"
       },
       "answer": "A",
-      "explanation": "Total ways: $\\binom{12}{3} = 220$. Ways with exactly 2 red: $\\binom{4}{2}\\binom{8}{1} = 6 \\cdot 8 = 48$. Probability $= \\frac{48}{220} = \\frac{12}{55}$."
+      "explanation": "There are 3 orders for exactly 2 red among 3 draws: RRN, RNR, NRR (N = not red, 8 marbles). Each order has probability $\\frac{4}{12} \\times \\frac{3}{11} \\times \\frac{8}{10} = \\frac{96}{1320}$. Summing the 3 orders: $3 \\times \\frac{96}{1320} = \\frac{288}{1320} = \\frac{12}{55}$."
     },
     {
       "id": "m-adv-148",
@@ -12442,30 +12442,30 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 3,
-      "prompt": "What is the coefficient of $x^3$ in the expansion of $(2x - 1)^5$?",
+      "prompt": "A population of bacteria doubles every 3 hours. If the initial population is 500, which function models the population $P(t)$, in terms of $t$ hours?",
       "choices": {
-        "A": "$-40$",
-        "B": "$80$",
-        "C": "$-80$",
-        "D": "$40$"
+        "A": "$P(t) = 500 \\cdot 2^{3t}$",
+        "B": "$P(t) = 500 \\cdot 2^{t/3}$",
+        "C": "$P(t) = 500 \\cdot 3^{t/2}$",
+        "D": "$P(t) = 500 \\cdot (t/3)^2$"
       },
       "answer": "B",
-      "explanation": "By the Binomial Theorem, the $x^3$ term is $\\binom{5}{3}(2x)^3(-1)^2 = 10 \\cdot 8x^3 \\cdot 1 = 80x^3$. Coefficient $= 80$."
+      "explanation": "The population doubles (factor of 2) every 3 hours, so the exponent must equal 1 when $t = 3$. $P(t) = 500 \\cdot 2^{t/3}$ satisfies $P(3) = 500 \\cdot 2^1 = 1000$."
     },
     {
       "id": "m-adv-158",
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 3,
-      "prompt": "How many ways can 4 students be chosen from 10 and then 1 of the 4 designated as president?",
+      "prompt": "The function $f(x) = 2x^2 - 8x + 3$ is graphed in the $xy$-plane. What is the $x$-coordinate of the vertex of the graph?",
       "choices": {
-        "A": "$840$",
-        "B": "$5040$",
-        "C": "$210$",
-        "D": "$2100$"
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
       },
-      "answer": "A",
-      "explanation": "Choose 4 from 10: $\\binom{10}{4} = 210$. Choose president from those 4: $4$ ways. Total $= 210 \\times 4 = 840$."
+      "answer": "B",
+      "explanation": "For $f(x) = ax^2 + bx + c$, the vertex has $x$-coordinate $-b/(2a) = -(-8)/(2 \\times 2) = 2$."
     },
     {
       "id": "m-adv-159",
@@ -13565,7 +13565,7 @@
       "type": "free-response",
       "prompt": "A bag has $3$ red, $4$ blue, and $5$ green marbles. Two are drawn without replacement. What is the probability both are blue? Enter the numerator if the denominator is $66$.",
       "answer": "6",
-      "explanation": "$\\binom{4}{2} = 6$, $\\binom{12}{2} = 66$. Probability $= \\frac{6}{66}$."
+      "explanation": "$P(\\text{both blue}) = \\frac{4}{12} \\times \\frac{3}{11} = \\frac{12}{132} = \\frac{6}{66}$."
     },
     {
       "id": "m-fr-082",
