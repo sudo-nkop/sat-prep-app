@@ -4897,15 +4897,15 @@
       "section": "rw",
       "topic": "quantitative",
       "difficulty": 2,
-      "prompt": "A text states that countries like Algeria contributed most to world urbanization since 1970. Which choice most effectively uses data to complete the assertion about Algeria's urbanization?",
+      "prompt": "A researcher states that Algeria's urban population grew faster in the second half of the period shown (1995-2020) than in the first half (1970-1995). Which choice most effectively uses data to support this claim?",
       "choices": {
-        "A": "less than 20% urban in 1970 to more than 50% urban in 2020",
-        "B": "less than 40% urban in 1970 to around 90% urban in 2020",
-        "C": "around 40% urban in 1970 to more than 70% urban in 2020",
-        "D": "around 50% urban in 1970 to around 90% urban in 2020"
+        "A": "Urban population share rose from 40% in 1970 to 55% in 1995, then from 55% to 62% in 2020.",
+        "B": "Urban population share rose from 40% in 1970 to 47% in 1995, then from 47% to 73% in 2020.",
+        "C": "Urban population share rose from 40% in 1970 to 60% in 1995, then from 60% to 73% in 2020.",
+        "D": "Urban population share fell from 45% in 1970 to 40% in 1995, then rose to 73% by 2020."
       },
-      "answer": "C",
-      "explanation": "Algeria's urban population rose from around 40% in 1970 to more than 70% by 2020, consistent with historical World Bank data and with the claim that Algeria was among the largest contributors to world urbanization growth over that period."
+      "answer": "B",
+      "explanation": "Choice B is the only option where the increase in the second half (47% to 73%, a 26-point rise) is greater than the increase in the first half (40% to 47%, a 7-point rise), directly supporting the claim that growth was faster after 1995. A and C show the opposite (slower growth in the second half), and D misrepresents the first half as a decline rather than growth."
     },
     {
       "id": "rw-quan-002",
