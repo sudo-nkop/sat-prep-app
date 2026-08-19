@@ -9172,7 +9172,7 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 2,
-      "prompt": "A test has mean 70 and SD 10. A student scored 85. Their z-score is:",
+      "prompt": "A test has a mean score of 70 and a standard deviation of 10. A student scored 85. The student's score is how many standard deviations above the mean?",
       "choices": {
         "A": "1.0",
         "B": "1.5",
@@ -9180,7 +9180,7 @@
         "D": "2.5"
       },
       "answer": "B",
-      "explanation": "z = (85−70)/10 = 15/10 = 1.5."
+      "explanation": "(85 − 70) ÷ 10 = 15 ÷ 10 = 1.5 standard deviations above the mean."
     },
     {
       "id": "m-stat-045",
