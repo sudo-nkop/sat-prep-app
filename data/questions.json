@@ -11947,15 +11947,15 @@
       "section": "math",
       "topic": "functions",
       "difficulty": 3,
-      "prompt": "A rational function $r(x) = \\frac{p(x)}{(x-1)(x+3)}$ has a horizontal asymptote $y = 0$ and a $y$-intercept of $2$. If $p(x)$ is linear, what is $r(x)$?",
+      "prompt": "A rational function $r(x) = \\frac{p(x)}{(x-1)(x+3)}$ has a horizontal asymptote $y = 0$ and a $y$-intercept of $2$. If $p(x)$ is a nonzero constant, what is $r(x)$?",
       "choices": {
-        "A": "$\\frac{6}{(x-1)(x+3)}$",
-        "B": "$\\frac{-6x}{(x-1)(x+3)}$",
-        "C": "$\\frac{6x}{(x-1)(x+3)}$",
-        "D": "$\\frac{2x+6}{(x-1)(x+3)}$"
+        "A": "$\\frac{-6}{(x-1)(x+3)}$",
+        "B": "$\\frac{6}{(x-1)(x+3)}$",
+        "C": "$\\frac{-2}{(x-1)(x+3)}$",
+        "D": "$\\frac{-6x}{(x-1)(x+3)}$"
       },
       "answer": "A",
-      "explanation": "Horizontal asymptote $y = 0$ means degree of numerator $<$ degree of denominator, so $p(x)$ is linear but since $y=0$ asymptote requires degree of $p < 2$, we can have linear or constant $p$. $y$-intercept: $r(0) = \\frac{p(0)}{(-1)(3)} = \\frac{p(0)}{-3} = 2 \\Rightarrow p(0) = -6$. With $p(x)$ constant $= -6$: $r(x) = \\frac{-6}{(x-1)(x+3)}$. But $\\frac{6}{(x-1)(x+3)}$ gives $r(0) = \\frac{6}{(-3)} = -2 \\neq 2$. Use $p(x) = -6$: $r(0) = \\frac{-6}{-3} = 2$ ✓. So $r(x) = \\frac{-6}{(x-1)(x+3)}$; the closest choice with magnitude 6 is A."
+      "explanation": "A horizontal asymptote of $y = 0$ requires the degree of the numerator to be less than the degree of the denominator. Since the denominator has degree $2$, a constant (degree $0$) numerator satisfies this. The $y$-intercept condition gives $r(0) = \\frac{p(0)}{(0-1)(0+3)} = \\frac{p(0)}{-3} = 2$, so $p(0) = -6$. Since $p(x)$ is constant, $p(x) = -6$ for all $x$, giving $r(x) = \\frac{-6}{(x-1)(x+3)}$, choice A."
     },
     {
       "id": "m-adv-125",
