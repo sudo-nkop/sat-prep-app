@@ -12142,15 +12142,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 3,
-      "prompt": "A data set has mean $\\mu = 50$ and standard deviation $\\sigma = 8$. What is the $z$-score for a value of $66$, and what percentile does it represent? (Use: $z = 2$ corresponds to the $97.7$th percentile)",
+      "prompt": "A data set is normally distributed with mean $\\mu = 50$ and standard deviation $\\sigma = 8$. Using the empirical rule ($68$-$95$-$99.7$ rule), a value of $66$ is at approximately which percentile?",
       "choices": {
-        "A": "$z=2$; $97.7$th percentile",
-        "B": "$z=2$; $95$th percentile",
-        "C": "$z=2.5$; $99.4$th percentile",
-        "D": "$z=1.5$; $93$rd percentile"
+        "A": "$84$th percentile",
+        "B": "$95$th percentile",
+        "C": "$97.5$th percentile",
+        "D": "$99.85$th percentile"
       },
-      "answer": "A",
-      "explanation": "$z = \\frac{66 - 50}{8} = \\frac{16}{8} = 2$. A $z$-score of $2$ corresponds to approximately the $97.7$th percentile."
+      "answer": "C",
+      "explanation": "$z = \\frac{66 - 50}{8} = 2$, so $66$ is $2$ standard deviations above the mean. By the empirical rule, about $95\\%$ of data falls within $2$ standard deviations of the mean, leaving $5\\%$ in the two tails, or $2.5\\%$ above $66$. That puts $66$ at the $100 - 2.5 = 97.5$th percentile."
     },
     {
       "id": "m-adv-138",
@@ -12217,15 +12217,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 3,
-      "prompt": "Five scores are $72, 85, 90, 68, x$ with mean $80$. What is the population standard deviation? (Round to nearest whole number)",
+      "prompt": "Five scores are $72, 85, 90, 68, x$ with mean $80$. Once the value of $x$ is determined, which of the five scores deviates the most from the mean?",
       "choices": {
-        "A": "$8$",
-        "B": "$9$",
-        "C": "$10$",
-        "D": "$7$"
+        "A": "$72$",
+        "B": "$85$",
+        "C": "$90$",
+        "D": "$68$"
       },
-      "answer": "B",
-      "explanation": "Mean $= 80 \\Rightarrow 315 + x = 400 \\Rightarrow x = 85$. Data: $72,85,90,68,85$. Deviations from $80$: $-8,5,10,-12,5$. Squared: $64,25,100,144,25$. Variance $= \\frac{358}{5} = 71.6$. SD $= \\sqrt{71.6} \\approx 8.5 \\approx 9$."
+      "answer": "D",
+      "explanation": "Mean $= 80 \\Rightarrow 72 + 85 + 90 + 68 + x = 400 \\Rightarrow x = 85$. Deviations from the mean: $|72-80|=8$, $|85-80|=5$, $|90-80|=10$, $|68-80|=12$, $|85-80|=5$. The score farthest from the mean is $68$, with a deviation of $12$."
     },
     {
       "id": "m-adv-143",
