@@ -5265,7 +5265,7 @@
         "D": "Whitten's 1960s work is much more realistic than his 1970s work."
       },
       "answer": "B",
-      "explanation": "Whitten called the developer \"one gesture,\" departing from his 1960s work. Art historians called it \"removing gesture.\" Both descriptions imply the 1970s work had fewer gestures than the 1960s work—B is the point of agreement."
+      "explanation": "Whitten called the developer \"one gesture,\" departing from his 1960s work. Art historians called it \"removing gesture.\" Both descriptions imply the 1970s work had fewer gestures than the 1960s work, which is the shared point of agreement — the 1960s work exhibited many more gestures than the 1970s work."
     },
     {
       "id": "rw-infe-013",
@@ -6847,7 +6847,7 @@
       "section": "rw",
       "topic": "sentence-structure",
       "difficulty": 2,
-      "prompt": "\"Having returned from the ocean to the stream where it was born, ________ spawns and dies, after which its offspring start the cycle anew.\"",
+      "prompt": "\"Having returned from the ocean to the stream where it was born, ________, after which its offspring start the cycle anew.\"",
       "choices": {
         "A": "an adult salmon's life cycle ends when it spawns and dies,",
         "B": "an adult salmon spawns and dies, completing its life cycle,",
@@ -6855,7 +6855,7 @@
         "D": "the life cycle of an adult salmon is complete when it spawns and die,"
       },
       "answer": "B",
-      "explanation": "The participial phrase \"Having returned\" must modify the grammatical subject. In B, \"an adult salmon\" is the subject doing the returning, spawning, and dying—proper placement avoids a dangling modifier."
+      "explanation": "The participial phrase \"Having returned\" must modify the grammatical subject. Placing \"an adult salmon\" immediately after the comma makes it the subject doing the returning, spawning, and dying — correct placement avoids a dangling modifier."
     },
     {
       "id": "rw-sent-003",
