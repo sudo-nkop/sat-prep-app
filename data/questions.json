@@ -7042,15 +7042,15 @@
       "section": "rw",
       "topic": "grammar",
       "difficulty": 2,
-      "prompt": "\"James Scawen was a British politician in the mid-1700s who was once pressured by a large mob to reveal how he had voted in an important election, and his father inherited a large estate near London.\"",
+      "prompt": "\"James Scawen was a British politician in the mid-1700s who was once pressured by a large mob to reveal how he had voted in an important election, ___\"\n\nWhich choice most logically completes the text?",
       "choices": {
-        "A": "NO CHANGE",
+        "A": "and his father inherited a large estate near London.",
         "B": "but he declined to share this information, stating that he must keep his vote secret in order to remain 'an independent man.'",
         "C": "and in his later years, he developed Carshalton Park with improvements like canals, mills, and grottoes.",
         "D": "and he lived from 1734 to 1801."
       },
       "answer": "B",
-      "explanation": "The sentence begins with information about Scawen being pressured to reveal his vote. B logically continues this by explaining what he did in response (declined to share). The other options introduce unrelated information."
+      "explanation": "The sentence sets up Scawen being pressured to reveal his vote. B logically completes it by saying what he did in response (declined to share). A, C, and D are all true-sounding biographical details, but none of them responds to the pressure described in the first half of the sentence."
     },
     {
       "id": "rw-gram-012",
