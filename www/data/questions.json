@@ -5594,8 +5594,8 @@
         "C": "indeed,",
         "D": "nevertheless,"
       },
-      "answer": "D",
-      "explanation": "\"Nevertheless\" introduces a contrasting fact—Iceland's volcanoes are extreme outliers, but most other volcanoes have shallow magma sources. The contrast between extreme and typical requires \"nevertheless.\""
+      "answer": "C",
+      "explanation": "\"Indeed\" introduces a detail that elaborates on and supports the claim that Iceland's volcanoes are extreme outliers: unlike Iceland's, many of Earth's volcanoes are fed by shallow magma pockets less than 15 km down, underscoring just how unusual Iceland's volcanoes are."
     },
     {
       "id": "rw-tran-005",
