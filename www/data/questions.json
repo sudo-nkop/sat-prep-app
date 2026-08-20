@@ -13533,7 +13533,7 @@
       "topic": "statistics",
       "difficulty": 3,
       "type": "free-response",
-      "prompt": "The table below shows test scores. If a student scoring $90$ is added, the new mean becomes $82$. If there were originally $4$ students with a mean of $80$, what is the new mean after adding the student? (Just compute: 5 students, original sum $= 320$, new sum $= 410$. What is the new mean?)",
+      "prompt": "A group of $4$ students has a mean test score of $80$. A fifth student, who scored $90$, joins the group. What is the mean test score of all $5$ students?",
       "answer": "82",
       "explanation": "New sum $= 320 + 90 = 410$. New mean $= 410 / 5 = 82$."
     },
