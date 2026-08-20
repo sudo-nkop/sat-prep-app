@@ -1477,7 +1477,7 @@
       "section": "math",
       "topic": "quadratics",
       "difficulty": 3,
-      "prompt": "The discriminant of $x^2 + bx + 9 = 0$ is zero. What is a possible value of $b$?",
+      "prompt": "The discriminant of $x^2 + bx + 9 = 0$ is zero, and $b > 0$. What is the value of $b$?",
       "choices": {
         "A": "$3$",
         "B": "$-6$",
@@ -1485,7 +1485,7 @@
         "D": "$6$"
       },
       "answer": "D",
-      "explanation": "Discriminant $= b^2 - 4(1)(9) = 0 \\Rightarrow b^2 = 36 \\Rightarrow b = \\pm 6$."
+      "explanation": "Discriminant $= b^2 - 4(1)(9) = 0 \\Rightarrow b^2 = 36 \\Rightarrow b = \\pm 6$. Since $b > 0$, $b = 6$."
     },
     {
       "id": "m-adv-015",
@@ -5594,8 +5594,8 @@
         "C": "indeed,",
         "D": "nevertheless,"
       },
-      "answer": "D",
-      "explanation": "\"Nevertheless\" introduces a contrasting fact—Iceland's volcanoes are extreme outliers, but most other volcanoes have shallow magma sources. The contrast between extreme and typical requires \"nevertheless.\""
+      "answer": "C",
+      "explanation": "\"Indeed\" introduces a detail that elaborates on and supports the claim that Iceland's volcanoes are extreme outliers: unlike Iceland's, many of Earth's volcanoes are fed by shallow magma pockets less than 15 km down, underscoring just how unusual Iceland's volcanoes are."
     },
     {
       "id": "rw-tran-005",
