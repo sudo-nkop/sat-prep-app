@@ -10462,15 +10462,15 @@
       "section": "math",
       "topic": "advanced-math",
       "difficulty": 2,
-      "prompt": "Which function grows fastest as x → ∞?",
+      "prompt": "Which function grows fastest as $x \\to \\infty$?",
       "choices": {
-        "A": "y = 100x",
-        "B": "y = x²",
-        "C": "y = x¹⁰",
-        "D": "y = 2^x"
+        "A": "$y = 100x$",
+        "B": "$y = x^2$",
+        "C": "$y = x^{10}$",
+        "D": "$y = 2^x$"
       },
       "answer": "D",
-      "explanation": "Exponential functions grow faster than any polynomial as x → ∞."
+      "explanation": "Exponential functions grow faster than any polynomial as $x \\to \\infty$."
     },
     {
       "id": "m-adva-060",
