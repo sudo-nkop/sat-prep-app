@@ -12232,15 +12232,15 @@
       "section": "math",
       "topic": "statistics",
       "difficulty": 3,
-      "prompt": "In 100 coin flips, 63 are heads. The $p$-value for testing $H_0$: fair coin vs. $H_a$: $p > 0.5$ is $0.006$. At $\\alpha = 0.01$, what is the correct conclusion?",
+      "prompt": "A researcher flips a coin 100 times and records 63 heads. If the coin is fair, random variation alone would typically produce a number of heads within about $10$ of $50$ (that is, between $40$ and $60$). Based on this, which conclusion is best supported?",
       "choices": {
-        "A": "Reject $H_0$; statistically significant evidence the coin favors heads",
-        "B": "Fail to reject $H_0$; the result could be due to chance",
-        "C": "Reject $H_0$; the coin is definitely biased",
-        "D": "Fail to reject $H_0$; $p$-value is too small"
+        "A": "The result is unlikely to occur by chance alone, so it provides evidence that the coin favors heads",
+        "B": "The result is consistent with a fair coin, since some variation from $50$ is expected by chance",
+        "C": "The coin is definitely biased toward heads",
+        "D": "No conclusion can be drawn from a single set of $100$ flips"
       },
       "answer": "A",
-      "explanation": "Since $p$-value $= 0.006 < \\alpha = 0.01$, we reject $H_0$. There is statistically significant evidence at the $1\\%$ level that the coin favors heads. Note: this doesn't prove the coin is 'definitely' biased (choice C is too strong)."
+      "explanation": "For a fair coin flipped 100 times, chance variation alone would typically keep the number of heads within about $10$ of $50$, i.e., between $40$ and $60$. Since $63$ falls outside that range, the result is unlikely to be due to chance, giving evidence that the coin favors heads. This evidence doesn't 'prove' the coin is biased with certainty (choice C is too strong), and the sample data given is enough to draw a conclusion (choice D is incorrect)."
     },
     {
       "id": "m-adv-144",
