@@ -6389,8 +6389,8 @@
         "C": "Revolution, he",
         "D": "Revolution he"
       },
-      "answer": "A",
-      "explanation": "Two independent clauses require strong punctuation (semicolon, period, or comma+conjunction) to separate them. A semicolon (A) correctly joins the two related independent clauses."
+      "answer": "C",
+      "explanation": "The subordinating conjunction \"Though\" makes \"Though Paul Revere is best known today for his 'midnight ride' during the American Revolution\" a dependent clause, not an independent one, so it cannot be joined to the main clause with a semicolon (which requires two independent clauses). A comma correctly separates the introductory dependent clause from the main clause \"he was famous in his own day as a prosperous silversmith.\""
     },
     {
       "id": "rw-punc-029",
