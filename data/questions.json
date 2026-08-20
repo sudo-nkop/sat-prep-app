@@ -1477,7 +1477,7 @@
       "section": "math",
       "topic": "quadratics",
       "difficulty": 3,
-      "prompt": "The discriminant of $x^2 + bx + 9 = 0$ is zero, and $b > 0$. What is the value of $b$?",
+      "prompt": "The discriminant of $x^2 + bx + 9 = 0$ is zero. What is a possible value of $b$?",
       "choices": {
         "A": "$3$",
         "B": "$-6$",
@@ -1485,7 +1485,7 @@
         "D": "$6$"
       },
       "answer": "D",
-      "explanation": "Discriminant $= b^2 - 4(1)(9) = 0 \\Rightarrow b^2 = 36 \\Rightarrow b = \\pm 6$. Since $b > 0$, $b = 6$."
+      "explanation": "Discriminant $= b^2 - 4(1)(9) = 0 \\Rightarrow b^2 = 36 \\Rightarrow b = \\pm 6$."
     },
     {
       "id": "m-adv-015",
