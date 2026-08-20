@@ -142,6 +142,7 @@ main#app {
 }
 .banner .btn-link { color: var(--accent-dark); }
 [data-theme="dark"] .banner .btn-link { color: var(--accent); }
+.banner[hidden] { display: none; }
 
 /* ── STREAK / STATS ───────────────────────────────────── */
 .hero {
