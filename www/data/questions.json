@@ -247,7 +247,7 @@
       "section": "math",
       "topic": "quadratics",
       "difficulty": 2,
-      "prompt": "If $(x - 4)^2 = 49$, what is the SUM of the two values of $x$?",
+      "prompt": "If $(x - 4)^2 = 49$, what is the sum of the two values of $x$?",
       "choices": {
         "A": "$-7$",
         "B": "$0$",
