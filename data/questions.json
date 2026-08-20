@@ -10552,7 +10552,7 @@
       "section": "math",
       "topic": "geometry",
       "difficulty": 2,
-      "prompt": "A sphere has surface area 100π. What is its radius?",
+      "prompt": "The surface area of a sphere with radius r is 4πr² (this formula is not on the reference sheet). A sphere has surface area 100π. What is its radius?",
       "choices": {
         "A": "5",
         "B": "10",
