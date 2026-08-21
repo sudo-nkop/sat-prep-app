@@ -43,16 +43,34 @@ function computeScoreboard() {
   return { answered, correct, accuracy };
 }
 function getQuestionLog() { return load(KEY.questionLog, []); }
-function appendQuestionLog(sessionId, when, mode, questions, answers) {
+function appendQuestionLog(sessionId, when, mode, questions, answers, times, sessionTotalMs) {
   const log = getQuestionLog();
+  const totalSec = Math.round((sessionTotalMs ?? (times || []).reduce((a, b) => a + b, 0)) / 1000);
   questions.forEach((q, i) => {
     const ans = answers[i] || '';
+    const timeSec = Math.round(((times && times[i]) || 0) / 1000);
     log.push([sessionId, when, mode, q.id, q.section, q.topic, q.difficulty,
       q.prompt, q.choices?.A || '', q.choices?.B || '', q.choices?.C || '', q.choices?.D || '',
-      q.answer, ans, !ans ? 'Skipped' : isCorrectAnswer(q, ans) ? 'Correct' : 'Incorrect']);
+      q.answer, ans, !ans ? 'Skipped' : isCorrectAnswer(q, ans) ? 'Correct' : 'Incorrect',
+      timeSec, totalSec]);
   });
   // keep newest 5000 rows to stay within localStorage limits
   save(KEY.questionLog, log.length > 5000 ? log.slice(log.length - 5000) : log);
+}
+
+// Rolls elapsed time on the currently displayed question into s.times,
+// then resets the clock. Call before any change to s.idx.
+function recordElapsed() {
+  const s = currentSession;
+  if (!s || !s.times) return;
+  const now = Date.now();
+  s.times[s.idx] = (s.times[s.idx] || 0) + (now - (s._qStart || now));
+  s._qStart = now;
+}
+function fmtDuration(ms) {
+  const totalSec = Math.round(ms / 1000);
+  const min = Math.floor(totalSec / 60), sec = totalSec % 60;
+  return `${min}m ${sec}s`;
 }
 function getSeenIds() { return new Set(load(KEY.seen, [])); }
 function addSeenIds(ids) {
@@ -248,10 +266,12 @@ function startPractice() {
     mode: 'practice',
     questions: qs,
     answers: new Array(qs.length).fill(null),
+    times: new Array(qs.length).fill(0),
     flagged: new Set(),
     idx: 0,
     startedAt: Date.now(),
     durationMs: null,
+    _qStart: Date.now(),
   };
   go('screen-quiz');
   renderQuiz();
@@ -327,12 +347,14 @@ function startEndless() {
     mode: 'endless',
     questions: pool,
     answers: new Array(pool.length).fill(null),
+    times: new Array(pool.length).fill(0),
     flagged: new Set(),
     idx: 0,
     startedAt: Date.now(),
     durationMs: null,
     _endlessConfig: config,
     _seenIds: new Set(pool.map(q => q.id)),
+    _qStart: Date.now(),
   };
   go('screen-quiz');
   renderQuiz();
@@ -367,11 +389,13 @@ function startTest(kind) {
     kind,
     questions: qs,
     answers: new Array(qs.length).fill(null),
+    times: new Array(qs.length).fill(0),
     flagged: new Set(),
     idx: 0,
     startedAt: Date.now(),
     durationMs,
     deadline: Date.now() + durationMs,
+    _qStart: Date.now(),
   };
   go('screen-quiz');
   renderQuiz();
@@ -672,6 +696,7 @@ function submitAnswer() {
 
 function nextQuestion() {
   const s = currentSession;
+  recordElapsed();
   if (s.mode === 'endless') {
     if (s.idx < s.questions.length - 1) {
       s.idx += 1;
@@ -682,6 +707,7 @@ function nextQuestion() {
       const newIdx = s.questions.length;
       s.questions.push(...more);
       s.answers.push(...new Array(more.length).fill(null));
+      s.times.push(...new Array(more.length).fill(0));
       s.idx = newIdx;
     }
     renderQuiz();
@@ -694,12 +720,14 @@ function nextQuestion() {
 }
 function prevQuestion() {
   if (currentSession.idx > 0) {
+    recordElapsed();
     currentSession.idx -= 1;
     renderQuiz();
   }
 }
 function skipQuestion() {
   const s = currentSession;
+  recordElapsed();
   if (s.idx < s.questions.length - 1) {
     s.idx += 1;
     renderQuiz();
@@ -730,6 +758,7 @@ function updateNavigator() {
   }).join('');
   grid.querySelectorAll('[data-qi]').forEach(btn => {
     btn.onclick = () => {
+      recordElapsed();
       currentSession.idx = Number(btn.dataset.qi);
       hideNavigator();
       renderQuiz();
@@ -765,8 +794,10 @@ function startFullSatModule(idx) {
   currentSession = {
     mode: 'test', kind: 'full', moduleLabel: mod.label, moduleIdx: idx,
     questions: qs, answers: new Array(qs.length).fill(null),
+    times: new Array(qs.length).fill(0),
     flagged: new Set(), idx: 0, startedAt: Date.now(), durationMs,
     deadline: Date.now() + durationMs,
+    _qStart: Date.now(),
   };
   go('screen-quiz');
   renderQuiz();
@@ -775,14 +806,16 @@ function startFullSatModule(idx) {
 
 function showModuleBreak() {
   stopTimer();
+  recordElapsed();
   const s = currentSession;
   const mod = fullSatState.modules[s.moduleIdx];
   let correct = 0;
   s.questions.forEach((q, i) => { if (isCorrectAnswer(q, s.answers[i])) correct++; });
   fullSatState.results.push({ label: mod.label, score: correct, total: s.questions.length, durationMs: Date.now() - s.startedAt });
-  if (!fullSatState.questionData) fullSatState.questionData = { questions: [], answers: [] };
+  if (!fullSatState.questionData) fullSatState.questionData = { questions: [], answers: [], times: [] };
   fullSatState.questionData.questions.push(...s.questions);
   fullSatState.questionData.answers.push(...s.answers);
+  fullSatState.questionData.times.push(...s.times);
   addSeenIds(s.questions.map(q => q.id));
   addMasteredIds(s.questions.filter((q, i) => isCorrectAnswer(q, s.answers[i])).map(q => q.id));
   const nextIdx = s.moduleIdx + 1;
@@ -833,7 +866,8 @@ function showFullSatResults() {
   save(KEY.history, hist.slice(0, 50));
   if (fullSatState.questionData) {
     appendQuestionLog(sessionTs, new Date(sessionTs).toISOString(), 'Test_full',
-      fullSatState.questionData.questions, fullSatState.questionData.answers);
+      fullSatState.questionData.questions, fullSatState.questionData.answers,
+      fullSatState.questionData.times, totalMs);
   }
   fullSatState = null;
   go('screen-results');
@@ -846,6 +880,7 @@ function finishQuiz(timeUp = false) {
     return;
   }
   stopTimer();
+  recordElapsed();
   const s = currentSession;
   // For endless mode, trim to only reviewed questions
   if (s.mode === 'endless') {
@@ -856,6 +891,7 @@ function finishQuiz(timeUp = false) {
     }
     s.questions = reviewedIdxs.map(i => s.questions[i]);
     s.answers = reviewedIdxs.map(i => s.answers[i]);
+    s.times = reviewedIdxs.map(i => s.times[i]);
   }
   s.durationMs = Date.now() - s.startedAt;
   let correct = 0;
@@ -873,7 +909,7 @@ function finishQuiz(timeUp = false) {
   hist.unshift({ when: sessionTs, mode: s.mode, kind: s.kind || null, score: correct, total: s.questions.length, durationMs: s.durationMs });
   save(KEY.history, hist.slice(0, 50));
   const modeLabel = s.mode === 'test' ? `Test_${s.kind || 'mixed'}` : s.mode === 'endless' ? 'Endless' : 'Practice';
-  appendQuestionLog(sessionTs, new Date(sessionTs).toISOString(), modeLabel, s.questions, s.answers);
+  appendQuestionLog(sessionTs, new Date(sessionTs).toISOString(), modeLabel, s.questions, s.answers, s.times, s.durationMs);
   showResults(timeUp);
 }
 
@@ -963,6 +999,7 @@ function showPreSubmitReview() {
   }).join('');
   grid.querySelectorAll('[data-qidx]').forEach(btn => {
     btn.onclick = () => {
+      recordElapsed();
       currentSession.idx = Number(btn.dataset.qidx);
       if (currentSession.deadline) {
         currentSession.deadline = Date.now() + Math.max(0, currentSession.deadline - Date.now());
@@ -1054,8 +1091,10 @@ function startSearchPractice() {
   currentSession = {
     mode: 'practice', questions: qs,
     answers: new Array(qs.length).fill(null),
+    times: new Array(qs.length).fill(0),
     flagged: new Set(), idx: 0,
     startedAt: Date.now(), durationMs: null,
+    _qStart: Date.now(),
   };
   addSeenIds(qs.map(q => q.id));
   closeSearch();
@@ -1070,14 +1109,19 @@ function exportSessionCSV() {
     alert('No session data to export. Complete a practice or test first.');
     return;
   }
+  const totalMs = s.durationMs ?? (s.times || []).reduce((a, b) => a + b, 0);
   const rows = [
-    ['Q', 'Section', 'Topic', 'Difficulty', 'Prompt', 'Correct_Answer', 'Your_Answer', 'Result'],
+    ['Q', 'Section', 'Topic', 'Difficulty', 'Prompt', 'Correct_Answer', 'Your_Answer', 'Result', 'Time_Seconds'],
     ...s.questions.map((q, i) => {
       const ans = s.answers[i] || '';
       const result = !ans ? 'Skipped' : isCorrectAnswer(q, ans) ? 'Correct' : 'Incorrect';
+      const timeSec = Math.round(((s.times && s.times[i]) || 0) / 1000);
       return [i + 1, q.section, q.topic, q.difficulty,
-        q.prompt.replace(/"/g, '""'), q.answer, ans, result];
-    })
+        q.prompt.replace(/"/g, '""'), q.answer, ans, result, timeSec];
+    }),
+    [],
+    ['Overall Time (seconds)', Math.round(totalMs / 1000)],
+    ['Overall Time', fmtDuration(totalMs)],
   ];
   const csv = rows.map(r => r.map(v => `"${v}"`).join(',')).join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -1094,7 +1138,8 @@ function exportHistoryCSV() {
     return;
   }
   const header = ['Session_ID', 'DateTime', 'Mode', 'Question_ID', 'Section', 'Topic', 'Difficulty',
-    'Prompt', 'Choice_A', 'Choice_B', 'Choice_C', 'Choice_D', 'Correct_Answer', 'Your_Answer', 'Result'];
+    'Prompt', 'Choice_A', 'Choice_B', 'Choice_C', 'Choice_D', 'Correct_Answer', 'Your_Answer', 'Result',
+    'Time_Seconds', 'Session_Total_Time_Seconds'];
   const rows = [header, ...log];
   const csv = rows.map(r => r.map(v => `"${String(v).replace(/"/g, '""')}"`).join(',')).join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
