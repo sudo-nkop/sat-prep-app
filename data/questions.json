@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "_comment": "SAT question bank - 960 questions",
+  "_comment": "SAT question bank - 980 questions",
   "questions": [
     {
       "id": "m-alg-001",
@@ -13756,6 +13756,456 @@
       "prompt": "A trapezoid has parallel bases of length $8$ and $12$ and a height of $5$. What is its area?",
       "answer": "50",
       "explanation": "Area $= \\frac{1}{2}(b_1+b_2) \\cdot h = \\frac{1}{2}(8+12)(5) = \\frac{1}{2}(20)(5) = 50$."
+    },
+    {
+      "id": "m-func-012",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "Let $g(x) = cx^3 - dx + 4$, where $c$ and $d$ are constants. If $g(2) = 10$, what is the value of $g(-2)$?",
+      "choices": {
+        "A": "$-10$",
+        "B": "$-2$",
+        "C": "$2$",
+        "D": "$10$"
+      },
+      "answer": "B",
+      "explanation": "$g(2) = 8c - 2d + 4 = 10$, so $8c - 2d = 6$. Evaluating $g(-2) = -8c + 2d + 4$, and $-8c + 2d$ is the opposite of $8c - 2d$, so $-8c + 2d = -6$. Thus $g(-2) = -6 + 4 = -2$."
+    },
+    {
+      "id": "m-func-013",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The function $P(x) = ax^2 + bx + c$ has its vertex at $(2, 5)$ and passes through the point $(0, 1)$. What is the value of $a$?",
+      "choices": {
+        "A": "$-2$",
+        "B": "$-1$",
+        "C": "$1$",
+        "D": "$2$"
+      },
+      "answer": "B",
+      "explanation": "Using vertex form, $P(x) = a(x-2)^2 + 5$. Since $P(0) = 1$: $1 = a(0-2)^2 + 5 = 4a + 5$, so $a = -1$."
+    },
+    {
+      "id": "m-func-014",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "A polynomial function $p(x)$ has zeros at $x = -3$, $x = 1$, and $x = 4$. Which of the following could define $p(x)$?",
+      "choices": {
+        "A": "$p(x) = x^3 - 2x^2 - 11x + 12$",
+        "B": "$p(x) = x^3 + 2x^2 - 11x - 12$",
+        "C": "$p(x) = x^3 - 2x^2 + 11x - 12$",
+        "D": "$p(x) = x^3 + 2x^2 + 11x + 12$"
+      },
+      "answer": "A",
+      "explanation": "The factors are $(x+3)$, $(x-1)$, and $(x-4)$. Multiplying $(x-1)(x-4) = x^2 - 5x + 4$, then by $(x+3)$ gives $x^3 - 2x^2 - 11x + 12$."
+    },
+    {
+      "id": "m-func-015",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The graph of a polynomial function $f$ in the $xy$-plane has an $x$-intercept at $x = 2$ and is tangent to the $x$-axis at $x = -1$. If the point $(0, -4)$ lies on the graph of $f$, which of the following could be the equation of $f$?",
+      "choices": {
+        "A": "$f(x) = (x+1)^2(x-2)$",
+        "B": "$f(x) = 2(x+1)^2(x-2)$",
+        "C": "$f(x) = 2(x-1)^2(x+2)$",
+        "D": "$f(x) = -2(x+1)^2(x-2)$"
+      },
+      "answer": "B",
+      "explanation": "Tangency at $x=-1$ means $(x+1)$ is squared; crossing at $x=2$ means $(x-2)$ has power 1: $f(x) = a(x+1)^2(x-2)$. Plugging in $(0,-4)$: $-4 = a(1)^2(-2)$, so $a = 2$."
+    },
+    {
+      "id": "m-func-016",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "If $f(x) = ax^2 + bx + c$ and $f(1) = 3$, $f(0) = 2$, and $f(-1) = 5$, what is the value of $a + b + c$?",
+      "choices": {
+        "A": "$0$",
+        "B": "$2$",
+        "C": "$3$",
+        "D": "$5$"
+      },
+      "answer": "C",
+      "explanation": "$f(1) = a(1)^2 + b(1) + c = a + b + c$. Since $f(1) = 3$, we have $a + b + c = 3$."
+    },
+    {
+      "id": "m-func-017",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "A polynomial is defined as $P(x) = (x-2)(x+3)(x-k)$, where $k$ is a constant. If $P(1) = 12$, what is the value of $k$?",
+      "choices": {
+        "A": "$-2$",
+        "B": "$0$",
+        "C": "$2$",
+        "D": "$4$"
+      },
+      "answer": "D",
+      "explanation": "$P(1) = (-1)(4)(1-k) = -4(1-k) = 12$, so $-4 + 4k = 12$, giving $4k = 16$ and $k = 4$."
+    },
+    {
+      "id": "m-func-018",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The quadratic function $f(x) = cx^2 - 4x + 5$ has an axis of symmetry at $x = 2$. What is the value of $c$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$2$",
+        "C": "$4$",
+        "D": "$8$"
+      },
+      "answer": "A",
+      "explanation": "The axis of symmetry for $ax^2+bx+c$ is $x = -\\frac{b}{2a}$. Here $x = \\frac{4}{2c} = 2$, so $4 = 4c$ and $c = 1$."
+    },
+    {
+      "id": "m-func-019",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The zeros of a polynomial function $g(x)$ are $x = -2$, $x = 0$, and $x = 4$. Which of the following must be a factor of $g(x)$?",
+      "choices": {
+        "A": "$x^2 - 4x$",
+        "B": "$x^2 + 4x$",
+        "C": "$x^2 - 2x$",
+        "D": "$x^2 + 2x$"
+      },
+      "answer": "A",
+      "explanation": "Since $x=0$ and $x=4$ are roots, $x$ and $(x-4)$ are factors. Multiplying gives $x(x-4) = x^2 - 4x$."
+    },
+    {
+      "id": "m-func-020",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "Consider the function $h(x) = ax^2 + bx + c$, where $a$, $b$, and $c$ are constants. If $a < 0$ and $c > 0$, how many $x$-intercepts does the graph of $h(x)$ have in the $xy$-plane?",
+      "choices": {
+        "A": "Zero",
+        "B": "Exactly one",
+        "C": "Exactly two",
+        "D": "It cannot be determined from the given information."
+      },
+      "answer": "C",
+      "explanation": "The $y$-intercept is positive ($c>0$) and the parabola opens downward ($a<0$). A downward-facing parabola with a positive $y$-intercept must cross the $x$-axis exactly twice."
+    },
+    {
+      "id": "m-func-021",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "When the polynomial $p(x) = x^3 - kx^2 + 2x + 4$ is divided by $x - 2$, the remainder is $0$. What is the value of $k$?",
+      "choices": {
+        "A": "$-4$",
+        "B": "$2$",
+        "C": "$4$",
+        "D": "$8$"
+      },
+      "answer": "C",
+      "explanation": "By the Remainder Theorem, $p(2) = 0$: $8 - 4k + 4 + 4 = 16 - 4k = 0$, so $k = 4$."
+    },
+    {
+      "id": "m-func-022",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The graph of $f(x) = a(x-h)^2 + k$ has its vertex at $(3, 4)$ and passes through the point $(1, 0)$. What is the value of $a$?",
+      "choices": {
+        "A": "$-2$",
+        "B": "$-1$",
+        "C": "$1$",
+        "D": "$2$"
+      },
+      "answer": "B",
+      "explanation": "$f(x) = a(x-3)^2 + 4$. Plugging in $(1,0)$: $0 = a(1-3)^2 + 4 = 4a + 4$, so $a = -1$."
+    },
+    {
+      "id": "m-func-023",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The function $P(x) = x(x-a)(x-b)$ is graphed in the $xy$-plane, where $a$ and $b$ are distinct positive constants. How many times does the graph intersect the $x$-axis?",
+      "choices": {
+        "A": "One",
+        "B": "Two",
+        "C": "Three",
+        "D": "Four"
+      },
+      "answer": "C",
+      "explanation": "The roots are $x=0$, $x=a$, and $x=b$. Since $a$ and $b$ are distinct positive constants, there are three unique roots."
+    },
+    {
+      "id": "m-func-024",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The quadratic function $g(x) = 2x^2 + bx + c$ has roots at $x = 3$ and $x = -3$. What is the value of $b$?",
+      "choices": {
+        "A": "$-18$",
+        "B": "$0$",
+        "C": "$3$",
+        "D": "$9$"
+      },
+      "answer": "B",
+      "explanation": "The sum of the roots of $ax^2+bx+c$ is $-\\frac{b}{a}$. Since the roots are $3$ and $-3$, their sum is $0$, so $b = 0$."
+    },
+    {
+      "id": "m-func-025",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "For the function $f(x) = (x-c)^2 + d$, where $c$ and $d$ are constants, what is the minimum value of $f(x)$?",
+      "choices": {
+        "A": "$c$",
+        "B": "$d$",
+        "C": "$-c$",
+        "D": "$-d$"
+      },
+      "answer": "B",
+      "explanation": "This is an upward-opening parabola with vertex $(c, d)$. The $y$-coordinate of the vertex, $d$, is the minimum value."
+    },
+    {
+      "id": "m-func-026",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "A quadratic function $P(x)$ has $x$-intercepts at $-1$ and $2$. If $P(0) = -4$, what is the value of $P(3)$?",
+      "choices": {
+        "A": "$4$",
+        "B": "$6$",
+        "C": "$8$",
+        "D": "$12$"
+      },
+      "answer": "C",
+      "explanation": "$P(x) = a(x+1)(x-2)$. Using $P(0)=-4$: $a(1)(-2) = -4$, so $a=2$. Then $P(3) = 2(4)(1) = 8$."
+    },
+    {
+      "id": "m-func-027",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "What are the zeros of the function $y = k^2x^2 - 16$, where $k$ is a positive constant?",
+      "choices": {
+        "A": "$x = \\frac{4}{k}$ only",
+        "B": "$x = \\pm\\frac{4}{k}$",
+        "C": "$x = \\pm\\frac{16}{k}$",
+        "D": "$x = \\pm\\frac{2}{k}$"
+      },
+      "answer": "B",
+      "explanation": "Setting $y=0$: $k^2x^2 = 16$, so $x^2 = \\frac{16}{k^2}$. Taking the square root gives $x = \\pm\\frac{4}{k}$."
+    },
+    {
+      "id": "m-func-028",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "Which of the following is the completely factored form of $f(x) = x^3 + cx^2 - 4x - 4c$?",
+      "choices": {
+        "A": "$f(x) = (x-2)(x+2)(x+c)$",
+        "B": "$f(x) = (x-4)(x+1)(x+c)$",
+        "C": "$f(x) = (x-2)^2(x+c)$",
+        "D": "$f(x) = (x+2)^2(x-c)$"
+      },
+      "answer": "A",
+      "explanation": "Factor by grouping: $x^2(x+c) - 4(x+c) = (x^2-4)(x+c) = (x-2)(x+2)(x+c)$."
+    },
+    {
+      "id": "m-func-029",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "Let $g(x) = ax^2 + c$. If $g(3) = 15$ and $g(1) = 7$, what is the value of $c$?",
+      "choices": {
+        "A": "$1$",
+        "B": "$4$",
+        "C": "$6$",
+        "D": "$8$"
+      },
+      "answer": "C",
+      "explanation": "$9a + c = 15$ and $a + c = 7$. Subtracting gives $8a = 8$, so $a=1$, and $c = 7 - 1 = 6$."
+    },
+    {
+      "id": "m-func-030",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The polynomial $p(x) = a(x-h)^2 + k$ has no real roots. If $a > 0$, which of the following must be true?",
+      "choices": {
+        "A": "$k > 0$",
+        "B": "$k < 0$",
+        "C": "$h > 0$",
+        "D": "$h < 0$"
+      },
+      "answer": "A",
+      "explanation": "The parabola has vertex $(h,k)$ and opens upward. For it to have no real roots, the vertex must lie above the $x$-axis, so $k > 0$."
+    },
+    {
+      "id": "m-func-031",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The function $f(x) = a(x-3)(x+1)$ is graphed in the $xy$-plane. If $f(1) = 8$, what is the value of $a$?",
+      "choices": {
+        "A": "$-2$",
+        "B": "$-1$",
+        "C": "$2$",
+        "D": "$4$"
+      },
+      "answer": "A",
+      "explanation": "$f(1) = a(1-3)(1+1) = a(-2)(2) = -4a$. Since $f(1) = 8$, $-4a = 8$, so $a = -2$."
+    },
+    {
+      "id": "m-func-032",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "What are the real zeros of $P(x) = x^4 - kx^2$, assuming $k > 0$?",
+      "choices": {
+        "A": "$x=0$ and $x=k$",
+        "B": "$x = \\pm\\sqrt{k}$",
+        "C": "$x=0$ and $x = \\pm\\sqrt{k}$",
+        "D": "$x=0$ and $x = \\pm k$"
+      },
+      "answer": "C",
+      "explanation": "Factor out $x^2$: $P(x) = x^2(x^2-k) = 0$. The roots are $x=0$ and the solutions to $x^2 - k = 0$, which are $x = \\pm\\sqrt{k}$."
+    },
+    {
+      "id": "m-func-033",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The function $h(x) = cx^3 + dx^2$ has a root at $x = 2$. Which of the following expresses $d$ in terms of $c$?",
+      "choices": {
+        "A": "$d = -2c$",
+        "B": "$d = 2c$",
+        "C": "$d = -4c$",
+        "D": "$d = 4c$"
+      },
+      "answer": "A",
+      "explanation": "Since $h(2)=0$: $8c + 4d = 0$, so $4d = -8c$, giving $d = -2c$."
+    },
+    {
+      "id": "m-func-034",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "A quadratic function is given by $f(x) = a(x-r_1)(x-r_2)$. If $r_1 + r_2 = 0$, which of the following is a possible equivalent form of $f(x)$?",
+      "choices": {
+        "A": "$f(x) = ax^2 + bx$",
+        "B": "$f(x) = ax^2 + c$",
+        "C": "$f(x) = a(x-r_1)^2$",
+        "D": "$f(x) = a(x+r_2)^2$"
+      },
+      "answer": "B",
+      "explanation": "Since $r_2 = -r_1$, the factors are $(x-r_1)(x+r_1) = x^2 - r_1^2$, a difference of squares. Multiplying by $a$ gives $ax^2 - ar_1^2$, which is of the form $ax^2 + c$."
+    },
+    {
+      "id": "m-func-035",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "If the polynomial $g(x) = (x-m)^3$ is graphed in the $xy$-plane, which of the following is true about its behavior at $x = m$?",
+      "choices": {
+        "A": "The graph is tangent to the $x$-axis and does not cross it.",
+        "B": "The graph crosses the $x$-axis and is tangent to it at the crossing.",
+        "C": "The graph has a vertical asymptote at $x = m$.",
+        "D": "The graph does not intersect the $x$-axis."
+      },
+      "answer": "B",
+      "explanation": "A root with an odd multiplicity greater than 1 (like 3) crosses the $x$-axis but flattens out at the point of intersection."
+    },
+    {
+      "id": "m-func-036",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "What are the zeros of the polynomial $p(x) = x^2 - (a+b)x + ab$?",
+      "choices": {
+        "A": "$x=a$ and $x=-b$",
+        "B": "$x=-a$ and $x=b$",
+        "C": "$x=-a$ and $x=-b$",
+        "D": "$x=a$ and $x=b$"
+      },
+      "answer": "D",
+      "explanation": "The polynomial factors to $(x-a)(x-b) = 0$, giving $x=a$ and $x=b$."
+    },
+    {
+      "id": "m-func-037",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The function $f(x) = -2(x-k)^2 + 18$ has roots at $x = 1$ and $x = 7$. What is the value of $k$?",
+      "choices": {
+        "A": "$3$",
+        "B": "$4$",
+        "C": "$5$",
+        "D": "$6$"
+      },
+      "answer": "B",
+      "explanation": "The axis of symmetry is halfway between the roots: $\\frac{1+7}{2} = 4$, so $k = 4$."
+    },
+    {
+      "id": "m-func-038",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "A quadratic function is given by $h(x) = ax^2 + bx + c$. If $a > 0$, $b = 0$, and $c < 0$, which of the following describes the roots of $h(x)$?",
+      "choices": {
+        "A": "Two positive real roots",
+        "B": "Two negative real roots",
+        "C": "One positive and one negative real root",
+        "D": "No real roots"
+      },
+      "answer": "C",
+      "explanation": "The equation becomes $ax^2 + c = 0$, so $x^2 = -\\frac{c}{a}$, which is positive since $a>0$ and $c<0$. Taking the square root yields one positive and one negative root."
+    },
+    {
+      "id": "m-func-039",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "Let $g(x) = ax^2 + bx + c$. If $g(0) = 4$, $g(2) = 0$, and $g(-2) = 0$, what is the value of $a$?",
+      "choices": {
+        "A": "$-2$",
+        "B": "$-1$",
+        "C": "$1$",
+        "D": "$2$"
+      },
+      "answer": "B",
+      "explanation": "$g(0)=4$ gives $c=4$. Since roots are $2$ and $-2$, $b=0$, so $g(x)=ax^2+4$. Using $g(2)=0$: $4a+4=0$, so $a=-1$."
+    },
+    {
+      "id": "m-func-040",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 2,
+      "prompt": "The graph of $f(x) = m(x+2)(x-4)$ has a maximum value of $18$. What is the value of $m$?",
+      "choices": {
+        "A": "$-3$",
+        "B": "$-2$",
+        "C": "$2$",
+        "D": "$3$"
+      },
+      "answer": "B",
+      "explanation": "The axis of symmetry is at $x = \\frac{-2+4}{2} = 1$, where the maximum occurs. So $f(1) = m(3)(-3) = -9m = 18$, giving $m = -2$."
+    },
+    {
+      "id": "m-func-041",
+      "section": "math",
+      "topic": "functions",
+      "difficulty": 3,
+      "prompt": "The quadratic function $f(x) = kx^2 - 2kx + 3$ has an axis of symmetry at $x = 1$. What must be true about the value of $k$?",
+      "choices": {
+        "A": "$k = 1$ only",
+        "B": "$k = 2$ only",
+        "C": "$k$ can be any non-zero real number",
+        "D": "$k$ cannot be determined"
+      },
+      "answer": "C",
+      "explanation": "The axis of symmetry is $x = -\\frac{b}{2a} = -\\frac{-2k}{2k} = 1$, which is true regardless of the value of $k$ (as long as $k \\neq 0$)."
     }
   ]
 }
