@@ -3641,11 +3641,11 @@
       "choices": {
         "A": "11/19",
         "B": "22/43",
-        "C": "44/86",
-        "D": "88/172"
+        "C": "21/43",
+        "D": "11/23"
       },
       "answer": "B",
-      "explanation": "Total heavy plastic boxes: 8×11 = 88. Total heavy cardboard boxes: 7×12 = 84. Grand total: 172. P(plastic | ≥25 lbs) = 88/172 = 22/43."
+      "explanation": "Total heavy plastic boxes: 8×11 = 88. Total heavy cardboard boxes: 7×12 = 84. Grand total: 172. P(plastic | ≥25 lbs) = 88/172 = 22/43 (already in lowest terms). C (21/43) is the probability of picking a heavy cardboard box, the complement of the correct answer. D (11/23) comes from using the per-shelf counts (11 and 12) without multiplying by the number of shelves."
     },
     {
       "id": "m-adva-001",
