@@ -4957,15 +4957,15 @@
       "section": "rw",
       "topic": "quantitative",
       "difficulty": 2,
-      "prompt": "In a climate comfort survey, all three participants wanted the room cooler. Which choice most effectively uses table data to complete this statement?",
+      "prompt": "Nan Gao and her team surveyed participants' comfort in a room whose temperature was regulated by a climate control system. Participants rated their comfort on a scale from −3 (very cold) to +3 (very hot), with 0 as neutral, and indicated how they would prefer the temperature to be adjusted. In one survey, participant 20 gave a comfort rating of −2 and preferred the room cooler; participant 1 gave a comfort rating of 1 and preferred the room cooler; participant 21 gave a comfort rating of 1 and preferred the room cooler.\n\nAccording to the table, all three participants wanted the room cooler, _____\n\nWhich choice most effectively uses data from the table to complete the statement?",
       "choices": {
         "A": "and they each reported the same level of comfort",
         "B": "even though each participant's ratings varied throughout the day",
         "C": "but participant 20 reported feeling significantly colder than the other two participants did",
         "D": "but participant 1 reported feeling warmer than the other two participants did"
       },
-      "answer": "D",
-      "explanation": "D correctly qualifies the \"all wanted it cooler\" statement by noting participant 1 reported feeling warmer—meaning they wanted it cooler despite feeling warmer, not colder."
+      "answer": "C",
+      "explanation": "C correctly qualifies the \"all wanted it cooler\" statement with a meaningful contrast: participant 20's comfort rating (−2) was significantly colder than participant 1's and participant 21's ratings (both 1), even though all three preferred a cooler room. D is incorrect because participant 1's rating (1) was not warmer than the other two participants' ratings—participant 21 also reported a rating of 1, so only participant 20's rating actually differed."
     },
     {
       "id": "rw-quan-006",
