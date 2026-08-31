@@ -10184,8 +10184,8 @@
         "C": "6",
         "D": "7"
       },
-      "answer": "B",
-      "explanation": "Primes between 10 and 30: 11, 13, 17, 19, 23 — that is 5 primes."
+      "answer": "C",
+      "explanation": "Primes between 10 and 30: 11, 13, 17, 19, 23, and 29 — that is 6 primes."
     },
     {
       "id": "m-stat-049",
